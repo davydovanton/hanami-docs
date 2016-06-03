@@ -1,5 +1,6 @@
-# require 'rdoc/task'
+require 'rdoc/task'
 require 'git'
+require './sdoc_task'
 
 REPOSITORIES = %w[hanami router controller model validations utils view helpers mailer assets]
 
@@ -12,7 +13,7 @@ task :clone_repos do
   end
 end
 
-
+SDocTask.new('rdoc')
 
 def print_status(msg)
   print msg.ljust(65)
