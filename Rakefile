@@ -15,6 +15,9 @@ end
 
 SDocTask.new('rdoc')
 
+desc 'Run documentation generation for hanami'
+task default: %w(clone_repos rdoc)
+
 def print_status(msg)
   print msg.ljust(65)
 
