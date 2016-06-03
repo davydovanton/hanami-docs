@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Request</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Action::Request 
+            
+                <span class="parent">&lt; 
+                    
+                    Rack::Request
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/request_rb.html">sources/controller/lib/hanami/action/request.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>An HTTP request based on top of Rack::Request. This guarantees backwards
+compatibility with with <a href="Rack.html">Rack</a>.</p>
+
+<p>@since 0.3.1</p>
+
+<p>@see <a
+href="http://www.rubydoc.info/gems/rack/Rack/Request">www.rubydoc.info/gems/rack/Rack/Request</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D-3D">[]=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-content_type">content_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cookies">cookies</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete_param">delete_param</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-params">params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-session">session</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update_param">update_param</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-values_at">values_at</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <b>[]</b>(*)
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-5B-5D" name="method-i-5B-5D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L65" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-keyword ruby-title">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D-3D">
+            
+              <b>[]=</b>(*)
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-5B-5D-3D" name="method-i-5B-5D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D-3D_source')" id="l_method-i-5B-5D-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L73" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-5B-5D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-keyword ruby-title">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-content_type">
+            
+              <b>content_type</b>()
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-content_type" name="method-i-content_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-content_type_source')" id="l_method-i-content_type_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L17" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-content_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">content_type</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use Action#content_type&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cookies">
+            
+              <b>cookies</b>()
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-cookies" name="method-i-cookies" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cookies_source')" id="l_method-i-cookies_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-cookies_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cookies</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please include Action::Cookies and use Action#cookies&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete_param">
+            
+              <b>delete_param</b>(*)
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-delete_param" name="method-i-delete_param" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_param_source')" id="l_method-i-delete_param_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L57" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_param_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete_param</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-params">
+            
+              <b>params</b>()
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-params" name="method-i-params" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-params_source')" id="l_method-i-params_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L41" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">params</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-session">
+            
+              <b>session</b>()
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-session" name="method-i-session" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_source')" id="l_method-i-session_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L25" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-session_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please include Action::Session and use Action#session&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update_param">
+            
+              <b>update_param</b>(*)
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-update_param" name="method-i-update_param" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_param_source')" id="l_method-i-update_param_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L49" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-update_param_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update_param</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-values_at">
+            
+              <b>values_at</b>(*)
+            
+            <a href="../../../classes/Hanami/Action/Request.html#method-i-values_at" name="method-i-values_at" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [NotImplementedError]</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-values_at_source')" id="l_method-i-values_at_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/request.rb#L81" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-values_at_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/request.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">values_at</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&#39;Please use params passed to Action#call&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

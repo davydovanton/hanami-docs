@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::CliSubCommands::Generate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::CliSubCommands::Generate 
+            
+                <span class="parent">&lt; 
+                    
+                    Thor
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/cli_sub_commands/generate_rb.html">sources/hanami/lib/hanami/cli_sub_commands/generate.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A set of generator subcommands</p>
+
+<p>It is run with:</p>
+
+<pre><code>`bundle exec hanami generate`
+</code></pre>
+
+<p>@since 0.6.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-actions">actions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-app">app</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mailer">mailer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-migration">migration</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-model">model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Thor::Actions
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-actions">
+            
+              <b>actions</b>(application_name = nil, controller_and_action_name)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/Generate.html#method-i-actions" name="method-i-actions" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-actions_source')" id="l_method-i-actions_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/generate.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-actions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/generate.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">actions</span>(<span class="ruby-identifier">application_name</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">controller_and_action_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">container?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">application_name</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;ERROR: \&quot;hanami generate action\&quot; was called with arguments [\&quot;#{controller_and_action_name}\&quot;]\n&quot;</span>                  <span class="ruby-node">&quot;Usage: \&quot;hanami action APPLICATION_NAME CONTROLLER_NAME#ACTION_NAME\&quot;&quot;</span>
+    <span class="ruby-identifier">fail</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;action&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Generate</span><span class="ruby-operator">::</span><span class="ruby-constant">Action</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">application_name</span>, <span class="ruby-identifier">controller_and_action_name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-app">
+            
+              <b>app</b>(application_name)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/Generate.html#method-i-app" name="method-i-app" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-app_source')" id="l_method-i-app_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/generate.rb#L118" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-app_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/generate.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">app</span>(<span class="ruby-identifier">application_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;app&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/generate/app&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Generate</span><span class="ruby-operator">::</span><span class="ruby-constant">App</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">application_name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mailer">
+            
+              <b>mailer</b>(name)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/Generate.html#method-i-mailer" name="method-i-mailer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mailer_source')" id="l_method-i-mailer_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/generate.rb#L99" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-mailer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/generate.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mailer</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;mailer&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Generate</span><span class="ruby-operator">::</span><span class="ruby-constant">Mailer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-migration">
+            
+              <b>migration</b>(name)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/Generate.html#method-i-migration" name="method-i-migration" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-migration_source')" id="l_method-i-migration_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/generate.rb#L60" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-migration_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/generate.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">migration</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;migration&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/generate/migration&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Generate</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model">
+            
+              <b>model</b>(name)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/Generate.html#method-i-model" name="method-i-model" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-model_source')" id="l_method-i-model_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/generate.rb#L80" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/generate.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">model</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;model&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/generate/model&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">Generate</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

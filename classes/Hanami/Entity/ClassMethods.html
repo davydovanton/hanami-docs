@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Entity::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Entity::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/model/lib/hanami/entity_rb.html">sources/model/lib/hanami/entity.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-allowed_attribute_name-3F">allowed_attribute_name?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-attributes">attributes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-define_attr_accessor">define_attr_accessor</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inherited">inherited</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-allowed_attribute_name-3F">
+            
+              <b>allowed_attribute_name?</b>(name)
+            
+            <a href="../../../classes/Hanami/Entity/ClassMethods.html#method-i-allowed_attribute_name-3F" name="method-i-allowed_attribute_name-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if attr_reader define the given attribute</p>
+
+<p>@since 0.5.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-allowed_attribute_name-3F_source')" id="l_method-i-allowed_attribute_name-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity.rb#L167" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-allowed_attribute_name-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">allowed_attribute_name?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-attributes">
+            
+              <b>attributes</b>(*attrs)
+            
+            <a href="../../../classes/Hanami/Entity/ClassMethods.html#method-i-attributes" name="method-i-attributes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>(Re)defines getters, setters and initialization for the given <a
+href="ClassMethods.html#method-i-attributes">#attributes</a>.</p>
+
+<p>These <a href="ClassMethods.html#method-i-attributes">#attributes</a> can
+match the database columns, but this isn&#39;t a requirement. The mapper
+used by the relative repository will translate these names automatically.</p>
+
+<p>An entity can work with <a
+href="ClassMethods.html#method-i-attributes">#attributes</a> not configured
+in the mapper, but of course they will be ignored when the entity will be
+persisted.</p>
+
+<p>Please notice that the required `id` attribute is automatically defined and
+can be omitted in the arguments.</p>
+
+<p>@param attrs [Array&lt;Symbol&gt;] a set of arbitrary attribute names</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="../Repository.html">Hanami::Repository</a> @see <a
+href="../Model/Mapper.html">Hanami::Model::Mapper</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class User
+  include Hanami::Entity
+  attributes :name, :age
+end
+User.attributes =&gt; #&lt;Set: {:id, :name, :age}&gt;</code></pre>
+
+<p>@example Given params is array of <a
+href="ClassMethods.html#method-i-attributes">#attributes</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class User
+  include Hanami::Entity
+  attributes [:name, :age]
+end
+User.attributes =&gt; #&lt;Set: {:id, :name, :age}&gt;</code></pre>
+
+<p>@example Extend entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class User
+  include Hanami::Entity
+  attributes :name
+end
+
+class DeletedUser &lt; User
+  include Hanami::Entity
+  attributes :deleted_at
+end
+
+User.attributes =&gt; #&lt;Set: {:id, :name}&gt;
+DeletedUser.attributes =&gt; #&lt;Set: {:id, :name, :deleted_at}&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-attributes_source')" id="l_method-i-attributes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity.rb#L142" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">attributes</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attrs</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">any?</span>
+
+  <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Array</span>(<span class="ruby-identifier">attrs</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">allowed_attribute_name?</span>(<span class="ruby-identifier">attr</span>)
+      <span class="ruby-identifier">define_attr_accessor</span>(<span class="ruby-identifier">attr</span>)
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">attr</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-define_attr_accessor">
+            
+              <b>define_attr_accessor</b>(attr)
+            
+            <a href="../../../classes/Hanami/Entity/ClassMethods.html#method-i-define_attr_accessor" name="method-i-define_attr_accessor" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define setter/getter methods for <a
+href="ClassMethods.html#method-i-attributes">#attributes</a>.</p>
+
+<p>@param attr [Symbol] an attribute name</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-define_attr_accessor_source')" id="l_method-i-define_attr_accessor_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity.rb#L159" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-define_attr_accessor_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">define_attr_accessor</span>(<span class="ruby-identifier">attr</span>)
+  <span class="ruby-identifier">attr_accessor</span>(<span class="ruby-identifier">attr</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inherited">
+            
+              <b>inherited</b>(subclass)
+            
+            <a href="../../../classes/Hanami/Entity/ClassMethods.html#method-i-inherited" name="method-i-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@see Class#inherited</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inherited_source')" id="l_method-i-inherited_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity.rb#L174" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">attributes</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

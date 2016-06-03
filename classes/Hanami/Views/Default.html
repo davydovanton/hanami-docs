@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Views::Default</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Views::Default 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/views/default_rb.html">sources/hanami/lib/hanami/views/default.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The default view that is rendered for non successful responses (200 and
+201)</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-render">render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-title">title</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../View.html">
+              Hanami::View
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-render">
+            
+              <b>render</b>(root, template_name, context)
+            
+            <a href="../../../classes/Hanami/Views/Default.html#method-c-render" name="method-c-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-render_source')" id="l_method-c-render_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/views/default.rb#L22" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/views/default.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">template_name</span>, <span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">format</span>   = <span class="ruby-identifier">context</span>[<span class="ruby-value">:format</span>]
+  <span class="ruby-identifier">template</span> = <span class="ruby-constant">DefaultTemplateFinder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">root</span>, <span class="ruby-identifier">template_name</span>, <span class="ruby-identifier">format</span>).<span class="ruby-identifier">find</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">template</span>
+    <span class="ruby-identifier">new</span>(<span class="ruby-identifier">template</span>, <span class="ruby-identifier">context</span>).<span class="ruby-identifier">render</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-title">
+            
+              <b>title</b>()
+            
+            <a href="../../../classes/Hanami/Views/Default.html#method-i-title" name="method-i-title" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-title_source')" id="l_method-i-title_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/views/default.rb#L18" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-title_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/views/default.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">title</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::CliSubCommands::DB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::CliSubCommands::DB 
+            
+                <span class="parent">&lt; 
+                    
+                    Thor
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/cli_sub_commands/db_rb.html">sources/hanami/lib/hanami/cli_sub_commands/db.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A set of subcommands related to <a href="DB.html">DB</a></p>
+
+<p>It is run with:</p>
+
+<pre><code>`bundle exec hanami db`
+</code></pre>
+
+<p>@since 0.6.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-apply">apply</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-console">console</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-drop">drop</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-migrate">migrate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prepare">prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-version">version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-apply">
+            
+              <b>apply</b>()
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-apply" name="method-i-apply" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-apply_source')" id="l_method-i-apply_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L63" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-apply_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">apply</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;apply&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_development_environment!</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/apply&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Apply</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-console">
+            
+              <b>console</b>(name = nil)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-console" name="method-i-console" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-console_source')" id="l_method-i-console_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L17" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-console_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">console</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;console&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/console&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Console</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>()
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;create&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_allowed_environment!</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/create&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Create</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-drop">
+            
+              <b>drop</b>()
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-drop" name="method-i-drop" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-drop_source')" id="l_method-i-drop_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-drop_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">drop</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;drop&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_allowed_environment!</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/drop&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Drop</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-migrate">
+            
+              <b>migrate</b>(version = nil)
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-migrate" name="method-i-migrate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-migrate_source')" id="l_method-i-migrate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L52" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-migrate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">migrate</span>(<span class="ruby-identifier">version</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;migrate&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/migrate&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrate</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">version</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepare">
+            
+              <b>prepare</b>()
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-prepare" name="method-i-prepare" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepare_source')" id="l_method-i-prepare_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L75" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;prepare&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_allowed_environment!</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/prepare&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Prepare</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-version">
+            
+              <b>version</b>()
+            
+            <a href="../../../classes/Hanami/CliSubCommands/DB.html#method-i-version" name="method-i-version" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-version_source')" id="l_method-i-version_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7f9eff66c24728f7e5dc83e614f88be06c61ece4/lib/hanami/cli_sub_commands/db.rb#L89" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/cli_sub_commands/db.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">version</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>]
+    <span class="ruby-identifier">invoke</span> <span class="ruby-value">:help</span>, [<span class="ruby-string">&#39;version&#39;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/commands/db/version&#39;</span>
+    <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Commands</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

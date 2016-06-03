@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Repository</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Repository 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/model/lib/hanami/repository_rb.html">sources/model/lib/hanami/repository.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Mediates between the entities and the persistence layer, by offering an API
+to query and execute commands on a database.</p>
+
+<p>By default, a repository is named after an entity, by appending the
+`Repository` suffix to the entity class name.</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class Article
+  include Hanami::Entity
+end
+
+# valid
+class ArticleRepository
+  include Hanami::Repository
+end
+
+# not valid for Article
+class PostRepository
+  include Hanami::Repository
+end
+</code></pre>
+
+<p><a href="Repository.html">Repository</a> for an entity can be configured by
+setting # the `#repository` on the mapper.</p>
+
+<p>@example</p>
+
+<pre><code># PostRepository is repository for Article
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+    repository PostRepository
+  end
+end
+</code></pre>
+
+<p>A repository is storage independent. All the queries and commands are
+delegated to the current adapter.</p>
+
+<p>This architecture has several advantages:</p>
+
+<pre><code>* Applications depend on an abstract API, instead of low level details
+  (Dependency Inversion principle)
+
+* Applications depend on a stable API, that doesn&#39;t change if the
+  storage changes
+
+* Developers can postpone storage decisions
+
+* Isolates the persistence logic at a low level</code></pre>
+
+<p><a href="Model.html">Hanami::Model</a> is shipped with two adapters:</p>
+
+<pre><code>* SqlAdapter
+* MemoryAdapter</code></pre>
+
+<p>All the queries and commands are private. This decision forces developers
+to define intention revealing API, instead leak storage API details outside
+of a repository.</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# This is bad for several reasons:
+#
+#  * The caller has an intimate knowledge of the internal mechanisms
+#      of the Repository.
+#
+#  * The caller works on several levels of abstraction.
+#
+#  * It doesn&#39;t express a clear intent, it&#39;s just a chain of methods.
+#
+#  * The caller can&#39;t be easily tested in isolation.
+#
+#  * If we change the storage, we are forced to change the code of the
+#    caller(s).
+
+ArticleRepository.where(author_id: 23).order(:published_at).limit(8)
+
+# This is a huge improvement:
+#
+#  * The caller doesn&#39;t know how the repository fetches the entities.
+#
+#  * The caller works on a single level of abstraction.
+#    It doesn&#39;t even know about records, only works with entities.
+#
+#  * It expresses a clear intent.
+#
+#  * The caller can be easily tested in isolation.
+#    It&#39;s just a matter of stub this method.
+#
+#  * If we change the storage, the callers aren&#39;t affected.
+
+ArticleRepository.most_recent_by_author(author)
+
+class ArticleRepository
+  include Hanami::Repository
+
+  def self.most_recent_by_author(author, limit = 8)
+    query do
+      where(author_id: author.id).
+        order(:published_at)
+    end.limit(limit)
+  end
+end
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Entity.html">Hanami::Entity</a> @see <a
+href="http://martinfowler.com/eaaCatalog/repository.html">martinfowler.com/eaaCatalog/repository.html</a>
+@see <a
+href="http://en.wikipedia.org/wiki/Dependency_inversion_principle">en.wikipedia.org/wiki/Dependency_inversion_principle</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Repository/ClassMethods.html">Hanami::Repository::ClassMethods</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Repository/InstanceMethods.html">Hanami::Repository::InstanceMethods</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Repository/InstanceMethods.html">
+              Hanami::Repository::InstanceMethods
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../classes/Hanami/Repository.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Inject the public API into the hosting class.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class UserRepository
+  include Hanami::Repository
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L132" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">InstanceMethods</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassAttribute</span>
+    <span class="ruby-identifier">class_attribute</span> <span class="ruby-value">:collection</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">adapter</span> = <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">Adapters</span><span class="ruby-operator">::</span><span class="ruby-constant">NullAdapter</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>JSMin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            JSMin 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/sources/assets/lib/hanami/assets/compressors/jsmin_rb.html">sources/assets/lib/hanami/assets/compressors/jsmin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="module-JSMin-label-JSMin"><a href="JSMin.html">JSMin</a></h1>
+
+<p>Ruby implementation of Douglas Crockford&#39;s JavaScript minifier, <a
+href="JSMin.html">JSMin</a>.</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Ryan Grove (<a href="mailto:ryan@wonko.com">ryan@wonko.com</a>)</p>
+</dd><dt><strong>Version</strong>
+<dd>
+<p>1.0.1 (2008-11-10)</p>
+</dd><dt><strong>Copyright</strong>
+<dd>
+<p>Copyright © 2008 Ryan Grove. All rights reserved.</p>
+</dd><dt><strong>Website</strong>
+<dd>
+<p><a href="http://github.com/rgrove/jsmin">github.com/rgrove/jsmin</a></p>
+</dd></dl>
+
+<h2 id="module-JSMin-label-Example">Example</h2>
+
+<pre><code>require &#39;rubygems&#39;
+require &#39;jsmin&#39;
+
+File.open(&#39;example.js&#39;, &#39;r&#39;) {|file| puts JSMin.minify(file) }
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="JSMin/ParseError.html">JSMin::ParseError</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-minify">minify</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-raise">raise</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_APOS</td>
+            <td>=</td>
+            <td class="attr-value">&quot;&#39;&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_ASTERISK</td>
+            <td>=</td>
+            <td class="attr-value">&#39;*&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_BACKSLASH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;\\&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_CR</td>
+            <td>=</td>
+            <td class="attr-value">&quot;\r&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_FRONTSLASH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;/&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_LF</td>
+            <td>=</td>
+            <td class="attr-value">&quot;\n&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_QUOTE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;&quot;&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHR_SPACE</td>
+            <td>=</td>
+            <td class="attr-value">&#39; &#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ORD_LF</td>
+            <td>=</td>
+            <td class="attr-value">?\n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ORD_SPACE</td>
+            <td>=</td>
+            <td class="attr-value">?\</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ORD_TILDE</td>
+            <td>=</td>
+            <td class="attr-value">?~</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-minify">
+            
+              <b>minify</b>(input)
+            
+            <a href="../classes/JSMin.html#method-c-minify" name="method-c-minify" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reads JavaScript from <em>input</em> (which can be a String or an IO
+object) and returns a String containing minified JS.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-minify_source')" id="l_method-c-minify_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/compressors/jsmin.rb#L81" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-minify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/compressors/jsmin.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">minify</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-ivar">@js</span> = <span class="ruby-constant">StringScanner</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">IO</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">read</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">IO</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">100</span>]
+  <span class="ruby-ivar">@line</span> = <span class="ruby-number">1</span>
+
+  <span class="ruby-ivar">@a</span>         = <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-ivar">@b</span>         = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@lookahead</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@output</span>    = <span class="ruby-string">&#39;&#39;</span>
+
+  <span class="ruby-identifier">action_get</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@a</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-ivar">@a</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">CHR_SPACE</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">alphanum?</span>(<span class="ruby-ivar">@b</span>)
+        <span class="ruby-identifier">action_output</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">action_copy</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">CHR_LF</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CHR_SPACE</span>
+        <span class="ruby-identifier">action_get</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[{\[\(+-]/</span>
+        <span class="ruby-identifier">action_output</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">alphanum?</span>(<span class="ruby-ivar">@b</span>)
+          <span class="ruby-identifier">action_output</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">action_copy</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CHR_SPACE</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">alphanum?</span>(<span class="ruby-ivar">@a</span>)
+          <span class="ruby-identifier">action_output</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">action_get</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@b</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CHR_LF</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@a</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[}\]\)\&quot;+-]/</span>
+          <span class="ruby-identifier">action_output</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">alphanum?</span>(<span class="ruby-ivar">@a</span>)
+            <span class="ruby-identifier">action_output</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">action_get</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">action_output</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@output</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-raise">
+            
+              <b>raise</b>(err)
+            
+            <a href="../classes/JSMin.html#method-c-raise" name="method-c-raise" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-raise_source')" id="l_method-c-raise_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/compressors/jsmin.rb#L75" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-raise_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/compressors/jsmin.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">raise</span>(<span class="ruby-identifier">err</span>)
+  <span class="ruby-keyword">super</span> <span class="ruby-constant">ParseError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">err</span>, <span class="ruby-ivar">@source</span>, <span class="ruby-ivar">@line</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

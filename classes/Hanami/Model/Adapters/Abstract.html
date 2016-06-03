@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Adapters::Abstract</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Model::Adapters::Abstract 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/model/lib/hanami/model/adapters/abstract_rb.html">sources/model/lib/hanami/model/adapters/abstract.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Abstract.html">Abstract</a> adapter.</p>
+
+<p>An adapter is a concrete implementation that allows a repository to
+communicate with a single database.</p>
+
+<p><a href="../../Model.html">Hanami::Model</a> is shipped with <a
+href="Memory.html">Memory</a> and SQL adapters. Third part adapters MUST
+implement the interface defined here. For convenience they may inherit from
+this class.</p>
+
+<p>These are low level details, and shouldn&#39;t be used directly. Please use
+a repository for entities persistence.</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adapter_name">adapter_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-all">all</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-command">command</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-connection_string">connection_string</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-disconnect">disconnect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-execute">execute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fetch">fetch</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-find">find</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-first">first</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-last">last</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-persist">persist</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-query">query</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-transaction">transaction</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">ADAPTER_NAME_SUFFIX</td>
+            <td>=</td>
+            <td class="attr-value">&#39;_adapter&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since x.x.x @api private</p>
+
+<p>@see <a href="Abstract.html#method-i-adapter_name">#adapter_name</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(mapper, uri = nil, options = {})
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the adapter</p>
+
+<p>@param mapper [Hanami::Model::Mapper] the object that defines the</p>
+
+<pre><code>database to entities mapping
+</code></pre>
+
+<p>@param uri [String] the optional connection string to the database</p>
+
+<p>@param options [Hash] a list of non-mandatory adapter options</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L108" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">mapper</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@mapper</span> = <span class="ruby-identifier">mapper</span>
+  <span class="ruby-ivar">@uri</span>    = <span class="ruby-identifier">uri</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+
+  <span class="ruby-identifier">assert_uri_present!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter_name">
+            
+              <b>adapter_name</b>()
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-adapter_name" name="method-i-adapter_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adapter name</p>
+
+<p>@return [String] adapter name</p>
+
+<p>@since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_name_source')" id="l_method-i-adapter_name_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L303" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-adapter_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter_name</span>
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">demodulize</span>.<span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-constant">ADAPTER_NAME_SUFFIX</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-all">
+            
+              <b>all</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-all" name="method-i-all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns <a href="Abstract.html#method-i-all">#all</a> the records for the
+given collection</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).</p>
+
+<p>@return [Array] <a href="Abstract.html#method-i-all">#all</a> the records</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-all_source')" id="l_method-i-all_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L170" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Empties the given collection.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L214" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-command">
+            
+              <b>command</b>(query)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-command" name="method-i-command" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Executes a <a href="Abstract.html#method-i-command">#command</a> for the
+given <a href="Abstract.html#method-i-query">#query</a>.</p>
+
+<p>@param <a href="Abstract.html#method-i-query">#query</a> [Object] the <a
+href="Abstract.html#method-i-query">#query</a> object to act on.</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-command_source')" id="l_method-i-command_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L223" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-command_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">command</span>(<span class="ruby-identifier">query</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-connection_string">
+            
+              <b>connection_string</b>()
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-connection_string" name="method-i-connection_string" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a string which can be executed to start a console suitable for the
+configured database.</p>
+
+<p>@return [String] to be executed to start a database console</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-connection_string_source')" id="l_method-i-connection_string_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L264" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-connection_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">connection_string</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotSupportedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a record in the database for the given entity. It should assign an
+id (identity) to the entity in case of success.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [Object] the entity to <a
+href="Abstract.html#method-i-create">#create</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L137" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <b>delete</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-delete" name="method-i-delete" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes a record in the database corresponding to the given entity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [Object] the entity to <a
+href="Abstract.html#method-i-delete">#delete</a></p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L159" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-disconnect">
+            
+              <b>disconnect</b>()
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-disconnect" name="method-i-disconnect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Disconnects the connection by freeing low level resources</p>
+
+<p>@since 0.5.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-disconnect_source')" id="l_method-i-disconnect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L294" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-disconnect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">disconnect</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-execute">
+            
+              <b>execute</b>(raw)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-execute" name="method-i-execute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Executes a raw <a href="Abstract.html#method-i-command">#command</a></p>
+
+<p>@param raw [String] the raw statement to <a
+href="Abstract.html#method-i-execute">#execute</a> on the connection</p>
+
+<p>@return [NilClass]</p>
+
+<p>@since 0.3.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-execute_source')" id="l_method-i-execute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L275" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-execute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">execute</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch">
+            
+              <b>fetch</b>(raw, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-fetch" name="method-i-fetch" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Fetches raw records from</p>
+
+<p>@param raw [String] the raw <a
+href="Abstract.html#method-i-query">#query</a> @param blk [Proc] an
+optional block that is yielded for each record</p>
+
+<p>@return [Enumerable&lt;Hash&gt;, Array&lt;Hash&gt;]</p>
+
+<p>@since 0.5.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_source')" id="l_method-i-fetch_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L287" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-fetch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch</span>(<span class="ruby-identifier">raw</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find">
+            
+              <b>find</b>(collection, id)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-find" name="method-i-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a unique record from the given collection, with the given identity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param id [Object] the identity of the object.</p>
+
+<p>@return [Object] the entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_source')" id="l_method-i-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L183" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-first">
+            
+              <b>first</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-first" name="method-i-first" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Abstract.html#method-i-first">#first</a> record in the
+given collection.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).</p>
+
+<p>@return [Object] the <a href="Abstract.html#method-i-first">#first</a>
+entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-first_source')" id="l_method-i-first_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L194" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">first</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-last">
+            
+              <b>last</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-last" name="method-i-last" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Abstract.html#method-i-last">#last</a> record in the
+given collection.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).</p>
+
+<p>@return [Object] the <a href="Abstract.html#method-i-last">#last</a> entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-last_source')" id="l_method-i-last_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L205" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-last_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">last</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-persist">
+            
+              <b>persist</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-persist" name="method-i-persist" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates or updates a record in the database for the given entity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [Object] the entity to <a
+href="Abstract.html#method-i-persist">#persist</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-persist_source')" id="l_method-i-persist_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L124" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-persist_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">persist</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-query">
+            
+              <b>query</b>(collection, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-query" name="method-i-query" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="Abstract.html#method-i-query">#query</a></p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param blk [Proc] a block of code to be executed in the context of</p>
+
+<pre><code>the query.</code></pre>
+
+<p>@return [Object]</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-query_source')" id="l_method-i-query_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L236" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">query</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-transaction">
+            
+              <b>transaction</b>(options = {})
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-transaction" name="method-i-transaction" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Wraps the given block in a <a
+href="Abstract.html#method-i-transaction">#transaction</a>.</p>
+
+<p>For performance reasons the block isn&#39;t in the signature of the method,
+but it&#39;s yielded at the lower level.</p>
+
+<p>Please note that it&#39;s only supported by some databases. For this
+reason, the options may vary from adapter to adapter.</p>
+
+<p>@param options [Hash] options for <a
+href="Abstract.html#method-i-transaction">#transaction</a></p>
+
+<p>@see <a
+href="SqlAdapter.html#method-i-transaction">Hanami::Model::Adapters::SqlAdapter#transaction</a>
+@see <a
+href="MemoryAdapter.html#method-i-transaction">Hanami::Model::Adapters::MemoryAdapter#transaction</a></p>
+
+<p>@since 0.2.3</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-transaction_source')" id="l_method-i-transaction_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L254" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">transaction</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/Abstract.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Updates a record in the database corresponding to the given entity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [Object] the entity to <a
+href="Abstract.html#method-i-update">#update</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/f952fa45b3c1c9dfdeda42e05bda26258ea9c565/lib/hanami/model/adapters/abstract.rb#L149" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/abstract.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

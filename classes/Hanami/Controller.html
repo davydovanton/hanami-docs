@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Controller 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/controller/lib/hanami/controller_rb.html">sources/controller/lib/hanami/controller.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/controller/configuration_rb.html">sources/controller/lib/hanami/controller/configuration.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/controller/error_rb.html">sources/controller/lib/hanami/controller/error.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/controller/version_rb.html">sources/controller/lib/hanami/controller/version.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A set of logically grouped actions</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Action.html">Hanami::Action</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+module Articles
+  class Index
+    include Hanami::Action
+
+    # ...
+  end
+
+  class Show
+    include Hanami::Action
+
+    # ...
+  end
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Controller/Configuration.html">Hanami::Controller::Configuration</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Controller/Error.html">Hanami::Controller::Error</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Controller/UnknownFormatError.html">Hanami::Controller::UnknownFormatError</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-configure">configure</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dupe">dupe</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-duplicate">duplicate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.7.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Defines the version</p>
+
+<p>@since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-configure">
+            
+              <b>configure</b>(&amp;blk)
+            
+            <a href="../../classes/Hanami/Controller.html#method-c-configure" name="method-c-configure" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Configure the framework. It yields the given block in the context of the
+configuration</p>
+
+<p>@param blk [Proc] the configuration block</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="Controller/Configuration.html">Hanami::Controller::Configuration</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+Hanami::Controller.configure do
+  handle_exceptions false
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-configure_source')" id="l_method-c-configure_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/controller.rb#L69" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-configure_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/controller.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-dupe">
+            
+              <b>dupe</b>()
+            
+            <a href="../../classes/Hanami/Controller.html#method-c-dupe" name="method-c-dupe" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Duplicate <a href="Controller.html">Hanami::Controller</a> in order to
+create a new separated instance of the framework.</p>
+
+<p>The new instance of the framework will be completely decoupled from the
+original. It will inherit the configuration, but all the changes that
+happen after the duplication, won&#39;t be reflected on the other copies.</p>
+
+<p>@return [Module] a copy of <a href="Controller.html">Hanami::Controller</a></p>
+
+<p>@since 0.2.0 @api private</p>
+
+<p>@example Basic usage</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+module MyApp
+  Controller = Hanami::Controller.dupe
+end
+
+MyApp::Controller == Hanami::Controller # =&gt; false
+
+MyApp::Controller.configuration ==
+  Hanami::Controller.configuration # =&gt; false
+</code></pre>
+
+<p>@example Inheriting configuration</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+Hanami::Controller.configure do
+  handle_exceptions false
+end
+
+module MyApp
+  Controller = Hanami::Controller.dupe
+end
+
+module MyApi
+  Controller = Hanami::Controller.dupe
+  Controller.configure do
+    handle_exceptions true
+  end
+end
+
+Hanami::Controller.configuration.handle_exceptions # =&gt; false
+MyApp::Controller.configuration.handle_exceptions # =&gt; false
+MyApi::Controller.configuration.handle_exceptions # =&gt; true
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dupe_source')" id="l_method-c-dupe_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/controller.rb#L118" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-dupe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/controller.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dupe</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configuration</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">duplicate</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-duplicate">
+            
+              <b>duplicate</b>(mod, controllers = &#39;Controllers&#39;, &amp;blk)
+            
+            <a href="../../classes/Hanami/Controller.html#method-c-duplicate" name="method-c-duplicate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre><code>Duplicate the framework and generate modules for the target application
+
+@param mod [Module] the Ruby namespace of the application
+@param controllers [String] the optional namespace where the application&#39;s
+  controllers will live
+@param blk [Proc] an optional block to configure the framework
+
+@return [Module] a copy of Hanami::Controller</code></pre>
+
+<p> @since 0.2.0</p>
+
+<pre><code>@see Hanami::Controller#dupe
+@see Hanami::Controller::Configuration
+@see Hanami::Controller::Configuration#action_module
+
+@example Basic usage
+  require &#39;hanami/controller&#39;
+
+  module MyApp
+    Controller = Hanami::Controller.duplicate(self)
+  end
+
+  # It will:
+  #
+  # 1. Generate MyApp::Controller
+  # 2. Generate MyApp::Action
+  # 3. Generate MyApp::Controllers
+  # 4. Configure MyApp::Action as the default module for actions
+
+ module MyApp::Controllers::Dashboard
+   include MyApp::Controller
+
+   action &#39;Index&#39; do # this will inject MyApp::Action
+     def call(params)
+       # ...
+     end
+   end
+ end
+
+@example Compare code
+  require &#39;hanami/controller&#39;
+
+  module MyApp
+    Controller = Hanami::Controller.duplicate(self) do
+      # ...
+    end
+  end
+
+  # it&#39;s equivalent to:
+
+  module MyApp
+    Controller = Hanami::Controller.dupe
+    Action     = Hanami::Action.dup
+
+    module Controllers
+    end
+
+    Controller.configure do
+      action_module MyApp::Action
+    end
+
+    Controller.configure do
+      # ...
+    end
+  end
+
+@example Custom controllers module
+  require &#39;hanami/controller&#39;
+
+  module MyApp
+    Controller = Hanami::Controller.duplicate(self, &#39;Ctrls&#39;)
+  end
+
+  defined?(MyApp::Controllers) # =&gt; nil
+  defined?(MyApp::Ctrls)       # =&gt; &quot;constant&quot;
+
+  # Developers can namespace controllers under Ctrls
+  module MyApp::Ctrls::Dashboard
+    # ...
+  end
+
+@example Nil controllers module
+  require &#39;hanami/controller&#39;
+
+  module MyApp
+    Controller = Hanami::Controller.duplicate(self, nil)
+  end
+
+  defined?(MyApp::Controllers) # =&gt; nil
+
+  # Developers can namespace controllers under MyApp
+  module MyApp::DashboardController
+    # ...
+  end
+
+@example Block usage
+  require &#39;hanami/controller&#39;
+
+  module MyApp
+    Controller = Hanami::Controller.duplicate(self) do
+      handle_exceptions false
+    end
+  end
+
+  Hanami::Controller.configuration.handle_exceptions # =&gt; true
+  MyApp::Controller.configuration.handle_exceptions # =&gt; false</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-duplicate_source')" id="l_method-c-duplicate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/controller.rb#L230" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-duplicate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/controller.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">duplicate</span>(<span class="ruby-identifier">mod</span>, <span class="ruby-identifier">controllers</span> = <span class="ruby-string">&#39;Controllers&#39;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">dupe</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-node">%Q{ module #{ controllers }; end }</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">controllers</span>
+    <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-string">%Q{ Action = Hanami::Action.dup }</span>
+
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-node">%Q{
+      configure do
+        action_module #{ mod }::Action
+      end
+    }</span>
+
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../classes/Hanami/Controller.html#method-c-load-21" name="method-c-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Framework loading entry point</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load-21_source')" id="l_method-c-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/controller.rb#L250" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/controller.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">load!</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

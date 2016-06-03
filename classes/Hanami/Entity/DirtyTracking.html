@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Entity::DirtyTracking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Entity::DirtyTracking 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/model/lib/hanami/entity/dirty_tracking_rb.html">sources/model/lib/hanami/entity/dirty_tracking.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Dirty tracking for entities</p>
+
+<p>@since 0.3.1</p>
+
+<p>@example Dirty tracking</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class User
+  include Hanami::Entity
+  include Hanami::Entity::DirtyTracking
+
+  attributes :name
+end
+
+article = Article.new(title: &#39;Generation P&#39;)
+article.changed? # =&gt; false
+
+article.title = &#39;Master and Margarita&#39;
+article.changed? # =&gt; true
+
+article.changed_attributes # =&gt; {:title =&gt; &quot;Generation P&quot;}
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-changed-3F">changed?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-changed_attributes">changed_attributes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(attributes = {})
+            
+            <a href="../../../classes/Hanami/Entity/DirtyTracking.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override initialize process.</p>
+
+<p>@param attributes [Hash] a set of attribute names and values</p>
+
+<p>@since 0.3.1</p>
+
+<p>@see Hanami::Entity#initialize</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity/dirty_tracking.rb#L32" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity/dirty_tracking.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@_initial_state</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">to_h</span>).<span class="ruby-identifier">deep_dup</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-changed-3F">
+            
+              <b>changed?</b>()
+            
+            <a href="../../../classes/Hanami/Entity/DirtyTracking.html#method-i-changed-3F" name="method-i-changed-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the attributes were changed</p>
+
+<p>@return [TrueClass, FalseClass] the result of the check</p>
+
+<p>@since 0.3.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-changed-3F_source')" id="l_method-i-changed-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity/dirty_tracking.rb#L69" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-changed-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity/dirty_tracking.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">changed?</span>
+  <span class="ruby-identifier">changed_attributes</span>.<span class="ruby-identifier">any?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-changed_attributes">
+            
+              <b>changed_attributes</b>()
+            
+            <a href="../../../classes/Hanami/Entity/DirtyTracking.html#method-i-changed_attributes" name="method-i-changed_attributes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Getter for hash of changed attributes. Return empty hash, if there is no
+changes Getter for hash of changed attributes. Value in it is the previous
+one.</p>
+
+<p>@return [::Hash] the changed attributes</p>
+
+<p>@since 0.3.1</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class Article
+  include Hanami::Entity
+  include Hanami::Entity::DirtyTracking
+
+  attributes :title
+end
+
+article = Article.new(title: &#39;The crime and punishment&#39;)
+article.changed_attributes # =&gt; {}
+
+article.title = &#39;Master and Margarita&#39;
+article.changed_attributes # =&gt; {:title =&gt; &quot;The crime and punishment&quot;}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-changed_attributes_source')" id="l_method-i-changed_attributes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/entity/dirty_tracking.rb#L60" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-changed_attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/entity/dirty_tracking.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">changed_attributes</span>
+  <span class="ruby-constant">Hash</span>[<span class="ruby-ivar">@_initial_state</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">to_h</span>.<span class="ruby-identifier">to_a</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

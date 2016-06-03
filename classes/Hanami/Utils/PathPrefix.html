@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::PathPrefix</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::PathPrefix 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="String.html">Hanami::Utils::String</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/path_prefix_rb.html">sources/utils/lib/hanami/utils/path_prefix.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Prefixed string</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-absolute-21">absolute!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-absolute-3F">absolute?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-join">join</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-relative-21">relative!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-relative_join">relative_join</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;/&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Path separator</p>
+
+<p>@since 0.3.1 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(string = nil, separator = DEFAULT_SEPARATOR)
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the path prefix</p>
+
+<p>@param string [::String] the prefix value @param separator [::String] the
+separator used between tokens</p>
+
+<p>@return [PathPrefix] self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Utils::PathPrefix::DEFAULT_SEPARATOR</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L26" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">string</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">separator</span> = <span class="ruby-constant">DEFAULT_SEPARATOR</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-ivar">@separator</span> = <span class="ruby-identifier">separator</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-join">
+            
+              <b>join</b>(*strings)
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-i-join" name="method-i-join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Joins self with the given token. It cleans up all the `separator`
+repetitions.</p>
+
+<p>@param strings [::String] the token(s) we want to <a
+href="PathPrefix.html#method-i-join">#join</a></p>
+
+<p>@return [Hanami::Utils::PathPrefix] the joined string</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Single string</p>
+
+<pre><code>require &#39;hanami/utils/path_prefix&#39;
+
+path_prefix = Hanami::Utils::PathPrefix.new(&#39;/posts&#39;)
+path_prefix.join(&#39;new&#39;).to_s  # =&gt; &quot;/posts/new&quot;
+path_prefix.join(&#39;/new&#39;).to_s # =&gt; &quot;/posts/new&quot;
+
+path_prefix = Hanami::Utils::PathPrefix.new(&#39;posts&#39;)
+path_prefix.join(&#39;new&#39;).to_s  # =&gt; &quot;/posts/new&quot;
+path_prefix.join(&#39;/new&#39;).to_s # =&gt; &quot;/posts/new&quot;
+</code></pre>
+
+<p>@example Multiple strings</p>
+
+<pre><code>require &#39;hanami/utils/path_prefix&#39;
+
+path_prefix = Hanami::Utils::PathPrefix.new(&#39;myapp&#39;)
+path_prefix.join(&#39;/assets&#39;, &#39;application.js&#39;).to_s
+  # =&gt; &quot;/myapp/assets/application.js&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-join_source')" id="l_method-i-join_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L57" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-join_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">join</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">strings</span>)
+  <span class="ruby-identifier">relative_join</span>(<span class="ruby-identifier">strings</span>).<span class="ruby-identifier">absolute!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-relative_join">
+            
+              <b>relative_join</b>(strings, separator = @separator)
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-i-relative_join" name="method-i-relative_join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Joins self with the given token, without prefixing it with `separator`. It
+cleans up all the `separator` repetitions.</p>
+
+<p>@param strings [::String] the tokens we want to <a
+href="PathPrefix.html#method-i-join">#join</a> @param separator [::String]
+the separator used between tokens</p>
+
+<p>@return [Hanami::Utils::PathPrefix] the joined string</p>
+
+<p>@raise [TypeError] if one of the argument can&#39;t be treated as a</p>
+
+<pre><code>string
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/path_prefix&#39;
+
+path_prefix = Hanami::Utils::PathPrefix.new &#39;posts&#39;
+path_prefix.relative_join(&#39;new&#39;).to_s      # =&gt; &#39;posts/new&#39;
+path_prefix.relative_join(&#39;new&#39;, &#39;_&#39;).to_s # =&gt; &#39;posts_new&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-relative_join_source')" id="l_method-i-relative_join_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L80" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-relative_join_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">relative_join</span>(<span class="ruby-identifier">strings</span>, <span class="ruby-identifier">separator</span> = <span class="ruby-ivar">@separator</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">separator</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">prefix</span> = <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-ivar">@separator</span>, <span class="ruby-identifier">separator</span>)
+  <span class="ruby-identifier">result</span> = [<span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">strings</span>]
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">compact!</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">reject!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">string</span><span class="ruby-operator">|</span> <span class="ruby-identifier">string</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">separator</span> }
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">separator</span>), <span class="ruby-identifier">separator</span>
+  ).<span class="ruby-identifier">relative!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-absolute-21">
+            
+              <b>absolute!</b>()
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-i-absolute-21" name="method-i-absolute-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Modifies the path prefix to have a prepended separator.</p>
+
+<p>@return [self]</p>
+
+<p>@since 0.3.1 @api private</p>
+
+<p>@see #absolute</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-absolute-21_source')" id="l_method-i-absolute-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L103" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-absolute-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">absolute!</span>
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">prepend</span>(<span class="ruby-identifier">separator</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">absolute?</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-absolute-3F">
+            
+              <b>absolute?</b>()
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-i-absolute-3F" name="method-i-absolute-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns whether the path prefix starts with its separator.</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.3.1 @api private</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/path_prefix&#39;
+
+Hanami::Utils::PathPrefix.new(&#39;/posts&#39;).absolute? #=&gt; true
+Hanami::Utils::PathPrefix.new(&#39;posts&#39;).absolute?  #=&gt; false
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-absolute-3F_source')" id="l_method-i-absolute-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L121" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-absolute-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">absolute?</span>
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-identifier">separator</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-relative-21">
+            
+              <b>relative!</b>()
+            
+            <a href="../../../classes/Hanami/Utils/PathPrefix.html#method-i-relative-21" name="method-i-relative-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Modifies the path prefix to remove the leading separator.</p>
+
+<p>@return [self]</p>
+
+<p>@since 0.3.1 @api private</p>
+
+<p>@see #relative</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-relative-21_source')" id="l_method-i-relative-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/path_prefix.rb#L133" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-relative-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/path_prefix.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">relative!</span>
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">%r{(?&lt;!:)#{ separator * 2 }}</span>, <span class="ruby-identifier">separator</span>)
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">%r{\A#{ separator }}</span>, <span class="ruby-string">&#39;&#39;</span>)
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

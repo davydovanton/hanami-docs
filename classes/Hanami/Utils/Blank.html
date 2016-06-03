@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Blank</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::Blank 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/blank_rb.html">sources/utils/lib/hanami/utils/blank.rb</a></li>
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/inflector_rb.html">sources/utils/lib/hanami/utils/inflector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Checks for blank @since x.x.x</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-blank-3F">blank?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">STRING_MATCHER</td>
+            <td>=</td>
+            <td class="attr-value">/\A[[:space:]]*\z/.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Matcher for blank strings</p>
+
+<p>@since x.x.x @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-blank-3F">
+            
+              <b>blank?</b>(object)
+            
+            <a href="../../../classes/Hanami/Utils/Blank.html#method-c-blank-3F" name="method-c-blank-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks object is blank</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/blank&#39;
+
+Hanami::Utils::Blank.blank?(Hanami::Utils::String.new(&#39;&#39;)) # =&gt; true
+Hanami::Utils::Blank.blank?(&#39;  &#39;)                          # =&gt; true
+Hanami::Utils::Blank.blank?(nil)                           # =&gt; true
+Hanami::Utils::Blank.blank?(Hanami::Utils::Hash.new({}))   # =&gt; true
+Hanami::Utils::Blank.blank?(true)                          # =&gt; false
+Hanami::Utils::Blank.blank?(1)                             # =&gt; false
+</code></pre>
+
+<p>@param object the argument</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-blank-3F_source')" id="l_method-c-blank-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/1b8bd058f016cfdc2e2660fee6b94c75e0efee50/lib/hanami/utils/blank.rb#L29" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-blank-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/blank.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">blank?</span>(<span class="ruby-identifier">object</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">object</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>, <span class="ruby-operator">::</span><span class="ruby-constant">String</span>
+    <span class="ruby-constant">STRING_MATCHER</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">object</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>, <span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>, <span class="ruby-operator">::</span><span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">object</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">TrueClass</span>, <span class="ruby-constant">Numeric</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">FalseClass</span>, <span class="ruby-constant">NilClass</span>
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:empty?</span>) <span class="ruby-operator">?</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">:</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

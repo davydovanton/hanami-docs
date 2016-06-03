@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::ApplicationName</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::ApplicationName 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/application_name_rb.html">sources/hanami/lib/hanami/application_name.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>An application name.</p>
+
+<p>@since 0.2.1</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-invalid-3F">invalid?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_env_s">to_env_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_str">to_str</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">RESERVED_WORDS</td>
+            <td>=</td>
+            <td class="attr-value">%w(hanami).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>A list of words that are prohibited from forming the application name</p>
+
+<p>@since 0.2.1</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-invalid-3F">
+            
+              <b>invalid?</b>(name)
+            
+            <a href="../../classes/Hanami/ApplicationName.html#method-c-invalid-3F" name="method-c-invalid-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if a potential application name matches one of the reserved
+words.</p>
+
+<p>@param name [String] the application name @return [TrueClass, FalseClass]
+the result of the check</p>
+
+<p>@example</p>
+
+<pre><code>Hanami::ApplicationName.invalid?(&quot;hanami&quot;) # =&gt; true
+</code></pre>
+
+<p>@since 0.2.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-invalid-3F_source')" id="l_method-c-invalid-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7ed7fd97f082d1e9a4be8f2405e3bfd3f36742b7/lib/hanami/application_name.rb#L76" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-invalid-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/application_name.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">invalid?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-constant">RESERVED_WORDS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(name)
+            
+            <a href="../../classes/Hanami/ApplicationName.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize and check against reserved words</p>
+
+<p>An application name needs to be translated in quite a few ways: First, it
+must be checked against a list of reserved words and rejected if it is
+invalid. Secondly, assuming it is not invalid, it must be able to be output
+roughly as given, but with the following changes:</p>
+<ol><li>
+<p>downcased,</p>
+</li><li>
+<p>with surrounding spaces removed,</p>
+</li><li>
+<p>with internal whitespace rendered as underscores</p>
+</li><li>
+<p>with underscores de-duplicated</p>
+</li></ol>
+
+<p>which is the default output. It must also be transformable into an
+environment variable.</p>
+
+<p>@return [Hanami::ApplicationName] a <a
+href="ApplicationName.html#method-c-new">::new</a> instance of the
+application name</p>
+
+<p>@since 0.2.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7ed7fd97f082d1e9a4be8f2405e3bfd3f36742b7/lib/hanami/application_name.rb#L32" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/application_name.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">ensure_validity!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-to_env_s">
+            
+              <b>to_env_s</b>()
+            
+            <a href="../../classes/Hanami/ApplicationName.html#method-i-to_env_s" name="method-i-to_env_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the application name uppercased with non-alphanumeric characters as
+underscores.</p>
+
+<p>@return [String] the upcased name</p>
+
+<p>@example</p>
+
+<pre><code>ApplicationName.new(&quot;my-app&quot;).to_env_s =&gt; &quot;MY_APP&quot;</code></pre>
+
+<p>@since 0.2.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_env_s_source')" id="l_method-i-to_env_s_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7ed7fd97f082d1e9a4be8f2405e3bfd3f36742b7/lib/hanami/application_name.rb#L62" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_env_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/application_name.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_env_s</span>
+  <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">upcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W/</span>, <span class="ruby-string">&#39;_&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../classes/Hanami/ApplicationName.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the cleaned application name.</p>
+
+<p>@return [String] the sanitized name</p>
+
+<p>@example</p>
+
+<pre><code>ApplicationName.new(&quot;my-App &quot;).to_s # =&gt; &quot;my_app&quot;
+</code></pre>
+
+<p>@since 0.2.1</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ApplicationName.html#method-i-to_str">to_str</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7ed7fd97f082d1e9a4be8f2405e3bfd3f36742b7/lib/hanami/application_name.rb#L45" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/application_name.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-ivar">@name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_str">
+            
+              <b>to_str</b>()
+            
+            <a href="../../classes/Hanami/ApplicationName.html#method-i-to_str" name="method-i-to_str" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="ApplicationName.html#method-i-to_s">to_s</a>
+            </div>
+          
+          
+          
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

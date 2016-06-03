@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Config::Cookies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Config::Cookies 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/config/cookies_rb.html">sources/hanami/lib/hanami/config/cookies.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Cookies.html">Cookies</a> configuration</p>
+
+<p>@since 0.3.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-enabled-3F">enabled?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>default_options</td>
+            <td class='attr-desc'><p>Return the routes for this application</p>
+
+<p>@return [Hash] options for cookies</p>
+
+<p>@since 0.3.0 @api private</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(configuration, options = {})
+            
+            <a href="../../../classes/Hanami/Config/Cookies.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Cookies.html">Cookies</a> configuration</p>
+
+<p>httponly option enabled by default. Prevent attackers to steal cookies via
+JavaScript, Eg. alert(document.cookie) will fail</p>
+
+<p>@param options [Hash, TrueClass, FalseClass] optional cookies options
+@param configuration [Hanami::Configuration] the application configuration</p>
+
+<p>@since 0.3.0 @api private</p>
+
+<p>@see <a
+href="https://github.com/rack/rack/blob/master/lib/rack/utils.rb">github.com/rack/rack/blob/master/lib/rack/utils.rb</a>
+#set_cookie_header! @see <a
+href="https://www.owasp.org/index.php/HttpOnly">www.owasp.org/index.php/HttpOnly</a></p>
+
+<p>@example Enable cookies with boolean</p>
+
+<pre><code>module Web
+  class Application &lt; Hanami::Application
+    configure do
+      # ...
+      cookies true
+    end
+  end
+end
+</code></pre>
+
+<p>@example Enable cookies with options</p>
+
+<pre><code>module Web
+  class Application &lt; Hanami::Application
+    configure do
+      # ...
+      cookies max_age: 300
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/config/cookies.rb#L51" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/cookies.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">configuration</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span>         = <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@default_options</span> = { <span class="ruby-identifier">httponly</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">secure</span><span class="ruby-operator">:</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">ssl?</span> }
+  <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-enabled-3F">
+            
+              <b>enabled?</b>()
+            
+            <a href="../../../classes/Hanami/Config/Cookies.html#method-i-enabled-3F" name="method-i-enabled-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return if cookies are enabled</p>
+
+<p>@return [TrueClass, FalseClass] enabled cookies</p>
+
+<p>@since 0.3.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-enabled-3F_source')" id="l_method-i-enabled-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/config/cookies.rb#L63" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-enabled-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/cookies.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">enabled?</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:empty?</span>) <span class="ruby-operator">?</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">:</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

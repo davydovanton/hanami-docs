@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::ClassAttribute::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils::ClassAttribute::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/utils/lib/hanami/utils/class_attribute_rb.html">sources/utils/lib/hanami/utils/class_attribute.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-class_attribute">class_attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inherited">inherited</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-class_attribute">
+            
+              <b>class_attribute</b>(*attributes)
+            
+            <a href="../../../../classes/Hanami/Utils/ClassAttribute/ClassMethods.html#method-i-class_attribute" name="method-i-class_attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a class level accessor for the given attribute(s).</p>
+
+<p>A value set for a superclass is automatically available by their
+subclasses, unless a different value is explicitely set within the
+inheritance chain.</p>
+
+<p>@param attributes [Array&lt;Symbol&gt;] a single or multiple attribute
+name(s)</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/class_attribute&#39;
+
+class Vehicle
+  include Hanami::Utils::ClassAttribute
+  class_attribute :engines, :wheels
+
+  self.engines = 0
+  self.wheels  = 0
+end
+
+class Car &lt; Vehicle
+  self.engines = 1
+  self.wheels  = 4
+end
+
+class Airplane &lt; Vehicle
+  self.engines = 4
+  self.wheels  = 16
+end
+
+class SmallAirplane &lt; Airplane
+  self.engines = 2
+  self.wheels  = 8
+end
+
+Vehicle.engines # =&gt; 0
+Vehicle.wheels  # =&gt; 0
+
+Car.engines # =&gt; 1
+Car.wheels  # =&gt; 4
+
+Airplane.engines # =&gt; 4
+Airplane.wheels  # =&gt; 16
+
+SmallAirplane.engines # =&gt; 2
+SmallAirplane.wheels  # =&gt; 8
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-class_attribute_source')" id="l_method-i-class_attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/476aec76692a24822ccf37eee9b752397b0daa7d/lib/hanami/utils/class_attribute.rb#L65" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-class_attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/class_attribute.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">class_attribute</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+  <span class="ruby-identifier">singleton_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">attr_accessor</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">class_attributes</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inherited">
+            
+              <b>inherited</b>(subclass)
+            
+            <a href="../../../../classes/Hanami/Utils/ClassAttribute/ClassMethods.html#method-i-inherited" name="method-i-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@see Class#inherited</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inherited_source')" id="l_method-i-inherited_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/476aec76692a24822ccf37eee9b752397b0daa7d/lib/hanami/utils/class_attribute.rb#L75" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/class_attribute.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-identifier">class_attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>)
+    <span class="ruby-identifier">value</span> = <span class="ruby-constant">Duplicable</span>.<span class="ruby-identifier">dup</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">class_attribute</span> <span class="ruby-identifier">attr</span>
+    <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{attr}=&quot;</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

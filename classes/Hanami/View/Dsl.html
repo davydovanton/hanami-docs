@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Dsl</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::View::Dsl 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/dsl_rb.html">sources/view/lib/hanami/view/dsl.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Class level DSL</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-format">format</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-layout">layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template">template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-format">
+            
+              <b>format</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/View/Dsl.html#method-i-format" name="method-i-format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>When a value is given, specify the handled <a
+href="Dsl.html#method-i-format">#format</a>. Otherwise, it returns the
+previously specified <a href="Dsl.html#method-i-format">#format</a>.</p>
+
+<p>@param value [Symbol] the <a href="Dsl.html#method-i-format">#format</a></p>
+
+<p>@return [Symbol, nil] the specified <a
+href="Dsl.html#method-i-format">#format</a> for this view, if set</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+
+  class JsonShow &lt; Show
+    format :json
+  end
+end
+
+Articles::Show.format     # =&gt; nil
+Articles::JsonShow.format # =&gt; :json
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-format_source')" id="l_method-i-format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/dsl.rb#L77" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/dsl.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">format</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@format</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@format</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layout">
+            
+              <b>layout</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/View/Dsl.html#method-i-layout" name="method-i-layout" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>When a value is given, it specifies the <a
+href="Dsl.html#method-i-layout">#layout</a>. When false is given, <a
+href="Rendering/NullLayout.html">Hanami::View::Rendering::NullLayout</a> is
+returned. Otherwise, it returns the previously specified <a
+href="Dsl.html#method-i-layout">#layout</a>.</p>
+
+<p>When the global configuration is set (`Hanami::View.layout=`), after the
+loading process, it will return that <a
+href="Dsl.html#method-i-layout">#layout</a> if not otherwise specified.</p>
+
+<p>@param value [Symbol, FalseClass, nil] the <a
+href="Dsl.html#method-i-layout">#layout</a> name</p>
+
+<p>@return [Symbol, nil] the specified <a
+href="Dsl.html#method-i-layout">#layout</a> for this view, if set</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Layout.html">Hanami::Layout</a></p>
+
+<p>@example Default usage</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+end
+
+Articles::Show.layout # =&gt; nil
+</code></pre>
+
+<p>@example Custom <a href="Dsl.html#method-i-layout">#layout</a></p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class ArticlesLayout
+  include Hanami::Layout
+end
+
+module Articles
+  class Show
+    include Hanami::View
+    layout :articles
+  end
+end
+
+Articles::Show.layout # =&gt; :articles
+</code></pre>
+
+<p>@example Global configuration</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class ApplicationLayout
+  include Hanami::Layout
+end
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+end
+
+Hanami::View.layout = :application
+Articles::Show.layout # =&gt; nil
+
+Hanami::View.load!
+Articles::Show.layout # =&gt; :application
+</code></pre>
+
+<p>@example Global configuration with custom <a
+href="Dsl.html#method-i-layout">#layout</a></p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class ApplicationLayout
+  include Hanami::Layout
+end
+
+class ArticlesLayout
+  include Hanami::Layout
+end
+
+module Articles
+  class Show
+    include Hanami::View
+    layout :articles
+  end
+end
+
+Hanami::View.layout = :application
+Articles::Show.layout # =&gt; :articles
+
+Hanami::View.load!
+Articles::Show.layout # =&gt; :articles
+</code></pre>
+
+<p>@example Disable <a href="Dsl.html#method-i-layout">#layout</a> for the
+view</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class ApplicationLayout
+  include Hanami::Layout
+end
+
+module Articles
+  class Show
+    include Hanami::View
+    layout false
+  end
+end
+
+Hanami::View.load!
+Articles::Show.layout # =&gt; Hanami::View::Rendering::NullLayout
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_source')" id="l_method-i-layout_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/dsl.rb#L315" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/dsl.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@layout</span>  <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@_layout</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">LayoutFinder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@layout</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">layout</span>, <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">namespace</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@layout</span> = <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">::</span><span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">NullLayout</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@layout</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/View/Dsl.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>When a value is given, specify a templates <a
+href="Dsl.html#method-i-root">#root</a> path for the view. Otherwise, it
+returns templates <a href="Dsl.html#method-i-root">#root</a> path.</p>
+
+<p>When not initialized, it will return the global value from
+`Hanami::View.root`.</p>
+
+<p>@param value [String] the templates <a
+href="Dsl.html#method-i-root">#root</a> for this view</p>
+
+<p>@return [Pathname] the specified <a href="Dsl.html#method-i-root">#root</a>
+for this view or the global value</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Default usage</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+end
+
+Hanami::View.configuration.root # =&gt; &#39;app/templates&#39;
+Articles::Show.root            # =&gt; &#39;app/templates&#39;
+</code></pre>
+
+<p>@example Custom <a href="Dsl.html#method-i-root">#root</a></p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+    root &#39;path/to/articles/templates&#39;
+  end
+end
+
+Hanami::View.configuration.root # =&gt; &#39;app/templates&#39;
+Articles::Show.root            # =&gt; &#39;path/to/articles/templates&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/dsl.rb#L45" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/dsl.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">root</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">root</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template">
+            
+              <b>template</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/View/Dsl.html#method-i-template" name="method-i-template" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre><code>When a value is given, specify the relative path to the template.
+Otherwise, it returns the name that follows Hanami::View conventions.
+
+@param value [String] relative template path
+
+@return [String] the specified template for this view or the name
+  that follows the convention
+
+@since 0.1.0</code></pre>
+
+<p> @example Default usage</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+
+  class JsonShow &lt; Show
+    format :json
+  end
+end
+
+Articles::Show.template     # =&gt; &#39;articles/show&#39;
+Articles::JsonShow.template # =&gt; &#39;articles/show&#39;
+</code></pre>
+
+<p> @example Custom <a href="Dsl.html#method-i-template">#template</a></p>
+
+<pre><code>  require &#39;hanami/view&#39;
+
+  module Articles
+    class Show
+      include Hanami::View
+      template &#39;articles/single_article&#39;
+    end
+
+    class JsonShow &lt; Show
+      format :json
+    end
+  end
+
+  Articles::Show.template     # =&gt; &#39;articles/single_article&#39;
+  Articles::JsonShow.template # =&gt; &#39;articles/single_article&#39;
+
+@example With namespace
+  require &#39;hanami/view&#39;
+
+  module Furnitures
+    View = Hanami::View.generate(self)
+
+    class Standalone
+      include Furnitures::View
+    end
+
+    module Catalog
+      class Index
+        Furnitures::View
+      end
+    end
+  end
+
+  Furnitures::Standalone.template     # =&gt; &#39;standalone&#39;
+  Furnitures::Catalog::Index.template # =&gt; &#39;catalog/index&#39;
+
+@example With nested namespace
+  require &#39;hanami/view&#39;
+
+  module Frontend
+    View = Hanami::View.generate(self)
+
+    class StandaloneView
+      include Frontend::View
+    end
+
+    module Views
+      class Standalone
+        include Frontend::View
+      end
+
+      module Sessions
+        class New
+          include Frontend::View
+        end
+      end
+    end
+  end
+
+  Frontend::StandaloneView.template       # =&gt; &#39;standalone_view&#39;
+  Frontend::Views::Standalone.template    # =&gt; &#39;standalone&#39;
+  Frontend::Views::Sessions::New.template # =&gt; &#39;sessions/new&#39;
+
+@example With deeply nested namespace
+  require &#39;hanami/view&#39;
+
+  module Bookshelf
+    module Web
+      View = Hanami::View.generate(self)
+
+      module Views
+        module Books
+          class Show
+            include Bookshelf::Web::View
+          end
+        end
+      end
+    end
+
+    module Api
+      View = Hanami::View.generate(self)
+
+      module Views
+        module Books
+          class Show
+            include Bookshelf::Api::View
+          end
+        end
+      end
+    end
+  end
+
+  Bookshelf::Web::Views::Books::Index.template # =&gt; &#39;books/index&#39;
+  Bookshelf::Api::Views::Books::Index.template # =&gt; &#39;books/index&#39;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_source')" id="l_method-i-template_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/dsl.rb#L206" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/dsl.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@template</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">TemplateName</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">namespace</span>).<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@template</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/View/Dsl.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loading mechanism hook.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../View.html#method-c-load-21">Hanami::View.load!</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/dsl.rb#L334" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/dsl.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-identifier">views</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">freeze</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">format</span>.<span class="ruby-identifier">freeze</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">template</span>.<span class="ruby-identifier">freeze</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">layout</span><span class="ruby-comment">#.freeze</span>
+    <span class="ruby-identifier">v</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

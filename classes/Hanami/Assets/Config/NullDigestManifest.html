@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Assets::Config::NullDigestManifest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Assets::Config::NullDigestManifest 
+            
+                <span class="parent">&lt; 
+                    
+                    Utils::BasicObject
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/assets/lib/hanami/assets/config/manifest_rb.html">sources/assets/lib/hanami/assets/config/manifest.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Default value for configuration&#39;s digest manifest.</p>
+
+<p>It indicates that the digest manifest wasn&#39;t loaded yet.</p>
+
+<p>At the load time, this should be replaced by an instance of
+<code>Hanami::Assets::Config::Manifest</code>.</p>
+
+<p>If for some reason that won&#39;t happen, the instance of this class is
+still referenced by the configuration and all the method invocations will
+raise a <code>Hanami::Assets::MissingDigestManifestError</code>.</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="../Configuration.html#method-i-manifest">Hanami::Assets::Configuration#manifest</a>
+@see <a
+href="../Configuration.html#method-i-manifest_path">Hanami::Assets::Configuration#manifest_path</a>
+@see <a
+href="../Configuration.html#method-i-digest">Hanami::Assets::Configuration#digest</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(configuration)
+            
+            <a href="../../../../classes/Hanami/Assets/Config/NullDigestManifest.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a <a href="NullDigestManifest.html#method-c-new">::new</a> instance</p>
+
+<p>@param configuration [Hanami::Assets::Configuration]</p>
+
+<p>@return [Hanami::Assets::Config::NullDigestManifest] a <a
+href="NullDigestManifest.html#method-c-new">::new</a> instance</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/config/manifest.rb#L56" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/config/manifest.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">configuration</span>)
+  <span class="ruby-ivar">@configuration</span> = <span class="ruby-identifier">configuration</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(*)
+            
+            <a href="../../../../classes/Hanami/Assets/Config/NullDigestManifest.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@raise [Hanami::Assets::MissingDigestManifestError]</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/config/manifest.rb#L64" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/config/manifest.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">raise</span>(
+    <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Assets</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingDigestManifestError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@configuration</span>.<span class="ruby-identifier">manifest_path</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

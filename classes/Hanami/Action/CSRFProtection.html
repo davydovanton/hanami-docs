@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::CSRFProtection</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::CSRFProtection 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/action/csrf_protection_rb.html">sources/hanami/lib/hanami/action/csrf_protection.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>CSRF Protection</p>
+
+<p>This security mechanism is enabled automatically if sessions are turned on.</p>
+
+<p>It stores a “challenge” token in session. For each “state changing request”
+(eg. <code>POST</code>, <code>PATCH</code> etc..), we should send a special
+param: <code>_csrf_token</code>.</p>
+
+<p>If the param matches with the challenge token, the flow can continue.
+Otherwise the application detects an attack attempt, it reset the session
+and <code>Hanami::Action::InvalidCSRFTokenError</code> is raised.</p>
+
+<p>We can specify a custom handling strategy, by overriding
+<code>#handle_invalid_csrf_token</code>.</p>
+
+<p>Form helper (<code>#form_for</code>) automatically sets a hidden field with
+the correct token. A special view method (<code>#csrf_token</code>) is
+available in case the form markup is manually crafted.</p>
+
+<p>We can disable this check on action basis, by overriding
+<code>#verify_csrf_token?</code>.</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29</a>
+@see <a
+href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet">www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet</a></p>
+
+<p>@example Custom Handling</p>
+
+<pre><code>module Web::Controllers::Books
+  class Create
+    include Web::Action
+
+    def call(params)
+      # ...
+    end
+
+    private
+
+    def handle_invalid_csrf_token
+      Web::Logger.warn &quot;CSRF attack: expected #{ session[:_csrf_token] }, was #{ params[:_csrf_token] }&quot;
+      # manual handling
+    end
+  end
+end
+</code></pre>
+
+<p>@example Bypass Security Check</p>
+
+<pre><code>module Web::Controllers::Books
+  class Create
+    include Web::Action
+
+    def call(params)
+      # ...
+    end
+
+    private
+
+    def verify_csrf_token?
+      false
+    end
+  end
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">CSRF_TOKEN</td>
+            <td>=</td>
+            <td class="attr-value">:_csrf_token</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Session.html">Session</a> and params key for CSRF token.</p>
+
+<p>This key is shared with <code>hanami-controller</code> and
+<code>hanami-helpers</code></p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IDEMPOTENT_HTTP_METHODS</td>
+            <td>=</td>
+            <td class="attr-value">Hash[
+&#39;GET&#39;     =&gt; true,
+&#39;HEAD&#39;    =&gt; true,
+&#39;TRACE&#39;   =&gt; true,
+&#39;OPTIONS&#39; =&gt; true
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Idempotent HTTP methods</p>
+
+<p>By default, the check isn&#39;t performed if the request method is <a
+href="CSRFProtection.html#method-c-included">::included</a> in this list.</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(action)
+            
+            <a href="../../../classes/Hanami/Action/CSRFProtection.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/82e17948754db32d70b3ed7ec2b632c493ed01eb/lib/hanami/action/csrf_protection.rb#L95" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/action/csrf_protection.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">action</span>)
+  <span class="ruby-identifier">action</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">before</span> <span class="ruby-value">:set_csrf_token</span>, <span class="ruby-value">:verify_csrf_token</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Hanami</span>.<span class="ruby-identifier">env?</span>(<span class="ruby-value">:test</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

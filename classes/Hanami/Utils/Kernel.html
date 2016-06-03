@@ -1,0 +1,1841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Kernel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils::Kernel 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/kernel_rb.html">sources/utils/lib/hanami/utils/kernel.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Kernel.html">Kernel</a> utilities @since 0.1.1</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Array">Array</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-BigDecimal">BigDecimal</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-Boolean">Boolean</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Date">Date</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-DateTime">DateTime</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Float">Float</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Hash">Hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Integer">Integer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Pathname">Pathname</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Set">Set</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-String">String</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-Symbol">Symbol</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-Time">Time</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-numeric-3F">numeric?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">NUMERIC_MATCHER</td>
+            <td>=</td>
+            <td class="attr-value">/\A([\d\/\.\+iE]+|NaN|Infinity)\z/.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Matcher for numeric values</p>
+
+<p>@since 0.3.3 @api private</p>
+
+<p>@see <a href="Kernel.html">Hanami::Utils::Kernel</a>.Integer</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">BOOLEAN_FALSE_STRING</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since x.x.x @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">BOOLEAN_TRUE_INTEGER</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since x.x.x @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-Array">
+            
+              <b>Array</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Array" name="method-c-Array" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be an <a
+href="Kernel.html#method-c-Array">::Array</a>.</p>
+
+<p>It&#39;s similar to Ruby&#39;s <a href="Kernel.html">Kernel</a>.Array, but
+it applies further transformations:</p>
+
+<pre><code>* flatten
+* compact
+* uniq</code></pre>
+
+<p>@param arg [Object] the input</p>
+
+<p>@return [Array] the result of the coercion</p>
+
+<p>@since 0.1.1</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Kernel.html#method-i-Array">www.ruby-doc.org/core/Kernel.html#method-i-Array</a></p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Array.html#method-i-flatten">www.ruby-doc.org/core/Array.html#method-i-flatten</a>
+@see <a
+href="http://www.ruby-doc.org/core/Array.html#method-i-compact">www.ruby-doc.org/core/Array.html#method-i-compact</a>
+@see <a
+href="http://www.ruby-doc.org/core/Array.html#method-i-uniq">www.ruby-doc.org/core/Array.html#method-i-uniq</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Array(nil)              # =&gt; []
+Hanami::Utils::Kernel.Array(true)             # =&gt; [true]
+Hanami::Utils::Kernel.Array(false)            # =&gt; [false]
+Hanami::Utils::Kernel.Array(1)                # =&gt; [1]
+Hanami::Utils::Kernel.Array([1])              # =&gt; [1]
+Hanami::Utils::Kernel.Array([1, [2]])         # =&gt; [1,2]
+Hanami::Utils::Kernel.Array([1, [2, nil]])    # =&gt; [1,2]
+Hanami::Utils::Kernel.Array([1, [2, nil, 1]]) # =&gt; [1,2]
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Array">::Array</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+ResultSet = Struct.new(:records) do
+  def to_a
+    records.to_a.sort
+  end
+end
+
+Response = Struct.new(:status, :headers, :body) do
+  def to_ary
+    [status, headers, body]
+  end
+end
+
+set = ResultSet.new([2,1,3])
+Hanami::Utils::Kernel.Array(set)              # =&gt; [1,2,3]
+
+response = Response.new(200, {}, &#39;hello&#39;)
+Hanami::Utils::Kernel.Array(response)         # =&gt; [200, {}, &quot;hello&quot;]
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Array_source')" id="l_method-c-Array_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L90" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Array</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">arg</span>).<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">flatten!</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">compact!</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">uniq!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-BigDecimal">
+            
+              <b>BigDecimal</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-BigDecimal" name="method-c-BigDecimal" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-BigDecimal">::BigDecimal</a>.</p>
+
+<p>@param arg [Object] the argument @param precision [Keyword] precision for
+Rational objects (Only JRuby).</p>
+
+<p>@return [BigDecimal] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/stdlib/libdoc/bigdecimal/rdoc/BigDecimal.html">www.ruby-doc.org/stdlib/libdoc/bigdecimal/rdoc/BigDecimal.html</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.BigDecimal(1)                        # =&gt; 1
+Hanami::Utils::Kernel.BigDecimal(1.2)                      # =&gt; 1
+Hanami::Utils::Kernel.BigDecimal(011)                      # =&gt; 9
+Hanami::Utils::Kernel.BigDecimal(0xf5)                     # =&gt; 245
+Hanami::Utils::Kernel.BigDecimal(&quot;1&quot;)                      # =&gt; 1
+Hanami::Utils::Kernel.BigDecimal(Rational(0.3))            # =&gt; 0.3
+Hanami::Utils::Kernel.BigDecimal(Complex(0.3))             # =&gt; 0.3
+Hanami::Utils::Kernel.BigDecimal(BigDecimal.new(12.00001)) # =&gt; 12.00001
+Hanami::Utils::Kernel.BigDecimal(176605528590345446089)
+  # =&gt; 176605528590345446089
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-BigDecimal">::BigDecimal</a>
+Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+UltimateAnswer = Struct.new(:question) do
+  def to_d
+    BigDecimal.new(42)
+  end
+end
+
+answer = UltimateAnswer.new(&#39;The Ultimate Question of Life&#39;)
+Hanami::Utils::Kernel.BigDecimal(answer)
+  # =&gt; #&lt;BigDecimal:7fabfd148588,&#39;0.42E2&#39;,9(27)&gt;
+</code></pre>
+
+<p>@example Unchecked exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# When nil
+input = nil
+Hanami::Utils::Kernel.BigDecimal(nil) # =&gt; TypeError
+
+# When true
+input = true
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# When false
+input = false
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# When Date
+input = Date.today
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# When DateTime
+input = DateTime.now
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# When Time
+input = Time.now
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# String that doesn&#39;t represent a big decimal
+input = &#39;hello&#39;
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.BigDecimal(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-BigDecimal_source')" id="l_method-c-BigDecimal_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L417" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-BigDecimal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">BigDecimal</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-constant">BigDecimal</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_d</span>) }
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_d</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into BigDecimal&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Boolean">
+            
+              <b>Boolean</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Boolean" name="method-c-Boolean" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a href="../../Boolean.html">Boolean</a>.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [true,false] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Boolean(nil)                      # =&gt; false
+Hanami::Utils::Kernel.Boolean(0)                        # =&gt; false
+Hanami::Utils::Kernel.Boolean(1)                        # =&gt; true
+Hanami::Utils::Kernel.Boolean(&#39;0&#39;)                      # =&gt; false
+Hanami::Utils::Kernel.Boolean(&#39;1&#39;)                      # =&gt; true
+Hanami::Utils::Kernel.Boolean(Object.new)               # =&gt; true
+</code></pre>
+
+<p>@example <a href="../../Boolean.html">Boolean</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Answer = Struct.new(:answer) do
+  def to_bool
+    case answer
+    when &#39;yes&#39; then true
+    else false
+    end
+  end
+end
+
+answer = Answer.new(&#39;yes&#39;)
+Hanami::Utils::Kernel.Boolean(answer) # =&gt; true
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.Boolean(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Boolean_source')" id="l_method-c-Boolean_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L891" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Boolean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 891</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Boolean</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-constant">BOOLEAN_TRUE_INTEGER</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">String</span>, <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>, <span class="ruby-constant">BOOLEAN_FALSE_STRING</span>
+    <span class="ruby-constant">Boolean</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_bool</span>) }
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_bool</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Boolean&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Date">
+            
+              <b>Date</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Date" name="method-c-Date" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-Date">::Date</a>.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [Date] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Date(Date.today)
+  # =&gt; #&lt;Date: 2014-04-17 ((2456765j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.Date(DateTime.now)
+  # =&gt; #&lt;Date: 2014-04-17 ((2456765j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.Date(Time.now)
+  # =&gt; #&lt;Date: 2014-04-17 ((2456765j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.Date(&#39;2014-04-17&#39;)
+  # =&gt; #&lt;Date: 2014-04-17 ((2456765j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.Date(&#39;2014-04-17 22:37:15&#39;)
+  # =&gt; #&lt;Date: 2014-04-17 ((2456765j,0s,0n),+0s,2299161j)&gt;
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Date">::Date</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class Christmas
+  def to_date
+    Date.parse(&#39;Dec, 25&#39;)
+  end
+end
+
+Hanami::Utils::Kernel.Date(Christmas.new)
+  # =&gt; #&lt;Date: 2014-12-25 ((2457017j,0s,0n),+0s,2299161j)&gt;
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# nil
+input = nil
+Hanami::Utils::Kernel.Date(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.Date(input) # =&gt; TypeError
+
+# Missing #to_s?
+input = BasicObject.new
+Hanami::Utils::Kernel.Date(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Date_source')" id="l_method-c-Date_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L707" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Date_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 707</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Date</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_date</span>)
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_date</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Date&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-DateTime">
+            
+              <b>DateTime</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-DateTime" name="method-c-DateTime" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-DateTime">::DateTime</a>.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [DateTime] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.DateTime(3483943)
+  # =&gt; Time.at(3483943).to_datetime #&lt;DateTime: 1970-02-10T08:45:43+01:00 ((2440628j,27943s,0n),+3600s,2299161j)&gt;
+
+Hanami::Utils::Kernel.DateTime(DateTime.now)
+  # =&gt; #&lt;DateTime: 2014-04-18T09:33:49+02:00 ((2456766j,27229s,690849000n),+7200s,2299161j)&gt;
+
+Hanami::Utils::Kernel.DateTime(Date.today)
+  # =&gt; #&lt;DateTime: 2014-04-18T00:00:00+00:00 ((2456766j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.Date(Time.now)
+  # =&gt; #&lt;DateTime: 2014-04-18T09:34:49+02:00 ((2456766j,27289s,832907000n),+7200s,2299161j)&gt;
+
+Hanami::Utils::Kernel.DateTime(&#39;2014-04-18&#39;)
+  # =&gt; #&lt;DateTime: 2014-04-18T00:00:00+00:00 ((2456766j,0s,0n),+0s,2299161j)&gt;
+
+Hanami::Utils::Kernel.DateTime(&#39;2014-04-18 09:35:42&#39;)
+  # =&gt; #&lt;DateTime: 2014-04-18T09:35:42+00:00 ((2456766j,34542s,0n),+0s,2299161j)&gt;
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-DateTime">::DateTime</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class NewYearEve
+  def to_datetime
+    DateTime.parse(&#39;Jan, 1&#39;)
+  end
+end
+
+Hanami::Utils::Kernel.Date(NewYearEve.new)
+  # =&gt; #&lt;DateTime: 2014-01-01T00:00:00+00:00 ((2456659j,0s,0n),+0s,2299161j)&gt;
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# When nil
+input = nil
+Hanami::Utils::Kernel.DateTime(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.DateTime(input) # =&gt; TypeError
+
+# Missing #to_s?
+input = BasicObject.new
+Hanami::Utils::Kernel.DateTime(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-DateTime_source')" id="l_method-c-DateTime_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L774" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-DateTime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 774</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">DateTime</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_datetime</span>) } <span class="ruby-keyword">then</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_datetime</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">DateTime</span>(<span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">arg</span>))
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into DateTime&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Float">
+            
+              <b>Float</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Float" name="method-c-Float" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-Float">::Float</a>.</p>
+
+<p>It&#39;s similar to Ruby&#39;s <a href="Kernel.html">Kernel</a>.Float, but
+it doesn&#39;t stop at the first error and raise an exception only when the
+argument can&#39;t be coerced.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [Float] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Kernel.html#method-i-Float">www.ruby-doc.org/core/Kernel.html#method-i-Float</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Float(1)                        # =&gt; 1.0
+Hanami::Utils::Kernel.Float(1.2)                      # =&gt; 1.2
+Hanami::Utils::Kernel.Float(011)                      # =&gt; 9.0
+Hanami::Utils::Kernel.Float(0xf5)                     # =&gt; 245.0
+Hanami::Utils::Kernel.Float(&quot;1&quot;)                      # =&gt; 1.0
+Hanami::Utils::Kernel.Float(Rational(0.3))            # =&gt; 0.3
+Hanami::Utils::Kernel.Float(Complex(0.3))             # =&gt; 0.3
+Hanami::Utils::Kernel.Float(BigDecimal.new(12.00001)) # =&gt; 12.00001
+Hanami::Utils::Kernel.Float(176605528590345446089)
+  # =&gt; 176605528590345446089.0
+
+Hanami::Utils::Kernel.Float(Time.now) # =&gt; 397750945.515169
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Float">::Float</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class Pi
+  def to_f
+    3.14
+  end
+end
+
+pi = Pi.new
+Hanami::Utils::Kernel.Float(pi) # =&gt; 3.14
+</code></pre>
+
+<p>@example Error Handling</p>
+
+<pre><code>require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+# nil
+Kernel.Float(nil)               # =&gt; TypeError
+Hanami::Utils::Kernel.Float(nil) # =&gt; 0.0
+
+# float represented as a string
+Kernel.Float(&quot;23.4&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Float(&quot;23.4&quot;) # =&gt; 23.4
+
+# rational represented as a string
+Kernel.Float(&quot;2/3&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Float(&quot;2/3&quot;) # =&gt; 2.0
+
+# complex represented as a string
+Kernel.Float(&quot;2.5/1&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Float(&quot;2.5/1&quot;) # =&gt; 2.5
+
+# bigdecimal infinity
+input = BigDecimal.new(&quot;Infinity&quot;)
+Hanami::Utils::Kernel.Float(input) # =&gt; Infinity
+
+# bigdecimal NaN
+input = BigDecimal.new(&quot;NaN&quot;)
+Hanami::Utils::Kernel.Float(input) # =&gt; NaN
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;date&#39;
+require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+# Missing #to_f
+input = OpenStruct.new(color: &#39;purple&#39;)
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# When true
+input = true
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# When false
+input = false
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# When Date
+input = Date.today
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# When DateTime
+input = DateTime.now
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# Missing #nil?
+input = BasicObject.new
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# String that doesn&#39;t represent a float
+input = &#39;hello&#39;
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# big rational
+input = Rational(-8) ** Rational(1, 3)
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+
+# big complex represented as a string
+input = Complex(2, 3)
+Hanami::Utils::Kernel.Float(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Float_source')" id="l_method-c-Float_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L542" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Float_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 542</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Float</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-constant">TypeError</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>, <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_f</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">numeric?</span>(<span class="ruby-identifier">a</span>) }
+      <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Float&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Float&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RangeError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Float&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Hash">
+            
+              <b>Hash</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Hash" name="method-c-Hash" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a href="Hash.html">Hash</a>.</p>
+
+<p>@param arg [Object] the input</p>
+
+<p>@return [Hash] the result of the coercion</p>
+
+<p>@raise [TypeError] if arg can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Kernel.html#method-i-Hash">www.ruby-doc.org/core/Kernel.html#method-i-Hash</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Hash(nil)                 # =&gt; {}
+Hanami::Utils::Kernel.Hash({a: 1})              # =&gt; { :a =&gt; 1 }
+Hanami::Utils::Kernel.Hash([[:a, 1]])           # =&gt; { :a =&gt; 1 }
+Hanami::Utils::Kernel.Hash(Set.new([[:a, 1]]))  # =&gt; { :a =&gt; 1 }
+</code></pre>
+
+<p>@example <a href="Hash.html">Hash</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Room = Class.new do
+  def initialize(*args)
+    @args = args
+  end
+
+  def to_h
+    Hash[*@args]
+  end
+end
+
+Record = Class.new do
+  def initialize(attributes = {})
+    @attributes = attributes
+  end
+
+  def to_hash
+    @attributes
+  end
+end
+
+room = Room.new(:key, 123456)
+Hanami::Utils::Kernel.Hash(room)        # =&gt; { :key =&gt; 123456 }
+
+record = Record.new(name: &#39;L&#39;)
+Hanami::Utils::Kernel.Hash(record)      # =&gt; { :name =&gt; &quot;L&quot; }
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+input = BasicObject.new
+Hanami::Utils::Kernel.Hash(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Hash_source')" id="l_method-c-Hash_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L209" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Hash</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_h</span>)
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_h</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Hash&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Integer">
+            
+              <b>Integer</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Integer" name="method-c-Integer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be an <a
+href="Kernel.html#method-c-Integer">::Integer</a>.</p>
+
+<p>It&#39;s similar to Ruby&#39;s <a href="Kernel.html">Kernel</a>.Integer,
+but it doesn&#39;t stop at the first error and raise an exception only when
+the argument can&#39;t be coerced.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [Fixnum] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Kernel.html#method-i-Integer">www.ruby-doc.org/core/Kernel.html#method-i-Integer</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Integer(1)                        # =&gt; 1
+Hanami::Utils::Kernel.Integer(1.2)                      # =&gt; 1
+Hanami::Utils::Kernel.Integer(011)                      # =&gt; 9
+Hanami::Utils::Kernel.Integer(0xf5)                     # =&gt; 245
+Hanami::Utils::Kernel.Integer(&quot;1&quot;)                      # =&gt; 1
+Hanami::Utils::Kernel.Integer(Rational(0.3))            # =&gt; 0
+Hanami::Utils::Kernel.Integer(Complex(0.3))             # =&gt; 0
+Hanami::Utils::Kernel.Integer(BigDecimal.new(12.00001)) # =&gt; 12
+Hanami::Utils::Kernel.Integer(176605528590345446089)
+  # =&gt; 176605528590345446089
+
+Hanami::Utils::Kernel.Integer(Time.now)                 # =&gt; 1396947161
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Integer">::Integer</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+UltimateAnswer = Struct.new(:question) do
+  def to_int
+    42
+  end
+end
+
+answer = UltimateAnswer.new(&#39;The Ultimate Question of Life&#39;)
+Hanami::Utils::Kernel.Integer(answer) # =&gt; 42
+</code></pre>
+
+<p>@example Error Handling</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# nil
+Kernel.Integer(nil)               # =&gt; TypeError
+Hanami::Utils::Kernel.Integer(nil) # =&gt; 0
+
+# float represented as a string
+Kernel.Integer(&quot;23.4&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Integer(&quot;23.4&quot;) # =&gt; 23
+
+# rational represented as a string
+Kernel.Integer(&quot;2/3&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Integer(&quot;2/3&quot;) # =&gt; 2
+
+# complex represented as a string
+Kernel.Integer(&quot;2.5/1&quot;)               # =&gt; TypeError
+Hanami::Utils::Kernel.Integer(&quot;2.5/1&quot;) # =&gt; 2
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;date&#39;
+require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+# Missing #to_int and #to_i
+input = OpenStruct.new(color: &#39;purple&#39;)
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# String that doesn&#39;t represent an integer
+input = &#39;hello&#39;
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# When true
+input = true
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# When false
+input = false
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# When Date
+input = Date.today
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# When DateTime
+input = DateTime.now
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# bigdecimal infinity
+input = BigDecimal.new(&quot;Infinity&quot;)
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# bigdecimal NaN
+input = BigDecimal.new(&quot;NaN&quot;)
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# big rational
+input = Rational(-8) ** Rational(1, 3)
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+
+# big complex represented as a string
+input = Complex(2, 3)
+Hanami::Utils::Kernel.Integer(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Integer_source')" id="l_method-c-Integer_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L326" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Integer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Integer</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-constant">TypeError</span>, <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>, <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_i</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">numeric?</span>(<span class="ruby-identifier">a</span>) }
+      <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Integer&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Integer&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RangeError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Integer&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Pathname">
+            
+              <b>Pathname</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Pathname" name="method-c-Pathname" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-Pathname">::Pathname</a>.</p>
+
+<p>@param arg [#to_pathname,#to_str] the argument</p>
+
+<p>@return [Pathname] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.2</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Pathname(Pathname.new(&#39;/path/to&#39;)) # =&gt; #&lt;Pathname:/path/to&gt;
+Hanami::Utils::Kernel.Pathname(&#39;/path/to&#39;)               # =&gt; #&lt;Pathname:/path/to&gt;
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Pathname">::Pathname</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class HomePath
+  def to_pathname
+    Pathname.new Dir.home
+  end
+end
+
+Hanami::Utils::Kernel.Pathname(HomePath.new) # =&gt; #&lt;Pathname:/Users/luca&gt;
+</code></pre>
+
+<p>@example <a href="String.html">String</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class RootPath
+  def to_str
+    &#39;/&#39;
+  end
+end
+
+Hanami::Utils::Kernel.Pathname(RootPath.new) # =&gt; #&lt;Pathname:/&gt;
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# When nil
+input = nil
+Hanami::Utils::Kernel.Pathname(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.Pathname(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Pathname_source')" id="l_method-c-Pathname_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L954" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Pathname_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 954</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Pathname</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_pathname</span>) } <span class="ruby-keyword">then</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_pathname</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Pathname&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Set">
+            
+              <b>Set</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Set" name="method-c-Set" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a href="Kernel.html#method-c-Set">::Set</a>.</p>
+
+<p>@param arg [Object] the input</p>
+
+<p>@return [Set] the result of the coercion</p>
+
+<p>@raise [TypeError] if arg doesn&#39;t implement #respond_to?</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Set(nil)              # =&gt; #&lt;Set: {}&gt;
+Hanami::Utils::Kernel.Set(true)             # =&gt; #&lt;Set: {true}&gt;
+Hanami::Utils::Kernel.Set(false)            # =&gt; #&lt;Set: {false}&gt;
+Hanami::Utils::Kernel.Set(1)                # =&gt; #&lt;Set: {1}&gt;
+Hanami::Utils::Kernel.Set([1])              # =&gt; #&lt;Set: {1}&gt;
+Hanami::Utils::Kernel.Set([1, 1])           # =&gt; #&lt;Set: {1}&gt;
+Hanami::Utils::Kernel.Set([1, [2]])         # =&gt; #&lt;Set: {1, [2]}&gt;
+Hanami::Utils::Kernel.Set([1, [2, nil]])    # =&gt; #&lt;Set: {1, [2, nil]}&gt;
+Hanami::Utils::Kernel.Set({a: 1})           # =&gt; #&lt;Set: {[:a, 1]}&gt;
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Set">::Set</a> Interface</p>
+
+<pre><code>require &#39;securerandom&#39;
+require &#39;hanami/utils/kernel&#39;
+
+UuidSet = Class.new do
+  def initialize(*uuids)
+    @uuids = uuids
+  end
+
+  def to_set
+    Set.new.tap do |set|
+      @uuids.each {|uuid| set.add(uuid) }
+    end
+  end
+end
+
+uuids = UuidSet.new(SecureRandom.uuid)
+Hanami::Utils::Kernel.Set(uuids)
+  # =&gt; #&lt;Set: {&quot;daa798b4-630c-4e11-b29d-92f0b1c7d075&quot;}&gt;
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Set(BasicObject.new) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Set_source')" id="l_method-c-Set_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L145" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Set</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_set</span>)
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_set</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Array</span>(<span class="ruby-identifier">arg</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Set&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-String">
+            
+              <b>String</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-String" name="method-c-String" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a href="String.html">String</a>.</p>
+
+<p>Identical behavior of Ruby&#39;s <a href="Kernel.html">Kernel</a>.Array,
+still here because we want to keep the interface consistent</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [String] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Kernel.html#method-i-String">www.ruby-doc.org/core/Kernel.html#method-i-String</a></p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;date&#39;
+require &#39;bigdecimal&#39;
+require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.String(&#39;&#39;)                            # =&gt; &quot;&quot;
+Hanami::Utils::Kernel.String(&#39;ciao&#39;)                        # =&gt; &quot;ciao&quot;
+
+Hanami::Utils::Kernel.String(true)                          # =&gt; &quot;true&quot;
+Hanami::Utils::Kernel.String(false)                         # =&gt; &quot;false&quot;
+
+Hanami::Utils::Kernel.String(:hanami)                        # =&gt; &quot;hanami&quot;
+
+Hanami::Utils::Kernel.String(Picture)                       # =&gt; &quot;Picture&quot; # class
+Hanami::Utils::Kernel.String(Hanami)                         # =&gt; &quot;Hanami&quot; # module
+
+Hanami::Utils::Kernel.String([])                            # =&gt; &quot;[]&quot;
+Hanami::Utils::Kernel.String([1,2,3])                       # =&gt; &quot;[1, 2, 3]&quot;
+Hanami::Utils::Kernel.String(%w[a b c])                     # =&gt; &quot;[\&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;]&quot;
+
+Hanami::Utils::Kernel.String({})                            # =&gt; &quot;{}&quot;
+Hanami::Utils::Kernel.String({a: 1, &#39;b&#39; =&gt; &#39;c&#39;})            # =&gt; &quot;{:a=&gt;1, \&quot;b\&quot;=&gt;\&quot;c\&quot;}&quot;
+
+Hanami::Utils::Kernel.String(Date.today)                    # =&gt; &quot;2014-04-11&quot;
+Hanami::Utils::Kernel.String(DateTime.now)                  # =&gt; &quot;2014-04-11T10:15:06+02:00&quot;
+Hanami::Utils::Kernel.String(Time.now)                      # =&gt; &quot;2014-04-11 10:15:53 +0200&quot;
+
+Hanami::Utils::Kernel.String(1)                             # =&gt; &quot;1&quot;
+Hanami::Utils::Kernel.String(3.14)                          # =&gt; &quot;3.14&quot;
+Hanami::Utils::Kernel.String(013)                           # =&gt; &quot;11&quot;
+Hanami::Utils::Kernel.String(0xc0ff33)                      # =&gt; &quot;12648243&quot;
+
+Hanami::Utils::Kernel.String(Rational(-22))                 # =&gt; &quot;-22/1&quot;
+Hanami::Utils::Kernel.String(Complex(11, 2))                # =&gt; &quot;11+2i&quot;
+Hanami::Utils::Kernel.String(BigDecimal.new(7944.2343, 10)) # =&gt; &quot;0.79442343E4&quot;
+Hanami::Utils::Kernel.String(BigDecimal.new(&#39;Infinity&#39;))    # =&gt; &quot;Infinity&quot;
+Hanami::Utils::Kernel.String(BigDecimal.new(&#39;NaN&#39;))         # =&gt; &quot;Infinity&quot;
+</code></pre>
+
+<p>@example <a href="String.html">String</a> interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+SimpleObject = Class.new(BasicObject) do
+  def to_s
+    &#39;simple object&#39;
+  end
+end
+
+Isbn = Struct.new(:code) do
+  def to_str
+    code.to_s
+  end
+end
+
+simple = SimpleObject.new
+isbn   = Isbn.new(123)
+
+Hanami::Utils::Kernel.String(simple) # =&gt; &quot;simple object&quot;
+Hanami::Utils::Kernel.String(isbn)   # =&gt; &quot;123&quot;
+</code></pre>
+
+<p>@example Comparison with Ruby</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# nil
+Kernel.String(nil)               # =&gt; &quot;&quot;
+Hanami::Utils::Kernel.String(nil) # =&gt; &quot;&quot;
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# Missing #to_s or #to_str
+input = BaseObject.new
+Hanami::Utils::Kernel.String(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-String_source')" id="l_method-c-String_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L646" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-String_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 646</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">String</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_str</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">arg</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into String&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Symbol">
+            
+              <b>Symbol</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Symbol" name="method-c-Symbol" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-Symbol">::Symbol</a>.</p>
+
+<p>@param arg [#to_sym] the argument</p>
+
+<p>@return [Symbol] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.2.0</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Symbol(:hello)  # =&gt; :hello
+Hanami::Utils::Kernel.Symbol(&#39;hello&#39;) # =&gt; :hello
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Symbol">::Symbol</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class StatusSymbol
+  def to_sym
+    :success
+  end
+end
+
+Hanami::Utils::Kernel.Symbol(StatusSymbol.new) # =&gt; :success
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# When nil
+input = nil
+Hanami::Utils::Kernel.Symbol(input) # =&gt; TypeError
+
+# When empty string
+input = &#39;&#39;
+Hanami::Utils::Kernel.Symbol(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.Symbol(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Symbol_source')" id="l_method-c-Symbol_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L1005" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 1005</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Symbol</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Symbol&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_sym</span>) } <span class="ruby-keyword">then</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Symbol&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Symbol&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-Time">
+            
+              <b>Time</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-Time" name="method-c-Time" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Coerces the argument to be a <a
+href="Kernel.html#method-c-Time">::Time</a>.</p>
+
+<p>@param arg [Object] the argument</p>
+
+<p>@return [Time] the result of the coercion</p>
+
+<p>@raise [TypeError] if the argument can&#39;t be coerced</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic Usage</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+Hanami::Utils::Kernel.Time(Time.now)
+  # =&gt; 2014-04-18 15:56:39 +0200
+
+Hanami::Utils::Kernel.Time(DateTime.now)
+  # =&gt; 2014-04-18 15:56:39 +0200
+
+Hanami::Utils::Kernel.Time(Date.today)
+  # =&gt; 2014-04-18 00:00:00 +0200
+
+Hanami::Utils::Kernel.Time(&#39;2014-04-18&#39;)
+  # =&gt; 2014-04-18 00:00:00 +0200
+
+Hanami::Utils::Kernel.Time(&#39;2014-04-18 15:58:02&#39;)
+  # =&gt; 2014-04-18 15:58:02 +0200
+</code></pre>
+
+<p>@example <a href="Kernel.html#method-c-Time">::Time</a> Interface</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+class Epoch
+  def to_time
+    Time.at(0)
+  end
+end
+
+Hanami::Utils::Kernel.Time(Epoch.new)
+  # =&gt; 1970-01-01 01:00:00 +0100
+</code></pre>
+
+<p>@example Unchecked Exceptions</p>
+
+<pre><code>require &#39;hanami/utils/kernel&#39;
+
+# When nil
+input = nil
+Hanami::Utils::Kernel.Time(input) # =&gt; TypeError
+
+# Missing #respond_to?
+input = BasicObject.new
+Hanami::Utils::Kernel.Time(input) # =&gt; TypeError
+
+# Missing #to_s?
+input = BasicObject.new
+Hanami::Utils::Kernel.Time(input) # =&gt; TypeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-Time_source')" id="l_method-c-Time_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L839" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-Time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 839</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-constant">Time</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">a</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_time</span>) } <span class="ruby-keyword">then</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_time</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-constant">NoMethodError</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;can&#39;t convert #{inspect_type_error(arg)}into Time&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-numeric-3F">
+            
+              <b>numeric?</b>(arg)
+            
+            <a href="../../../classes/Hanami/Utils/Kernel.html#method-c-numeric-3F" name="method-c-numeric-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if the given argument is a string representation of a number</p>
+
+<p>@param arg [Object] the input</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since x.x.x @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-numeric-3F_source')" id="l_method-c-numeric-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/kernel.rb#L1024" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-numeric-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/kernel.rb, line 1024</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">numeric?</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">NUMERIC_MATCHER</span>).<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Commands::Generate::Mailer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Commands::Generate::Mailer 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Abstract.html">Hanami::Commands::Generate::Abstract</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/hanami/lib/hanami/cli_sub_commands/generate_rb.html">sources/hanami/lib/hanami/cli_sub_commands/generate.rb</a></li>
+            
+            <li><a href="../../../../files/sources/hanami/lib/hanami/commands/generate/mailer_rb.html">sources/hanami/lib/hanami/commands/generate/mailer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@since 0.5.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-map_templates">map_templates</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template_options">template_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options, name)
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Mailer.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.5.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/mailer.rb#L38" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/mailer.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>)
+
+  <span class="ruby-ivar">@name_underscored</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">underscore</span>
+  <span class="ruby-ivar">@name</span>             = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name_underscored</span>).<span class="ruby-identifier">classify</span>
+  <span class="ruby-ivar">@from</span>             = <span class="ruby-identifier">options</span>[<span class="ruby-value">:from</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_FROM</span>
+  <span class="ruby-ivar">@to</span>               = <span class="ruby-identifier">options</span>[<span class="ruby-value">:to</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_TO</span>
+  <span class="ruby-ivar">@subject</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:subject</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_SUBJECT</span>
+
+  <span class="ruby-identifier">assert_name!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-map_templates">
+            
+              <b>map_templates</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Mailer.html#method-i-map_templates" name="method-i-map_templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.x.x @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-map_templates_source')" id="l_method-i-map_templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/mailer.rb#L52" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-map_templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/mailer.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">map_templates</span>
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&quot;mailer_spec.rb.tt&quot;</span>, <span class="ruby-identifier">mailer_spec_path</span>)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&quot;mailer.rb.tt&quot;</span>, <span class="ruby-identifier">mailer_path</span>)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&quot;template.txt.tt&quot;</span>, <span class="ruby-identifier">txt_template_path</span>)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&quot;template.html.tt&quot;</span>, <span class="ruby-identifier">html_template_path</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template_options">
+            
+              <b>template_options</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Mailer.html#method-i-template_options" name="method-i-template_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_options_source')" id="l_method-i-template_options_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/mailer.rb#L59" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/mailer.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template_options</span>
+  {
+    <span class="ruby-identifier">mailer</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">name</span>,
+    <span class="ruby-identifier">from</span><span class="ruby-operator">:</span>    <span class="ruby-identifier">from</span>,
+    <span class="ruby-identifier">to</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">to</span>,
+    <span class="ruby-identifier">subject</span><span class="ruby-operator">:</span> <span class="ruby-identifier">subject</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

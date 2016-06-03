@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Mapping::Collection</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Model::Mapping::Collection 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/model/lib/hanami/model/mapping/collection_rb.html">sources/model/lib/hanami/model/mapping/collection.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Maps a collection and its <a
+href="Collection.html#attribute-i-attributes">#attributes</a>.</p>
+
+<p>A collection is a set of homogeneous records. Think of a table of a SQL
+database or about collection of MongoDB.</p>
+
+<p>This is database independent. It can work with SQL, document, and even with
+key/value stores.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Mapper.html">Hanami::Model::Mapper</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+mapper = Hanami::Model::Mapper.new do
+  collection :users do
+    entity User
+
+    attribute :id,   Integer
+    attribute :name, String
+  end
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-attribute">attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deserialize">deserialize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-deserialize_attribute">deserialize_attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-entity">entity</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-identity">identity</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-repository">repository</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-serialize">serialize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">REPOSITORY_SUFFIX</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Repository&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="../../Repository.html">Repository</a> <a
+href="Collection.html#attribute-i-name">#name</a> suffix</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../../Repository.html">Hanami::Repository</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>adapter</td>
+            <td class='attr-desc'><p>@attr_reader <a href="Collection.html#attribute-i-adapter">#adapter</a>
+[Hanami::Model::Adapters] the instance of <a
+href="Collection.html#attribute-i-adapter">#adapter</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>attributes</td>
+            <td class='attr-desc'><p>@attr_reader <a
+href="Collection.html#attribute-i-attributes">#attributes</a> [Hash] the
+set of <a href="Collection.html#attribute-i-attributes">#attributes</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>coercer_class</td>
+            <td class='attr-desc'><p>@attr_reader <a
+href="Collection.html#attribute-i-coercer_class">#coercer_class</a> [Class]
+the coercer class</p>
+
+<p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>name</td>
+            <td class='attr-desc'><p>@attr_reader <a href="Collection.html#attribute-i-name">#name</a> [Symbol]
+the <a href="Collection.html#attribute-i-name">#name</a> of the collection</p>
+
+<p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(name, coercer_class, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiate a <a href="Collection.html#method-c-new">::new</a> collection</p>
+
+<p>@param <a href="Collection.html#attribute-i-name">#name</a> [Symbol] the <a
+href="Collection.html#attribute-i-name">#name</a> of the mapped collection.
+If used with a</p>
+
+<pre><code>SQL database it&#39;s the table name.</code></pre>
+
+<p>@param <a
+href="Collection.html#attribute-i-coercer_class">#coercer_class</a> [Class]
+the coercer class @param blk [Proc] the block that maps the <a
+href="Collection.html#attribute-i-attributes">#attributes</a> of that
+collection.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="../Mapper.html#method-i-collection">Hanami::Model::Mapper#collection</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L74" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">coercer_class</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@coercer_class</span> = <span class="ruby-identifier">coercer_class</span>
+  <span class="ruby-ivar">@attributes</span> = {}
+  <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-attribute">
+            
+              <b>attribute</b>(name, coercer, options = {})
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-attribute" name="method-i-attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Map an <a href="Collection.html#method-i-attribute">#attribute</a>.</p>
+
+<p>An <a href="Collection.html#method-i-attribute">#attribute</a> defines a
+property of an object. This is storage independent. For instance, it can
+map an SQL column, a MongoDB <a
+href="Collection.html#method-i-attribute">#attribute</a> or everything that
+makes sense for your database.</p>
+
+<p>Each <a href="Collection.html#method-i-attribute">#attribute</a> defines a
+Ruby type, to coerce that value from the database. This fixes a huge
+problem, because database types don&#39;t match Ruby types. Think of Redis,
+where everything is stored as a string or integer, the mapper translates
+values from/to the database.</p>
+
+<p>It supports the following types (coercers):</p>
+
+<pre><code>* Array
+* Boolean
+* Date
+* DateTime
+* Float
+* Hash
+* Integer
+* BigDecimal
+* Set
+* String
+* Symbol
+* Time</code></pre>
+
+<p>@param <a href="Collection.html#attribute-i-name">#name</a> [Symbol] the <a
+href="Collection.html#attribute-i-name">#name</a> of the <a
+href="Collection.html#method-i-attribute">#attribute</a>, as we want it to
+be</p>
+
+<pre><code>mapped in the object</code></pre>
+
+<p>@param coercer [.load, .dump] a class that implements coercer interface</p>
+
+<p>@param options [Hash] a set of options to customize the mapping @option
+options [Symbol] :as the <a
+href="Collection.html#attribute-i-name">#name</a> of the original column</p>
+
+<p>@raise [NameError] if coercer cannot be found</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Coercer.html">Hanami::Model::Coercer</a></p>
+
+<p>@example Default schema</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# Given the following schema:
+#
+# CREATE TABLE users (
+#   id     integer NOT NULL,
+#   name   varchar(64),
+# );
+#
+# And the following entity:
+#
+# class User
+#   include Hanami::Entity
+#   attributes :name
+# end
+
+mapper = Hanami::Model::Mapper.new do
+  collection :users do
+    entity User
+
+    attribute :id,   Integer
+    attribute :name, String
+  end
+end
+
+# The first argument (`:name`) always corresponds to the `User`
+# attribute.
+
+# The second one (`:coercer`) is the Ruby type coercer that we want
+# for our attribute.
+
+# We don&#39;t need to use `:as` because the database columns match the
+# `User` attributes.
+</code></pre>
+
+<p>@example Customized schema</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# Given the following schema:
+#
+# CREATE TABLE articles (
+#   i_id           integer NOT NULL,
+#   i_user_id      integer NOT NULL,
+#   s_title        varchar(64),
+#   comments_count varchar(8) # Not an error: it&#39;s for String =&gt; Integer coercion
+# );
+#
+# And the following entity:
+#
+# class Article
+#   include Hanami::Entity
+#   attributes :user_id, :title, :comments_count
+# end
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+
+    attribute :id,             Integer, as: :i_id
+    attribute :user_id,        Integer, as: :i_user_id
+    attribute :title,          String,  as: :s_title
+    attribute :comments_count, Integer
+
+    identity :i_id
+  end
+end
+
+# The first argument (`:name`) always corresponds to the `Article`
+# attribute.
+
+# The second one (`:coercer`) is the Ruby type that we want for our
+# attribute.
+
+# The third option (`:as`) is mandatory only when the database
+# column doesn&#39;t match the name of the mapped attribute.
+#
+# For instance: we need to use it for translate `:s_title` to
+# `:title`, but not for `:comments_count`.
+</code></pre>
+
+<p>@example Custom coercer</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# Given the following schema:
+#
+# CREATE TABLE articles (
+#   id     integer NOT NULL,
+#   title  varchar(128),
+#   tags   text[],
+# );
+#
+# The following entity:
+#
+# class Article
+#   include Hanami::Entity
+#   attributes :title, :tags
+# end
+#
+# And the following custom coercer:
+#
+# require &#39;hanami/model/coercer&#39;
+# require &#39;sequel/extensions/pg_array&#39;
+#
+# class PGArray &lt; Hanami::Model::Coercer
+#   def self.dump(value)
+#     ::Sequel.pg_array(value) rescue nil
+#   end
+#
+#   def self.load(value)
+#     ::Kernel.Array(value) unless value.nil?
+#   end
+# end
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+
+    attribute :id,    Integer
+    attribute :title, String
+    attribute :tags,  PGArray
+  end
+end
+
+# When an entity is persisted as record into the database,
+# `PGArray.dump` is invoked.
+
+# When an entity is retrieved from the database, it will be
+# deserialized as an Array via `PGArray.load`.
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-attribute_source')" id="l_method-i-attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L387" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">coercer</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@attributes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Attribute</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">coercer</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-deserialize">
+            
+              <b>deserialize</b>(records)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-deserialize" name="method-i-deserialize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deserialize a set of records fetched from the database.</p>
+
+<p>@param records [Array] a set of raw records</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deserialize_source')" id="l_method-i-deserialize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L407" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-deserialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deserialize</span>(<span class="ruby-identifier">records</span>)
+  <span class="ruby-identifier">records</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@coercer</span>.<span class="ruby-identifier">from_record</span>(<span class="ruby-identifier">record</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-deserialize_attribute">
+            
+              <b>deserialize_attribute</b>(attribute, value)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-deserialize_attribute" name="method-i-deserialize_attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deserialize only one <a
+href="Collection.html#method-i-attribute">#attribute</a> from a raw value.</p>
+
+<p>@param <a href="Collection.html#method-i-attribute">#attribute</a> [Symbol]
+the <a href="Collection.html#method-i-attribute">#attribute</a> <a
+href="Collection.html#attribute-i-name">#name</a> @param value [Object,nil]
+the value to be coerced</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deserialize_attribute_source')" id="l_method-i-deserialize_attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L420" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-deserialize_attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deserialize_attribute</span>(<span class="ruby-identifier">attribute</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@coercer</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-value">:&quot;deserialize_#{ attribute }&quot;</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-entity">
+            
+              <b>entity</b>(klass = nil)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-entity" name="method-i-entity" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines the <a href="Collection.html#method-i-entity">#entity</a> that is
+persisted with this collection.</p>
+
+<p>The <a href="Collection.html#method-i-entity">#entity</a> can be any kind
+of object as long as it implements the following interface:
+`#initialize(attributes = {})`.</p>
+
+<p>@param klass [Class, String] the <a
+href="Collection.html#method-i-entity">#entity</a> persisted with this
+collection.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../../Entity.html">Hanami::Entity</a></p>
+
+<p>@example Set <a href="Collection.html#method-i-entity">#entity</a> with
+class <a href="Collection.html#attribute-i-name">#name</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+  end
+end
+
+mapper.entity #=&gt; Article
+</code></pre>
+
+<p>@example Set <a href="Collection.html#method-i-entity">#entity</a> with
+class <a href="Collection.html#attribute-i-name">#name</a> string</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity &#39;Article&#39;
+  end
+end
+
+mapper.entity #=&gt; Article
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-entity_source')" id="l_method-i-entity_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L114" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-entity_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">entity</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-ivar">@entity</span> = <span class="ruby-identifier">klass</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@entity</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-identity">
+            
+              <b>identity</b>(name = nil)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-identity" name="method-i-identity" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines the <a href="Collection.html#method-i-identity">#identity</a> for a
+collection.</p>
+
+<p>An <a href="Collection.html#method-i-identity">#identity</a> is a unique
+value that identifies a record. If used with an SQL table it corresponds to
+the primary key.</p>
+
+<p>This is an optional feature. By default the system assumes that your <a
+href="Collection.html#method-i-identity">#identity</a> is `:id`. If this is
+the case, you can omit the value, otherwise you have to specify it.</p>
+
+<p>@param <a href="Collection.html#attribute-i-name">#name</a> [Symbol] the <a
+href="Collection.html#attribute-i-name">#name</a> of the <a
+href="Collection.html#method-i-identity">#identity</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Default</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# We have an SQL table `users` with a primary key `id`.
+#
+# This this is compliant to the mapper default, we can omit
+# `#identity`.
+
+mapper = Hanami::Model::Mapper.new do
+  collection :users do
+    entity User
+
+    # attribute definitions..
+  end
+end
+</code></pre>
+
+<p>@example Custom <a href="Collection.html#method-i-identity">#identity</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+# We have an SQL table `articles` with a primary key `i_id`.
+#
+# This schema diverges from the expected default: `id`, that&#39;s why
+# we need to use #identity to let the mapper to recognize the
+# primary key.
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+
+    # attribute definitions..
+
+    identity :i_id
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-identity_source')" id="l_method-i-identity_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L211" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-identity_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">identity</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-ivar">@identity</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@identity</span> <span class="ruby-operator">||</span> <span class="ruby-value">:id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads the internals of the mapper, in order to guarantee thread safety.</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L428" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-identifier">_load_entity!</span>
+  <span class="ruby-identifier">_load_repository!</span>
+  <span class="ruby-identifier">_load_coercer!</span>
+
+  <span class="ruby-identifier">_configure_repository!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-repository">
+            
+              <b>repository</b>(klass = nil)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-repository" name="method-i-repository" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines the <a href="Collection.html#method-i-repository">#repository</a>
+that interacts with this collection.</p>
+
+<p>@param klass [Class, String] the <a
+href="Collection.html#method-i-repository">#repository</a> that interacts
+with this collection.</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="../../Repository.html">Hanami::Repository</a></p>
+
+<p>@example Set <a href="Collection.html#method-i-repository">#repository</a>
+with class <a href="Collection.html#attribute-i-name">#name</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+
+    repository RemoteArticleRepository
+  end
+end
+
+mapper.repository #=&gt; RemoteArticleRepository
+</code></pre>
+
+<p>@example Set <a href="Collection.html#method-i-repository">#repository</a>
+with class <a href="Collection.html#attribute-i-name">#name</a> string</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+mapper = Hanami::Model::Mapper.new do
+  collection :articles do
+    entity Article
+
+    repository &#39;RemoteArticleRepository&#39;
+  end
+end
+
+mapper.repository #=&gt; RemoteArticleRepository
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-repository_source')" id="l_method-i-repository_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L155" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-repository_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">repository</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-ivar">@repository</span> = <span class="ruby-identifier">klass</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@repository</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">default_repository_klass</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-serialize">
+            
+              <b>serialize</b>(entity)
+            
+            <a href="../../../../classes/Hanami/Model/Mapping/Collection.html#method-i-serialize" name="method-i-serialize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Serializes an <a href="Collection.html#method-i-entity">#entity</a> to be
+persisted in the database.</p>
+
+<p>@param <a href="Collection.html#method-i-entity">#entity</a> [Object] an <a
+href="Collection.html#method-i-entity">#entity</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-serialize_source')" id="l_method-i-serialize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/mapping/collection.rb#L397" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-serialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/mapping/collection.rb, line 397</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">serialize</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-ivar">@coercer</span>.<span class="ruby-identifier">to_record</span>(<span class="ruby-identifier">entity</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

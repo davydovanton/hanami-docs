@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Commands::New::App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Commands::New::App 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Abstract.html">Hanami::Commands::New::Abstract</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/hanami/lib/hanami/commands/new/app_rb.html">sources/hanami/lib/hanami/commands/new/app.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-map_templates">map_templates</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-post_process_templates">post_process_templates</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template_options">template_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options, name)
+            
+            <a href="../../../../classes/Hanami/Commands/New/App.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/63abca42da72acbc74a1b9ceff93f83a6211f960/lib/hanami/commands/new/app.rb#L8" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/new/app.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-map_templates">
+            
+              <b>map_templates</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/New/App.html#method-i-map_templates" name="method-i-map_templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-map_templates_source')" id="l_method-i-map_templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/63abca42da72acbc74a1b9ceff93f83a6211f960/lib/hanami/commands/new/app.rb#L12" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-map_templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/new/app.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">map_templates</span>
+  <span class="ruby-identifier">add_application_templates</span>
+  <span class="ruby-identifier">add_empty_directories</span>
+  <span class="ruby-identifier">add_test_templates</span>
+  <span class="ruby-identifier">add_sql_templates</span>
+  <span class="ruby-identifier">add_git_templates</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-post_process_templates">
+            
+              <b>post_process_templates</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/New/App.html#method-i-post_process_templates" name="method-i-post_process_templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-post_process_templates_source')" id="l_method-i-post_process_templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/63abca42da72acbc74a1b9ceff93f83a6211f960/lib/hanami/commands/new/app.rb#L36" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-post_process_templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/new/app.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">post_process_templates</span>
+  <span class="ruby-identifier">init_git</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template_options">
+            
+              <b>template_options</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/New/App.html#method-i-template_options" name="method-i-template_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_options_source')" id="l_method-i-template_options_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/63abca42da72acbc74a1b9ceff93f83a6211f960/lib/hanami/commands/new/app.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/new/app.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template_options</span>
+  {
+    <span class="ruby-identifier">app_name</span><span class="ruby-operator">:</span>             <span class="ruby-identifier">app_name</span>,
+    <span class="ruby-identifier">upcase_app_name</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">upcase_app_name</span>,
+    <span class="ruby-identifier">classified_app_name</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">classified_app_name</span>,
+    <span class="ruby-identifier">application_base_url</span><span class="ruby-operator">:</span> <span class="ruby-identifier">application_base_url</span>,
+    <span class="ruby-identifier">hanami_head</span><span class="ruby-operator">:</span>          <span class="ruby-identifier">hanami_head?</span>,
+    <span class="ruby-identifier">test</span><span class="ruby-operator">:</span>                 <span class="ruby-identifier">test_framework</span>.<span class="ruby-identifier">framework</span>,
+    <span class="ruby-identifier">database</span><span class="ruby-operator">:</span>             <span class="ruby-identifier">database_config</span>.<span class="ruby-identifier">type</span>,
+    <span class="ruby-identifier">database_config</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">database_config</span>.<span class="ruby-identifier">to_hash</span>,
+    <span class="ruby-identifier">hanami_model_version</span><span class="ruby-operator">:</span> <span class="ruby-identifier">hanami_model_version</span>,
+    <span class="ruby-identifier">hanami_version</span><span class="ruby-operator">:</span>       <span class="ruby-identifier">hanami_version</span>,
+    <span class="ruby-identifier">template</span><span class="ruby-operator">:</span>             <span class="ruby-identifier">template_engine</span>.<span class="ruby-identifier">name</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Glue</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Glue 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/glue_rb.html">sources/controller/lib/hanami/action/glue.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Glue.html">Glue</a> code for full stack <a
+href="../../Hanami.html">Hanami</a> applications</p>
+
+<p>This includes missing rendering logic that it makes sense to include only
+for web applications.</p>
+
+<p>@api private @since 0.3.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-finish">finish</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-renderable-3F">renderable?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sending_file-3F">sending_file?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">ENV_KEY</td>
+            <td>=</td>
+            <td class="attr-value">&#39;hanami.action&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Rack.html">Rack</a> environment key that indicates where the
+action instance is passed</p>
+
+<p>@api private @since 0.3.0</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ADDITIONAL_HTTP_STATUSES_WITHOUT_BODY</td>
+            <td>=</td>
+            <td class="attr-value">Set.new([301, 302]).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@api private @since 0.3.2</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../../classes/Hanami/Action/Glue.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s Module#included</p>
+
+<p>@api private @since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/glue.rb#L25" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/glue.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">expose</span>(<span class="ruby-value">:format</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:expose</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-renderable-3F">
+            
+              <b>renderable?</b>()
+            
+            <a href="../../../classes/Hanami/Action/Glue.html#method-i-renderable-3F" name="method-i-renderable-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if the current HTTP request is renderable.</p>
+
+<p>It verifies if the verb isn&#39;t HEAD, if the status demands to omit the
+body and if it isn&#39;t sending a file.</p>
+
+<p>@return [TrueClass,FalseClass] the result of the check</p>
+
+<p>@api private @since 0.3.2</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-renderable-3F_source')" id="l_method-i-renderable-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/glue.rb#L38" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-renderable-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/glue.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">renderable?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">_requires_no_body?</span> <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-operator">!</span><span class="ruby-identifier">sending_file?</span>    <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-operator">!</span><span class="ruby-constant">ADDITIONAL_HTTP_STATUSES_WITHOUT_BODY</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@_status</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-finish">
+            
+              <b>finish</b>()
+            
+            <a href="../../../classes/Hanami/Action/Glue.html#method-i-finish" name="method-i-finish" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Put the current instance into the <a href="Rack.html">Rack</a> environment</p>
+
+<p>@api private @since 0.3.0</p>
+
+<p>@see <a href="Head.html#method-i-finish">Hanami::Action::Head#finish</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-finish_source')" id="l_method-i-finish_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/glue.rb#L51" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-finish_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/glue.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">finish</span>
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@_env</span>[<span class="ruby-constant">ENV_KEY</span>] = <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sending_file-3F">
+            
+              <b>sending_file?</b>()
+            
+            <a href="../../../classes/Hanami/Action/Glue.html#method-i-sending_file-3F" name="method-i-sending_file-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if the request&#39;s body is a file</p>
+
+<p>@return [TrueClass,FalseClass] the result of the check</p>
+
+<p>@since 0.4.3</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sending_file-3F_source')" id="l_method-i-sending_file-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/glue.rb#L61" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-sending_file-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/glue.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sending_file?</span>
+  <span class="ruby-ivar">@_body</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

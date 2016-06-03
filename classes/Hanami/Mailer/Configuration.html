@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Mailer::Configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Mailer::Configuration 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/mailer/lib/hanami/mailer/configuration_rb.html">sources/mailer/lib/hanami/mailer/configuration.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Framework configuration</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_mailer">add_mailer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-copy-21">copy!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-default_charset">default_charset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-delivery_method">delivery_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-duplicate">duplicate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-namespace">namespace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prepare">prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset-21">reset!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unload-21">unload!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_ROOT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;.&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="Configuration.html#method-i-root">#root</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_DELIVERY_METHOD</td>
+            <td>=</td>
+            <td class="attr-value">:smtp</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default delivery method</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_CHARSET</td>
+            <td>=</td>
+            <td class="attr-value">&#39;UTF-8&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default charset</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [W]
+            </td>
+            <td class='attr-name'>default_charset</td>
+            <td class='attr-desc'><p>@api private @since 0.1.0</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [W]
+            </td>
+            <td class='attr-name'>delivery_method</td>
+            <td class='attr-desc'><p>@api private @since 0.1.0</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>mailers</td>
+            <td class='attr-desc'><p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>modules</td>
+            <td class='attr-desc'><p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [W]
+            </td>
+            <td class='attr-name'>namespace</td>
+            <td class='attr-desc'><p>@api private @since 0.1.0</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [W]
+            </td>
+            <td class='attr-name'>root</td>
+            <td class='attr-desc'><p>@api private @since 0.1.0</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a configuration instance</p>
+
+<p>@return [Hanami::Mailer::Configuration] a <a
+href="Configuration.html#method-c-new">::new</a> configuration&#39;s
+instance</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L41" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@namespace</span> = <span class="ruby-constant">Object</span>
+  <span class="ruby-identifier">reset!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_mailer">
+            
+              <b>add_mailer</b>(mailer)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-add_mailer" name="method-i-add_mailer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Add a mailer to the registry</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_mailer_source')" id="l_method-i-add_mailer_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L158" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-add_mailer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_mailer</span>(<span class="ruby-identifier">mailer</span>)
+  <span class="ruby-ivar">@mailers</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">mailer</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-copy-21">
+            
+              <b>copy!</b>(base)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-copy-21" name="method-i-copy-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Copy the configuration for the given mailer</p>
+
+<p>@param base [Class] the target mailer</p>
+
+<p>@return void</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-copy-21_source')" id="l_method-i-copy-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L204" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-copy-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy!</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mod</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">mod</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_charset">
+            
+              <b>default_charset</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-default_charset" name="method-i-default_charset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_charset_source')" id="l_method-i-default_charset_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L277" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_charset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_charset</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@default_charset</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@default_charset</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delivery_method">
+            
+              <b>delivery_method</b>(method = nil, options = {})
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-delivery_method" name="method-i-delivery_method" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify a global delivery method for the mail gateway.</p>
+
+<p>It supports the following delivery methods:</p>
+
+<pre><code>* Exim (&lt;tt&gt;:exim&lt;/tt&gt;)
+* Sendmail (&lt;tt&gt;:sendmail&lt;/tt&gt;)
+* SMTP (&lt;tt&gt;:smtp&lt;/tt&gt;, for local installations)
+* SMTP Connection (&lt;tt&gt;:smtp_connection&lt;/tt&gt;,
+  via &lt;tt&gt;Net::SMTP&lt;/tt&gt; - for remote installations)
+* Test (&lt;tt&gt;:test&lt;/tt&gt;, for testing purposes)</code></pre>
+
+<p>The default delivery method is SMTP (<code>:smtp</code>).</p>
+
+<p>Custom delivery methods can be specified by passing the class policy and a
+set of optional configurations. This class MUST respond to:</p>
+
+<pre><code>* &lt;tt&gt;initialize(options = {})&lt;/tt&gt;
+* &lt;tt&gt;deliver!(mail)&lt;tt&gt;</code></pre>
+
+<p>@param method [Symbol, #initialize, deliver!] delivery method @param
+options [Hash] optional settings</p>
+
+<p>@return [Array] an array containing the delivery method and the optional
+settings as an Hash</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Setup delivery method with supported symbol</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configure do
+  delivery_method :sendmail
+end
+</code></pre>
+
+<p>@example Setup delivery method with supported symbol and options</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configure do
+  delivery_method :smtp, address: &quot;localhost&quot;, port: 1025
+end
+</code></pre>
+
+<p>@example Setup custom delivery method with options</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class MandrillDeliveryMethod
+  def initialize(options)
+    @options = options
+  end
+
+  def deliver!(mail)
+    # ...
+  end
+end
+
+Hanami::Mailer.configure do
+  delivery_method MandrillDeliveryMethod,
+    username: ENV[&#39;MANDRILL_USERNAME&#39;],
+    password: ENV[&#39;MANDRILL_API_KEY&#39;]
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delivery_method_source')" id="l_method-i-delivery_method_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L268" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delivery_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delivery_method</span>(<span class="ruby-identifier">method</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@delivery_method</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@delivery_method</span> = [<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-duplicate">
+            
+              <b>duplicate</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-duplicate" name="method-i-duplicate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Duplicate by copying the settings in a <a
+href="Configuration.html#method-c-new">::new</a> instance.</p>
+
+<p>@return [Hanami::Mailer::Configuration] a copy of the configuration</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-duplicate_source')" id="l_method-i-duplicate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L168" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-duplicate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">duplicate</span>
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">namespace</span>  = <span class="ruby-identifier">namespace</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">root</span>       = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">modules</span>    = <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">delivery_method</span> = <span class="ruby-identifier">delivery_method</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">default_charset</span> = <span class="ruby-identifier">default_charset</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the configuration</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L179" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-identifier">mailers</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-value">:load!</span>) }
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-namespace">
+            
+              <b>namespace</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-namespace" name="method-i-namespace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the Ruby <a href="Configuration.html#method-i-namespace">#namespace</a>
+where to lookup for <a
+href="Configuration.html#attribute-i-mailers">#mailers</a>.</p>
+
+<p>When multiple instances of the framework are used, we want to make sure
+that if a `MyApp` wants a `Mailers::Signup` mailer, we are loading the
+right one.</p>
+
+<p>If not set, this value defaults to `Object`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload namespace(value)</p>
+
+<pre><code>Sets the given value
+@param value [Class, Module, String] a valid Ruby namespace identifier</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-namespace">#namespace</a></p>
+
+<pre><code>Gets the value
+@return [Class, Module, String]
+</code></pre>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configuration.namespace # =&gt; Object
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configure do
+  namespace &#39;MyApp::Mailers&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-namespace_source')" id="l_method-i-namespace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L80" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-namespace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">namespace</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@namespace</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@namespace</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepare">
+            
+              <b>prepare</b>(&amp;blk)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-prepare" name="method-i-prepare" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Prepare the <a href="Configuration.html#attribute-i-mailers">#mailers</a>.</p>
+
+<p>The given block will be yielded when `Hanami::Mailer` will be included by a
+mailer.</p>
+
+<p>This method can be called multiple times.</p>
+
+<p>@param blk [Proc] the code block</p>
+
+<p>@return [void]</p>
+
+<p>@raise [ArgumentError] if called without passing a block</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="../Mailer.html#method-c-configure">Hanami::Mailer.configure</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepare_source')" id="l_method-i-prepare_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L146" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@modules</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Please provide a block&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset-21">
+            
+              <b>reset!</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-reset-21" name="method-i-reset-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reset the configuration</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Configuration.html#method-i-unload-21">unload!</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset-21_source')" id="l_method-i-reset-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L185" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-reset-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset!</span>
+  <span class="ruby-identifier">root</span>(<span class="ruby-constant">DEFAULT_ROOT</span>)
+  <span class="ruby-identifier">delivery_method</span>(<span class="ruby-constant">DEFAULT_DELIVERY_METHOD</span>)
+  <span class="ruby-identifier">default_charset</span>(<span class="ruby-constant">DEFAULT_CHARSET</span>)
+
+  <span class="ruby-ivar">@mailers</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@modules</span> = []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the <a href="Configuration.html#method-i-root">#root</a> path where to
+search for templates</p>
+
+<p>If not set, this value defaults to the current directory.</p>
+
+<p>When this method is called with an argument, it will set the corresponding
+instance variable. When called without, it will return the already set
+value, or the default.</p>
+
+<p>@overload root(value)</p>
+
+<pre><code>Sets the given value
+@param value [String, Pathname, #to_pathname] an object that can be
+  coerced to Pathname</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-root">#root</a></p>
+
+<pre><code>Gets the value
+@return [Pathname]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html">www.ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html</a>
+@see <a
+href="http://rdoc.info/gems/hanami-utils/Hanami/Utils/Kernel#Pathname-class_method">rdoc.info/gems/hanami-utils/Hanami/Utils/Kernel#Pathname-class_method</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configuration.root # =&gt; #&lt;Pathname:.&gt;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configure do
+  root &#39;/path/to/templates&#39;
+end
+
+Hanami::Mailer.configuration.root # =&gt; #&lt;Pathname:/path/to/templates&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5e794696ef2db96440e1c23891948484fd564872/lib/hanami/mailer/configuration.rb#L122" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/configuration.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@root</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Pathname</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">realpath</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@root</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unload-21">
+            
+              <b>unload!</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Configuration.html#method-i-unload-21" name="method-i-unload-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Configuration.html#method-i-reset-21">reset!</a>
+            </div>
+          
+          
+          
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

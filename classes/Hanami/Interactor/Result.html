@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Interactor::Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Interactor::Result 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Utils/BasicObject.html">Hanami::Utils::BasicObject</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/interactor_rb.html">sources/utils/lib/hanami/interactor.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Result.html">Result</a> of an operation</p>
+
+<p>@since 0.3.5</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-__inspect">__inspect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-_payload">_payload</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_error">add_error</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-error">error</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-errors">errors</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fail-21">fail!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prepare-21">prepare!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-success-3F">success?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">METHODS</td>
+            <td>=</td>
+            <td class="attr-value">{initialize: true, success?: true, fail!: true, prepare!: true, errors: true, error: true}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Concrete methods</p>
+
+<p>@since 0.3.5 @api private</p>
+
+<p>@see <a
+href="Result.html#method-i-respond_to_missing-3F">#respond_to_missing?</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(payload = {})
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a <a href="Result.html#method-c-new">::new</a> result</p>
+
+<p>@param payload [Hash] a payload to carry on</p>
+
+<p>@return [Hanami::Interactor::Result]</p>
+
+<p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L30" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">payload</span> = {})
+  <span class="ruby-ivar">@payload</span> = <span class="ruby-identifier">_payload</span>(<span class="ruby-identifier">payload</span>)
+  <span class="ruby-ivar">@errors</span>  = []
+  <span class="ruby-ivar">@success</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_error">
+            
+              <b>add_error</b>(*errors)
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-add_error" name="method-i-add_error" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.5.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_error_source')" id="l_method-i-add_error_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L68" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-add_error_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_error</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">errors</span>)
+  <span class="ruby-ivar">@errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">errors</span>
+  <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-error">
+            
+              <b>error</b>()
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-error" name="method-i-error" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the first <a href="Result.html#method-i-errors">#errors</a>
+collected during an operation</p>
+
+<p>@return [nil,String] the <a href="Result.html#method-i-error">#error</a>,
+if present</p>
+
+<p>@since 0.3.5</p>
+
+<p>@see <a href="Result.html#method-i-errors">#errors</a> @see
+Hanami::Interactor#call @see Hanami::Interactor#error @see
+Hanami::Interactor#error!</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-error_source')" id="l_method-i-error_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L84" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-error_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error</span>
+  <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-errors">
+            
+              <b>errors</b>()
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-errors" name="method-i-errors" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns all the <a href="Result.html#method-i-errors">#errors</a> collected
+during an operation</p>
+
+<p>@return [Array] the <a href="Result.html#method-i-errors">#errors</a></p>
+
+<p>@since 0.3.5</p>
+
+<p>@see <a href="Result.html#method-i-error">#error</a> @see
+Hanami::Interactor#call @see Hanami::Interactor#error @see
+Hanami::Interactor#error!</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-errors_source')" id="l_method-i-errors_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L62" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-errors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">errors</span>
+  <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fail-21">
+            
+              <b>fail!</b>()
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-fail-21" name="method-i-fail-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Force the status to be a failure</p>
+
+<p>@since 0.3.5</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fail-21_source')" id="l_method-i-fail-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L48" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-fail-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fail!</span>
+  <span class="ruby-ivar">@success</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepare-21">
+            
+              <b>prepare!</b>(payload)
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-prepare-21" name="method-i-prepare-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Prepare the result before to be returned</p>
+
+<p>@param payload [Hash] an updated payload</p>
+
+<p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepare-21_source')" id="l_method-i-prepare-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L94" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-prepare-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare!</span>(<span class="ruby-identifier">payload</span>)
+  <span class="ruby-ivar">@payload</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">_payload</span>(<span class="ruby-identifier">payload</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-success-3F">
+            
+              <b>success?</b>()
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-success-3F" name="method-i-success-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if the current status is successful</p>
+
+<p>@return [TrueClass,FalseClass] the result of the check</p>
+
+<p>@since 0.3.5</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-success-3F_source')" id="l_method-i-success-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L41" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-success-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">success?</span>
+  <span class="ruby-ivar">@success</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-__inspect">
+            
+              <b>__inspect</b>()
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-__inspect" name="method-i-__inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-__inspect_source')" id="l_method-i-__inspect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L121" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-__inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">__inspect</span>
+  <span class="ruby-node">&quot; @success=#{ @success } @payload=#{ @payload.inspect }&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-_payload">
+            
+              <b>_payload</b>(payload)
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-_payload" name="method-i-_payload" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-_payload_source')" id="l_method-i-_payload_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L115" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-_payload_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">_payload</span>(<span class="ruby-identifier">payload</span>)
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">payload</span>).<span class="ruby-identifier">symbolize!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *)
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L102" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span>)
+  <span class="ruby-ivar">@payload</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">m</span>) { <span class="ruby-keyword">super</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(method_name, include_all)
+            
+            <a href="../../../classes/Hanami/Interactor/Result.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.5 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L108" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">include_all</span>)
+  <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-constant">METHODS</span>[<span class="ruby-identifier">method_name</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@payload</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">method_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

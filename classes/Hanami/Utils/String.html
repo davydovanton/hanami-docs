@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::String</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::String 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/string_rb.html">sources/utils/lib/hanami/utils/string.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="String.html">String</a> on steroids</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-capitalize">capitalize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-classify">classify</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dasherize">dasherize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-demodulize">demodulize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eql-3F">eql?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-gsub">gsub</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hash">hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-namespace">namespace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-pluralize">pluralize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rsub">rsub</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-scan">scan</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-singularize">singularize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-split">split</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-titleize">titleize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_str">to_str</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tokenize">tokenize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-underscore">underscore</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">EMPTY_STRING</td>
+            <td>=</td>
+            <td class="attr-value">&#39;&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Empty string for #classify</p>
+
+<p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NAMESPACE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;::&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator between Ruby namespaces</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLASSIFY_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;_&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #classify</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TOKENIZE_REGEXP</td>
+            <td>=</td>
+            <td class="attr-value">/\((.*)\)/</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Regexp for #tokenize</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TOKENIZE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;|&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #tokenize</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UNDERSCORE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;/&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #underscore</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UNDERSCORE_DIVISION_TARGET</td>
+            <td>=</td>
+            <td class="attr-value">&#39;\1_\2&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="String.html#method-i-gsub">#gsub</a> second parameter used in
+#underscore</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TITLEIZE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39; &#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #titleize</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CAPITALIZE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39; &#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #capitalize</p>
+
+<p>@since 0.5.2 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DASHERIZE_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;-&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Separator for #dasherize</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLASSIFY_WORD_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">/#{CLASSIFY_SEPARATOR}|#{NAMESPACE_SEPARATOR}|#{UNDERSCORE_SEPARATOR}|#{DASHERIZE_SEPARATOR}/</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Regexp for #classify</p>
+
+<p>@since 0.3.4 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(string)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the string</p>
+
+<p>@param string [::String, Symbol] the value we want to initialize</p>
+
+<p>@return [String] self</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L82" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-ivar">@string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <b>==</b>(other)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-3D-3D" name="method-i-3D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equality</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="String.html#method-i-eql-3F">eql?</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L317" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-keyword ruby-title">other</span>)
+  <span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-capitalize">
+            
+              <b>capitalize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-capitalize" name="method-i-capitalize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a capitalized version of the string</p>
+
+<p>@return [Hanami::Utils::String] the transformed string</p>
+
+<p>@since 0.5.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;hanami&#39;
+string.capitalize # =&gt; &quot;Hanami&quot;
+
+string = Hanami::Utils::String.new &#39;hanami utils&#39;
+string.capitalize # =&gt; &quot;Hanami utils&quot;
+
+string = Hanami::Utils::String.new &#39;Hanami Utils&#39;
+string.capitalize # =&gt; &quot;Hanami utils&quot;
+
+string = Hanami::Utils::String.new &#39;hanami_utils&#39;
+string.capitalize # =&gt; &quot;Hanami utils&quot;
+
+string = Hanami::Utils::String.new &#39;hanami-utils&#39;
+string.capitalize # =&gt; &quot;Hanami utils&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-capitalize_source')" id="l_method-i-capitalize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L124" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-capitalize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">capitalize</span>
+  <span class="ruby-identifier">head</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">tail</span> = <span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">CLASSIFY_SEPARATOR</span>)
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-identifier">tail</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">head</span>.<span class="ruby-identifier">capitalize</span>).<span class="ruby-identifier">join</span>(<span class="ruby-constant">CAPITALIZE_SEPARATOR</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-classify">
+            
+              <b>classify</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-classify" name="method-i-classify" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a CamelCase version of the string</p>
+
+<p>@return [String] the transformed string</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;hanami_utils&#39;
+string.classify # =&gt; &#39;HanamiUtils&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-classify_source')" id="l_method-i-classify_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L143" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-classify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">classify</span>
+  <span class="ruby-identifier">words</span> = <span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">CLASSIFY_WORD_SEPARATOR</span>).<span class="ruby-identifier">map!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:capitalize</span>)
+  <span class="ruby-identifier">delimiters</span> = <span class="ruby-identifier">scan</span>(<span class="ruby-constant">CLASSIFY_WORD_SEPARATOR</span>)
+
+  <span class="ruby-identifier">delimiters</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">delimiter</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">delimiter</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CLASSIFY_SEPARATOR</span> <span class="ruby-operator">?</span> <span class="ruby-constant">EMPTY_STRING</span> <span class="ruby-operator">:</span> <span class="ruby-constant">NAMESPACE_SEPARATOR</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">words</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">delimiters</span>).<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dasherize">
+            
+              <b>dasherize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-dasherize" name="method-i-dasherize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a downcased and dash separated version of the string</p>
+
+<p>@return [Hanami::Utils::String] the transformed string</p>
+
+<p>@since 0.4.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;Hanami Utils&#39;
+string.dasherize # =&gt; &#39;hanami-utils&#39;
+
+string = Hanami::Utils::String.new &#39;hanami_utils&#39;
+string.dasherize # =&gt; &#39;hanami-utils&#39;
+
+string = Hanami::Utils::String.new &#39;HanamiUtils&#39;
+string.dasherize # =&gt; &quot;hanami-utils&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dasherize_source')" id="l_method-i-dasherize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L194" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-dasherize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dasherize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">CLASSIFY_SEPARATOR</span>).<span class="ruby-identifier">join</span>(<span class="ruby-constant">DASHERIZE_SEPARATOR</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-demodulize">
+            
+              <b>demodulize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-demodulize" name="method-i-demodulize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the string without the Ruby <a
+href="String.html#method-i-namespace">#namespace</a> of the class</p>
+
+<p>@return [String] the transformed string</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;Hanami::Utils::String&#39;
+string.demodulize # =&gt; &#39;String&#39;
+
+string = Hanami::Utils::String.new &#39;String&#39;
+string.demodulize # =&gt; &#39;String&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-demodulize_source')" id="l_method-i-demodulize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L212" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-demodulize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">demodulize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">split</span>(<span class="ruby-constant">NAMESPACE_SEPARATOR</span>).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eql-3F">
+            
+              <b>eql?</b>(other)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-eql-3F" name="method-i-eql-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="String.html#method-i-3D-3D">==</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-gsub">
+            
+              <b>gsub</b>(pattern, replacement = nil, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-gsub" name="method-i-gsub" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Replace the given pattern with the given replacement</p>
+
+<p>@return [String,nil]</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/String.html#method-i-gsub">www.ruby-doc.org/core/String.html#method-i-gsub</a></p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gsub_source')" id="l_method-i-gsub_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L341" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-gsub_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 341</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hash">
+            
+              <b>hash</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-hash" name="method-i-hash" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="String.html#method-i-hash">#hash</a> of the internal
+string</p>
+
+<p>@return [Fixnum]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hash_source')" id="l_method-i-hash_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L297" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hash</span>
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s <a
+href="String.html#method-i-method_missing">#method_missing</a> in order to
+provide ::String interface</p>
+
+<p>@api private @since 0.3.0</p>
+
+<p>@raise [NoMethodError] If doesn&#39;t respond to the given method</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L400" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">s</span> = <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-identifier">s</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">%Q(undefined method `#{ m }&#39; for &quot;#{ @string }&quot;:#{ self.class })</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-namespace">
+            
+              <b>namespace</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-namespace" name="method-i-namespace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the top level <a
+href="String.html#method-i-namespace">#namespace</a> name</p>
+
+<p>@return [String] the transformed string</p>
+
+<p>@since 0.1.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;Hanami::Utils::String&#39;
+string.namespace # =&gt; &#39;Hanami&#39;
+
+string = Hanami::Utils::String.new &#39;String&#39;
+string.namespace # =&gt; &#39;String&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-namespace_source')" id="l_method-i-namespace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L230" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-namespace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">namespace</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">split</span>(<span class="ruby-constant">NAMESPACE_SEPARATOR</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-pluralize">
+            
+              <b>pluralize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-pluralize" name="method-i-pluralize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a pluralized version of self.</p>
+
+<p>@return [Hanami::Utils::String] the pluralized string.</p>
+
+<p>@api private @since 0.4.1</p>
+
+<p>@see <a href="Inflector.html">Hanami::Utils::Inflector</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-pluralize_source')" id="l_method-i-pluralize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L276" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-pluralize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">pluralize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(m, include_private=false)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s <a
+href="String.html#method-i-respond_to_missing-3F">#respond_to_missing?</a>
+in order to support ::String interface</p>
+
+<p>@api private @since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L414" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 414</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rsub">
+            
+              <b>rsub</b>(pattern, replacement)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-rsub" name="method-i-rsub" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Replace the rightmost match of <code>pattern</code> with
+<code>replacement</code></p>
+
+<p>If the pattern cannot be matched, it returns the original string.</p>
+
+<p>This method does NOT mutate the original string.</p>
+
+<p>@param pattern [Regexp, String] the pattern to find @param replacement
+[String, Hanami::Utils::String] the string to replace</p>
+
+<p>@return [Hanami::Utils::String] the replaced string</p>
+
+<p>@since 0.6.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new(&#39;authors/books/index&#39;)
+result = string.rsub(/\//, &#39;#&#39;)
+
+puts string
+  # =&gt; #&lt;Hanami::Utils::String:0x007fdb41233ad8 @string=&quot;authors/books/index&quot;&gt;
+
+puts result
+  # =&gt; #&lt;Hanami::Utils::String:0x007fdb41232ed0 @string=&quot;authors/books#index&quot;&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rsub_source')" id="l_method-i-rsub_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L384" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rsub_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rsub</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">replacement</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> = <span class="ruby-identifier">rindex</span>(<span class="ruby-identifier">pattern</span>)
+    <span class="ruby-identifier">s</span>    = <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">replacement</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scan">
+            
+              <b>scan</b>(pattern, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-scan" name="method-i-scan" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Both forms iterate through str, matching the pattern</p>
+
+<p>@return [String,nil]</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/String.html#method-i-scan">www.ruby-doc.org/core/String.html#method-i-scan</a></p>
+
+<p>@since 0.6.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scan_source')" id="l_method-i-scan_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L356" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-scan_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scan</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-singularize">
+            
+              <b>singularize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-singularize" name="method-i-singularize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a singularized version of self.</p>
+
+<p>@return [Hanami::Utils::String] the singularized string.</p>
+
+<p>@api private @since 0.4.1</p>
+
+<p>@see <a href="Inflector.html">Hanami::Utils::Inflector</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-singularize_source')" id="l_method-i-singularize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L288" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-singularize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">singularize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">singularize</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-split">
+            
+              <b>split</b>(pattern, limit = 0)
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-split" name="method-i-split" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Split the string with the given pattern</p>
+
+<p>@return [Array&lt;String&gt;]</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/String.html#method-i-split">www.ruby-doc.org/core/String.html#method-i-split</a></p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-split_source')" id="l_method-i-split_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L330" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-split_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">split</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">limit</span> = <span class="ruby-number">0</span>)
+  <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">limit</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-titleize">
+            
+              <b>titleize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-titleize" name="method-i-titleize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a titleized version of the string</p>
+
+<p>@return [Hanami::Utils::String] the transformed string</p>
+
+<p>@since 0.4.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;hanami utils&#39;
+string.titleize # =&gt; &quot;Hanami Utils&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-titleize_source')" id="l_method-i-titleize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L97" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-titleize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">titleize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">CLASSIFY_SEPARATOR</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:capitalize</span>).<span class="ruby-identifier">join</span>(<span class="ruby-constant">TITLEIZE_SEPARATOR</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a string representation</p>
+
+<p>@return [String]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="String.html#method-i-to_str">to_str</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L306" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-ivar">@string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_str">
+            
+              <b>to_str</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-to_str" name="method-i-to_str" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="String.html#method-i-to_s">to_s</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tokenize">
+            
+              <b>tokenize</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-tokenize" name="method-i-tokenize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It iterates through the tokens and calls the given block. A token is a
+substring wrapped by `()` and separated by `|`.</p>
+
+<p>@yield the block that is called for each token.</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;Hanami::(Utils|App)&#39;
+string.tokenize do |token|
+  puts token
+end
+
+# =&gt;
+  &#39;Hanami::Utils&#39;
+  &#39;Hanami::App&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tokenize_source')" id="l_method-i-tokenize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L254" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-tokenize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tokenize</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> = <span class="ruby-constant">TOKENIZE_REGEXP</span>.<span class="ruby-identifier">match</span>(<span class="ruby-ivar">@string</span>)
+    <span class="ruby-identifier">pre</span>, <span class="ruby-identifier">post</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">pre_match</span>, <span class="ruby-identifier">match</span>.<span class="ruby-identifier">post_match</span>
+    <span class="ruby-identifier">tokens</span> = <span class="ruby-identifier">match</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">split</span>(<span class="ruby-constant">TOKENIZE_SEPARATOR</span>)
+    <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{pre}#{token}#{post}&quot;</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@string</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-underscore">
+            
+              <b>underscore</b>()
+            
+            <a href="../../../classes/Hanami/Utils/String.html#method-i-underscore" name="method-i-underscore" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a downcased and <a
+href="String.html#method-i-underscore">#underscore</a> separated version of
+the string</p>
+
+<p>Revised version of `ActiveSupport::Inflector.underscore` implementation
+@see <a
+href="https://github.com/rails/rails/blob/feaa6e2048fe86bcf07e967d6e47b865e42e055b/activesupport/lib/active_support/inflector/methods.rb#L90">github.com/rails/rails/blob/feaa6e2048fe86bcf07e967d6e47b865e42e055b/activesupport/lib/active_support/inflector/methods.rb#L90</a></p>
+
+<p>@return [String] the transformed string</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/string&#39;
+
+string = Hanami::Utils::String.new &#39;HanamiUtils&#39;
+string.underscore # =&gt; &#39;hanami_utils&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-underscore_source')" id="l_method-i-underscore_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/3d7aa877182a545654b2ebd3a2a495546051ac91/lib/hanami/utils/string.rb#L168" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-underscore_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/string.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">underscore</span>
+  <span class="ruby-identifier">new_string</span> = <span class="ruby-identifier">gsub</span>(<span class="ruby-constant">NAMESPACE_SEPARATOR</span>, <span class="ruby-constant">UNDERSCORE_SEPARATOR</span>)
+  <span class="ruby-identifier">new_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([A-Z\d]+)([A-Z][a-z])/</span>, <span class="ruby-constant">UNDERSCORE_DIVISION_TARGET</span>)
+  <span class="ruby-identifier">new_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([a-z\d])([A-Z])/</span>, <span class="ruby-constant">UNDERSCORE_DIVISION_TARGET</span>)
+  <span class="ruby-identifier">new_string</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/[[:space:]]|\-/</span>, <span class="ruby-constant">UNDERSCORE_DIVISION_TARGET</span>)
+  <span class="ruby-identifier">new_string</span>.<span class="ruby-identifier">downcase!</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">new_string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routing::EndpointResolver</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routing::EndpointResolver 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/router/lib/hanami/routing/endpoint_resolver_rb.html">sources/router/lib/hanami/routing/endpoint_resolver.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Resolve duck-typed endpoints</p>
+
+<p>@since 0.1.0</p>
+
+<p>@api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-classify">classify</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-constantize">constantize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-default">default</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find">find</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resolve">resolve</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">NAMING_PATTERN</td>
+            <td>=</td>
+            <td class="attr-value">&#39;%{controller}::%{action}&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_RESPONSE</td>
+            <td>=</td>
+            <td class="attr-value">[404, {&#39;X-Cascade&#39; =&gt; &#39;pass&#39;}, &#39;Not Found&#39;].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since x.x.x @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ACTION_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;#&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> separator for controller and action. A
+different separator can be passed to #initialize with the `:separator`
+option.</p>
+
+<p>@see #initialize @see #resolve</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/&#39;, to: &#39;articles#show&#39;
+end
+</code></pre></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>action_separator</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options = {})
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize an endpoint resolver</p>
+
+<p>@param options [Hash] the options used to customize lookup behavior</p>
+
+<p>@option options [Class] :endpoint the endpoint class that is returned</p>
+
+<pre><code>by `#resolve`. (defaults to `Hanami::Routing::Endpoint`)
+</code></pre>
+
+<p>@option options [Class,Module] :namespace the Ruby namespace where to</p>
+
+<pre><code>lookup for controllers and actions. (defaults to `Object`)</code></pre>
+
+<p>@option options [String] :pattern the string to interpolate in order</p>
+
+<pre><code>to return an action name. This string SHOULD contain
+&lt;tt&gt;&#39;%{controller}&#39;&lt;/tt&gt; and &lt;tt&gt;&#39;%{action}&#39;&lt;/tt&gt;, all the other keys
+will be ignored.
+See the examples below.</code></pre>
+
+<p>@option options [String] :action_separator the separator between controller
+and</p>
+
+<pre><code>action name. (defaults to `ACTION_SEPARATOR`)
+</code></pre>
+
+<p>@return [Hanami::Routing::EndpointResolver] self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Specify custom endpoint class</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+resolver = Hanami::Routing::EndpointResolver.new(endpoint: CustomEndpoint)
+router   = Hanami::Router.new(resolver: resolver)
+
+router.get(&#39;/&#39;, to: endpoint).dest # =&gt; #&lt;CustomEndpoint:0x007f97f3359570 ...&gt;
+</code></pre>
+
+<p>@example Specify custom Ruby namespace</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+resolver = Hanami::Routing::EndpointResolver.new(namespace: MyApp)
+router   = Hanami::Router.new(resolver: resolver)
+
+router.get(&#39;/&#39;, to: &#39;articles#show&#39;)
+  # =&gt; Will look for: MyApp::Articles::Show
+</code></pre>
+
+<p>@example Specify custom pattern</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+resolver = Hanami::Routing::EndpointResolver.new(pattern: &#39;%{controller}Controller::%{action}&#39;)
+router   = Hanami::Router.new(resolver: resolver)
+
+router.get(&#39;/&#39;, to: &#39;articles#show&#39;)
+  # =&gt; Will look for: ArticlesController::Show
+</code></pre>
+
+<p>@example Specify custom controller-action separator</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+resolver = Hanami::Routing::EndpointResolver.new(separator: &#39;@&#39;)
+router   = Hanami::Router.new(resolver: resolver)
+
+router.get(&#39;/&#39;, to: &#39;articles@show&#39;)
+  # =&gt; Will look for: Articles::Show
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L100" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@endpoint_class</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:endpoint</span>]         <span class="ruby-operator">||</span> <span class="ruby-constant">Endpoint</span>
+  <span class="ruby-ivar">@namespace</span>        = <span class="ruby-identifier">options</span>[<span class="ruby-value">:namespace</span>]        <span class="ruby-operator">||</span> <span class="ruby-constant">Object</span>
+  <span class="ruby-ivar">@action_separator</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:action_separator</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ACTION_SEPARATOR</span>
+  <span class="ruby-ivar">@pattern</span>          = <span class="ruby-identifier">options</span>[<span class="ruby-value">:pattern</span>]          <span class="ruby-operator">||</span> <span class="ruby-constant">NAMING_PATTERN</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-find">
+            
+              <b>find</b>(options)
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-i-find" name="method-i-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Finds a path from the given options.</p>
+
+<p>@param options [Hash] the path description @option options
+[String,Proc,Class,Object#call] :to the endpoint @option options [String]
+:namespace an optional namespace</p>
+
+<p>@since 0.1.0</p>
+
+<p>@return [Object]</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_source')" id="l_method-i-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L178" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:to</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resolve">
+            
+              <b>resolve</b>(options, &amp;endpoint)
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-i-resolve" name="method-i-resolve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resolve the given set of HTTP verb, path, endpoint and options. If it fails
+to <a href="EndpointResolver.html#method-i-resolve">#resolve</a>, it will
+mount the <a href="EndpointResolver.html#method-i-default">#default</a>
+endpoint to the given path, which returns an 404 (Not Found).</p>
+
+<p>@param options [Hash] the options required to <a
+href="EndpointResolver.html#method-i-resolve">#resolve</a> the endpoint</p>
+
+<p>@option options [String,Proc,Class,Object#call] :to the endpoint @option
+options [String] :namespace an optional routing namespace</p>
+
+<p>@return [Endpoint] this may vary according to the :endpoint option</p>
+
+<pre><code>passed to #initialize
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see #initialize @see #find</p>
+
+<p>@example Resolve to a Proc</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/&#39;, to: -&gt;(env) { [200, {}, [&#39;Hi!&#39;]] }
+</code></pre>
+
+<p>@example Resolve to a class</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/&#39;, to: RackMiddleware
+</code></pre>
+
+<p>@example Resolve to a Rack compatible object (respond to #call)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/&#39;, to: AnotherMiddleware.new
+</code></pre>
+
+<p>@example Resolve to a <a href="../Action.html">Hanami::Action</a> from a
+string (see <a href="../Controller.html">Hanami::Controller</a> framework)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/&#39;, to: &#39;articles#show&#39;
+</code></pre>
+
+<p>@example Resolve to a <a href="../Action.html">Hanami::Action</a> (see <a
+href="../Controller.html">Hanami::Controller</a> framework)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/&#39;, to: Articles::Show
+</code></pre>
+
+<p>@example Resolve a redirect with a namespace</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.namespace &#39;users&#39; do
+  get &#39;/home&#39;,           to: -&gt;(env) { ... }
+  redirect &#39;/dashboard&#39;, to: &#39;/home&#39;
+end
+
+# GET /users/dashboard =&gt; 301 Location: &quot;/users/home&quot;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resolve_source')" id="l_method-i-resolve_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L164" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resolve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve</span>(<span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">endpoint</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">endpoint</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">resolve_callable</span>(<span class="ruby-identifier">result</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">resolve_matchable</span>(<span class="ruby-identifier">result</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-classify">
+            
+              <b>classify</b>(string)
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-i-classify" name="method-i-classify" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-classify_source')" id="l_method-i-classify_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L200" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-classify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">classify</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>).<span class="ruby-identifier">classify</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-constantize">
+            
+              <b>constantize</b>(string)
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-i-constantize" name="method-i-constantize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-constantize_source')" id="l_method-i-constantize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L189" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-constantize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">constantize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Class</span>.<span class="ruby-identifier">load!</span>(<span class="ruby-identifier">string</span>, <span class="ruby-ivar">@namespace</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-constant">Endpoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">ClassEndpoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
+  <span class="ruby-constant">LazyEndpoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>, <span class="ruby-ivar">@namespace</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default">
+            
+              <b>default</b>()
+            
+            <a href="../../../classes/Hanami/Routing/EndpointResolver.html#method-i-default" name="method-i-default" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_source')" id="l_method-i-default_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/63b8de9d1d1c0d0f35e322cf768374ec8534625e/lib/hanami/routing/endpoint_resolver.rb#L183" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint_resolver.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default</span>
+  <span class="ruby-ivar">@endpoint_class</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-constant">DEFAULT_RESPONSE</span> }
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Inflector</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils::Inflector 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/inflector_rb.html">sources/utils/lib/hanami/utils/inflector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="String.html">String</a> inflector</p>
+
+<p>@since 0.4.1</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Inflector/IrregularRules.html">Hanami::Utils::Inflector::IrregularRules</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-exception">exception</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-inflections">inflections</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-pluralize">pluralize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-singularize">singularize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-uncountable">uncountable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">A</td>
+            <td>=</td>
+            <td class="attr-value">&#39;a&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ch&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CHES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ches&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">EAUX</td>
+            <td>=</td>
+            <td class="attr-value">&#39;eaux&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;es&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">F</td>
+            <td>=</td>
+            <td class="attr-value">&#39;f&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">I</td>
+            <td>=</td>
+            <td class="attr-value">&#39;i&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ICE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ice&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ICES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ices&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IDES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ides&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ies&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IFE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ife&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">INA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ina&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IS</td>
+            <td>=</td>
+            <td class="attr-value">&#39;is&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IVES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ives&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ma&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MATA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;mata&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MEN</td>
+            <td>=</td>
+            <td class="attr-value">&#39;men&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MINA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;mina&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;na&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NON</td>
+            <td>=</td>
+            <td class="attr-value">&#39;non&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">O</td>
+            <td>=</td>
+            <td class="attr-value">&#39;o&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;oes&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OUSE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ouse&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RSE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;rse&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RSES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;rses&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">S</td>
+            <td>=</td>
+            <td class="attr-value">&#39;s&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ses&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SSES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;sses&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TA</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ta&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UM</td>
+            <td>=</td>
+            <td class="attr-value">&#39;um&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">US</td>
+            <td>=</td>
+            <td class="attr-value">&#39;us&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">USES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;uses&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">VES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ves&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">X</td>
+            <td>=</td>
+            <td class="attr-value">&#39;x&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">XES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;xes&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">Y</td>
+            <td>=</td>
+            <td class="attr-value">&#39;y&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-exception">
+            
+              <b>exception</b>(singular, plural)
+            
+            <a href="../../../classes/Hanami/Utils/Inflector.html#method-c-exception" name="method-c-exception" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Add a custom inflection <a
+href="Inflector.html#method-c-exception">::exception</a></p>
+
+<p>@param [String] singular form @param [String] plural form</p>
+
+<p>@since 0.6.0</p>
+
+<p>@see <a href="Inflector.html#method-c-inflections">::inflections</a> @see
+<a href="Inflector.html#method-c-uncountable">::uncountable</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/inflector&#39;
+
+Hanami::Utils::Inflector.inflections do
+  exception &#39;alga&#39;, &#39;algae&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-exception_source')" id="l_method-c-exception_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/inflector.rb#L314" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-exception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/inflector.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">exception</span>(<span class="ruby-identifier">singular</span>, <span class="ruby-identifier">plural</span>)
+  <span class="ruby-identifier">singulars</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">plural</span>, <span class="ruby-identifier">singular</span>)
+  <span class="ruby-identifier">plurals</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">singular</span>, <span class="ruby-identifier">plural</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inflections">
+            
+              <b>inflections</b>(&amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/Inflector.html#method-c-inflections" name="method-c-inflections" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Block for custom inflection rules.</p>
+
+<p>@param [Proc] blk custom <a
+href="Inflector.html#method-c-inflections">::inflections</a></p>
+
+<p>@since 0.6.0</p>
+
+<p>@see <a href="Inflector.html#method-c-exception">::exception</a> @see <a
+href="Inflector.html#method-c-uncountable">::uncountable</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/inflector&#39;
+
+Hanami::Utils::Inflector.inflections do
+  exception   &#39;analysis&#39;, &#39;analyses&#39;
+  exception   &#39;alga&#39;,     &#39;algae&#39;
+  uncountable &#39;music&#39;, &#39;butter&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-inflections_source')" id="l_method-c-inflections_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/inflector.rb#L294" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-inflections_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/inflector.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inflections</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">class_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-pluralize">
+            
+              <b>pluralize</b>(string)
+            
+            <a href="../../../classes/Hanami/Utils/Inflector.html#method-c-pluralize" name="method-c-pluralize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Pluralize the given string</p>
+
+<p>@param string [String] a string to <a
+href="Inflector.html#method-c-pluralize">::pluralize</a></p>
+
+<p>@return [String,NilClass] the pluralized string, if present</p>
+
+<p>@api private @since 0.4.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-pluralize_source')" id="l_method-c-pluralize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/inflector.rb#L348" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-pluralize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/inflector.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Blank</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING_MATCHER</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">plurals</span>
+    <span class="ruby-identifier">plurals</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A((.*)[^aeiou])ch\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">CHES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A((.*)[^aeiou])y\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">IES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)(ex|ix)\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">ICES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)(eau|#{ EAUX })\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EAUX</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)x\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">XES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)ma\z/</span>
+    <span class="ruby-identifier">string</span> <span class="ruby-operator">+</span> <span class="ruby-constant">TA</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)(um|#{ A })\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(buffal|domin|ech|embarg|her|mosquit|potat|tomat)#{ O }\z/i</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">OES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)(en|#{ INA })\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">INA</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)(?:([^f]))f[e]*\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-node">$2</span> <span class="ruby-operator">+</span> <span class="ruby-constant">VES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)us\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">USES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)non\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">NA</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A((.*)[^aeiou])is\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">ES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)ss\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">SSES</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/s\z/</span>
+    <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">string</span> <span class="ruby-operator">+</span> <span class="ruby-constant">S</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-singularize">
+            
+              <b>singularize</b>(string)
+            
+            <a href="../../../classes/Hanami/Utils/Inflector.html#method-c-singularize" name="method-c-singularize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Singularize the given string</p>
+
+<p>@param string [String] a string to <a
+href="Inflector.html#method-c-singularize">::singularize</a></p>
+
+<p>@return [String,NilClass] the singularized string, if present</p>
+
+<p>@api private @since 0.4.1</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-singularize_source')" id="l_method-c-singularize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/inflector.rb#L397" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-singularize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/inflector.rb, line 397</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">singularize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">string</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Blank</span><span class="ruby-operator">::</span><span class="ruby-constant">STRING_MATCHER</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">singulars</span>
+    <span class="ruby-identifier">singulars</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A.*[^aeiou]#{CHES}\z/</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-constant">CHES</span>, <span class="ruby-constant">CH</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A.*[^aeiou]#{IES}\z/</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-constant">IES</span>, <span class="ruby-constant">Y</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A.*#{EAUX}\z/</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">chop</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{IDES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">IS</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{US}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">I</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{RSES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">RSE</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{SES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">S</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{MATA}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">MA</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{OES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">O</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{MINA}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">MEN</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{XES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">X</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{IVES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">IFE</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{VES}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">F</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{I}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">US</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)ae\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A(.*)na\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">NON</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-node">/\A(.*)#{A}\z/</span>
+    <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-constant">UM</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[^s]\z/</span>
+    <span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">chop</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-uncountable">
+            
+              <b>uncountable</b>(*words)
+            
+            <a href="../../../classes/Hanami/Utils/Inflector.html#method-c-uncountable" name="method-c-uncountable" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Add an <a href="Inflector.html#method-c-uncountable">::uncountable</a> word</p>
+
+<p>@param [Array&lt;String&gt;] words</p>
+
+<p>@since 0.6.0</p>
+
+<p>@see <a href="Inflector.html#method-c-inflections">::inflections</a> @see
+<a href="Inflector.html#method-c-exception">::exception</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/inflector&#39;
+
+Hanami::Utils::Inflector.inflections do
+  uncountable &#39;music&#39;, &#39;art&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-uncountable_source')" id="l_method-c-uncountable_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/a954ba096f2c9f663ff237e9ac911985d5e6777a/lib/hanami/utils/inflector.rb#L334" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-uncountable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/inflector.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">uncountable</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">words</span>)
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">words</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">word</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exception</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">word</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

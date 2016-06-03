@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Duplicable</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils::Duplicable 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/duplicable_rb.html">sources/utils/lib/hanami/utils/duplicable.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Safe <a href="Duplicable.html#method-c-dup">::dup</a> logic</p>
+
+<p>@since 0.6.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dup">dup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-dup">
+            
+              <b>dup</b>(value, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/Duplicable.html#method-c-dup" name="method-c-dup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Duplicates the given value.</p>
+
+<p>It accepts a block to customize the logic.</p>
+
+<p>The following types aren&#39;t duped:</p>
+
+<pre><code>* &lt;tt&gt;NilClass&lt;/tt&gt;
+* &lt;tt&gt;FalseClass&lt;/tt&gt;
+* &lt;tt&gt;TrueClass&lt;/tt&gt;
+* &lt;tt&gt;Symbol&lt;/tt&gt;
+* &lt;tt&gt;Numeric&lt;/tt&gt;</code></pre>
+
+<p>All the other types are duped via <code>#dup</code></p>
+
+<p>@param value [Object] the value to duplicate @param blk [Proc] the optional
+block to customize the logic</p>
+
+<p>@return [Object] the duped value</p>
+
+<p>@since 0.6.0</p>
+
+<p>@example Basic Usage With Types That Can&#39;t Be Duped</p>
+
+<pre><code>require &#39;hanami/utils/duplicable&#39;
+
+object = 23
+puts object.object_id # =&gt; 47
+
+result = Hanami::Utils::Duplicable.dup(object)
+
+puts result           # =&gt; 23
+puts result.object_id # =&gt; 47 - Same object, because numbers can&#39;t be duped
+</code></pre>
+
+<p>@example Basic Usage With Types That Can Be Duped</p>
+
+<pre><code>require &#39;hanami/utils/duplicable&#39;
+
+object = &quot;hello&quot;
+puts object.object_id # =&gt; 70172661782360
+
+result = Hanami::Utils::Duplicable.dup(object)
+
+puts result           # =&gt; &quot;hello&quot;
+puts result.object_id # =&gt; 70172671467020 – Different object
+</code></pre>
+
+<p>@example Custom Logic</p>
+
+<pre><code>require &#39;hanami/utils/duplicable&#39;
+require &#39;hanami/utils/hash&#39;
+
+hash = { a: 1 }
+puts hash.object_id # =&gt; 70207105061680
+
+result = Hanami::Utils::Duplicable.dup(hash) do |value|
+  case value
+  when Hanami::Utils::Hash
+    value.deep_dup
+  when ::Hash
+    Hanami::Utils::Hash.new(value).deep_dup.to_h
+  end
+end
+
+puts result           # =&gt; &quot;{:a=&gt;1}&quot;
+puts result.object_id # =&gt; 70207105185500 – Different object
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dup_source')" id="l_method-c-dup_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/duplicable.rb#L68" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-dup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/duplicable.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dup</span>(<span class="ruby-identifier">value</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>, <span class="ruby-constant">FalseClass</span>, <span class="ruby-constant">TrueClass</span>, <span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-identifier">v</span> = <span class="ruby-identifier">blk</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

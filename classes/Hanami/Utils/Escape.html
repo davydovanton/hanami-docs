@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Escape</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils::Escape 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/escape_rb.html">sources/utils/lib/hanami/utils/escape.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/escape_rb.html">sources/view/lib/hanami/view/escape.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>HTML escape utilities</p>
+
+<p>Based on OWASP research and OWASP ESAPI code</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a href="https://www.owasp.org">www.owasp.org</a> @see <a
+href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29</a>
+@see <a
+href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</a>
+@see <a
+href="https://www.owasp.org/index.php/ESAPI">www.owasp.org/index.php/ESAPI</a>
+@see <a
+href="https://github.com/ESAPI/esapi-java-legacy">github.com/ESAPI/esapi-java-legacy</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Escape/SafeString.html">Hanami::Utils::Escape::SafeString</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-html">html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-html_attribute">html_attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-url">url</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">HEX_BASE</td>
+            <td>=</td>
+            <td class="attr-value">16</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Hex base for base 10 integer conversion</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Fixnum.html#method-i-to_s">www.ruby-doc.org/core/Fixnum.html#method-i-to_s</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">LOW_HEX_CODE_LIMIT</td>
+            <td>=</td>
+            <td class="attr-value">0xff</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Limit for non printable chars</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REPLACEMENT_HEX</td>
+            <td>=</td>
+            <td class="attr-value">&quot;fffd&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Replacement hex for non printable characters</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HEX_CODES</td>
+            <td>=</td>
+            <td class="attr-value">(0..255).each_with_object({}) do |c, codes|
+if (c &gt;= 0x30 &amp;&amp; c &lt;= 0x39) || (c &gt;= 0x41 &amp;&amp; c &lt;= 0x5A) || (c &gt;= 0x61 &amp;&amp; c &lt;= 0x7A)
+codes[c] = nil
+else
+codes[c] = c.to_s(HEX_BASE)
+end
+end.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Low hex codes lookup table</p>
+
+<p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NON_PRINTABLE_CHARS</td>
+            <td>=</td>
+            <td class="attr-value">{
+0x0  =&gt; true, 0x1  =&gt; true, 0x2  =&gt; true, 0x3  =&gt; true, 0x4  =&gt; true,
+0x5  =&gt; true, 0x6  =&gt; true, 0x7  =&gt; true, 0x8  =&gt; true, 0x11 =&gt; true,
+0x12 =&gt; true, 0x14 =&gt; true, 0x15 =&gt; true, 0x16 =&gt; true, 0x17 =&gt; true,
+0x18 =&gt; true, 0x19 =&gt; true, 0x1a =&gt; true, 0x1b =&gt; true, 0x1c =&gt; true,
+0x1d =&gt; true, 0x1e =&gt; true, 0x1f =&gt; true, 0x7f =&gt; true, 0x80 =&gt; true,
+0x81 =&gt; true, 0x82 =&gt; true, 0x83 =&gt; true, 0x84 =&gt; true, 0x85 =&gt; true,
+0x86 =&gt; true, 0x87 =&gt; true, 0x88 =&gt; true, 0x89 =&gt; true, 0x8a =&gt; true,
+0x8b =&gt; true, 0x8c =&gt; true, 0x8d =&gt; true, 0x8e =&gt; true, 0x8f =&gt; true,
+0x90 =&gt; true, 0x91 =&gt; true, 0x92 =&gt; true, 0x93 =&gt; true, 0x94 =&gt; true,
+0x95 =&gt; true, 0x96 =&gt; true, 0x97 =&gt; true, 0x98 =&gt; true, 0x99 =&gt; true,
+0x9a =&gt; true, 0x9b =&gt; true, 0x9c =&gt; true, 0x9d =&gt; true, 0x9e =&gt; true,
+0x9f =&gt; true
+}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Non printable chars</p>
+
+<p>This is a <a href="Hash.html">Hash</a> instead of a Set, to make lookup
+faster.</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a
+href="https://gist.github.com/jodosha/ac5dd54416de744b9600">gist.github.com/jodosha/ac5dd54416de744b9600</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTML_CHARS</td>
+            <td>=</td>
+            <td class="attr-value">{
+&#39;&amp;&#39; =&gt; &#39;&amp;amp;&#39;,
+&#39;&lt;&#39; =&gt; &#39;&amp;lt;&#39;,
+&#39;&gt;&#39; =&gt; &#39;&amp;gt;&#39;,
+&#39;&quot;&#39; =&gt; &#39;&amp;quot;&#39;,
+&quot;&#39;&quot; =&gt; &#39;&amp;apos;&#39;,
+&#39;/&#39; =&gt; &#39;&amp;#x2F;&#39;
+}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Lookup table for HTML escape</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a href="Escape.html#method-c-html">::html</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTML_ATTRIBUTE_SAFE_CHARS</td>
+            <td>=</td>
+            <td class="attr-value">{
+&#39;,&#39; =&gt; true, &#39;.&#39; =&gt; true, &#39;-&#39; =&gt; true, &#39;_&#39; =&gt; true
+}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Lookup table for safe chars for HTML attributes.</p>
+
+<p>This is a <a href="Hash.html">Hash</a> instead of a Set, to make lookup
+faster.</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see Lookup::Utils::Escape.html_attribute @see <a
+href="https://gist.github.com/jodosha/ac5dd54416de744b9600">gist.github.com/jodosha/ac5dd54416de744b9600</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTML_ENTITIES</td>
+            <td>=</td>
+            <td class="attr-value">{
+34   =&gt; &#39;quot&#39;,     # quotation mark
+38   =&gt; &#39;amp&#39;,      # ampersand
+60   =&gt; &#39;lt&#39;,       # less-than sign
+62   =&gt; &#39;gt&#39;,       # greater-than sign
+160  =&gt; &#39;nbsp&#39;,     # no-break space
+161  =&gt; &#39;iexcl&#39;,    # inverted exclamation mark
+162  =&gt; &#39;cent&#39;,     # cent sign
+163  =&gt; &#39;pound&#39;,    # pound sign
+164  =&gt; &#39;curren&#39;,   # currency sign
+165  =&gt; &#39;yen&#39;,      # yen sign
+166  =&gt; &#39;brvbar&#39;,   # broken bar
+167  =&gt; &#39;sect&#39;,     # section sign
+168  =&gt; &#39;uml&#39;,      # diaeresis
+169  =&gt; &#39;copy&#39;,     # copyright sign
+170  =&gt; &#39;ordf&#39;,     # feminine ordinal indicator
+171  =&gt; &#39;laquo&#39;,    # left-pointing double angle quotation mark
+172  =&gt; &#39;not&#39;,      # not sign
+173  =&gt; &#39;shy&#39;,      # soft hyphen
+174  =&gt; &#39;reg&#39;,      # registered sign
+175  =&gt; &#39;macr&#39;,     # macron
+176  =&gt; &#39;deg&#39;,      # degree sign
+177  =&gt; &#39;plusmn&#39;,   # plus-minus sign
+178  =&gt; &#39;sup2&#39;,     # superscript two
+179  =&gt; &#39;sup3&#39;,     # superscript three
+180  =&gt; &#39;acute&#39;,    # acute accent
+181  =&gt; &#39;micro&#39;,    # micro sign
+182  =&gt; &#39;para&#39;,     # pilcrow sign
+183  =&gt; &#39;middot&#39;,   # middle dot
+184  =&gt; &#39;cedil&#39;,    # cedilla
+185  =&gt; &#39;sup1&#39;,     # superscript one
+186  =&gt; &#39;ordm&#39;,     # masculine ordinal indicator
+187  =&gt; &#39;raquo&#39;,    # right-pointing double angle quotation mark
+188  =&gt; &#39;frac14&#39;,   # vulgar fraction one quarter
+189  =&gt; &#39;frac12&#39;,   # vulgar fraction one half
+190  =&gt; &#39;frac34&#39;,   # vulgar fraction three quarters
+191  =&gt; &#39;iquest&#39;,   # inverted question mark
+192  =&gt; &#39;Agrave&#39;,   # Latin capital letter a with grave
+193  =&gt; &#39;Aacute&#39;,   # Latin capital letter a with acute
+194  =&gt; &#39;Acirc&#39;,    # Latin capital letter a with circumflex
+195  =&gt; &#39;Atilde&#39;,   # Latin capital letter a with tilde
+196  =&gt; &#39;Auml&#39;,     # Latin capital letter a with diaeresis
+197  =&gt; &#39;Aring&#39;,    # Latin capital letter a with ring above
+198  =&gt; &#39;AElig&#39;,    # Latin capital letter ae
+199  =&gt; &#39;Ccedil&#39;,   # Latin capital letter c with cedilla
+200  =&gt; &#39;Egrave&#39;,   # Latin capital letter e with grave
+201  =&gt; &#39;Eacute&#39;,   # Latin capital letter e with acute
+202  =&gt; &#39;Ecirc&#39;,    # Latin capital letter e with circumflex
+203  =&gt; &#39;Euml&#39;,     # Latin capital letter e with diaeresis
+204  =&gt; &#39;Igrave&#39;,   # Latin capital letter i with grave
+205  =&gt; &#39;Iacute&#39;,   # Latin capital letter i with acute
+206  =&gt; &#39;Icirc&#39;,    # Latin capital letter i with circumflex
+207  =&gt; &#39;Iuml&#39;,     # Latin capital letter i with diaeresis
+208  =&gt; &#39;ETH&#39;,      # Latin capital letter eth
+209  =&gt; &#39;Ntilde&#39;,   # Latin capital letter n with tilde
+210  =&gt; &#39;Ograve&#39;,   # Latin capital letter o with grave
+211  =&gt; &#39;Oacute&#39;,   # Latin capital letter o with acute
+212  =&gt; &#39;Ocirc&#39;,    # Latin capital letter o with circumflex
+213  =&gt; &#39;Otilde&#39;,   # Latin capital letter o with tilde
+214  =&gt; &#39;Ouml&#39;,     # Latin capital letter o with diaeresis
+215  =&gt; &#39;times&#39;,    # multiplication sign
+216  =&gt; &#39;Oslash&#39;,   # Latin capital letter o with stroke
+217  =&gt; &#39;Ugrave&#39;,   # Latin capital letter u with grave
+218  =&gt; &#39;Uacute&#39;,   # Latin capital letter u with acute
+219  =&gt; &#39;Ucirc&#39;,    # Latin capital letter u with circumflex
+220  =&gt; &#39;Uuml&#39;,     # Latin capital letter u with diaeresis
+221  =&gt; &#39;Yacute&#39;,   # Latin capital letter y with acute
+222  =&gt; &#39;THORN&#39;,    # Latin capital letter thorn
+223  =&gt; &#39;szlig&#39;,    # Latin small letter sharp sXCOMMAX German Eszett
+224  =&gt; &#39;agrave&#39;,   # Latin small letter a with grave
+225  =&gt; &#39;aacute&#39;,   # Latin small letter a with acute
+226  =&gt; &#39;acirc&#39;,    # Latin small letter a with circumflex
+227  =&gt; &#39;atilde&#39;,   # Latin small letter a with tilde
+228  =&gt; &#39;auml&#39;,     # Latin small letter a with diaeresis
+229  =&gt; &#39;aring&#39;,    # Latin small letter a with ring above
+230  =&gt; &#39;aelig&#39;,    # Latin lowercase ligature ae
+231  =&gt; &#39;ccedil&#39;,   # Latin small letter c with cedilla
+232  =&gt; &#39;egrave&#39;,   # Latin small letter e with grave
+233  =&gt; &#39;eacute&#39;,   # Latin small letter e with acute
+234  =&gt; &#39;ecirc&#39;,    # Latin small letter e with circumflex
+235  =&gt; &#39;euml&#39;,     # Latin small letter e with diaeresis
+236  =&gt; &#39;igrave&#39;,   # Latin small letter i with grave
+237  =&gt; &#39;iacute&#39;,   # Latin small letter i with acute
+238  =&gt; &#39;icirc&#39;,    # Latin small letter i with circumflex
+239  =&gt; &#39;iuml&#39;,     # Latin small letter i with diaeresis
+240  =&gt; &#39;eth&#39;,      # Latin small letter eth
+241  =&gt; &#39;ntilde&#39;,   # Latin small letter n with tilde
+242  =&gt; &#39;ograve&#39;,   # Latin small letter o with grave
+243  =&gt; &#39;oacute&#39;,   # Latin small letter o with acute
+244  =&gt; &#39;ocirc&#39;,    # Latin small letter o with circumflex
+245  =&gt; &#39;otilde&#39;,   # Latin small letter o with tilde
+246  =&gt; &#39;ouml&#39;,     # Latin small letter o with diaeresis
+247  =&gt; &#39;divide&#39;,   # division sign
+248  =&gt; &#39;oslash&#39;,   # Latin small letter o with stroke
+249  =&gt; &#39;ugrave&#39;,   # Latin small letter u with grave
+250  =&gt; &#39;uacute&#39;,   # Latin small letter u with acute
+251  =&gt; &#39;ucirc&#39;,    # Latin small letter u with circumflex
+252  =&gt; &#39;uuml&#39;,     # Latin small letter u with diaeresis
+253  =&gt; &#39;yacute&#39;,   # Latin small letter y with acute
+254  =&gt; &#39;thorn&#39;,    # Latin small letter thorn
+255  =&gt; &#39;yuml&#39;,     # Latin small letter y with diaeresis
+338  =&gt; &#39;OElig&#39;,    # Latin capital ligature oe
+339  =&gt; &#39;oelig&#39;,    # Latin small ligature oe
+352  =&gt; &#39;Scaron&#39;,   # Latin capital letter s with caron
+353  =&gt; &#39;scaron&#39;,   # Latin small letter s with caron
+376  =&gt; &#39;Yuml&#39;,     # Latin capital letter y with diaeresis
+402  =&gt; &#39;fnof&#39;,     # Latin small letter f with hook
+710  =&gt; &#39;circ&#39;,     # modifier letter circumflex accent
+732  =&gt; &#39;tilde&#39;,    # small tilde
+913  =&gt; &#39;Alpha&#39;,    # Greek capital letter alpha
+914  =&gt; &#39;Beta&#39;,     # Greek capital letter beta
+915  =&gt; &#39;Gamma&#39;,    # Greek capital letter gamma
+916  =&gt; &#39;Delta&#39;,    # Greek capital letter delta
+917  =&gt; &#39;Epsilon&#39;,  # Greek capital letter epsilon
+918  =&gt; &#39;Zeta&#39;,     # Greek capital letter zeta
+919  =&gt; &#39;Eta&#39;,      # Greek capital letter eta
+920  =&gt; &#39;Theta&#39;,    # Greek capital letter theta
+921  =&gt; &#39;Iota&#39;,     # Greek capital letter iota
+922  =&gt; &#39;Kappa&#39;,    # Greek capital letter kappa
+923  =&gt; &#39;Lambda&#39;,   # Greek capital letter lambda
+924  =&gt; &#39;Mu&#39;,       # Greek capital letter mu
+925  =&gt; &#39;Nu&#39;,       # Greek capital letter nu
+926  =&gt; &#39;Xi&#39;,       # Greek capital letter xi
+927  =&gt; &#39;Omicron&#39;,  # Greek capital letter omicron
+928  =&gt; &#39;Pi&#39;,       # Greek capital letter pi
+929  =&gt; &#39;Rho&#39;,      # Greek capital letter rho
+931  =&gt; &#39;Sigma&#39;,    # Greek capital letter sigma
+932  =&gt; &#39;Tau&#39;,      # Greek capital letter tau
+933  =&gt; &#39;Upsilon&#39;,  # Greek capital letter upsilon
+934  =&gt; &#39;Phi&#39;,      # Greek capital letter phi
+935  =&gt; &#39;Chi&#39;,      # Greek capital letter chi
+936  =&gt; &#39;Psi&#39;,      # Greek capital letter psi
+937  =&gt; &#39;Omega&#39;,    # Greek capital letter omega
+945  =&gt; &#39;alpha&#39;,    # Greek small letter alpha
+946  =&gt; &#39;beta&#39;,     # Greek small letter beta
+947  =&gt; &#39;gamma&#39;,    # Greek small letter gamma
+948  =&gt; &#39;delta&#39;,    # Greek small letter delta
+949  =&gt; &#39;epsilon&#39;,  # Greek small letter epsilon
+950  =&gt; &#39;zeta&#39;,     # Greek small letter zeta
+951  =&gt; &#39;eta&#39;,      # Greek small letter eta
+952  =&gt; &#39;theta&#39;,    # Greek small letter theta
+953  =&gt; &#39;iota&#39;,     # Greek small letter iota
+954  =&gt; &#39;kappa&#39;,    # Greek small letter kappa
+955  =&gt; &#39;lambda&#39;,   # Greek small letter lambda
+956  =&gt; &#39;mu&#39;,       # Greek small letter mu
+957  =&gt; &#39;nu&#39;,       # Greek small letter nu
+958  =&gt; &#39;xi&#39;,       # Greek small letter xi
+959  =&gt; &#39;omicron&#39;,  # Greek small letter omicron
+960  =&gt; &#39;pi&#39;,       # Greek small letter pi
+961  =&gt; &#39;rho&#39;,      # Greek small letter rho
+962  =&gt; &#39;sigmaf&#39;,   # Greek small letter final sigma
+963  =&gt; &#39;sigma&#39;,    # Greek small letter sigma
+964  =&gt; &#39;tau&#39;,      # Greek small letter tau
+965  =&gt; &#39;upsilon&#39;,  # Greek small letter upsilon
+966  =&gt; &#39;phi&#39;,      # Greek small letter phi
+967  =&gt; &#39;chi&#39;,      # Greek small letter chi
+968  =&gt; &#39;psi&#39;,      # Greek small letter psi
+969  =&gt; &#39;omega&#39;,    # Greek small letter omega
+977  =&gt; &#39;thetasym&#39;, # Greek theta symbol
+978  =&gt; &#39;upsih&#39;,    # Greek upsilon with hook symbol
+982  =&gt; &#39;piv&#39;,      # Greek pi symbol
+8194 =&gt; &#39;ensp&#39;,     # en space
+8195 =&gt; &#39;emsp&#39;,     # em space
+8201 =&gt; &#39;thinsp&#39;,   # thin space
+8204 =&gt; &#39;zwnj&#39;,     # zero width non-joiner
+8205 =&gt; &#39;zwj&#39;,      # zero width joiner
+8206 =&gt; &#39;lrm&#39;,      # left-to-right mark
+8207 =&gt; &#39;rlm&#39;,      # right-to-left mark
+8211 =&gt; &#39;ndash&#39;,    # en dash
+8212 =&gt; &#39;mdash&#39;,    # em dash
+8216 =&gt; &#39;lsquo&#39;,    # left single quotation mark
+8217 =&gt; &#39;rsquo&#39;,    # right single quotation mark
+8218 =&gt; &#39;sbquo&#39;,    # single low-9 quotation mark
+8220 =&gt; &#39;ldquo&#39;,    # left double quotation mark
+8221 =&gt; &#39;rdquo&#39;,    # right double quotation mark
+8222 =&gt; &#39;bdquo&#39;,    # double low-9 quotation mark
+8224 =&gt; &#39;dagger&#39;,   # dagger
+8225 =&gt; &#39;Dagger&#39;,   # double dagger
+8226 =&gt; &#39;bull&#39;,     # bullet
+8230 =&gt; &#39;hellip&#39;,   # horizontal ellipsis
+8240 =&gt; &#39;permil&#39;,   # per mille sign
+8242 =&gt; &#39;prime&#39;,    # prime
+8243 =&gt; &#39;Prime&#39;,    # double prime
+8249 =&gt; &#39;lsaquo&#39;,   # single left-pointing angle quotation mark
+8250 =&gt; &#39;rsaquo&#39;,   # single right-pointing angle quotation mark
+8254 =&gt; &#39;oline&#39;,    # overline
+8260 =&gt; &#39;frasl&#39;,    # fraction slash
+8364 =&gt; &#39;euro&#39;,     # euro sign
+8465 =&gt; &#39;image&#39;,    # black-letter capital i
+8472 =&gt; &#39;weierp&#39;,   # script capital pXCOMMAX Weierstrass p
+8476 =&gt; &#39;real&#39;,     # black-letter capital r
+8482 =&gt; &#39;trade&#39;,    # trademark sign
+8501 =&gt; &#39;alefsym&#39;,  # alef symbol
+8592 =&gt; &#39;larr&#39;,     # leftwards arrow
+8593 =&gt; &#39;uarr&#39;,     # upwards arrow
+8594 =&gt; &#39;rarr&#39;,     # rightwards arrow
+8595 =&gt; &#39;darr&#39;,     # downwards arrow
+8596 =&gt; &#39;harr&#39;,     # left right arrow
+8629 =&gt; &#39;crarr&#39;,    # downwards arrow with corner leftwards
+8656 =&gt; &#39;lArr&#39;,     # leftwards double arrow
+8657 =&gt; &#39;uArr&#39;,     # upwards double arrow
+8658 =&gt; &#39;rArr&#39;,     # rightwards double arrow
+8659 =&gt; &#39;dArr&#39;,     # downwards double arrow
+8660 =&gt; &#39;hArr&#39;,     # left right double arrow
+8704 =&gt; &#39;forall&#39;,   # for all
+8706 =&gt; &#39;part&#39;,     # partial differential
+8707 =&gt; &#39;exist&#39;,    # there exists
+8709 =&gt; &#39;empty&#39;,    # empty set
+8711 =&gt; &#39;nabla&#39;,    # nabla
+8712 =&gt; &#39;isin&#39;,     # element of
+8713 =&gt; &#39;notin&#39;,    # not an element of
+8715 =&gt; &#39;ni&#39;,       # contains as member
+8719 =&gt; &#39;prod&#39;,     # n-ary product
+8721 =&gt; &#39;sum&#39;,      # n-ary summation
+8722 =&gt; &#39;minus&#39;,    # minus sign
+8727 =&gt; &#39;lowast&#39;,   # asterisk operator
+8730 =&gt; &#39;radic&#39;,    # square root
+8733 =&gt; &#39;prop&#39;,     # proportional to
+8734 =&gt; &#39;infin&#39;,    # infinity
+8736 =&gt; &#39;ang&#39;,      # angle
+8743 =&gt; &#39;and&#39;,      # logical and
+8744 =&gt; &#39;or&#39;,       # logical or
+8745 =&gt; &#39;cap&#39;,      # intersection
+8746 =&gt; &#39;cup&#39;,      # union
+8747 =&gt; &#39;int&#39;,      # integral
+8756 =&gt; &#39;there4&#39;,   # therefore
+8764 =&gt; &#39;sim&#39;,      # tilde operator
+8773 =&gt; &#39;cong&#39;,     # congruent to
+8776 =&gt; &#39;asymp&#39;,    # almost equal to
+8800 =&gt; &#39;ne&#39;,       # not equal to
+8801 =&gt; &#39;equiv&#39;,    # identical toXCOMMAX equivalent to
+8804 =&gt; &#39;le&#39;,       # less-than or equal to
+8805 =&gt; &#39;ge&#39;,       # greater-than or equal to
+8834 =&gt; &#39;sub&#39;,      # subset of
+8835 =&gt; &#39;sup&#39;,      # superset of
+8836 =&gt; &#39;nsub&#39;,     # not a subset of
+8838 =&gt; &#39;sube&#39;,     # subset of or equal to
+8839 =&gt; &#39;supe&#39;,     # superset of or equal to
+8853 =&gt; &#39;oplus&#39;,    # circled plus
+8855 =&gt; &#39;otimes&#39;,   # circled times
+8869 =&gt; &#39;perp&#39;,     # up tack
+8901 =&gt; &#39;sdot&#39;,     # dot operator
+8968 =&gt; &#39;lceil&#39;,    # left ceiling
+8969 =&gt; &#39;rceil&#39;,    # right ceiling
+8970 =&gt; &#39;lfloor&#39;,   # left floor
+8971 =&gt; &#39;rfloor&#39;,   # right floor
+9001 =&gt; &#39;lang&#39;,     # left-pointing angle bracket
+9002 =&gt; &#39;rang&#39;,     # right-pointing angle bracket
+9674 =&gt; &#39;loz&#39;,      # lozenge
+9824 =&gt; &#39;spades&#39;,   # black spade suit
+9827 =&gt; &#39;clubs&#39;,    # black club suit
+9829 =&gt; &#39;hearts&#39;,   # black heart suit
+9830 =&gt; &#39;diams&#39;,    # black diamond suit
+}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Lookup table for HTML attribute escape</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a href="Escape.html#method-c-html_attribute">::html_attribute</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_URL_SCHEMES</td>
+            <td>=</td>
+            <td class="attr-value">[&#39;http&#39;, &#39;https&#39;, &#39;mailto&#39;].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Allowed URL schemes</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a href="Escape.html#method-c-url">::url</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-html">
+            
+              <b>html</b>(input)
+            
+            <a href="../../../classes/Hanami/Utils/Escape.html#method-c-html" name="method-c-html" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Escape.html">Escape</a> HTML contents</p>
+
+<p>This MUST be used only for tag contents. Please use `html_attribute` for
+escaping HTML attributes.</p>
+
+<p>@param input [String] the input</p>
+
+<p>@return [String] the escaped string</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet</a>
+OWASP XSS Cheat Sheet Rule #1</p>
+
+<p>@example Good practice</p>
+
+<pre><code>&lt;div&gt;&lt;%= Hanami::Utils::Escape.html(&#39;&lt;script&gt;alert(1);&lt;/script&gt;&#39;) %&gt;&lt;/div&gt;
+&lt;div&gt;&amp;lt;script&amp;gt;alert(1);&amp;lt;&amp;#x2F;script&amp;gt;&lt;/div&gt;</code></pre>
+
+<p>@example Bad practice</p>
+
+<pre><code># WRONG Use Escape.html_attribute
+&lt;a title=&quot;&lt;%= Hanami::Utils::Escape.html(&#39;...&#39;) %&gt;&quot;&gt;link&lt;/a&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-html_source')" id="l_method-c-html_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/d15cfe598fe5b4b04f1c8d46cf6fbdb42b6c54b4/lib/hanami/utils/escape.rb#L420" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/escape.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">html</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-identifier">input</span> = <span class="ruby-identifier">encode</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">input</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SafeString</span>)
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">SafeString</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each_char</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chr</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">HTML_CHARS</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">chr</span>, <span class="ruby-identifier">chr</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-html_attribute">
+            
+              <b>html_attribute</b>(input)
+            
+            <a href="../../../classes/Hanami/Utils/Escape.html#method-c-html_attribute" name="method-c-html_attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Escape.html">Escape</a> HTML attributes</p>
+
+<p>This can be used both for HTML attributes and contents. Please note that
+this is more computational expensive. If you need to escape only HTML
+contents, please use `.html`.</p>
+
+<p>@param input [String] the input</p>
+
+<p>@return [String] the escaped string</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet</a>
+OWASP XSS Cheat Sheet Rule #2</p>
+
+<p>@example Good practice</p>
+
+<pre><code>&lt;a title=&quot;&lt;%= Hanami::Utils::Escape.html_attribute(&#39;...&#39;) %&gt;&quot;&gt;link&lt;/a&gt;</code></pre>
+
+<p>@example Good but expensive practice</p>
+
+<pre><code># Alternatively you can use Escape.html
+&lt;p&gt;&lt;%= Hanami::Utils::Escape.html_attribute(&#39;...&#39;) %&gt;&lt;/p&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-html_attribute_source')" id="l_method-c-html_attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/d15cfe598fe5b4b04f1c8d46cf6fbdb42b6c54b4/lib/hanami/utils/escape.rb#L453" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-html_attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/escape.rb, line 453</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">html_attribute</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-identifier">input</span> = <span class="ruby-identifier">encode</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">input</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SafeString</span>)
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">SafeString</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each_char</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chr</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encode_char</span>(<span class="ruby-identifier">chr</span>, <span class="ruby-constant">HTML_ATTRIBUTE_SAFE_CHARS</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-url">
+            
+              <b>url</b>(input, schemes = DEFAULT_URL_SCHEMES)
+            
+            <a href="../../../classes/Hanami/Utils/Escape.html#method-c-url" name="method-c-url" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Escape.html">Escape</a> URL for HTML attributes (href, src,
+etc..).</p>
+
+<p>It extracts from the given input the first valid URL that matches the
+whitelisted schemes (default: http, https and mailto).</p>
+
+<p>It&#39;s possible to pass a second optional argument to specify different
+schemes.</p>
+
+<p>@param input [String] the input @param schemes [Array&lt;String&gt;] an
+array of whitelisted schemes</p>
+
+<p>@return [String] the escaped string</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see Hanami::Utils::Escape::DEFAULT_URL_SCHEMES @see <a
+href="http://www.ruby-doc.org/stdlib/libdoc/uri/rdoc/URI.html#method-c-extract">www.ruby-doc.org/stdlib/libdoc/uri/rdoc/URI.html#method-c-extract</a></p>
+
+<p>@example Basic usage</p>
+
+<pre><code>&lt;%
+  good_input = &quot;http://hanamirb.org&quot;
+  evil_input = &quot;javascript:alert(&#39;xss&#39;)&quot;
+
+  escaped_good_input = Hanami::Utils::Escape.url(good_input) # =&gt; &quot;http://hanamirb.org&quot;
+  escaped_evil_input = Hanami::Utils::Escape.url(evil_input) # =&gt; &quot;&quot;
+%&gt;
+
+&lt;a href=&quot;&lt;%= escaped_good_input %&gt;&quot;&gt;personal website&lt;/a&gt;
+&lt;a href=&quot;&lt;%= escaped_evil_input %&gt;&quot;&gt;personal website&lt;/a&gt;</code></pre>
+
+<p>@example Custom scheme</p>
+
+<pre><code>&lt;%
+  schemes  = [&#39;ftp&#39;, &#39;ftps&#39;]
+
+  accepted = &quot;ftps://ftp.example.org&quot;
+  rejected = &quot;http://www.example.org&quot;
+
+  escaped_accepted = Hanami::Utils::Escape.url(accepted) # =&gt; &quot;ftps://ftp.example.org&quot;
+  escaped_rejected = Hanami::Utils::Escape.url(rejected) # =&gt; &quot;&quot;
+%&gt;
+
+&lt;a href=&quot;&lt;%= escaped_accepted %&gt;&quot;&gt;FTP&lt;/a&gt;
+&lt;a href=&quot;&lt;%= escaped_rejected %&gt;&quot;&gt;FTP&lt;/a&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-url_source')" id="l_method-c-url_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/d15cfe598fe5b4b04f1c8d46cf6fbdb42b6c54b4/lib/hanami/utils/escape.rb#L509" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-url_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/escape.rb, line 509</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">schemes</span> = <span class="ruby-constant">DEFAULT_URL_SCHEMES</span>)
+  <span class="ruby-identifier">input</span> = <span class="ruby-identifier">encode</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">input</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SafeString</span>)
+
+  <span class="ruby-constant">SafeString</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">extract</span>(
+      <span class="ruby-constant">URI</span>.<span class="ruby-identifier">decode_www_form_component</span>(<span class="ruby-identifier">input</span>),
+      <span class="ruby-identifier">schemes</span>
+    ).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

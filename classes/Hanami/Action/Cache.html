@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Cache</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Cache 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/cache_rb.html">sources/controller/lib/hanami/action/cache.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/cache/cache_control_rb.html">sources/controller/lib/hanami/action/cache/cache_control.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/cache/conditional_get_rb.html">sources/controller/lib/hanami/action/cache/conditional_get.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/cache/directives_rb.html">sources/controller/lib/hanami/action/cache/directives.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/cache/expires_rb.html">sources/controller/lib/hanami/action/cache/expires.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Cache.html">Cache</a> type API</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see Hanami::Action::Cache::ClassMethods#cache_control @see
+Hanami::Action::Cache::ClassMethods#expires @see
+Hanami::Action::Cache::ClassMethods#fresh</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Cache/CacheControl.html">Hanami::Action::Cache::CacheControl</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Cache/Expires.html">Hanami::Action::Cache::Expires</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/ConditionalGet.html">Hanami::Action::Cache::ConditionalGet</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/Directives.html">Hanami::Action::Cache::Directives</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/ETag.html">Hanami::Action::Cache::ETag</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/LastModified.html">Hanami::Action::Cache::LastModified</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/NonValueDirective.html">Hanami::Action::Cache::NonValueDirective</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Cache/ValueDirective.html">Hanami::Action::Cache::ValueDirective</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cache_control">cache_control</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-expires">expires</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fresh">fresh</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Cache/CacheControl.html">
+              Hanami::Action::Cache::CacheControl
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Cache/Expires.html">
+              Hanami::Action::Cache::Expires
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">IF_NONE_MATCH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_IF_NONE_MATCH&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ETAG</td>
+            <td>=</td>
+            <td class="attr-value">&#39;ETag&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The HTTP header for <a href="Cache/ETag.html">ETag</a></p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IF_MODIFIED_SINCE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_IF_MODIFIED_SINCE&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">LAST_MODIFIED</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Last-Modified&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The HTTP header for Last-Modified</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">VALUE_DIRECTIVES</td>
+            <td>=</td>
+            <td class="attr-value">%i(max_age s_maxage min_fresh max_stale).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Cache-Control directives which have values</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NON_VALUE_DIRECTIVES</td>
+            <td>=</td>
+            <td class="attr-value">%i(public private no_cache no_store no_transform must_revalidate proxy_revalidate).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Cache-Control directives which are implicitly true</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../../classes/Hanami/Action/Cache.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes exposures logic</p>
+
+<p>@param base [Class] the target action</p>
+
+<p>@since 0.3.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Module.html#method-i-included">www.ruby-doc.org/core-2.1.2/Module.html#method-i-included</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/cache.rb#L24" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/cache.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">CacheControl</span>, <span class="ruby-constant">Expires</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cache_control">
+            
+              <b>cache_control</b>(*values)
+            
+            <a href="../../../classes/Hanami/Action/Cache.html#method-i-cache_control" name="method-i-cache_control" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify response freshness policy for HTTP caches (Cache-Control header).
+Any number of non-value directives (:public, :private, :no_cache,
+:no_store, :must_revalidate, :proxy_revalidate) may be passed along with a
+Hash of value directives (:max_age, :min_stale, :s_max_age).</p>
+
+<p>See RFC 2616 / 14.9 for more on standard cache control directives: <a
+href="http://tools.ietf.org/html/rfc2616#section-14.9.1">tools.ietf.org/html/rfc2616#section-14.9.1</a></p>
+
+<p>@param values [Array&lt;Symbols, Hash&gt;] mapped to <a
+href="Cache.html#method-i-cache_control">#cache_control</a> directives
+@option values [Symbol] :public @option values [Symbol] :private @option
+values [Symbol] :no_cache @option values [Symbol] :no_store @option values
+[Symbol] :must_validate @option values [Symbol] :proxy_revalidate @option
+values [Hash] :max_age @option values [Hash] :min_stale @option values
+[Hash] :s_max_age</p>
+
+<p>@return void</p>
+
+<p>@since 0.3.0 @api public</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+require &#39;hanami/action/cache&#39;
+
+class Show
+  include Hanami::Action
+  include Hanami::Action::Cache
+
+  def call(params)
+    # ...
+
+    # set Cache-Control directives
+    cache_control :public, max_age: 900, s_maxage: 86400
+
+    # overwrite previous Cache-Control directives
+    cache_control :private, :no_cache, :no_store
+
+    =&gt; Cache-Control: private, no-store, max-age=900
+
+  end
+end</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cache_control_source')" id="l_method-i-cache_control_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/cache.rb#L78" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-cache_control_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/cache.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cache_control</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">cache_control</span> = <span class="ruby-constant">CacheControl</span><span class="ruby-operator">::</span><span class="ruby-constant">Directives</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">cache_control</span>.<span class="ruby-identifier">headers</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-expires">
+            
+              <b>expires</b>(amount, *values)
+            
+            <a href="../../../classes/Hanami/Action/Cache.html#method-i-expires" name="method-i-expires" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the <a href="Cache/Expires.html">Expires</a> header and
+Cache-Control/max-age directive. Amount can be an integer number of seconds
+in the future or a Time object indicating when the response should be
+considered “stale”. The remaining “values” arguments are passed to the
+#cache_control helper:</p>
+
+<p>@param amount [Integer,Time] number of seconds or point in time @param
+values [Array&lt;Symbols&gt;] mapped to <a
+href="Cache.html#method-i-cache_control">#cache_control</a> directives</p>
+
+<p>@return void</p>
+
+<p>@since 0.3.0 @api public</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+require &#39;hanami/action/cache&#39;
+
+class Show
+  include Hanami::Action
+  include Hanami::Action::Cache
+
+  def call(params)
+    # ...
+
+    # set Cache-Control directives and Expires
+    expires 900, :public
+
+    # overwrite Cache-Control directives and Expires
+    expires 300, :private, :no_cache, :no_store
+
+    =&gt; Expires: Thu, 26 Jun 2014 12:00:00 GMT
+    =&gt; Cache-Control: private, no-cache, no-store max-age=300
+
+  end
+end</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-expires_source')" id="l_method-i-expires_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/cache.rb#L119" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-expires_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/cache.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">expires</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">expires</span> = <span class="ruby-constant">Expires</span><span class="ruby-operator">::</span><span class="ruby-constant">Directives</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">expires</span>.<span class="ruby-identifier">headers</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fresh">
+            
+              <b>fresh</b>(options)
+            
+            <a href="../../../classes/Hanami/Action/Cache.html#method-i-fresh" name="method-i-fresh" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the etag, last_modified, or both headers on the response and halts a
+304 Not Modified if the request is still <a
+href="Cache.html#method-i-fresh">#fresh</a> respecting IfNoneMatch and
+IfModifiedSince request headers</p>
+
+<p>@param options [Hash] @option options [Integer] :etag for testing
+IfNoneMatch conditions @option options [Date] :last_modified for testing
+IfModifiedSince conditions</p>
+
+<p>@return void</p>
+
+<p>@since 0.3.0 @api public</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+require &#39;hanami/action/cache&#39;
+
+class Show
+  include Hanami::Action
+  include Hanami::Action::Cache
+
+  def call(params)
+    # ...
+
+    # set etag response header and halt 304
+    # if request matches IF_NONE_MATCH header
+    fresh etag: @resource.updated_at.to_i
+
+    # set last_modified response header and halt 304
+    # if request matches IF_MODIFIED_SINCE
+    fresh last_modified: @resource.updated_at
+
+    # set etag and last_modified response header,
+    # halt 304 if request matches IF_MODIFIED_SINCE
+    # and IF_NONE_MATCH
+    fresh last_modified: @resource.updated_at
+
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fresh_source')" id="l_method-i-fresh_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/cache.rb#L163" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-fresh_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/cache.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fresh</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">conditional_get</span> = <span class="ruby-constant">ConditionalGet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@_env</span>, <span class="ruby-identifier">options</span>)
+
+  <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">conditional_get</span>.<span class="ruby-identifier">headers</span>)
+
+  <span class="ruby-identifier">conditional_get</span>.<span class="ruby-identifier">fresh?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">halt</span> <span class="ruby-number">304</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

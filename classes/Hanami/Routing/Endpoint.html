@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routing::Endpoint</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routing::Endpoint 
+            
+                <span class="parent">&lt; 
+                    
+                    SimpleDelegator
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/router/lib/hanami/routing/endpoint_rb.html">sources/router/lib/hanami/routing/endpoint.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../Routing.html">Routing</a> endpoint This is the object that
+responds to an HTTP request made against a certain path.</p>
+
+<p>The router will use this class for:</p>
+
+<pre><code>* Procs and any Rack compatible object (respond to #call)</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@api private</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  get &#39;/proc&#39;,     to: -&gt;(env) { [200, {}, [&#39;This will use Hanami::Routing::Endpoint&#39;]] }
+  get &#39;/rack-app&#39;, to: RackApp.new
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <b>inspect</b>()
+            
+            <a href="../../../classes/Hanami/Routing/Endpoint.html#method-i-inspect" name="method-i-inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/endpoint.rb#L35" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/endpoint.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">__getobj__</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>
+    <span class="ruby-identifier">source</span>, <span class="ruby-identifier">line</span>     = <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">source_location</span>
+    <span class="ruby-identifier">lambda_inspector</span> = <span class="ruby-string">&quot; (lambda)&quot;</span>  <span class="ruby-keyword">if</span>  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">lambda?</span>
+
+    <span class="ruby-node">&quot;#&lt;Proc@#{ ::File.expand_path(source) }:#{ line }#{ lambda_inspector }&gt;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span>
+    <span class="ruby-identifier">__getobj__</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#&lt;#{ __getobj__.class }&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::NullTemplate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::View::Rendering::NullTemplate 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering/null_template_rb.html">sources/view/lib/hanami/view/rendering/null_template.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Null <a href="../../../Object.html">Object</a> pattern for layout template</p>
+
+<p>It&#39;s used when a layout doesn&#39;t have an associated template.</p>
+
+<p>A common scenario is for non-html requests. Usually we have a template for
+the application layout (eg `templates/application.html.erb`), but we
+don&#39;t use to have the a template for JSON requests (eg
+`templates/application.json.erb`). Because most of the times, we only
+return the output of the view.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+# We have an ApplicationLayout (views/application_layout.rb):
+class ApplicationLayout
+  include Hanami::Layout
+end
+
+# Our layout has a template for HTML requests, located at:
+# templates/application.html.erb
+
+# We set it as global layout
+Hanami::View.layout = :application
+
+# We have two views for HTML and JSON articles.
+# They have a template each:
+#
+#   * templates/articles/show.html.erb
+#   * templates/articles/show.json.erb
+module Articles
+  class Show
+    include Hanami::View
+    format :html
+  end
+
+  class JsonShow &lt; Show
+    format :json
+  end
+end
+
+# We initialize the framework
+Hanami::View.load!
+
+# When we ask for a HTML rendering, it will use `Articles::Show` and
+# ApplicationLayout. The output will be a composition of:
+#
+#   * templates/articles/show.html.erb
+#   * templates/application.html.erb
+
+# When we ask for a JSON rendering, it will use `Articles::JsonShow`
+# and ApplicationLayout. Since, the layout doesn&#39;t have any associated
+# template for JSON, the output will be a composition of:
+#
+#   * templates/articles/show.json.erb
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render">render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-render">
+            
+              <b>render</b>(scope, locals = {})
+            
+            <a href="../../../../classes/Hanami/View/Rendering/NullTemplate.html#method-i-render" name="method-i-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Render the layout template</p>
+
+<p>@param scope [Hanami::View::Scope] the rendering scope @param locals [Hash]
+a set of objects available during the rendering @yield [Proc] yields the
+given block</p>
+
+<p>@return [String] the output of the rendering process</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../../Layout.html#method-i-render">Hanami::Layout#render</a>
+@see <a
+href="../Rendering.html#method-i-render">Hanami::View::Rendering#render</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_source')" id="l_method-i-render_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/rendering/null_template.rb#L77" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/null_template.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render</span>(<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">locals</span> = {})
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

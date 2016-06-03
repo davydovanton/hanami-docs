@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::View::Rendering 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering_rb.html">sources/view/lib/hanami/view/rendering.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/layout_finder_rb.html">sources/view/lib/hanami/view/rendering/layout_finder.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/layout_registry_rb.html">sources/view/lib/hanami/view/rendering/layout_registry.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/layout_scope_rb.html">sources/view/lib/hanami/view/rendering/layout_scope.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/null_layout_rb.html">sources/view/lib/hanami/view/rendering/null_layout.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/null_local_rb.html">sources/view/lib/hanami/view/rendering/null_local.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/null_template_rb.html">sources/view/lib/hanami/view/rendering/null_template.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/partial_rb.html">sources/view/lib/hanami/view/rendering/partial.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/partial_file_rb.html">sources/view/lib/hanami/view/rendering/partial_file.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/partial_finder_rb.html">sources/view/lib/hanami/view/rendering/partial_finder.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/partial_templates_finder_rb.html">sources/view/lib/hanami/view/rendering/partial_templates_finder.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/registry_rb.html">sources/view/lib/hanami/view/rendering/registry.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/scope_rb.html">sources/view/lib/hanami/view/rendering/scope.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/template_rb.html">sources/view/lib/hanami/view/rendering/template.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/template_finder_rb.html">sources/view/lib/hanami/view/rendering/template_finder.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/template_name_rb.html">sources/view/lib/hanami/view/rendering/template_name.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/templates_finder_rb.html">sources/view/lib/hanami/view/rendering/templates_finder.rb</a></li>
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/rendering/view_finder_rb.html">sources/view/lib/hanami/view/rendering/view_finder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Rendering.html">Rendering</a> methods</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="Rendering/InstanceMethods.html">Hanami::View::Rendering::InstanceMethods</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Rendering/InstanceMethods.html">Hanami::View::Rendering::InstanceMethods</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/LayoutFinder.html">Hanami::View::Rendering::LayoutFinder</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/LayoutRegistry.html">Hanami::View::Rendering::LayoutRegistry</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/LayoutScope.html">Hanami::View::Rendering::LayoutScope</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/NullLayout.html">Hanami::View::Rendering::NullLayout</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/NullLocal.html">Hanami::View::Rendering::NullLocal</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/NullTemplate.html">Hanami::View::Rendering::NullTemplate</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/Partial.html">Hanami::View::Rendering::Partial</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/PartialFile.html">Hanami::View::Rendering::PartialFile</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/PartialFinder.html">Hanami::View::Rendering::PartialFinder</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/PartialTemplatesFinder.html">Hanami::View::Rendering::PartialTemplatesFinder</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/Registry.html">Hanami::View::Rendering::Registry</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/Scope.html">Hanami::View::Rendering::Scope</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/Template.html">Hanami::View::Rendering::Template</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/TemplateFinder.html">Hanami::View::Rendering::TemplateFinder</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/TemplateName.html">Hanami::View::Rendering::TemplateName</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/TemplatesFinder.html">Hanami::View::Rendering::TemplatesFinder</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rendering/ViewFinder.html">Hanami::View::Rendering::ViewFinder</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-extended">extended</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render">render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Rendering/InstanceMethods.html">
+              Hanami::View::Rendering::InstanceMethods
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-extended">
+            
+              <b>extended</b>(base)
+            
+            <a href="../../../classes/Hanami/View/Rendering.html#method-c-extended" name="method-c-extended" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-extended_source')" id="l_method-c-extended_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-extended_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">InstanceMethods</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-render">
+            
+              <b>render</b>(context)
+            
+            <a href="../../../classes/Hanami/View/Rendering.html#method-i-render" name="method-i-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Render the given context and locals with the appropriate template. If there
+are registered subclasses, it choose the right class, according</p>
+
+<pre><code>to the requested format.</code></pre>
+
+<p>@param context [Hash] the context for the rendering process @option context
+[Symbol] :format the requested format</p>
+
+<p>@return [String] the output of the rendering process</p>
+
+<p>@raise [Hanami::View::MissingTemplateError] if it can&#39;t find a template</p>
+
+<pre><code>for the given context</code></pre>
+
+<p>@raise [Hanami::View::MissingFormatError] if the given context doesn&#39;t</p>
+
+<pre><code>have the :format key</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::View#initialize @see Hanami::View#render</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+article = OpenStruct.new(title: &#39;Hello&#39;)
+
+module Articles
+  class Show
+    include Hanami::View
+
+    def title
+      @title ||= article.title.upcase
+    end
+  end
+
+  class JsonShow &lt; Show
+    format :json
+
+    def title
+      super.downcase
+    end
+  end
+end
+
+Hanami::View.root = &#39;/path/to/templates&#39;
+Hanami::View.load!
+
+Articles::Show.render(format: :html,  article: article)
+  # =&gt; renders `articles/show.html.erb`
+
+Articles::Show.render(format: :json, article: article)
+  # =&gt; renders `articles/show.json.erb`
+
+Articles::Show.render(format: :xml, article: article)
+  # =&gt; raises Hanami::View::MissingTemplateError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_source')" id="l_method-i-render_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L255" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">registry</span>.<span class="ruby-identifier">resolve</span>(<span class="ruby-identifier">context</span>).<span class="ruby-identifier">render</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/View/Rendering.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loading mechanism hook.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../View.html#method-c-load-21">Hanami::View.load!</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L267" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">registry</span>.<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

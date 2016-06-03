@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routing::RoutesInspector</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routing::RoutesInspector 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/router/lib/hanami/routing/routes_inspector_rb.html">sources/router/lib/hanami/routing/routes_inspector.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../Routes.html">Routes</a> inspector</p>
+
+<p>@since 0.2.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect_routes">inspect_routes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">FORMATTER</td>
+            <td>=</td>
+            <td class="attr-value">&quot;%&lt;name&gt;20s %&lt;methods&gt;-10s %&lt;path&gt;-30s %&lt;endpoint&gt;-30s\n&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> route formatter</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_METHODS_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;, &#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> HTTP methods separator</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">INSPECTOR_HEADER_HASH</td>
+            <td>=</td>
+            <td class="attr-value">Hash[
+name:     &#39;Name&#39;,
+methods:  &#39;Method&#39;,
+path:     &#39;Path&#39;,
+endpoint: &#39;Action&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> inspector header hash values</p>
+
+<p>@since 0.5.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">INSPECTOR_HEADER_NAME</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Name&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> inspector header name values</p>
+
+<p>@since 0.5.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">EMPTY_LINE</td>
+            <td>=</td>
+            <td class="attr-value">&quot;\n&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Empty line string</p>
+
+<p>@since 0.5.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(routes)
+            
+            <a href="../../../classes/Hanami/Routing/RoutesInspector.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiate a <a href="RoutesInspector.html#method-c-new">::new</a>
+inspector</p>
+
+<p>@return [Hanami::Routing::RoutesInspector] the <a
+href="RoutesInspector.html#method-c-new">::new</a> instance</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/routes_inspector.rb#L50" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/routes_inspector.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">routes</span>)
+  <span class="ruby-ivar">@routes</span> = <span class="ruby-identifier">routes</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect_routes">
+            
+              <b>inspect_routes</b>(formatter, base_path)
+            
+            <a href="../../../classes/Hanami/Routing/RoutesInspector.html#method-i-inspect_routes" name="method-i-inspect_routes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a string representation of routes</p>
+
+<p>@param formatter [String] the template for the output @param base_path
+[Hanami::Utils::PathPrefix] the base path</p>
+
+<p>@return [String] serialized routes from router</p>
+
+<p>@since 0.5.1 @api private</p>
+
+<p>@see Hanami::Routing::RoutesInspector#FORMATTER @see <a
+href="RoutesInspector.html#method-i-to_s">#to_s</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_routes_source')" id="l_method-i-inspect_routes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/routes_inspector.rb#L155" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inspect_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/routes_inspector.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect_routes</span>(<span class="ruby-identifier">formatter</span>, <span class="ruby-identifier">base_path</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-string">&#39;&#39;</span>
+
+  <span class="ruby-comment"># TODO refactoring: replace conditional with polymorphism</span>
+  <span class="ruby-comment"># We&#39;re exposing too much knowledge from Routing::Route:</span>
+  <span class="ruby-comment"># #path_for_generation and #base_path</span>
+  <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">router</span> = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">nested_router</span>
+      <span class="ruby-identifier">inspect_router</span>(<span class="ruby-identifier">formatter</span>, <span class="ruby-identifier">router</span>, <span class="ruby-identifier">route</span>, <span class="ruby-identifier">base_path</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">inspect_route</span>(<span class="ruby-identifier">formatter</span>, <span class="ruby-identifier">route</span>, <span class="ruby-identifier">base_path</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <b>to_s</b>(formatter = FORMATTER, base_path = nil)
+            
+            <a href="../../../classes/Hanami/Routing/RoutesInspector.html#method-i-to_s" name="method-i-to_s" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a formatted string that describes all the routes</p>
+
+<p>@param formatter [String] the optional formatter for a route @param
+base_path [String] the base path of a nested route</p>
+
+<p>@return [String] routes pretty print</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see Hanami::Routing::RoutesInspector::FORMATTER</p>
+
+<p>@example <a href="Default.html">Default</a> formatter</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get    &#39;/&#39;,       to: &#39;home#index&#39;
+  get    &#39;/login&#39;,  to: &#39;sessions#new&#39;,     as: :login
+  post   &#39;/login&#39;,  to: &#39;sessions#create&#39;
+  delete &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, as: :logout
+end
+
+puts router.inspector.to_s
+  # =&gt;   Name Method     Path                     Action
+
+              GET, HEAD  /                        Home::Index
+        login GET, HEAD  /login                   Sessions::New
+              POST       /login                   Sessions::Create
+       logout GET, HEAD  /logout                  Sessions::Destroy</code></pre>
+
+<p>@example Custom formatter</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get    &#39;/&#39;,       to: &#39;home#index&#39;
+  get    &#39;/login&#39;,  to: &#39;sessions#new&#39;,     as: :login
+  post   &#39;/login&#39;,  to: &#39;sessions#create&#39;
+  delete &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, as: :logout
+end
+
+formatter = &quot;| %{methods} | %{name} | %{path} | %{endpoint} |\n&quot;
+
+puts router.inspector.to_s(formatter)
+  # =&gt; | Method    | Name   | Path    | Action            |
+
+       | GET, HEAD |        | /       | Home::Index       |
+       | GET, HEAD | login  | /login  | Sessions::New     |
+       | POST      |        | /login  | Sessions::Create  |
+       | GET, HEAD | logout | /logout | Sessions::Destroy |</code></pre>
+
+<p>@example Nested routes</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+class AdminHanamiApp
+  def call(env)
+  end
+  def routes
+    Hanami::Router.new {
+      get &#39;/home&#39;, to: &#39;home#index&#39;
+    }
+  end
+end
+
+router = Hanami::Router.new {
+  get &#39;/fakeroute&#39;, to: &#39;fake#index&#39;
+  mount AdminHanamiApp, at: &#39;/admin&#39;
+  mount Hanami::Router.new {
+    get &#39;/posts&#39;, to: &#39;posts#index&#39;
+    mount Hanami::Router.new {
+      get &#39;/comments&#39;, to: &#39;comments#index&#39;
+    }, at: &#39;/second_mount&#39;
+  }, at: &#39;/api&#39;
+}
+
+formatter = &quot;| %{methods} | %{name} | %{path} | %{endpoint} |\n&quot;
+
+puts router.inspector.to_s(formatter)
+  # =&gt; | Method    | Name | Path                       | Action          |
+
+       | GET, HEAD |      | /fakeroute                 | Fake::Index     |
+       | GET, HEAD |      | /admin/home                | Home::Index     |
+       | GET, HEAD |      | /api/posts                 | Posts::Index    |
+       | GET, HEAD |      | /api/second_mount/comments | Comments::Index |</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/routes_inspector.rb#L136" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/routes_inspector.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>(<span class="ruby-identifier">formatter</span> = <span class="ruby-constant">FORMATTER</span>, <span class="ruby-identifier">base_path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">base_path</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">PathPrefix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">base_path</span>)
+
+  <span class="ruby-identifier">inspect_routes</span>(<span class="ruby-identifier">formatter</span>, <span class="ruby-identifier">base_path</span>)
+    .<span class="ruby-identifier">insert</span>(<span class="ruby-number">0</span>, <span class="ruby-identifier">formatter</span> <span class="ruby-operator">%</span> <span class="ruby-constant">INSPECTOR_HEADER_HASH</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EMPTY_LINE</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

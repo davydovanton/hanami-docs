@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::View 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/view/lib/hanami/view_rb.html">sources/view/lib/hanami/view.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/configuration_rb.html">sources/view/lib/hanami/view/configuration.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/dsl_rb.html">sources/view/lib/hanami/view/dsl.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/errors_rb.html">sources/view/lib/hanami/view/errors.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/escape_rb.html">sources/view/lib/hanami/view/escape.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/inheritable_rb.html">sources/view/lib/hanami/view/inheritable.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering_rb.html">sources/view/lib/hanami/view/rendering.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/layout_finder_rb.html">sources/view/lib/hanami/view/rendering/layout_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/layout_registry_rb.html">sources/view/lib/hanami/view/rendering/layout_registry.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/layout_scope_rb.html">sources/view/lib/hanami/view/rendering/layout_scope.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/null_layout_rb.html">sources/view/lib/hanami/view/rendering/null_layout.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/null_local_rb.html">sources/view/lib/hanami/view/rendering/null_local.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/null_template_rb.html">sources/view/lib/hanami/view/rendering/null_template.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/partial_rb.html">sources/view/lib/hanami/view/rendering/partial.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/partial_file_rb.html">sources/view/lib/hanami/view/rendering/partial_file.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/partial_finder_rb.html">sources/view/lib/hanami/view/rendering/partial_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/partial_templates_finder_rb.html">sources/view/lib/hanami/view/rendering/partial_templates_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/registry_rb.html">sources/view/lib/hanami/view/rendering/registry.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/scope_rb.html">sources/view/lib/hanami/view/rendering/scope.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/template_rb.html">sources/view/lib/hanami/view/rendering/template.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/template_finder_rb.html">sources/view/lib/hanami/view/rendering/template_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/template_name_rb.html">sources/view/lib/hanami/view/rendering/template_name.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/templates_finder_rb.html">sources/view/lib/hanami/view/rendering/templates_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/view_finder_rb.html">sources/view/lib/hanami/view/rendering/view_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/template_rb.html">sources/view/lib/hanami/view/template.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/version_rb.html">sources/view/lib/hanami/view/version.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="View.html">View</a></p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="View/Dsl.html">Hanami::View::Dsl</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="View/Escape.html">Hanami::View::Escape</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="View/Inheritable.html">Hanami::View::Inheritable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="View/Rendering.html">Hanami::View::Rendering</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/Configuration.html">Hanami::View::Configuration</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/Error.html">Hanami::View::Error</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/MissingFormatError.html">Hanami::View::MissingFormatError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/MissingTemplateError.html">Hanami::View::MissingTemplateError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/MissingTemplateLayoutError.html">Hanami::View::MissingTemplateLayoutError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="View/Template.html">Hanami::View::Template</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-configure">configure</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dupe">dupe</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-duplicate">duplicate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.7.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Defines the version</p>
+
+<p>@since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-configure">
+            
+              <b>configure</b>(&amp;blk)
+            
+            <a href="../../classes/Hanami/View.html#method-c-configure" name="method-c-configure" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Configure the framework. It yields the given block in the context of the
+configuration</p>
+
+<p>@param blk [Proc] the configuration block</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="View/Configuration.html">Hanami::View::Configuration</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View.configure do
+  root &#39;/path/to/root&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-configure_source')" id="l_method-c-configure_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view.rb#L42" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-configure_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-dupe">
+            
+              <b>dupe</b>()
+            
+            <a href="../../classes/Hanami/View.html#method-c-dupe" name="method-c-dupe" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Duplicate <a href="View.html">Hanami::View</a> in order to create a new
+separated instance of the framework.</p>
+
+<p>The new instance of the framework will be completely decoupled from the
+original. It will inherit the configuration, but all the changes that
+happen after the duplication, won&#39;t be reflected on the other copies.</p>
+
+<p>@return [Module] a copy of <a href="View.html">Hanami::View</a></p>
+
+<p>@since 0.2.0 @api private</p>
+
+<p>@example Basic usage</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module MyApp
+  View = Hanami::View.dupe
+end
+
+MyApp::View == Hanami::View # =&gt; false
+
+MyApp::View.configuration ==
+  Hanami::View.configuration # =&gt; false
+</code></pre>
+
+<p>@example Inheriting configuration</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View.configure do
+  root &#39;/path/to/root&#39;
+end
+
+module MyApp
+  View = Hanami::View.dupe
+end
+
+module MyApi
+  View = Hanami::View.dupe
+  View.configure do
+    root &#39;/another/root&#39;
+  end
+end
+
+Hanami::View.configuration.root # =&gt; #&lt;Pathname:/path/to/root&gt;
+MyApp::View.configuration.root # =&gt; #&lt;Pathname:/path/to/root&gt;
+MyApi::View.configuration.root # =&gt; #&lt;Pathname:/another/root&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dupe_source')" id="l_method-c-dupe_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view.rb#L91" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-dupe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dupe</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configuration</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">duplicate</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-duplicate">
+            
+              <b>duplicate</b>(mod, views = &#39;Views&#39;, &amp;blk)
+            
+            <a href="../../classes/Hanami/View.html#method-c-duplicate" name="method-c-duplicate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre><code>Duplicate the framework and generate modules for the target application
+
+@param mod [Module] the Ruby namespace of the application
+@param views [String] the optional namespace where the application&#39;s
+  views will live
+@param blk [Proc] an optional block to configure the framework
+
+@return [Module] a copy of Hanami::View</code></pre>
+
+<p> @since 0.2.0</p>
+
+<pre><code>@see Hanami::View#dupe
+@see Hanami::View::Configuration
+@see Hanami::View::Configuration#namespace
+
+@example Basic usage
+  require &#39;hanami/view&#39;
+
+  module MyApp
+    View = Hanami::View.duplicate(self)
+  end
+
+  # It will:
+  #
+  # 1. Generate MyApp::View
+  # 2. Generate MyApp::Layout
+  # 3. Generate MyApp::Presenter
+  # 4. Generate MyApp::Views
+  # 5. Configure MyApp::Views as the default namespace for views
+
+ module MyApp::Views::Dashboard
+   class Index
+     include MyApp::View
+   end
+ end
+
+@example Compare code
+  require &#39;hanami/view&#39;
+
+  module MyApp
+    View = Hanami::View.duplicate(self) do
+      # ...
+    end
+  end
+
+  # it&#39;s equivalent to:
+
+  module MyApp
+    View   = Hanami::View.dupe
+    Layout = Hanami::Layout.dup
+
+    module Views
+    end
+
+    View.configure do
+      namespace &#39;MyApp::Views&#39;
+    end
+
+    View.configure do
+      # ...
+    end
+  end
+
+@example Custom views module
+  require &#39;hanami/view
+
+  module MyApp
+    View = Hanami::View.duplicate(self, &#39;Vs&#39;)
+  end
+
+  defined?(MyApp::Views) # =&gt; nil
+  defined?(MyApp::Vs)    # =&gt; &quot;constant&quot;
+
+  # Developers can namespace views under Vs
+  module MyApp::Vs::Dashboard
+    # ...
+  end
+
+@example Nil views module
+  require &#39;hanami/view&#39;
+
+  module MyApp
+    View = Hanami::View.duplicate(self, nil)
+  end
+
+  defined?(MyApp::Views) # =&gt; nil
+
+  # Developers can namespace views under MyApp
+  module MyApp
+    # ...
+  end
+
+@example Block usage
+  require &#39;hanami/view&#39;
+
+  module MyApp
+    View = Hanami::View.duplicate(self) do
+      root &#39;/path/to/root&#39;
+    end
+  end
+
+  Hanami::View.configuration.root # =&gt; #&lt;Pathname:.&gt;
+  MyApp::View.configuration.root # =&gt; #&lt;Pathname:/path/to/root&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-duplicate_source')" id="l_method-c-duplicate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view.rb#L200" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-duplicate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">duplicate</span>(<span class="ruby-identifier">mod</span>, <span class="ruby-identifier">views</span> = <span class="ruby-string">&#39;Views&#39;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">dupe</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-node">%Q{ module #{ views }; end }</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">views</span>
+    <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-string">%Q{
+      Layout = Hanami::Layout.dup
+      Presenter = Hanami::Presenter.dup
+    }</span>
+
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">namespace</span> [<span class="ruby-identifier">mod</span>, <span class="ruby-identifier">views</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&#39;::&#39;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../classes/Hanami/View.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes basic <a
+href="View.html">Hanami::View</a> modules to the given Class. It sets a
+copy of the framework configuration</p>
+
+<p>@param base [Class] the target view</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Module.html#method-i-included">www.ruby-doc.org/core-2.1.2/Module.html#method-i-included</a></p>
+
+<p>@see <a href="View/Dsl.html">Hanami::View::Dsl</a> @see <a
+href="View/Inheritable.html">Hanami::View::Inheritable</a> @see <a
+href="View/Rendering.html">Hanami::View::Rendering</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view.rb#L237" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">conf</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configuration</span>
+  <span class="ruby-identifier">conf</span>.<span class="ruby-identifier">add_view</span>(<span class="ruby-identifier">base</span>)
+
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Inheritable</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Dsl</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Rendering</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Escape</span>
+
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassAttribute</span>
+    <span class="ruby-identifier">class_attribute</span> <span class="ruby-value">:configuration</span>
+
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configuration</span> = <span class="ruby-identifier">conf</span>.<span class="ruby-identifier">duplicate</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">conf</span>.<span class="ruby-identifier">copy!</span>(<span class="ruby-identifier">base</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../classes/Hanami/View.html#method-c-load-21" name="method-c-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the framework</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load-21_source')" id="l_method-c-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view.rb#L260" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">load!</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

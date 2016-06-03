@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Repository::InstanceMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Repository::InstanceMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/model/lib/hanami/repository_rb.html">sources/model/lib/hanami/repository.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adapter">adapter</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-all">all</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-collection">collection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find">find</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-first">first</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-last">last</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-persist">persist</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-transaction">transaction</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter">
+            
+              <b>adapter</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-adapter" name="method-i-adapter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the currently configured <a
+href="InstanceMethods.html#method-i-adapter">#adapter</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_source')" id="l_method-i-adapter_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L226" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-adapter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">adapter</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-all">
+            
+              <b>all</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-all" name="method-i-all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns <a href="InstanceMethods.html#method-i-all">#all</a> the persisted
+entities.</p>
+
+<p>@return [Array&lt;Object&gt;] the result of the query</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.all # =&gt; [ #&lt;Article:0x007f9b19a60098&gt; ]
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-all_source')" id="l_method-i-all_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L435" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all</span>
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">all</span>(<span class="ruby-identifier">collection</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes <a href="InstanceMethods.html#method-i-all">#all</a> the records
+from the current <a
+href="InstanceMethods.html#method-i-collection">#collection</a>.</p>
+
+<p>If used with a SQL database it executes a `DELETE FROM &lt;table&gt;`.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.clear # deletes all the records
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L534" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">clear</span>(<span class="ruby-identifier">collection</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-collection">
+            
+              <b>collection</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-collection" name="method-i-collection" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the currently configured <a
+href="InstanceMethods.html#method-i-collection">#collection</a> name</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collection_source')" id="l_method-i-collection_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L231" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-collection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">collection</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">collection</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>(entity)
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a record in the database for the given entity. It returns a copy of
+the entity with `id` assigned.</p>
+
+<p>If already persisted (`id` present) it does nothing.</p>
+
+<p>@param entity [#id,#id=] the entity to <a
+href="InstanceMethods.html#method-i-create">#create</a></p>
+
+<p>@return [Object] a copy of the entity with `id` assigned</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="InstanceMethods.html#method-i-persist">#persist</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = Article.new(title: &#39;Introducing Hanami::Model&#39;)
+article.id # =&gt; nil
+
+created_article = ArticleRepository.new.create(article) # creates a record
+article.id # =&gt; nil
+created_article.id # =&gt; 23
+
+created_article = ArticleRepository.new.create(article)
+created_article.id # =&gt; 24
+
+created_article = ArticleRepository.new.create(existing_article) # =&gt; no-op
+created_article # =&gt; nil
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L313" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">_persisted?</span>(<span class="ruby-identifier">entity</span>)
+    <span class="ruby-identifier">_touch</span>(<span class="ruby-identifier">entity</span>)
+    <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <b>delete</b>(entity)
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-delete" name="method-i-delete" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes a record in the database corresponding to the given entity.</p>
+
+<p>If not already persisted (`id` present) it raises an exception.</p>
+
+<p>@param entity [#id] the entity to <a
+href="InstanceMethods.html#method-i-delete">#delete</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@raise [Hanami::Model::NonPersistedEntityError] if the given entity</p>
+
+<pre><code>wasn&#39;t already persisted.</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Model::NonPersistedEntityError</p>
+
+<p>@example With a persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = ArticleRepository.new.find(23)
+article.id # =&gt; 23
+
+ArticleRepository.new.delete(article) # deletes the record
+</code></pre>
+
+<p>@example With a non persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = Article.new(title: &#39;Introducing Hanami::Model&#39;)
+article.id # =&gt; nil
+
+ArticleRepository.new.delete(article) # raises Hanami::Model::NonPersistedEntityError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L411" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 411</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">_persisted?</span>(<span class="ruby-identifier">entity</span>)
+    <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">NonPersistedEntityError</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">entity</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find">
+            
+              <b>find</b>(id)
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-find" name="method-i-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Finds an entity by its identity.</p>
+
+<p>If used with a SQL database, it corresponds to the primary key.</p>
+
+<p>@param id [Object] the identity of the entity</p>
+
+<p>@return [Object,NilClass] the result of the query, if present</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.find(23)   # =&gt; #&lt;Article:0x007f9b19a60098&gt;
+ArticleRepository.new.find(9999) # =&gt; nil
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_source')" id="l_method-i-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L458" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 458</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">id</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-first">
+            
+              <b>first</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-first" name="method-i-first" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="InstanceMethods.html#method-i-first">#first</a> entity
+in the database.</p>
+
+<p>@return [Object,nil] the result of the query</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="InstanceMethods.html#method-i-last">#last</a></p>
+
+<p>@example With at least one persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.first # =&gt; #&lt;Article:0x007f8c71d98a28&gt;
+</code></pre>
+
+<p>@example With an empty <a
+href="InstanceMethods.html#method-i-collection">#collection</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.first # =&gt; nil
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-first_source')" id="l_method-i-first_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L487" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 487</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">first</span>
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">collection</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-last">
+            
+              <b>last</b>()
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-last" name="method-i-last" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="InstanceMethods.html#method-i-last">#last</a> entity
+in the database.</p>
+
+<p>@return [Object,nil] the result of the query</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="InstanceMethods.html#method-i-last">#last</a></p>
+
+<p>@example With at least one persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.last # =&gt; #&lt;Article:0x007f8c71d98a28&gt;
+</code></pre>
+
+<p>@example With an empty <a
+href="InstanceMethods.html#method-i-collection">#collection</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+ArticleRepository.new.last # =&gt; nil
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-last_source')" id="l_method-i-last_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L516" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-last_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">last</span>
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">collection</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-persist">
+            
+              <b>persist</b>(entity)
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-persist" name="method-i-persist" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates or updates a record in the database for the given entity.</p>
+
+<p>@param entity [#id, #id=] the entity to <a
+href="InstanceMethods.html#method-i-persist">#persist</a></p>
+
+<p>@return [Object] a copy of the entity with `id` assigned</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="InstanceMethods.html#method-i-create">#create</a> @see <a
+href="InstanceMethods.html#method-i-update">#update</a></p>
+
+<p>@example With a non persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = Article.new(title: &#39;Introducing Hanami::Model&#39;)
+article.id # =&gt; nil
+
+persisted_article = ArticleRepository.new.persist(article) # creates a record
+article.id # =&gt; nil
+persisted_article.id # =&gt; 23
+</code></pre>
+
+<p>@example With a persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = ArticleRepository.new.find(23)
+article.id # =&gt; 23
+
+article.title = &#39;Launching Hanami::Model&#39;
+ArticleRepository.new.persist(article) # updates the record
+
+article = ArticleRepository.new.find(23)
+article.title # =&gt; &quot;Launching Hanami::Model&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-persist_source')" id="l_method-i-persist_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L275" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-persist_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">persist</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">_touch</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">persist</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-transaction">
+            
+              <b>transaction</b>(options = {})
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-transaction" name="method-i-transaction" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Wraps the given block in a <a
+href="InstanceMethods.html#method-i-transaction">#transaction</a>.</p>
+
+<p>For performance reasons the block isn&#39;t in the signature of the method,
+but it&#39;s yielded at the lower level.</p>
+
+<p>Please note that it&#39;s only supported by some databases. For this
+reason, the accepted options may be different from <a
+href="InstanceMethods.html#method-i-adapter">#adapter</a> to <a
+href="InstanceMethods.html#method-i-adapter">#adapter</a>.</p>
+
+<p>For advanced scenarios, please check the documentation of each <a
+href="InstanceMethods.html#method-i-adapter">#adapter</a>.</p>
+
+<p>@param options [Hash] options for <a
+href="InstanceMethods.html#method-i-transaction">#transaction</a></p>
+
+<p>@see <a
+href="../Model/Adapters/SqlAdapter.html#method-i-transaction">Hanami::Model::Adapters::SqlAdapter#transaction</a>
+@see <a
+href="../Model/Adapters/MemoryAdapter.html#method-i-transaction">Hanami::Model::Adapters::MemoryAdapter#transaction</a></p>
+
+<p>@since 0.2.3</p>
+
+<p>@example Basic usage with SQL <a
+href="InstanceMethods.html#method-i-adapter">#adapter</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class Article
+  include Hanami::Entity
+  attributes :title, :body
+end
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = Article.new(title: &#39;Introducing transactions&#39;,
+  body: &#39;lorem ipsum&#39;)
+
+ArticleRepository.new.transaction do
+  ArticleRepository.dangerous_operation!(article) # =&gt; RuntimeError
+  # !!! ROLLBACK !!!
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-transaction_source')" id="l_method-i-transaction_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L575" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 575</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">transaction</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">transaction</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>(entity)
+            
+            <a href="../../../classes/Hanami/Repository/InstanceMethods.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Updates a record in the database corresponding to the given entity.</p>
+
+<p>If not already persisted (`id` present) it raises an exception.</p>
+
+<p>@param entity [#id] the entity to <a
+href="InstanceMethods.html#method-i-update">#update</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@raise [Hanami::Model::NonPersistedEntityError] if the given entity</p>
+
+<pre><code>wasn&#39;t already persisted.</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="InstanceMethods.html#method-i-persist">#persist</a> @see
+Hanami::Model::NonPersistedEntityError</p>
+
+<p>@example With a persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = ArticleRepository.new.find(23)
+article.id # =&gt; 23
+article.title = &#39;Launching Hanami::Model&#39;
+
+ArticleRepository.new.update(article) # updates the record
+</code></pre>
+
+<p>@example With a non persisted entity</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+class ArticleRepository
+  include Hanami::Repository
+end
+
+article = Article.new(title: &#39;Introducing Hanami::Model&#39;)
+article.id # =&gt; nil
+
+ArticleRepository.new.update(article) # raises Hanami::Model::NonPersistedEntityError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/314a83be15d2c70a2e917227b65184fc480865e7/lib/hanami/repository.rb#L362" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/repository.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">_persisted?</span>(<span class="ruby-identifier">entity</span>)
+    <span class="ruby-identifier">_touch</span>(<span class="ruby-identifier">entity</span>)
+    <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">NonPersistedEntityError</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

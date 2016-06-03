@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Params</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Action::Params 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="BaseParams.html">Hanami::Action::BaseParams</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/params_rb.html">sources/controller/lib/hanami/action/params.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A set of <a href="Params.html#method-c-params">::params</a> requested by
+the client</p>
+
+<p>It&#39;s able to extract the relevant <a
+href="Params.html#method-c-params">::params</a> from a <a
+href="Rack.html">Rack</a> env of from an Hash.</p>
+
+<p>There are three scenarios:</p>
+
+<pre><code>* When used with Hanami::Router: it contains only the params from the request
+* When used standalone: it contains all the Rack env
+* Default: it returns the given hash as it is. It&#39;s useful for testing purposes.</code></pre>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-_base_rules">_base_rules</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-errors">errors</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-params">params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-raw">raw</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_h">to_h</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_hash">to_hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-valid-3F">valid?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../Validations/Form.html">
+              Hanami::Validations::Form
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-_base_rules">
+            
+              <b>_base_rules</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-c-_base_rules" name="method-c-_base_rules" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>This is a <a href="../Validations.html">Hanami::Validations</a> extension
+point</p>
+
+<p>@since x.x.x @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-_base_rules_source')" id="l_method-c-_base_rules_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L23" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-_base_rules_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">_base_rules</span>
+  <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">optional</span>(<span class="ruby-value">:_csrf_token</span>).<span class="ruby-identifier">filled</span>(<span class="ruby-value">:str?</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(env)
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the <a href="Params.html#method-c-params">::params</a> and
+freeze them.</p>
+
+<p>@param env [Hash] a <a href="Rack.html">Rack</a> env or an hash of <a
+href="Params.html#method-c-params">::params</a>.</p>
+
+<p>@return [Params]</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">env</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">_extract_params</span>)
+  <span class="ruby-ivar">@result</span> = <span class="ruby-identifier">validate</span>
+  <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">_params</span>
+  <span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-params">
+            
+              <b>params</b>(&amp;blk)
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-c-params" name="method-c-params" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-params_source')" id="l_method-c-params_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L29" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">params</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">validations</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> <span class="ruby-operator">||</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>() {})
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-errors">
+            
+              <b>errors</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-i-errors" name="method-i-errors" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-errors_source')" id="l_method-i-errors_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L57" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-errors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">errors</span>
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">messages</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-raw">
+            
+              <b>raw</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-i-raw" name="method-i-raw" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns <a href="Params.html#method-i-raw">#raw</a> <a
+href="Params.html#method-c-params">::params</a> from <a
+href="Rack.html">Rack</a> env</p>
+
+<p>@return [Hash]</p>
+
+<p>@since 0.3.2</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-raw_source')" id="l_method-i-raw_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L53" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-raw_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">raw</span>
+  <span class="ruby-ivar">@input</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_h">
+            
+              <b>to_h</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-i-to_h" name="method-i-to_h" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Serialize <a href="Params.html#method-c-params">::params</a> to Hash</p>
+
+<p>@return [::Hash]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Params.html#method-i-to_hash">to_hash</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L70" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_h_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
+  <span class="ruby-ivar">@params</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_hash">
+            
+              <b>to_hash</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-i-to_hash" name="method-i-to_hash" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Params.html#method-i-to_h">to_h</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-valid-3F">
+            
+              <b>valid?</b>()
+            
+            <a href="../../../classes/Hanami/Action/Params.html#method-i-valid-3F" name="method-i-valid-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-valid-3F_source')" id="l_method-i-valid-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/abc5697334ca63e576abd00a69f9aa7a8d9a6cb1/lib/hanami/action/params.rb#L61" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-valid-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/params.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">valid?</span>
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">success?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Validations::AttributeDefiner::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Validations::AttributeDefiner::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/validations/lib/hanami/validations/attribute_definer_rb.html">sources/validations/lib/hanami/validations/attribute_definer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@since 0.2.2 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-_attribute">_attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-attribute">attribute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-defined_attributes">defined_attributes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-included">included</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inherited">inherited</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-_attribute">
+            
+              <b>_attribute</b>(name, options = {}, &amp;block)
+            
+            <a href="../../../../classes/Hanami/Validations/AttributeDefiner/ClassMethods.html#method-i-_attribute" name="method-i-_attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define an <a href="ClassMethods.html#method-i-attribute">#attribute</a></p>
+
+<p>@see Hanami::Validations::AttributeDefiner#attribute</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-_attribute_source')" id="l_method-i-_attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute_definer.rb#L267" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-_attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute_definer.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">_attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">define_nested_attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">validates</span>(<span class="ruby-identifier">name</span>, {})
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">define_attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">validates</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-attribute">
+            
+              <b>attribute</b>(name, options = {}, &amp;block)
+            
+            <a href="../../../../classes/Hanami/Validations/AttributeDefiner/ClassMethods.html#method-i-attribute" name="method-i-attribute" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define an <a href="ClassMethods.html#method-i-attribute">#attribute</a></p>
+
+<p>@param name [#to_sym] the name of the <a
+href="ClassMethods.html#method-i-attribute">#attribute</a> @param options
+[Hash] optional set of validations @option options [Class] :type the Ruby
+type used to coerce the value @option options [TrueClass,FalseClass]
+:acceptance requires a non-empty value which coerces to TrueClass @option
+options [TrueClass,FalseClass] :confirmation requires the value</p>
+
+<pre><code>to be confirmed twice
+</code></pre>
+
+<p>@option options [#include?] :exclusion requires the value NOT be</p>
+
+<pre><code>included in the given collection</code></pre>
+
+<p>@option options [Regexp] :format requires value to match the given</p>
+
+<pre><code>Regexp
+</code></pre>
+
+<p>@option options [#include?] :inclusion requires the value BE <a
+href="ClassMethods.html#method-i-included">#included</a> in</p>
+
+<pre><code>the given collection
+</code></pre>
+
+<p>@option options [TrueClass,FalseClass] :presence requires the value be</p>
+
+<pre><code>included in the given collection</code></pre>
+
+<p>@option options [Numeric,Range] :size requires value&#39;s to be equal or</p>
+
+<pre><code>included by the given validator
+</code></pre>
+
+<p>@raise [ArgumentError] if an unknown or mispelled validation is given</p>
+
+<p>@since 0.2.2</p>
+
+<p>@example Attributes</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Person
+  include Hanami::Validations
+
+  attribute :name
+end
+
+person = Person.new(name: &#39;Luca&#39;, age: 32)
+person.name # =&gt; &quot;Luca&quot;
+person.age  # =&gt; raises NoMethodError because `:age` wasn&#39;t defined as attribute.
+</code></pre>
+
+<p>@example Standard coercions</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Person
+  include Hanami::Validations
+
+  attribute :fav_number, type: Integer
+end
+
+person = Person.new(fav_number: &#39;23&#39;)
+person.valid?
+
+person.fav_number # =&gt; 23
+</code></pre>
+
+<p>@example Custom coercions</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class FavNumber
+  def initialize(number)
+    @number = number
+  end
+end
+
+class BirthDate
+end
+
+class Person
+  include Hanami::Validations
+
+  attribute :fav_number, type: FavNumber
+  attribute :date,       type: BirthDate
+end
+
+person = Person.new(fav_number: &#39;23&#39;, date: &#39;Oct 23, 2014&#39;)
+person.valid?
+
+person.fav_number # =&gt; 23
+person.date       # =&gt; this raises an error, because BirthDate#initialize doesn&#39;t accept any arg
+</code></pre>
+
+<p>@example Acceptance</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :terms_of_service, acceptance: true
+end
+
+signup = Signup.new(terms_of_service: &#39;1&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(terms_of_service: &#39;&#39;)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Confirmation</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :password, confirmation: true
+end
+
+signup = Signup.new(password: &#39;secret&#39;, password_confirmation: &#39;secret&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(password: &#39;secret&#39;, password_confirmation: &#39;x&#39;)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Exclusion</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :music, exclusion: [&#39;pop&#39;]
+end
+
+signup = Signup.new(music: &#39;rock&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(music: &#39;pop&#39;)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Format</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :name, format: /\A[a-zA-Z]+\z/
+end
+
+signup = Signup.new(name: &#39;Luca&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(name: &#39;23&#39;)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Inclusion</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :age, inclusion: 18..99
+end
+
+signup = Signup.new(age: 32)
+signup.valid? # =&gt; true
+
+signup = Signup.new(age: 17)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Presence</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  include Hanami::Validations
+
+  attribute :name, presence: true
+end
+
+signup = Signup.new(name: &#39;Luca&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(name: nil)
+signup.valid? # =&gt; false
+</code></pre>
+
+<p>@example Size</p>
+
+<pre><code>require &#39;hanami/validations&#39;
+
+class Signup
+  MEGABYTE = 1024 ** 2
+  include Hanami::Validations
+
+  attribute :ssn,      size: 11    # exact match
+  attribute :password, size: 8..64 # range
+  attribute :avatar,   size  1..(5 * MEGABYTE)
+end
+
+signup = Signup.new(password: &#39;a-very-long-password&#39;)
+signup.valid? # =&gt; true
+
+signup = Signup.new(password: &#39;short&#39;)
+signup.valid? # =&gt; false</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-attribute_source')" id="l_method-i-attribute_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute_definer.rb#L257" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute_definer.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">_attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-defined_attributes">
+            
+              <b>defined_attributes</b>()
+            
+            <a href="../../../../classes/Hanami/Validations/AttributeDefiner/ClassMethods.html#method-i-defined_attributes" name="method-i-defined_attributes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set of user defined attributes</p>
+
+<p>@return [Array&lt;String&gt;]</p>
+
+<p>@since 0.2.2 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-defined_attributes_source')" id="l_method-i-defined_attributes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute_definer.rb#L283" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-defined_attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute_definer.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">defined_attributes</span>
+  <span class="ruby-ivar">@defined_attributes</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">super</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../../../classes/Hanami/Validations/AttributeDefiner/ClassMethods.html#method-i-included" name="method-i-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules.</p>
+
+<p>@param base [Class] the target class</p>
+
+<p>@since 0.2.2 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Module.html#method-i-extended">www.ruby-doc.org/core/Module.html#method-i-extended</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-included_source')" id="l_method-i-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute_definer.rb#L56" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute_definer.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">defined_attributes</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">defined_attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inherited">
+            
+              <b>inherited</b>(base)
+            
+            <a href="../../../../classes/Hanami/Validations/AttributeDefiner/ClassMethods.html#method-i-inherited" name="method-i-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules.</p>
+
+<p>@param base [Class] the target class</p>
+
+<p>@since 0.2.2 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Module.html#method-i-extended">www.ruby-doc.org/core/Module.html#method-i-extended</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inherited_source')" id="l_method-i-inherited_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute_definer.rb#L69" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute_definer.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inherited</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">defined_attributes</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">defined_attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,3421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Configuration 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/configuration_rb.html">sources/hanami/lib/hanami/configuration.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Configuration.html">Configuration</a> for a <a
+href="../Hanami.html">Hanami</a> application</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adapter">adapter</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assets">assets</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-body_parsers">body_parsers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-configure">configure</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-controller">controller</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-controller_pattern">controller_pattern</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cookies">cookies</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-default_format">default_format</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_request_format">default_request_format</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-default_response_format">default_response_format</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-force_ssl">force_ssl</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-handle_exceptions">handle_exceptions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-host">host</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-layout">layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load_paths">load_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-logger">logger</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mapping">mapping</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-middleware">middleware</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-model">model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-namespace">namespace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-path_prefix">path_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-port">port</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-routes">routes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-scheme">scheme</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-security">security</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-sessions">sessions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ssl-3F">ssl?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-templates">templates</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-view">view</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-view_pattern">view_pattern</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SSL_SCHEME</td>
+            <td>=</td>
+            <td class="attr-value">&#39;https&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.2.0 @api private</p>
+
+<p>@see <a href="Configuration.html#method-i-ssl-3F">#ssl?</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a <a href="Configuration.html#method-c-new">::new</a>
+configuration instance</p>
+
+<p>@return [Hanami::Configuration]</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L31" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@blk</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span>{}
+  <span class="ruby-ivar">@env</span> = <span class="ruby-constant">Environment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@configurations</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>[<span class="ruby-identifier">v</span>] = [] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter">
+            
+              <b>adapter</b>(options = {})
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-adapter" name="method-i-adapter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adapter configuration. The application will instantiate <a
+href="Configuration.html#method-i-adapter">#adapter</a> instance based on
+this configuration.</p>
+
+<p>The given options must have key pairs :type and :uri If it isn&#39;t, at
+the runtime the framework will raise a `ArgumentError`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload adapter(options)</p>
+
+<pre><code>Sets the given type and uri
+@param options [Hash] a set of options for adapter</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-adapter">#adapter</a></p>
+
+<pre><code>Gets the value
+@return [Hash] adapter options</code></pre>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="Configuration.html#method-i-adapter">#adapter</a> @see <a
+href="http://rdoc.info/gems/hanami-model/Hanami/Model/Configuration:adapter">rdoc.info/gems/hanami-model/Hanami/Model/Configuration:adapter</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      adapter type: :sql, uri: &#39;sqlite3://uri&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.adapter
+  # =&gt; {type: :sql, uri: &#39;sqlite3://uri&#39;}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_source')" id="l_method-i-adapter_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L892" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-adapter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 892</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@adapter</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@adapter</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assets">
+            
+              <b>assets</b>(&amp;blk)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-assets" name="method-i-assets" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The application will serve the static <a
+href="Configuration.html#method-i-assets">#assets</a> under these
+directories.</p>
+
+<p>By default it&#39;s equal to the `public/` directory under the application
+`root`.</p>
+
+<p>Otherwise, you can add different relatives paths under `root`.</p>
+
+<p>@overload <a href="Configuration.html#method-i-assets">#assets</a></p>
+
+<pre><code>Gets the value
+@return [Hanami::Config::Assets] assets root</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.assets
+  # =&gt; #&lt;Pathname:/root/path/public&gt;
+</code></pre>
+
+<p>@example Adding <a href="Configuration.html#method-c-new">::new</a> <a
+href="Configuration.html#method-i-assets">#assets</a> paths</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      assets do
+        sources &lt;&lt; [
+          &#39;vendor/assets&#39;
+        ]
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.assets
+  # =&gt; #&lt;Hanami::Config::Assets @root=#&lt;Pathname:/root/path/assets&gt;, @paths=[&quot;public&quot;]&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assets_source')" id="l_method-i-assets_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L420" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-assets_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assets</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@assets</span>
+    <span class="ruby-ivar">@assets</span>.<span class="ruby-identifier">__add</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@assets</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">FrameworkConfiguration</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-body_parsers">
+            
+              <b>body_parsers</b>(*parsers)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-body_parsers" name="method-i-body_parsers" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Body parsing configuration.</p>
+
+<p>Specify a set of parsers for specific mime types that your application will
+use. This method will return the application&#39;s parsers which you can
+use to add existing and <a href="Configuration.html#method-c-new">::new</a>
+custom parsers for your application to use.</p>
+
+<p>By default it&#39;s an empty `Array`</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload body_parsers(parsers)</p>
+
+<pre><code>Specify a set of body parsers.
+@param parsers [Array] the body parser definitions</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-body_parsers">#body_parsers</a></p>
+
+<pre><code>Gets the value
+@return [Array] the set of parsers</code></pre>
+
+<p>@since 0.2.0</p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.body_parsers
+  # =&gt; []
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      body_parsers :json, XmlParser.new
+    end
+  end
+end
+
+Bookshelf::Application.configuration.body_parsers
+  # =&gt; [:json, XmlParser.new]
+</code></pre>
+
+<p>@example Setting a <a href="Configuration.html#method-c-new">::new</a>
+value after one is set.</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      body_parsers :json
+      body_parsers XmlParser.new
+    end
+  end
+end
+
+Bookshelf::Application.configuration.body_parsers
+  # =&gt; [XmlParser.new]
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-body_parsers_source')" id="l_method-i-body_parsers_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L738" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-body_parsers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 738</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">body_parsers</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">parsers</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parsers</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@body_parsers</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@body_parsers</span> = <span class="ruby-identifier">parsers</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-configure">
+            
+              <b>configure</b>(environment = nil, path = nil, &amp;blk)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-configure" name="method-i-configure" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a block yield when the configuration will be loaded or set a path for
+the specific environment.</p>
+
+<p>@param environment [Symbol,nil] the configuration environment name @param
+blk [Proc] the configuration block</p>
+
+<p>@return [self]</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-configure_source')" id="l_method-i-configure_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L47" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-configure_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">configure</span>(<span class="ruby-identifier">environment</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">path</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">environment</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-ivar">@configurations</span>[<span class="ruby-identifier">environment</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Configure</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">environment</span>
+    <span class="ruby-ivar">@configurations</span>[<span class="ruby-identifier">environment</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@blk</span> = <span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-controller">
+            
+              <b>controller</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-controller" name="method-i-controller" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It lazily collects all the low level settings for Hanami::Controller&#39;s
+configuration and applies them when the application is loaded.</p>
+
+<p>NOTE: This forwards all the configurations to <a
+href="Controller.html">Hanami::Controller</a>, without checking them.
+Before to use this feature, please have a look at the current <a
+href="Controller.html">Hanami::Controller</a> version installed.</p>
+
+<p>NOTE: This may override some configurations of your application.</p>
+
+<p>@return [Hanami::Config::FrameworkConfiguration] the configuration</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://www.rubydoc.info/gems/hanami-controller/Hanami/Controller/Configuration">www.rubydoc.info/gems/hanami-controller/Hanami/Controller/Configuration</a></p>
+
+<p>@example Define a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      controller.default_request_format :json
+    end
+  end
+end
+</code></pre>
+
+<p>@example Override a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      handle_exceptions            false
+      controller.handle_exceptions true
+    end
+  end
+end
+
+# Exceptions will be handled
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-controller_source')" id="l_method-i-controller_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1614" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-controller_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1614</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">controller</span>
+  <span class="ruby-ivar">@controller</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">FrameworkConfiguration</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-controller_pattern">
+            
+              <b>controller_pattern</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-controller_pattern" name="method-i-controller_pattern" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a relative pattern to find controllers.</p>
+
+<p><a href="../Hanami.html">Hanami</a> supports multiple architectures (aka
+application structures), this setting helps to understand the <a
+href="Configuration.html#method-i-namespace">#namespace</a> where to find
+applications&#39; controllers and actions.</p>
+
+<p>By default this equals to
+<code>&quot;Controllers::%{controller}::%{action}&quot;</code> That means
+controllers must be structured like this:
+<code>Bookshelf::Controllers::Dashboard::Index</code>, where
+<code>Bookshelf</code> is the application module, <code>Controllers</code>
+is the first value specified in the pattern, <code>Dashboard</code> the <a
+href="Configuration.html#method-i-controller">#controller</a> and
+<code>Index</code> the action.</p>
+
+<p>This pattern MUST always contain <code>&quot;%{controller}&quot;</code> and
+<code>%{action}</code>. This pattern SHOULD be used accordingly to
+<code>#view_pattern</code> value.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload controller_pattern(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] the controller pattern</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-controller_pattern">#controller_pattern</a></p>
+
+<pre><code>Gets the value
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Configuration.html#method-i-view_pattern">#view_pattern</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+
+  module Controllers::Dashboard
+    class Index
+      include Bookshelf::Action
+
+      def call(params)
+        # ...
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.controller_pattern
+  # =&gt; &quot;Controllers::%{controller}::%{action}&quot;
+
+# All the controllers MUST live under Bookshelf::Controllers
+
+# GET &#39;/&#39; # =&gt; Bookshelf::Controllers::Dashboard::Index
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      controller_pattern &quot;%{controller}Controller::%{action}&quot;
+
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+
+  module DashboardController
+    class Index
+      include Bookshelf::Action
+
+      def call(params)
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.controller_pattern
+  # =&gt; &quot;%{controller}Controller::%{action}&quot;
+
+# All the controllers are directly under the Bookshelf module
+
+# GET &#39;/&#39; # =&gt; Bookshelf::DashboardController::Index
+</code></pre>
+
+<p>@example Setting the value for a top level name structure</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      namespace Object
+      controller_pattern &quot;%{controller}Controller::%{action}&quot;
+
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+end
+
+module DashboardController
+  class Index
+    include Bookshelf::Action
+
+    def call(params)
+    end
+  end
+end
+
+Bookshelf::Application.configuration.controller_pattern
+  # =&gt; &quot;%{controller}Controller::%{action}&quot;
+
+# All the controllers are at the top level namespace
+
+# GET &#39;/&#39; # =&gt; DashboardController::Index
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-controller_pattern_source')" id="l_method-i-controller_pattern_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1311" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-controller_pattern_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">controller_pattern</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@controller_pattern</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@controller_pattern</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&#39;Controllers::%{controller}::%{action}&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cookies">
+            
+              <b>cookies</b>(options = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-cookies" name="method-i-cookies" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Configure <a href="Configuration.html#method-i-cookies">#cookies</a> Enable
+<a href="Configuration.html#method-i-cookies">#cookies</a> (disabled by
+default).</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload cookies(options)</p>
+
+<pre><code>Sets the given value with their options.
+@param options [Hash, TrueClass, FalseClass]</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-cookies">#cookies</a></p>
+
+<pre><code>Gets the value.
+@return [Hanami::Config::Cookies]</code></pre>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.cookies
+  # =&gt; #&lt;Hanami::Config::Cookies:0x0000000329f880 @options={}, @default_options={:httponly=&gt;true, :secure=&gt;false}&gt;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      cookies domain: &#39;hanamirb.org&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.cookies
+  # =&gt; #&lt;Hanami::Config::Cookies:0x0000000329f880 @options={:domain=&gt;&#39;hanamirb.org&#39;}, @default_options={:domain=&gt;&#39;hanamirb.org&#39;, :httponly=&gt;true, :secure=&gt;false}&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cookies_source')" id="l_method-i-cookies_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L467" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-cookies_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 467</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cookies</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@cookies</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookies</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@cookies</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookies</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_format">
+            
+              <b>default_format</b>(format = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-default_format" name="method-i-default_format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a format as default fallback for all the requests without a strict
+requirement for the mime type.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@deprecated Use {#default_request_format} instead.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_format_source')" id="l_method-i-default_format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1017" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1017</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_format</span>(<span class="ruby-identifier">format</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;default_format is deprecated, please use default_request_format&#39;</span>)
+  <span class="ruby-identifier">default_request_format</span>(<span class="ruby-identifier">format</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_request_format">
+            
+              <b>default_request_format</b>(format = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-default_request_format" name="method-i-default_request_format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a format as default fallback for all the requests without a strict
+requirement for the mime type.</p>
+
+<p>The given format must be coercible to a symbol, and be a valid mime type
+alias. If it isn&#39;t, at the runtime the framework will raise a
+`Hanami::Controller::UnknownFormatError`.</p>
+
+<p>By default this value is `:html`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload default_request_format(format)</p>
+
+<pre><code>Sets the given value
+@param format [#to_sym] the symbol format
+@raise [TypeError] if it cannot be coerced to a symbol</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-default_request_format">#default_request_format</a></p>
+
+<pre><code>Gets the value
+@return [Symbol]
+</code></pre>
+
+<p>@since 0.5.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-default_request_format">#default_request_format</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.default_request_format # =&gt; :html
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      default_request_format :json
+    end
+  end
+end
+
+Bookshelf::Application.configuration.default_request_format # =&gt; :json
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_request_format_source')" id="l_method-i-default_request_format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L948" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_request_format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 948</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_request_format</span>(<span class="ruby-identifier">format</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span>
+    <span class="ruby-ivar">@default_request_format</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Symbol</span>(<span class="ruby-identifier">format</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@default_request_format</span> <span class="ruby-operator">||</span> <span class="ruby-value">:html</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_response_format">
+            
+              <b>default_response_format</b>(format = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-default_response_format" name="method-i-default_response_format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set a format to be used for all responses regardless of the request type.</p>
+
+<p>The given format must be coercible to a symbol, and be a valid mime type
+alias. If it isn&#39;t, at the runtime the framework will raise a
+`Hanami::Controller::UnknownFormatError`.</p>
+
+<p>By default this value is `:html`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload default_response_format(format)</p>
+
+<pre><code>Sets the given value
+@param format [#to_sym] the symbol format
+@raise [TypeError] if it cannot be coerced to a symbol</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-default_response_format">#default_response_format</a></p>
+
+<pre><code>Gets the value
+@return [Symbol,nil]
+</code></pre>
+
+<p>@since 0.5.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-default_response_format">#default_response_format</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.default_response_format # =&gt; :html
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      default_response_format :json
+    end
+  end
+end
+
+Bookshelf::Application.configuration.default_response_format # =&gt; :json
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_response_format_source')" id="l_method-i-default_response_format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1003" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_response_format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1003</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_response_format</span>(<span class="ruby-identifier">format</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span>
+    <span class="ruby-ivar">@default_response_format</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Symbol</span>(<span class="ruby-identifier">format</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@default_response_format</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-force_ssl">
+            
+              <b>force_ssl</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-force_ssl" name="method-i-force_ssl" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Force ssl redirection if http <a
+href="Configuration.html#method-i-scheme">#scheme</a> is set</p>
+
+<p>@return [Boolean]</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a href="Routing/ForceSsl.html">Hanami::Routing::ForceSsl</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-force_ssl_source')" id="l_method-i-force_ssl_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L119" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-force_ssl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">force_ssl</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@force_ssl</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@force_ssl</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-handle_exceptions">
+            
+              <b>handle_exceptions</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-handle_exceptions" name="method-i-handle_exceptions" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Decide if handle exceptions with an HTTP status or let them uncaught</p>
+
+<p>If this value is set to `true`, the configured exceptions will return the
+specified HTTP status, the rest of them with `500`.</p>
+
+<p>If this value is set to `false`, the exceptions won&#39;t be caught.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload handle_exceptions(value)</p>
+
+<pre><code>Sets the given value
+@param value [TrueClass, FalseClass] true or false, default to true</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-handle_exceptions">#handle_exceptions</a></p>
+
+<pre><code>Gets the value
+@return [TrueClass, FalseClass]
+</code></pre>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-controller/Hanami/Controller/Configuration:handle_exceptions">rdoc.info/gems/hanami-controller/Hanami/Controller/Configuration:handle_exceptions</a>
+@see <a href="http://httpstatus.es/500">httpstatus.es/500</a></p>
+
+<p>@example Enabled (default)</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/error&#39;, to: &#39;error#index&#39;
+      end
+    end
+
+    load!
+  end
+
+  module Controllers::Error
+    class Index
+      include Bookshelf::Action
+
+      def call(params)
+        raise ArgumentError
+      end
+    end
+  end
+end
+
+# GET &#39;/error&#39; # =&gt; 500 - Internal Server Error
+</code></pre>
+
+<p>@example Disabled</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      handle_exceptions false
+
+      routes do
+        get &#39;/error&#39;, to: &#39;error#index&#39;
+      end
+    end
+
+    load!
+  end
+
+  module Controllers::Error
+    class Index
+      include Bookshelf::Action
+
+      def call(params)
+        raise ArgumentError
+      end
+    end
+  end
+end
+
+# GET &#39;/error&#39; # =&gt; raises ArgumentError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-handle_exceptions_source')" id="l_method-i-handle_exceptions_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1522" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-handle_exceptions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1522</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">handle_exceptions</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@handle_exceptions</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@handle_exceptions</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-host">
+            
+              <b>host</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-host" name="method-i-host" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The URI <a href="Configuration.html#method-i-host">#host</a> for this
+application. This is used by the router helpers to generate absolute URLs.</p>
+
+<p>By default this value is `“localhost”`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload host(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] the URI host</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-scheme">#scheme</a></p>
+
+<pre><code>Gets the value
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://en.wikipedia.org/wiki/URI_scheme">en.wikipedia.org/wiki/URI_scheme</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.host # =&gt; &quot;localhost&quot;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      host &#39;bookshelf.org&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.host # =&gt; &quot;bookshelf.org&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-host_source')" id="l_method-i-host_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1127" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-host_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">host</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@host</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">host</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layout">
+            
+              <b>layout</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-layout" name="method-i-layout" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>A <a href="Layout.html">Hanami::Layout</a> for this application</p>
+
+<p>By default it&#39;s `nil`.</p>
+
+<p>It accepts a Symbol as <a
+href="Configuration.html#method-i-layout">#layout</a> name. When the
+application is loaded, it will lookup for the corresponding class.</p>
+
+<p>All the views will use this <a
+href="Configuration.html#method-i-layout">#layout</a>, unless otherwise
+specified.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload layout(value)</p>
+
+<pre><code>Sets the given value
+@param value [Symbol] the layout name</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-layout">#layout</a></p>
+
+<pre><code>Gets the value
+@return [Symbol,nil] the layout name</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-view/Hanami/Layout">rdoc.info/gems/hanami-view/Hanami/Layout</a>
+@see <a
+href="http://rdoc.info/gems/hanami-view/Hanami/View/Configuration:layout">rdoc.info/gems/hanami-view/Hanami/View/Configuration:layout</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.layout # =&gt; nil
+
+# All the views will render without a layout
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      layout :application
+    end
+  end
+
+  module Views
+    module Dashboard
+      class Index
+        include Bookshelf::Views
+      end
+
+      class JsonIndex &lt; Index
+        layout nil
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.namespace layout =&gt; :application
+
+# All the views will use Bookshelf::Views::ApplicationLayout, unless
+# they set a different value.
+
+Bookshelf::Views::Dashboard::Index.layout
+  # =&gt; Bookshelf::Views::ApplicationLayout
+
+Bookshelf::Views::Dashboard::JsonIndex.layout
+  # =&gt; Hanami::View::Rendering::NullLayout
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_source')" id="l_method-i-layout_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L315" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@layout</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@layout</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>(namespace = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the configuration</p>
+
+<p>@param <a href="Configuration.html#method-i-namespace">#namespace</a>
+[String,nil] the application <a
+href="Configuration.html#method-i-namespace">#namespace</a></p>
+
+<p>@return [self]</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L67" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>(<span class="ruby-identifier">namespace</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@namespace</span> = <span class="ruby-identifier">namespace</span>
+  <span class="ruby-identifier">evaluate_configurations!</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_paths">
+            
+              <b>load_paths</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-load_paths" name="method-i-load_paths" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Application.html">Application</a> load paths The application will
+recursively load all the Ruby files under these paths.</p>
+
+<p>By default it&#39;s empty in order to allow developers to decide their own
+app structure.</p>
+
+<p>@return [Hanami::Config::LoadPaths] a set of load paths</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Configuration.html#method-i-root">#root</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.load_paths
+  # =&gt; #&lt;Hanami::Config::LoadPaths:0x007ff4fa212310 @paths=[]&gt;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      load_paths &lt;&lt; [
+        &#39;app/controllers&#39;,
+        &#39;app/views
+      ]
+    end
+  end
+end
+
+Bookshelf::Application.configuration.assets
+  # =&gt; #&lt;Hanami::Config::LoadPaths:0x007fe3a20b18e0 @paths=[[&quot;app/controllers&quot;, &quot;app/views&quot;]]&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_paths_source')" id="l_method-i-load_paths_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L596" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 596</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_paths</span>
+  <span class="ruby-ivar">@load_paths</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">LoadPaths</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-logger">
+            
+              <b>logger</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-logger" name="method-i-logger" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a <a href="Config/Logger.html">Config::Logger</a> instance to the
+<a href="Configuration.html#method-i-logger">#logger</a> configuration.</p>
+
+<p>This instance will be used to generate the hanami <a
+href="Configuration.html#method-i-logger">#logger</a> available on
+application module.</p>
+
+<p>@return [Config::Logger] Configure <a
+href="Configuration.html#method-i-logger">#logger</a> instance</p>
+
+<p>@since 0.5.0</p>
+
+<p>@example Define a <a href="Configuration.html#method-i-logger">#logger</a></p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      logger.stream &#39;path/to/log/file&#39;
+    end
+    load!
+  end
+
+  module Controllers::Error
+    class Index
+      include Bookshelf::Action
+
+      def call(params)
+        Bookshelf::Logger.info &quot;Logging to STDOUT&quot;
+      end
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-logger_source')" id="l_method-i-logger_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1691" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-logger_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1691</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">logger</span>
+  <span class="ruby-ivar">@logger</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mapping">
+            
+              <b>mapping</b>(path = nil, &amp;blk)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-mapping" name="method-i-mapping" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Application.html">Application</a> collection <a
+href="Configuration.html#method-i-mapping">#mapping</a>.</p>
+
+<p>Specify a set of collections for the application, by passing a block, or a
+relative path where to find the file that describes them.</p>
+
+<p>By default it&#39;s `nil`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload mapping(blk)</p>
+
+<pre><code>Specify a set of mapping in the given block
+@param blk [Proc] the mapping definitions</code></pre>
+
+<p>@overload mapping(path)</p>
+
+<pre><code>Specify a relative path where to find the mapping file
+@param path [String] the relative path</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-mapping">#mapping</a></p>
+
+<pre><code>Gets the value
+@return [Hanami::Config::Mapping] the set of mappings</code></pre>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-model/Hanami/Mapper">rdoc.info/gems/hanami-model/Hanami/Mapper</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.mapping
+  # =&gt; nil
+</code></pre>
+
+<p>@example Setting the value, by passing a block</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      mapping do
+        collection :users do
+          entity User
+
+          attribute :id,   Integer
+          attribute :name, String
+        end
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.mapping
+  # =&gt; #&lt;Hanami::Config::Mapping:0x007ff50a991388 @blk=#&lt;Proc:0x007ff123991338@(irb):4&gt;, @path=#&lt;Pathname:.&gt;&gt;
+</code></pre>
+
+<p>@example Setting the value, by passing a relative path</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      mapping &#39;config/mapping&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.mapping
+  # =&gt; #&lt;Hanami::Config::Routes:0x007ff50a991388 @blk=nil, @path=#&lt;Pathname:config/mapping.rb&gt;&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mapping_source')" id="l_method-i-mapping_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L847" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-mapping_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 847</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mapping</span>(<span class="ruby-identifier">path</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@mapping</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Mapping</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@mapping</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-middleware">
+            
+              <b>middleware</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-middleware" name="method-i-middleware" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Application.html">Application</a> <a
+href="Configuration.html#method-i-middleware">#middleware</a>.</p>
+
+<p>Specify <a href="Configuration.html#method-i-middleware">#middleware</a>
+that your application will use. This method will return the
+application&#39;s underlying <a href="Middleware.html">Middleware</a> stack
+which you can use to add <a
+href="Configuration.html#method-c-new">::new</a> <a
+href="Configuration.html#method-i-middleware">#middleware</a> for your
+application to use. By default, the <a
+href="Configuration.html#method-i-middleware">#middleware</a> stack will
+contain only `Rack::Static` and `Rack::MethodOverride`. However, if `assets
+false` was specified # in the configuration block, the default
+`Rack::Static` will be removed.</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/rack/Rack/Static">rdoc.info/gems/rack/Rack/Static</a>
+@see <a href="Middleware.html#method-i-use">Hanami::Middleware#use</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      middleware.use Rack::MethodOverride, nil, &#39;max-age=0, private, must-revalidate&#39;
+      middleware.use Rack::ETag
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-middleware_source')" id="l_method-i-middleware_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L771" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-middleware_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 771</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">middleware</span>
+  <span class="ruby-ivar">@middleware</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Middleware</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model">
+            
+              <b>model</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-model" name="method-i-model" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It lazily collects all the low level settings for Hanami::Model&#39;s
+configuration and applies them when the application is loaded.</p>
+
+<p>NOTE: This forwards all the configurations to <a
+href="Model.html">Hanami::Model</a>, without checking them. Before to use
+this feature, please have a look at the current <a
+href="Model.html">Hanami::Model</a> version installed.</p>
+
+<p>NOTE: This may override some configurations of your application.</p>
+
+<p>@return [Hanami::Config::FrameworkConfiguration] the configuration</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://www.rubydoc.info/gems/hanami-model/Hanami/Model/Configuration">www.rubydoc.info/gems/hanami-model/Hanami/Model/Configuration</a></p>
+
+<p>@example Define a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+require &#39;hanami/model&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      model.adapter type: :memory, uri: &#39;memory://localhost/database&#39;
+    end
+  end
+end
+</code></pre>
+
+<p>@example Override a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+require &#39;hanami/model&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      adapter       type: :sql,    uri: &#39;postgres://localhost/database&#39;
+      model.adapter type: :memory, uri: &#39;memory://localhost/database&#39;
+    end
+  end
+end
+
+# The memory adapter will override the SQL one
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-model_source')" id="l_method-i-model_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1571" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1571</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">model</span>
+  <span class="ruby-ivar">@model</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">FrameworkConfiguration</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-namespace">
+            
+              <b>namespace</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-namespace" name="method-i-namespace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The application <a
+href="Configuration.html#method-i-namespace">#namespace</a></p>
+
+<p>By default it returns the Ruby <a
+href="Configuration.html#method-i-namespace">#namespace</a> of the
+application. For instance for an application `Bookshelf::Application`, it
+returns `Bookshelf`.</p>
+
+<p>This value isn&#39;t set at the init time, but when the configuration is
+loaded with `#load!`.</p>
+
+<p><a href="../Hanami.html">Hanami</a> applications are namespaced: all the
+controllers and views live under the application module, without polluting
+the global <a href="Configuration.html#method-i-namespace">#namespace</a>.
+However, if for some reason, you want top level classes, set this value to
+`Object` (which is the top level <a
+href="Configuration.html#method-i-namespace">#namespace</a> for Ruby).</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload namespace(value)</p>
+
+<pre><code>Sets the given value
+@param value [Class,Module] A valid Ruby namespace</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-namespace">#namespace</a></p>
+
+<pre><code>Gets the value
+@return [Class,Module] a Ruby namespace</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.namespace # =&gt; Bookshelf
+
+# It will lookup namespaced controllers under Bookshelf
+# eg. Bookshelf::Controllers::Dashboard
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      namespace Object
+    end
+  end
+end
+
+Bookshelf::Application.configuration.namespace # =&gt; Object
+
+# It will lookup top level controllers under Object
+# eg. DashboardController
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-namespace_source')" id="l_method-i-namespace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L236" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-namespace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">namespace</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@namespace</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@namespace</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-path_prefix">
+            
+              <b>path_prefix</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-path_prefix" name="method-i-path_prefix" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>This options is used as a bridge between container and router application.</p>
+
+<p>@return [String, NilClass] path prefix for <a
+href="Configuration.html#method-i-routes">#routes</a></p>
+
+<p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-path_prefix_source')" id="l_method-i-path_prefix_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1701" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-path_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1701</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">path_prefix</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@path_prefix</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@path_prefix</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-port">
+            
+              <b>port</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-port" name="method-i-port" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The URI <a href="Configuration.html#method-i-port">#port</a> for this
+application. This is used by the router helpers to generate absolute URLs.</p>
+
+<p>By default this value is `2300`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload port(value)</p>
+
+<pre><code>Sets the given value
+@param value [#to_int] the URI port
+@raise [TypeError] if the given value cannot be coerced to Integer</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-scheme">#scheme</a></p>
+
+<pre><code>Gets the value
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://en.wikipedia.org/wiki/URI_scheme">en.wikipedia.org/wiki/URI_scheme</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.port # =&gt; 2300
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      port 8080
+    end
+  end
+end
+
+Bookshelf::Application.configuration.port # =&gt; 8080
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-port_source')" id="l_method-i-port_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1179" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">port</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@port</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@port</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">port</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Configuration.html#method-i-root">#root</a> of the application</p>
+
+<p>By default it returns the current directory, for this reason, **all the
+commands must be executed from the top level directory of the project**.</p>
+
+<p>If for some reason, that constraint above cannot be satisfied, please <a
+href="Configuration.html#method-i-configure">#configure</a> the <a
+href="Configuration.html#method-i-root">#root</a> directory, so that
+commands can be executed from everywhere.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload root(value)</p>
+
+<pre><code>Sets the given value
+@param value [String,Pathname,#to_pathname] The root directory of the app</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-root">#root</a></p>
+
+<pre><code>Gets the value
+@return [Pathname]
+@raise [Errno::ENOENT] if the path cannot be found
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Dir.html#method-c-pwd">www.ruby-doc.org/core-2.1.2/Dir.html#method-c-pwd</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.root # =&gt; #&lt;Pathname:/path/to/root&gt;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      root &#39;/path/to/another/root&#39;
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L173" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@root</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Pathname</span>(<span class="ruby-ivar">@root</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>).<span class="ruby-identifier">realpath</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-routes">
+            
+              <b>routes</b>(path = nil, &amp;blk)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-routes" name="method-i-routes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Application.html">Application</a> <a
+href="Configuration.html#method-i-routes">#routes</a>.</p>
+
+<p>Specify a set of <a href="Configuration.html#method-i-routes">#routes</a>
+for the application, by passing a block, or a relative path where to find
+the file that describes them.</p>
+
+<p>By default it&#39;s `nil`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload routes(blk)</p>
+
+<pre><code>Specify a set of routes in the given block
+@param blk [Proc] the routes definitions</code></pre>
+
+<p>@overload routes(path)</p>
+
+<pre><code>Specify a relative path where to find the routes file
+@param path [String] the relative path</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-routes">#routes</a></p>
+
+<pre><code>Gets the value
+@return [Hanami::Config::Routes] the set of routes</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-router/Hanami/Router">rdoc.info/gems/hanami-router/Hanami/Router</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.routes
+  # =&gt; nil
+</code></pre>
+
+<p>@example Setting the value, by passing a block</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+        resources :books
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.routes
+  # =&gt; #&lt;Hanami::Config::Routes:0x007ff50a991388 @blk=#&lt;Proc:0x007ff50a991338@(irb):4&gt;, @path=#&lt;Pathname:.&gt;&gt;
+</code></pre>
+
+<p>@example Setting the value, by passing a relative path</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes &#39;config/routes&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.routes
+  # =&gt; #&lt;Hanami::Config::Routes:0x007ff50a991388 @blk=nil, @path=#&lt;Pathname:config/routes.rb&gt;&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-routes_source')" id="l_method-i-routes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L668" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 668</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">routes</span>(<span class="ruby-identifier">path</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@routes</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@routes</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scheme">
+            
+              <b>scheme</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-scheme" name="method-i-scheme" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The URI <a href="Configuration.html#method-i-scheme">#scheme</a> for this
+application. This is used by the router helpers to generate absolute URLs.</p>
+
+<p>By default this value is `“http”`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload scheme(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] the URI scheme</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-scheme">#scheme</a></p>
+
+<pre><code>Gets the value
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://en.wikipedia.org/wiki/URI_scheme">en.wikipedia.org/wiki/URI_scheme</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.scheme # =&gt; &quot;http&quot;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      scheme &#39;https&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.scheme # =&gt; &quot;https&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scheme_source')" id="l_method-i-scheme_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1065" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-scheme_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1065</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scheme</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@scheme</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@scheme</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&#39;http&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-security">
+            
+              <b>security</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-security" name="method-i-security" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Configuration.html#method-i-security">#security</a>
+policy</p>
+
+<p>@return [Hanami::Config::Security]</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a href="Config/Security.html">Hanami::Config::Security</a></p>
+
+<p>@example Getting values</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      security.x_frame_options         &quot;ALLOW ALL&quot;
+      security.content_security_policy &quot;script-src &#39;self&#39; https://apis.example.com&quot;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.security.x_frame_options         # =&gt; &quot;ALLOW ALL&quot;
+Bookshelf::Application.configuration.security.content_security_policy # =&gt; &quot;script-src &#39;self&#39; https://apis.example.com&quot;
+</code></pre>
+
+<p>@example Setting values</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      security.x_frame_options         &quot;ALLOW ALL&quot;
+      security.content_security_policy &quot;script-src &#39;self&#39; https://apis.example.com&quot;
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-security_source')" id="l_method-i-security_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L108" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-security_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">security</span>
+  <span class="ruby-ivar">@security</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Security</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sessions">
+            
+              <b>sessions</b>(adapter = nil, options = {})
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-sessions" name="method-i-sessions" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Configure <a href="Configuration.html#method-i-sessions">#sessions</a>
+Enable <a href="Configuration.html#method-i-sessions">#sessions</a>
+(disabled by default).</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>Given Class as <a href="Configuration.html#method-i-adapter">#adapter</a>
+it will be used as <a
+href="Configuration.html#method-i-sessions">#sessions</a> <a
+href="Configuration.html#method-i-middleware">#middleware</a>. Given String
+as <a href="Configuration.html#method-i-adapter">#adapter</a> it will be
+resolved as class name and used as <a
+href="Configuration.html#method-i-sessions">#sessions</a> <a
+href="Configuration.html#method-i-middleware">#middleware</a>. Given Symbol
+as <a href="Configuration.html#method-i-adapter">#adapter</a> it is assumed
+it&#39;s name of the class under Rack::Session <a
+href="Configuration.html#method-i-namespace">#namespace</a> that will be
+used as <a href="Configuration.html#method-i-sessions">#sessions</a> <a
+href="Configuration.html#method-i-middleware">#middleware</a> (e.g. :cookie
+for Rack::Session::Cookie).</p>
+
+<p>By default options include domain inferred from <a
+href="Configuration.html#method-i-host">#host</a> configuration, and secure
+flag inferred from <a href="Configuration.html#method-i-scheme">#scheme</a>
+configuration.</p>
+
+<p>@overload <a
+href="Configuration.html#method-i-sessions">#sessions</a>(adapter, options)</p>
+
+<pre><code>Sets the given value.
+@param adapter [Class, String, Symbol] Rack middleware for sessions management
+@param options [Hash] options to pass to sessions middleware</code></pre>
+
+<p>@overload sessions(false)</p>
+
+<pre><code>Disables sessions
+</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-sessions">#sessions</a></p>
+
+<pre><code>Gets the value.
+@return [Hanami::Config::Sessions] sessions configuration</code></pre>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="Configuration.html#method-i-host">#host</a> @see <a
+href="Configuration.html#method-i-scheme">#scheme</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.sessions
+  # =&gt; #&lt;Hanami::Config::Sessions:0x00000001ca0c28 @enabled=false&gt;
+</code></pre>
+
+<p>@example Setting the value with symbol</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      sessions :cookie, secret: &#39;abc123&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.sessions
+  # =&gt; #&lt;Hanami::Config::Sessions:0x00000001589458 @enabled=true, @adapter=:cookie, @options={:domain=&gt;&quot;localhost&quot;, :secure=&gt;false}&gt;
+</code></pre>
+
+<p>@example Disabling previously enabled <a
+href="Configuration.html#method-i-sessions">#sessions</a></p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      sessions :cookie
+      sessions false
+    end
+  end
+end
+
+Bookshelf::Application.configuration.sessions
+  # =&gt; #&lt;Hanami::Config::Sessions:0x00000002460d78 @enabled=false&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sessions_source')" id="l_method-i-sessions_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L549" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-sessions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 549</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sessions</span>(<span class="ruby-identifier">adapter</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">adapter</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@sessions</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Sessions</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@sessions</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Sessions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">adapter</span>, <span class="ruby-identifier">options</span>, <span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ssl-3F">
+            
+              <b>ssl?</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-ssl-3F" name="method-i-ssl-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if the application uses SSL</p>
+
+<p>@return [FalseClass,TrueClass] the result of the check</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="Configuration.html#method-i-scheme">#scheme</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ssl-3F_source')" id="l_method-i-ssl-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1080" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-ssl-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1080</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ssl?</span>
+  <span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SSL_SCHEME</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-templates">
+            
+              <b>templates</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-templates" name="method-i-templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Templates <a href="Configuration.html#method-i-root">#root</a>. The
+application will recursively look for <a
+href="Configuration.html#method-i-templates">#templates</a> under this
+path.</p>
+
+<p>By default it&#39;s equal to the application `root`.</p>
+
+<p>Otherwise, you can specify a different relative path under `root`.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload templates(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] the relative path to the templates root.</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-templates">#templates</a></p>
+
+<pre><code>Gets the value
+@return [Pathname] templates root</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Configuration.html#method-i-root">#root</a> @see <a
+href="http://rdoc.info/gems/hanami-view/Hanami/View/Configuration:root">rdoc.info/gems/hanami-view/Hanami/View/Configuration:root</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+  end
+end
+
+Bookshelf::Application.configuration.templates
+  # =&gt; #&lt;Pathname:/root/path&gt;
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      templates &#39;app/templates&#39;
+    end
+  end
+end
+
+Bookshelf::Application.configuration.templates
+  # =&gt; #&lt;Pathname:/root/path/app/templates&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-templates_source')" id="l_method-i-templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L371" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 371</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">templates</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@templates</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@templates</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-view">
+            
+              <b>view</b>()
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-view" name="method-i-view" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It lazily collects all the low level settings for Hanami::View&#39;s
+configuration and applies them when the application is loaded.</p>
+
+<p>NOTE: This forwards all the configurations to <a
+href="View.html">Hanami::View</a>, without checking them. Before to use
+this feature, please have a look at the current <a
+href="View.html">Hanami::View</a> version installed.</p>
+
+<p>NOTE: This may override some configurations of your application.</p>
+
+<p>@return [Hanami::Config::FrameworkConfiguration] the configuration</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://www.rubydoc.info/gems/hanami-view/Hanami/View/Configuration">www.rubydoc.info/gems/hanami-view/Hanami/View/Configuration</a></p>
+
+<p>@example Define a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      view.layout :application
+    end
+  end
+end
+</code></pre>
+
+<p>@example Override a setting</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      layout      :application
+      view.layout :backend
+    end
+  end
+end
+
+# It will use `:backend` layout
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-view_source')" id="l_method-i-view_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1657" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-view_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1657</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">view</span>
+  <span class="ruby-ivar">@view</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">FrameworkConfiguration</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-view_pattern">
+            
+              <b>view_pattern</b>(value = nil)
+            
+            <a href="../../classes/Hanami/Configuration.html#method-i-view_pattern" name="method-i-view_pattern" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a relative pattern to find views:.</p>
+
+<p><a href="../Hanami.html">Hanami</a> supports multiple architectures (aka
+application structures), this setting helps to understand the <a
+href="Configuration.html#method-i-namespace">#namespace</a> where to find
+applications&#39; views:.</p>
+
+<p>By default this equals to
+<code>&quot;Views::%{controller}::%{action}&quot;</code> That means views
+must be structured like this:
+<code>Bookshelf::Views::Dashboard::Index</code>, where
+<code>Bookshelf</code> is the application module, <code>Views</code> is the
+first value specified in the pattern, <code>Dashboard</code> a module
+corresponding to the <a
+href="Configuration.html#method-i-controller">#controller</a> name and
+<code>Index</code> the <a
+href="Configuration.html#method-i-view">#view</a>, corresponding to the
+action name.</p>
+
+<p>This pattern MUST always contain <code>&quot;%{controller}&quot;</code> and
+<code>%{action}</code>. This pattern SHOULD be used accordingly to
+<code>#controller_pattern</code> value.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding instance variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload view_pattern(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] the view pattern</code></pre>
+
+<p>@overload <a
+href="Configuration.html#method-i-controller_pattern">#controller_pattern</a></p>
+
+<pre><code>Gets the value
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-controller_pattern">#controller_pattern</a></p>
+
+<p>@example Getting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+
+  module Views
+    module Dashboard
+      class Index
+        include Bookshelf::View
+      end
+    end
+  end
+end
+
+Bookshelf::Application.configuration.view_pattern
+  # =&gt; &quot;Views::%{controller}::%{action}&quot;
+
+# All the views MUST live under Bookshelf::Views
+
+# GET &#39;/&#39; # =&gt; Bookshelf::Views::Dashboard::Index
+</code></pre>
+
+<p>@example Setting the value</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      view_pattern &quot;%{controller}::%{action}&quot;
+
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+
+  module Dashboard
+    class Index
+      include Bookshelf::View
+    end
+  end
+end
+
+Bookshelf::Application.configuration.view_pattern
+  # =&gt; &quot;%{controller}::%{action}&quot;
+
+# All the views are directly under the Bookshelf module
+
+# GET &#39;/&#39; # =&gt; Bookshelf::Dashboard::Index
+</code></pre>
+
+<p>@example Setting the value for a top level name structure</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      namespace Object
+      view_pattern &quot;%{controller}::%{action}&quot;
+
+      routes do
+        get &#39;/&#39;, to: &#39;dashboard#index&#39;
+      end
+    end
+  end
+end
+
+module Dashboard
+  class Index
+    include Bookshelf::View
+  end
+end
+
+Bookshelf::Application.configuration.view_pattern
+  # =&gt; &quot;%{controller}::%{action}&quot;
+
+# All the views: are at the top level namespace
+
+# GET &#39;/&#39; # =&gt; Dashboard::Index
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-view_pattern_source')" id="l_method-i-view_pattern_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/86a18312a4ccd409929f926821dbe25e22e740a8/lib/hanami/configuration.rb#L1435" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-view_pattern_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/configuration.rb, line 1435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">view_pattern</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-ivar">@view_pattern</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@view_pattern</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&#39;Views::%{controller}::%{action}&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

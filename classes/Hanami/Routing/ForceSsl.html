@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routing::ForceSsl</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routing::ForceSsl 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/router/lib/hanami/routing/force_ssl_rb.html">sources/router/lib/hanami/routing/force_ssl.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Force ssl</p>
+
+<p>Redirect response to the secure equivalent resource (https)</p>
+
+<p>@since 0.4.1 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-force-3F">force?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SSL_SCHEME</td>
+            <td>=</td>
+            <td class="attr-value">&#39;https&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Https scheme</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTPS</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTPS&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ON</td>
+            <td>=</td>
+            <td class="attr-value">&#39;on&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">LOCATION_HEADER</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Location&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Location header</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_HTTP_PORT</td>
+            <td>=</td>
+            <td class="attr-value">80</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> http port</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_SSL_PORT</td>
+            <td>=</td>
+            <td class="attr-value">443</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Default.html">Default</a> ssl port</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MOVED_PERMANENTLY_HTTP_CODE</td>
+            <td>=</td>
+            <td class="attr-value">301</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Moved Permanently http code</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TEMPORARY_REDIRECT_HTTP_CODE</td>
+            <td>=</td>
+            <td class="attr-value">307</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Temporary Redirect http code</p>
+
+<p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_X_FORWARDED_SSL</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_X_FORWARDED_SSL&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_X_FORWARDED_SCHEME</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_X_FORWARDED_SCHEME&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_X_FORWARDED_PROTO</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_X_FORWARDED_PROTO&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_X_FORWARDED_PROTO_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;,&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RACK_URL_SCHEME</td>
+            <td>=</td>
+            <td class="attr-value">&#39;rack.url_scheme&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REQUEST_METHOD</td>
+            <td>=</td>
+            <td class="attr-value">&#39;REQUEST_METHOD&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">IDEMPOTENT_METHODS</td>
+            <td>=</td>
+            <td class="attr-value">[&#39;GET&#39;, &#39;HEAD&#39;].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">EMPTY_BODY</td>
+            <td>=</td>
+            <td class="attr-value">[].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(active, options = {})
+            
+            <a href="../../../classes/Hanami/Routing/ForceSsl.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize <a href="ForceSsl.html">ForceSsl</a>.</p>
+
+<p>@param active [Boolean] activate redirection to SSL @param options [Hash]
+set of options @option options [String] :host @option options [Integer]
+:port</p>
+
+<p>@since 0.4.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/force_ssl.rb#L95" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/force_ssl.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">active</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@active</span> = <span class="ruby-identifier">active</span>
+  <span class="ruby-ivar">@host</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:host</span>]
+  <span class="ruby-ivar">@port</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:port</span>]
+
+  <span class="ruby-identifier">_redefine_call</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-call">
+            
+              <b>call</b>(env)
+            
+            <a href="../../../classes/Hanami/Routing/ForceSsl.html#method-i-call" name="method-i-call" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set 301 status and Location header if this feature is activated.</p>
+
+<p>@param env [Hash] a Rack env instance</p>
+
+<p>@return [Array]</p>
+
+<p>@see Hanami::Routing::HttpRouter#call</p>
+
+<p>@since 0.4.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/force_ssl.rb#L113" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/force_ssl.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-force-3F">
+            
+              <b>force?</b>(env)
+            
+            <a href="../../../classes/Hanami/Routing/ForceSsl.html#method-i-force-3F" name="method-i-force-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if router has to force the response with ssl</p>
+
+<p>@return [Boolean]</p>
+
+<p>@since 0.4.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-force-3F_source')" id="l_method-i-force-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/force_ssl.rb#L122" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-force-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/force_ssl.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">force?</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">ssl?</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

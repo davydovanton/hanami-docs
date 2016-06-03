@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Mailer::Dsl</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Mailer::Dsl 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/mailer/lib/hanami/mailer/dsl_rb.html">sources/mailer/lib/hanami/mailer/dsl.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Class level DSL</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bcc">bcc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cc">cc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-extended">extended</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-from">from</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-subject">subject</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template">template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-templates">templates</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to">to</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-extended">
+            
+              <b>extended</b>(base)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-c-extended" name="method-c-extended" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since x.x.x @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-extended_source')" id="l_method-c-extended_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L12" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-extended_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@from</span>    = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@to</span>      = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@cc</span>      = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@bcc</span>     = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@subject</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bcc">
+            
+              <b>bcc</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-bcc" name="method-i-bcc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <a href="Dsl.html#method-i-bcc">#bcc</a> (blind carbon copy) for
+mail messages</p>
+
+<p>It accepts a hardcoded value as a string or array of strings. For dynamic
+values, you can specify a symbol that represents an instance method.</p>
+
+<p>This value is optional.</p>
+
+<p>When a value is given, it specifies the <a
+href="Dsl.html#method-i-bcc">#bcc</a> for the email.  When a value is not
+given, it returns the <a href="Dsl.html#method-i-bcc">#bcc</a> of the
+email.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload bcc(value)</p>
+
+<pre><code>Sets the bcc
+@param value [String, Array, Symbol] the hardcoded value or method name
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-bcc">#bcc</a></p>
+
+<pre><code>Returns the bcc
+@return [String, Array, Symbol] the recipient</code></pre>
+
+<p>@since x.x.x</p>
+
+<p>@example Hardcoded value (String)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to &quot;user@example.com&quot;
+  bcc &quot;other.user@example.com&quot;
+end
+</code></pre>
+
+<p>@example Hardcoded value (Array)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to [&quot;user-1@example.com&quot;, &quot;user-2@example.com&quot;]
+  bcc [&quot;other.user-1@example.com&quot;, &quot;other.user-2@example.com&quot;]
+end
+</code></pre>
+
+<p>@example Method (Symbol)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to &quot;user@example.com&quot;
+  bcc :email_address
+
+  private
+
+  def email_address
+    user.email
+  end
+end
+
+other_user = User.new(name: &#39;L&#39;)
+WelcomeMailer.deliver(user: other_user)
+</code></pre>
+
+<p>@example Method that returns a collection of recipients</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to &quot;user@example.com&quot;
+  bcc :recipients
+
+  private
+
+  def recipients
+    users.map(&amp;:email)
+  end
+end
+
+other_users = [User.new(name: &#39;L&#39;), User.new(name: &#39;MG&#39;)]
+WelcomeMailer.deliver(users: other_users)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bcc_source')" id="l_method-i-bcc_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L314" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-bcc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bcc</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@bcc</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@bcc</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cc">
+            
+              <b>cc</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-cc" name="method-i-cc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <a href="Dsl.html#method-i-cc">#cc</a> (carbon copy) for mail
+messages</p>
+
+<p>It accepts a hardcoded value as a string or array of strings. For dynamic
+values, you can specify a symbol that represents an instance method.</p>
+
+<p>This value is optional.</p>
+
+<p>When a value is given, it specifies the <a
+href="Dsl.html#method-i-cc">#cc</a> for the email.  When a value is not
+given, it returns the <a href="Dsl.html#method-i-cc">#cc</a> of the email.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload cc(value)</p>
+
+<pre><code>Sets the cc
+@param value [String, Array, Symbol] the hardcoded value or method name
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-cc">#cc</a></p>
+
+<pre><code>Returns the cc
+@return [String, Array, Symbol] the recipient</code></pre>
+
+<p>@since x.x.x</p>
+
+<p>@example Hardcoded value (String)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to &quot;user@example.com&quot;
+  cc &quot;other.user@example.com&quot;
+end
+</code></pre>
+
+<p>@example Hardcoded value (Array)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to [&quot;user-1@example.com&quot;, &quot;user-2@example.com&quot;]
+  cc [&quot;other.user-1@example.com&quot;, &quot;other.user-2@example.com&quot;]
+end
+</code></pre>
+
+<p>@example Method (Symbol)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to &quot;user@example.com&quot;
+  cc :email_address
+
+  private
+
+  def email_address
+    user.email
+  end
+end
+
+other_user = User.new(name: &#39;L&#39;)
+WelcomeMailer.deliver(user: other_user)
+</code></pre>
+
+<p>@example Method that returns a collection of recipients</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to &quot;user@example.com&quot;
+  cc :recipients
+
+  private
+
+  def recipients
+    users.map(&amp;:email)
+  end
+end
+
+other_users = [User.new(name: &#39;L&#39;), User.new(name: &#39;MG&#39;)]
+WelcomeMailer.deliver(users: other_users)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cc_source')" id="l_method-i-cc_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L225" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-cc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cc</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@cc</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@cc</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-from">
+            
+              <b>from</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-from" name="method-i-from" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the sender for mail messages</p>
+
+<p>It accepts a hardcoded value as a string, or a symbol that represents an
+instance method for more complex logic.</p>
+
+<p>This value MUST be set, otherwise an exception is raised at the delivery
+time.</p>
+
+<p>When a value is given, specify the sender of the email Otherwise, it
+returns the sender of the email</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload from(value)</p>
+
+<pre><code>Sets the sender
+@param value [String, Symbol] the hardcoded value or method name
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-from">#from</a></p>
+
+<pre><code>Returns the sender
+@return [String, Symbol] the sender</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Hardcoded value (String)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  from &quot;noreply@example.com&quot;
+end
+</code></pre>
+
+<p>@example Method (Symbol)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  from :sender
+
+  private
+
+  def sender
+    &quot;noreply@example.com&quot;
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-from_source')" id="l_method-i-from_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L136" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-from_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">from</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@from</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@from</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-subject">
+            
+              <b>subject</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-subject" name="method-i-subject" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <a href="Dsl.html#method-i-subject">#subject</a> for mail messages</p>
+
+<p>It accepts a hardcoded value as a string, or a symbol that represents an
+instance method for more complex logic.</p>
+
+<p>This value MUST be set, otherwise an exception is raised at the delivery
+time.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload subject(value)</p>
+
+<pre><code>Sets the subject
+@param value [String, Symbol] the hardcoded value or method name
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-subject">#subject</a></p>
+
+<pre><code>Returns the subject
+@return [String, Symbol] the subject</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Hardcoded value (String)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  subject &quot;Welcome&quot;
+end
+</code></pre>
+
+<p>@example Method (Symbol)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  subject :greeting
+
+  private
+
+  def greeting
+    &quot;Hello, #{ user.name }&quot;
+  end
+end
+
+user = User.new(name: &#39;L&#39;)
+WelcomeMailer.deliver(user: user)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-subject_source')" id="l_method-i-subject_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L456" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-subject_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 456</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">subject</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@subject</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@subject</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template">
+            
+              <b>template</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-template" name="method-i-template" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the <a href="Dsl.html#method-i-template">#template</a> name IF it
+differs <a href="Dsl.html#method-i-from">#from</a> the convention.</p>
+
+<p>For a given mailer named <code>Signup::Welcome</code> it will look for
+<code>signup/welcome.<strong>.</code></strong> <a
+href="Dsl.html#method-i-templates">#templates</a> under the root directory.</p>
+
+<p>If for some reason, we need <a href="Dsl.html#method-i-to">#to</a> specify
+a different <a href="Dsl.html#method-i-template">#template</a> name, we can
+use this method.</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload template(value)</p>
+
+<pre><code>Sets the given value
+@param value [String, #to_s] relative template path, under root
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-template">#template</a></p>
+
+<pre><code>Gets the template name
+@return [String]
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Mailers::Configuration.root</p>
+
+<p>@example Custom <a href="Dsl.html#method-i-template">#template</a> name</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class MyMailer
+  include Hanami::Mailer
+  template &#39;mailer&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_source')" id="l_method-i-template_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L54" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@template</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Mailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">TemplateName</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">namespace</span>).<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@template</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-templates">
+            
+              <b>templates</b>(format = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-templates" name="method-i-templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a set of associated <a
+href="Dsl.html#method-i-templates">#templates</a> or only one for the given
+format</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload templates(format)</p>
+
+<pre><code>Returns the template associated with the given format
+@param value [Symbol] the format
+@return [Hash]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-templates">#templates</a></p>
+
+<pre><code>Returns all the associated templates
+Gets the template name
+@return [Hash] a set of templates</code></pre>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-templates_source')" id="l_method-i-templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L80" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">templates</span>(<span class="ruby-identifier">format</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@templates</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Mailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">TemplatesFinder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">find</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@templates</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">format</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to">
+            
+              <b>to</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-to" name="method-i-to" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the recipient for mail messages</p>
+
+<p>It accepts a hardcoded value as a string or array of strings. For dynamic
+values, you can specify a symbol that represents an instance method.</p>
+
+<p>This value MUST be set, otherwise an exception is raised at the delivery
+time.</p>
+
+<p>When a value is given, specify the recipient of the email Otherwise, it
+returns the recipient of the email</p>
+
+<p>This is part of a DSL, for this reason when this method is called with an
+argument, it will set the corresponding class variable. When called
+without, it will return the already set value, or the default.</p>
+
+<p>@overload to(value)</p>
+
+<pre><code>Sets the recipient
+@param value [String, Array, Symbol] the hardcoded value or method name
+@return [NilClass]</code></pre>
+
+<p>@overload <a href="Dsl.html#method-i-to">#to</a></p>
+
+<pre><code>Returns the recipient
+@return [String, Array, Symbol] the recipient</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Hardcoded value (String)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to &quot;user@example.com&quot;
+end
+</code></pre>
+
+<p>@example Hardcoded value (Array)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+
+  to [&quot;user-1@example.com&quot;, &quot;user-2@example.com&quot;]
+end
+</code></pre>
+
+<p>@example Method (Symbol)</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to :email_address
+
+  private
+
+  def email_address
+    user.email
+  end
+end
+
+user = User.new(name: &#39;L&#39;)
+WelcomeMailer.deliver(user: user)
+</code></pre>
+
+<p>@example Method that returns a collection of recipients</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+class WelcomeMailer
+  include Hanami::Mailer
+  to :recipients
+
+  private
+
+  def recipients
+    users.map(&amp;:email)
+  end
+end
+
+users = [User.new(name: &#39;L&#39;), User.new(name: &#39;MG&#39;)]
+WelcomeMailer.deliver(users: users)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_source')" id="l_method-i-to_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L400" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@to</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@to</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/Mailer/Dsl.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loading mechanism hook.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../Mailer.html#method-c-load-21">Hanami::Mailer.load!</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/5c989d51372b54cdb74372b47056e2e24b17ca2a/lib/hanami/mailer/dsl.rb#L472" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer/dsl.rb, line 472</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-identifier">templates</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

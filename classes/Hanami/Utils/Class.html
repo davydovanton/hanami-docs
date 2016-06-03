@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Class</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::Class 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/class_rb.html">sources/utils/lib/hanami/utils/class.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Class.html">Class</a> utilities @since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-load-21">load!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-load_from_pattern-21">load_from_pattern!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-load-21">
+            
+              <b>load!</b>(name, namespace = Object)
+            
+            <a href="../../../classes/Hanami/Utils/Class.html#method-c-load-21" name="method-c-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads a class for the given name.</p>
+
+<p>@param name [String, Class] the specific class name @param namespace
+[Class, Module] the Ruby namespace where we want to perform the lookup.
+@return [Class, Module] the found Ruby constant.</p>
+
+<p>@raise [NameError] if no constant can be found.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/class&#39;
+
+module App
+  module Service
+    class Endpoint
+    end
+  end
+
+  class ServiceEndpoint
+  end
+end
+
+# basic usage
+Hanami::Utils::Class.load!(&#39;App::Service&#39;) # =&gt; App::Service
+Hanami::Utils::Class.load!(App::Service)   # =&gt; App::Service
+
+# with explicit namespace
+Hanami::Utils::Class.load!(&#39;Service&#39;, App) # =&gt; App::Service
+
+# with missing constant
+Hanami::Utils::Class.load!(&#39;Unknown&#39;) # =&gt; raises NameError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load-21_source')" id="l_method-c-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/class.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/class.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">load!</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">namespace</span> = <span class="ruby-constant">Object</span>)
+  <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-load_from_pattern-21">
+            
+              <b>load_from_pattern!</b>(pattern, namespace = Object)
+            
+            <a href="../../../classes/Hanami/Utils/Class.html#method-c-load_from_pattern-21" name="method-c-load_from_pattern-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads a class from the given pattern name and namespace</p>
+
+<p>@param pattern [String] the class name pattern @param namespace [Class,
+Module] the Ruby namespace where we want to perform the lookup. @return
+[Class, Module] the found Ruby constant.</p>
+
+<p>@raise [NameError] if no constant can be found.</p>
+
+<p>@since 0.3.1</p>
+
+<p>@see <a
+href="String.html#method-i-tokenize">Hanami::Utils::String#tokenize</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/class&#39;
+
+module App
+  module Service
+    class Endpoint
+    end
+  end
+
+  class ServiceEndpoint
+  end
+end
+
+# basic usage
+Hanami::Utils::Class.load_from_pattern!(&#39;App::Service&#39;) # =&gt; App::Service
+
+# with explicit namespace
+Hanami::Utils::Class.load_from_pattern!(&#39;Service&#39;, App) # =&gt; App::Service
+
+# with pattern
+Hanami::Utils::Class.load_from_pattern!(&#39;App::Service(::Endpoint|Endpoint)&#39;) # =&gt; App::Service::Endpoint
+Hanami::Utils::Class.load_from_pattern!(&#39;App::Service(Endpoint|::Endpoint)&#39;) # =&gt; App::ServiceEndpoint
+
+# with missing constant
+Hanami::Utils::Class.load_from_pattern!(&#39;Unknown&#39;) # =&gt; raises NameError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load_from_pattern-21_source')" id="l_method-c-load_from_pattern-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/class.rb#L81" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-load_from_pattern-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/class.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">load_from_pattern!</span>(<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">namespace</span> = <span class="ruby-constant">Object</span>)
+  <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">pattern</span>).<span class="ruby-identifier">tokenize</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">token</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">full_name</span> = [ (<span class="ruby-identifier">namespace</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Object</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">namespace</span>), <span class="ruby-identifier">pattern</span> ].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;::&#39;</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NameError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;uninitialized constant #{ full_name }&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

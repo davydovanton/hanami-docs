@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Assets::Config::DigestManifest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Assets::Config::DigestManifest 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/assets/lib/hanami/assets/config/manifest_rb.html">sources/assets/lib/hanami/assets/config/manifest.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Digest manifest</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resolve">resolve</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(assets, manifest_path)
+            
+            <a href="../../../../classes/Hanami/Assets/Config/DigestManifest.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a <a href="DigestManifest.html#method-c-new">::new</a> instance</p>
+
+<p>@param assets [Hash] the content of the digest manifest @param
+manifest_path [Pathname] the path to the digest manifest</p>
+
+<p>@return [Hanami::Assets::Config::Manifest] a <a
+href="DigestManifest.html#method-c-new">::new</a> instance</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="../Configuration.html#method-i-manifest">Hanami::Assets::Configuration#manifest</a>
+@see <a
+href="../Configuration.html#method-i-manifest_path">Hanami::Assets::Configuration#manifest_path</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/config/manifest.rb#L88" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/config/manifest.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">assets</span>, <span class="ruby-identifier">manifest_path</span>)
+  <span class="ruby-ivar">@assets</span>        = <span class="ruby-identifier">assets</span>
+  <span class="ruby-ivar">@manifest_path</span> = <span class="ruby-identifier">manifest_path</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-resolve">
+            
+              <b>resolve</b>(asset)
+            
+            <a href="../../../../classes/Hanami/Assets/Config/DigestManifest.html#method-i-resolve" name="method-i-resolve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resolve the given asset into a digest path</p>
+
+<p>For a given path <code>/assets/application.js</code> it will return
+<code>/assets/application-28a6b886de2372ee3922fcaf3f78f2d8.js</code></p>
+
+<p>@param asset [#to_s] the relateive asset path</p>
+
+<p>@return [String] the digest path</p>
+
+<p>@raise [Hanami::Assets::MissingDigestAssetError] when the asset can&#39;t
+be</p>
+
+<pre><code>found in manifest</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resolve_source')" id="l_method-i-resolve_source">show</a>
+                
+                  | <a href="https://github.com/hanami/assets/blob/687e4702d7714362adade8eba11c37c076fe2675/lib/hanami/assets/config/manifest.rb#L104" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resolve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/assets/lib/hanami/assets/config/manifest.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve</span>(<span class="ruby-identifier">asset</span>)
+  <span class="ruby-ivar">@assets</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">asset</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Assets</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingDigestAssetError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">asset</span>, <span class="ruby-ivar">@manifest_path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

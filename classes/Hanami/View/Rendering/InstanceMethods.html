@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::InstanceMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::View::Rendering::InstanceMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering_rb.html">sources/view/lib/hanami/view/rendering.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-layout">layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-local">local</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-locals">locals</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render">render</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rendered">rendered</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template">template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(template, locals)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a view</p>
+
+<p>@param <a href="InstanceMethods.html#method-i-template">#template</a>
+[Hanami::View::Template] the <a
+href="InstanceMethods.html#method-i-template">#template</a> to <a
+href="InstanceMethods.html#method-i-render">#render</a> @param <a
+href="InstanceMethods.html#method-i-locals">#locals</a> [Hash] a set of
+objects available during the rendering</p>
+
+<pre><code>process.</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Template.html">Hanami::View::Template</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+end
+
+template = Hanami::View::Template.new(&#39;index.html.erb&#39;)
+view     = IndexView.new(template, {article: article})
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L39" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">template</span>, <span class="ruby-identifier">locals</span>)
+  <span class="ruby-ivar">@template</span> = <span class="ruby-identifier">template</span>
+  <span class="ruby-ivar">@locals</span>   = <span class="ruby-identifier">locals</span>
+  <span class="ruby-ivar">@scope</span>    = <span class="ruby-constant">Scope</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@locals</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-local">
+            
+              <b>local</b>(key)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-local" name="method-i-local" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It tries to invoke a method for the view or a <a
+href="InstanceMethods.html#method-i-local">#local</a> for the given key. If
+the lookup fails, it returns a null object.</p>
+
+<p>@return [Objeect,Hanami::View::Rendering::NullLocal] the returning value</p>
+
+<p>@since x.x.x</p>
+
+<p>@example</p>
+
+<pre><code>&lt;% if local(:plan).overdue? %&gt;
+  &lt;h2&gt;Your plan is overdue.&lt;/h2&gt;
+&lt;% end %&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-local_source')" id="l_method-i-local_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L119" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-local_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">local</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">locals</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) { <span class="ruby-constant">NullLocal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render">
+            
+              <b>render</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-render" name="method-i-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Render the <a href="InstanceMethods.html#method-i-template">#template</a>
+by bounding the <a href="InstanceMethods.html#method-i-local">#local</a>
+scope. If it uses a <a
+href="InstanceMethods.html#method-i-layout">#layout</a>, it renders the <a
+href="InstanceMethods.html#method-i-template">#template</a> first and then
+the control passes to the <a
+href="InstanceMethods.html#method-i-layout">#layout</a>.</p>
+
+<p>Override this method for custom rendering policies. For instance, when a
+serializer is used and there isn&#39;t the need of a <a
+href="InstanceMethods.html#method-i-template">#template</a>.</p>
+
+<p>@return [String] the output of the rendering process</p>
+
+<p>@raise [Hanami::View::MissingTemplateError] if the <a
+href="InstanceMethods.html#method-i-template">#template</a> is nil</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::View::Layout</p>
+
+<p>@example with <a
+href="InstanceMethods.html#method-i-template">#template</a></p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+end
+
+template = Hanami::View::Template.new(&#39;index.html.erb&#39;)
+view     = IndexView.new(template, {article: article})
+
+view.render # =&gt; &lt;h1&gt;Introducing Hanami::view&lt;/h1&gt; ...
+</code></pre>
+
+<p>@example with <a
+href="InstanceMethods.html#method-i-template">#template</a> and <a
+href="InstanceMethods.html#method-i-layout">#layout</a></p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class ApplicationLayout
+  include Hanami::View::Layout
+end
+
+class IndexView
+  include Hanami::View
+  layout :application
+end
+
+template = Hanami::View::Template.new(&#39;index.html.erb&#39;)
+view     = IndexView.new(template, {article: article})
+
+view.render # =&gt; &lt;html&gt; ... &lt;h1&gt;Introducing Hanami::view&lt;/h1&gt; ...
+</code></pre>
+
+<p>@example with custom rendering</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+
+  def render
+    ArticleSerializer.new(article).render
+  end
+end
+
+view = IndexView.new(nil, {article: article})
+
+view.render # =&gt; {title: ...}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_source')" id="l_method-i-render_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L104" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render</span>
+  <span class="ruby-identifier">layout</span>.<span class="ruby-identifier">render</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-layout">
+            
+              <b>layout</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-layout" name="method-i-layout" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="InstanceMethods.html#method-i-layout">#layout</a>.</p>
+
+<p>@return [Class, Hanami::View::Rendering::NullLayout]</p>
+
+<p>@see Hanami::View::Layout @see Hanami::View.layout @see <a
+href="../Dsl.html#method-i-layout">Hanami::View::Dsl#layout</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_source')" id="l_method-i-layout_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L150" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout</span>
+  <span class="ruby-ivar">@layout</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">layout</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@scope</span>, <span class="ruby-identifier">rendered</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-locals">
+            
+              <b>locals</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-locals" name="method-i-locals" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>A set of objects available during the rendering process.</p>
+
+<p>@return [Hash]</p>
+
+<p>@see Hanami::View#initialize</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-locals_source')" id="l_method-i-locals_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L174" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-locals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">locals</span>
+  <span class="ruby-ivar">@locals</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Delegates missing methods to the scope.</p>
+
+<p>@see <a href="Scope.html">Hanami::View::Rendering::Scope</a></p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+end
+
+template = Hanami::View::Template.new(&#39;index.html.erb&#39;)
+view     = IndexView.new(template, {article: article})
+
+view.article # =&gt; #&lt;Article:0x007fb0bbd3b6e8&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L196" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>)
+  <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">__send__</span> <span class="ruby-identifier">m</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rendered">
+            
+              <b>rendered</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-rendered" name="method-i-rendered" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The output of the <a
+href="InstanceMethods.html#method-i-template">#template</a> rendering
+process.</p>
+
+<p>@return [String] the rendering output</p>
+
+<p>@raise [Hanami::View::MissingTemplateError] if the <a
+href="InstanceMethods.html#method-i-template">#template</a> is nil</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rendered_source')" id="l_method-i-rendered_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L136" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rendered_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rendered</span>
+  <span class="ruby-identifier">template</span>.<span class="ruby-identifier">render</span> <span class="ruby-ivar">@scope</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template">
+            
+              <b>template</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/InstanceMethods.html#method-i-template" name="method-i-template" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="InstanceMethods.html#method-i-template">#template</a>.</p>
+
+<p>@return [Hanami::View::Template] the <a
+href="InstanceMethods.html#method-i-template">#template</a></p>
+
+<p>@raise [Hanami::View::MissingTemplateError] if the <a
+href="InstanceMethods.html#method-i-template">#template</a> is nil</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_source')" id="l_method-i-template_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/c2caea4aadf7c139b9df4dd3cac74af11f1058b5/lib/hanami/view/rendering.rb#L162" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template</span>
+  <span class="ruby-ivar">@template</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">MissingTemplateError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">template</span>, <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">format</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

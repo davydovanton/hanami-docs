@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Validatable::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Validatable::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/controller/lib/hanami/action/validatable_rb.html">sources/controller/lib/hanami/action/validatable.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../Validatable.html">Validatable</a> API class methods</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-params">params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-params">
+            
+              <b>params</b>(klass = nil, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Validatable/ClassMethods.html#method-i-params" name="method-i-params" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Whitelist valid parameters to be passed to Hanami::Action#call.</p>
+
+<p>This feature isn&#39;t mandatory, but higly recommended for security
+reasons.</p>
+
+<p>Because <a href="ClassMethods.html#method-i-params">#params</a> come into
+your application from untrusted sources, it&#39;s a good practice to filter
+only the wanted keys that serve for your specific use case.</p>
+
+<p>Once whitelisted, the <a
+href="ClassMethods.html#method-i-params">#params</a> are available as an
+Hash with symbols as keys.</p>
+
+<p>It accepts an anonymous block where all the <a
+href="ClassMethods.html#method-i-params">#params</a> can be listed. It
+internally creates an inner class which inherits from <a
+href="../Params.html">Hanami::Action::Params</a>.</p>
+
+<p>Alternatively, it accepts an concrete class that should inherit from <a
+href="../Params.html">Hanami::Action::Params</a>.</p>
+
+<p>@param klass [Class,nil] a <a
+href="../Params.html">Hanami::Action::Params</a> subclass @param blk [Proc]
+a block which defines the whitelisted <a
+href="ClassMethods.html#method-i-params">#params</a></p>
+
+<p>@return void</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a href="../Params.html">Hanami::Action::Params</a></p>
+
+<p>@example Anonymous Block</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Signup
+  include Hanami::Action
+
+  params do
+    param :first_name
+    param :last_name
+    param :email
+  end
+
+  def call(params)
+    puts params.class            # =&gt; Signup::Params
+    puts params.class.superclass # =&gt; Hanami::Action::Params
+
+    puts params[:first_name]     # =&gt; &quot;Luca&quot;
+    puts params[:admin]          # =&gt; nil
+  end
+end
+</code></pre>
+
+<p>@example Concrete class</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class SignupParams &lt; Hanami::Action::Params
+  param :first_name
+  param :last_name
+  param :email
+end
+
+class Signup
+  include Hanami::Action
+  params SignupParams
+
+  def call(params)
+    puts params.class            # =&gt; SignupParams
+    puts params.class.superclass # =&gt; Hanami::Action::Params
+
+    params[:first_name]          # =&gt; &quot;Luca&quot;
+    params[:admin]               # =&gt; nil
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-params_source')" id="l_method-i-params_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/c2aa76382488840afe721e14876079829cfb2f52/lib/hanami/action/validatable.rb#L94" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/validatable.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">params</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">const_set</span>(<span class="ruby-constant">PARAMS_CLASS_NAME</span>, <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Params</span>))
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">params</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@params_class</span> = <span class="ruby-identifier">klass</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

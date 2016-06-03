@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Model 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/model/lib/hanami/model_rb.html">sources/model/lib/hanami/model.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/abstract_rb.html">sources/model/lib/hanami/model/adapters/abstract.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/file_system_adapter_rb.html">sources/model/lib/hanami/model/adapters/file_system_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/implementation_rb.html">sources/model/lib/hanami/model/adapters/implementation.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/memory/collection_rb.html">sources/model/lib/hanami/model/adapters/memory/collection.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/memory/command_rb.html">sources/model/lib/hanami/model/adapters/memory/command.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/memory/query_rb.html">sources/model/lib/hanami/model/adapters/memory/query.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/memory_adapter_rb.html">sources/model/lib/hanami/model/adapters/memory_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/null_adapter_rb.html">sources/model/lib/hanami/model/adapters/null_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/collection_rb.html">sources/model/lib/hanami/model/adapters/sql/collection.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/command_rb.html">sources/model/lib/hanami/model/adapters/sql/command.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/console_rb.html">sources/model/lib/hanami/model/adapters/sql/console.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/consoles/mysql_rb.html">sources/model/lib/hanami/model/adapters/sql/consoles/mysql.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/consoles/postgresql_rb.html">sources/model/lib/hanami/model/adapters/sql/consoles/postgresql.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/consoles/sqlite_rb.html">sources/model/lib/hanami/model/adapters/sql/consoles/sqlite.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql/query_rb.html">sources/model/lib/hanami/model/adapters/sql/query.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/adapters/sql_adapter_rb.html">sources/model/lib/hanami/model/adapters/sql_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/coercer_rb.html">sources/model/lib/hanami/model/coercer.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/config/adapter_rb.html">sources/model/lib/hanami/model/config/adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/config/mapper_rb.html">sources/model/lib/hanami/model/config/mapper.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/configuration_rb.html">sources/model/lib/hanami/model/configuration.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/error_rb.html">sources/model/lib/hanami/model/error.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapper_rb.html">sources/model/lib/hanami/model/mapper.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapping_rb.html">sources/model/lib/hanami/model/mapping.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapping/attribute_rb.html">sources/model/lib/hanami/model/mapping/attribute.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapping/coercers_rb.html">sources/model/lib/hanami/model/mapping/coercers.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapping/collection_rb.html">sources/model/lib/hanami/model/mapping/collection.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/mapping/collection_coercer_rb.html">sources/model/lib/hanami/model/mapping/collection_coercer.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator_rb.html">sources/model/lib/hanami/model/migrator.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator/adapter_rb.html">sources/model/lib/hanami/model/migrator/adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator/connection_rb.html">sources/model/lib/hanami/model/migrator/connection.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator/mysql_adapter_rb.html">sources/model/lib/hanami/model/migrator/mysql_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator/postgres_adapter_rb.html">sources/model/lib/hanami/model/migrator/postgres_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/migrator/sqlite_adapter_rb.html">sources/model/lib/hanami/model/migrator/sqlite_adapter.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/model/version_rb.html">sources/model/lib/hanami/model/version.rb</a></li>
+            
+            <li><a href="../../files/sources/model/lib/hanami/repository_rb.html">sources/model/lib/hanami/repository.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Model.html">Model</a></p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Model/Adapters.html">Hanami::Model::Adapters</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Model/Config.html">Hanami::Model::Config</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Model/Mapping.html">Hanami::Model::Mapping</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Model/Migrator.html">Hanami::Model::Migrator</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/CheckConstraintViolationError.html">Hanami::Model::CheckConstraintViolationError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/Coercer.html">Hanami::Model::Coercer</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/Configuration.html">Hanami::Model::Configuration</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/ForeignKeyConstraintViolationError.html">Hanami::Model::ForeignKeyConstraintViolationError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/InvalidCommandError.html">Hanami::Model::InvalidCommandError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/InvalidQueryError.html">Hanami::Model::InvalidQueryError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/Mapper.html">Hanami::Model::Mapper</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/MigrationError.html">Hanami::Model::MigrationError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/NoMappingError.html">Hanami::Model::NoMappingError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/NotNullConstraintViolationError.html">Hanami::Model::NotNullConstraintViolationError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/NullMapper.html">Hanami::Model::NullMapper</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Model/UniqueConstraintViolationError.html">Hanami::Model::UniqueConstraintViolationError</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-configure">configure</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dupe">dupe</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-duplicate">duplicate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-migration">migration</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-unload-21">unload!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">Error</td>
+            <td>=</td>
+            <td class="attr-value">Class.new(::StandardError)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="Model.html#Error">Error</a> class</p>
+
+<p>@since 0.5.1</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NonPersistedEntityError</td>
+            <td>=</td>
+            <td class="attr-value">Class.new(Error)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Model.html#Error">Error</a> for non persisted entity It&#39;s
+raised when we try to update or delete a non persisted entity.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="Repository/InstanceMethods.html#method-i-update">Hanami::Repository::InstanceMethods#update</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">InvalidMappingError</td>
+            <td>=</td>
+            <td class="attr-value">Class.new(Error)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Model.html#Error">Error</a> for invalid mapper configuration
+It&#39;s raised when mapping is not configured correctly</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-mapping">Hanami::Configuration#mapping</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.7.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Defines the version</p>
+
+<p>@since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-configure">
+            
+              <b>configure</b>(&amp;blk)
+            
+            <a href="../../classes/Hanami/Model.html#method-c-configure" name="method-c-configure" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Configure the framework. It yields the given block in the context of the
+configuration</p>
+
+<p>@param blk [Proc] the configuration block</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="Model.html">Hanami::Model</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+Hanami::Model.configure do
+  adapter type: :sql, uri: &#39;postgres://localhost/database&#39;
+
+  mapping do
+    collection :users do
+      entity User
+
+      attribute :id,   Integer
+      attribute :name, String
+    end
+  end
+end
+</code></pre>
+
+<p>Adapter MUST follow the convention in which adapter class is inflection of
+adapter name The above example has name :sql, thus derived class will be
+`Hanami::Model::Adapters::SqlAdapter`</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-configure_source')" id="l_method-c-configure_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/7ff03eef2fc59e174b0a2e3d1519a542de0b34d9/lib/hanami/model.rb#L50" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-configure_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-dupe">
+            
+              <b>dupe</b>()
+            
+            <a href="../../classes/Hanami/Model.html#method-c-dupe" name="method-c-dupe" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre><code>Duplicate Hanami::Model in order to create a new separated instance
+of the framework.
+
+The new instance of the framework will be completely decoupled from the
+original. It will inherit the configuration, but all the changes that
+happen after the duplication, won&#39;t be reflected on the other copies.
+
+@return [Module] a copy of Hanami::Model</code></pre>
+
+<p> @since 0.2.0</p>
+
+<pre><code>@api private
+
+@example Basic usage
+  require &#39;hanami/model&#39;
+
+  module MyApp
+    Model = Hanami::Model.dupe
+  end
+
+  MyApp::Model == Hanami::Model # =&gt; false
+
+  MyApp::Model.configuration ==
+    Hanami::Model.configuration # =&gt; false
+
+@example Inheriting configuration
+  require &#39;hanami/model&#39;
+
+  Hanami::Model.configure do
+    adapter type: :sql, uri: &#39;sqlite3://uri&#39;
+  end
+
+  module MyApp
+    Model = Hanami::Model.dupe
+  end
+
+  module MyApi
+    Model = Hanami::Model.dupe
+    Model.configure do
+      adapter type: :sql, uri: &#39;postgresql://uri&#39;
+    end
+  end
+
+  Hanami::Model.configuration.adapter_config.uri # =&gt; &#39;sqlite3://uri&#39;
+  MyApp::Model.configuration.adapter_config.uri # =&gt; &#39;sqlite3://uri&#39;
+  MyApi::Model.configuration.adapter_config.uri # =&gt; &#39;postgresql://uri&#39;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dupe_source')" id="l_method-c-dupe_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/7ff03eef2fc59e174b0a2e3d1519a542de0b34d9/lib/hanami/model.rb#L116" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-dupe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dupe</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configuration</span> = <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-duplicate">
+            
+              <b>duplicate</b>(mod, &amp;blk)
+            
+            <a href="../../classes/Hanami/Model.html#method-c-duplicate" name="method-c-duplicate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <pre><code>Duplicate the framework and generate modules for the target application
+
+@param mod [Module] the Ruby namespace of the application
+@param blk [Proc] an optional block to configure the framework
+
+@return [Module] a copy of Hanami::Model</code></pre>
+
+<p> @since 0.2.0</p>
+
+<pre><code>@see Hanami::Model#dupe
+@see Hanami::Model::Configuration
+
+@example Basic usage
+  require &#39;hanami/model&#39;
+
+  module MyApp
+    Model = Hanami::Model.dupe
+  end
+
+  # It will:
+  #
+  # 1. Generate MyApp::Model
+  # 2. Generate MyApp::Entity
+  # 3. Generate MyApp::Repository
+
+  MyApp::Model      == Hanami::Model # =&gt; false
+  MyApp::Repository == Hanami::Repository # =&gt; false
+
+@example Block usage
+  require &#39;hanami/model&#39;
+
+  module MyApp
+    Model = Hanami::Model.duplicate(self) do
+      adapter type: :memory, uri: &#39;memory://localhost&#39;
+    end
+  end
+
+  Hanami::Model.configuration.adapter_config # =&gt; nil
+  MyApp::Model.configuration.adapter_config # =&gt; #&lt;Hanami::Model::Config::Adapter:0x007ff0ff0244f8 @type=:memory, @uri=&quot;memory://localhost&quot;, @class_name=&quot;MemoryAdapter&quot;&gt;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-duplicate_source')" id="l_method-c-duplicate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/7ff03eef2fc59e174b0a2e3d1519a542de0b34d9/lib/hanami/model.rb#L161" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-duplicate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">duplicate</span>(<span class="ruby-identifier">mod</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">dupe</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duplicated</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-string">%Q{
+      Entity = Hanami::Entity.dup
+      Repository = Hanami::Repository.dup
+    }</span>
+
+    <span class="ruby-identifier">duplicated</span>.<span class="ruby-identifier">configure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../classes/Hanami/Model.html#method-c-load-21" name="method-c-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the framework</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-load-21_source')" id="l_method-c-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/7ff03eef2fc59e174b0a2e3d1519a542de0b34d9/lib/hanami/model.rb#L59" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">load!</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-migration">
+            
+              <b>migration</b>(&amp;blk)
+            
+            <a href="../../classes/Hanami/Model.html#method-c-migration" name="method-c-migration" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define a <a href="Model.html#method-c-migration">::migration</a></p>
+
+<p>It must define an up/down strategy to write schema changes (up) and to
+rollback them (down).</p>
+
+<p>We can use <code>up</code> and <code>down</code> blocks for custom
+strategies, or only one <code>change</code> block that automatically
+implements “down” strategy.</p>
+
+<p>@param blk [Proc] a block that defines up/down or change database <a
+href="Model.html#method-c-migration">::migration</a></p>
+
+<p>@since 0.4.0</p>
+
+<p>@example Use up/down blocks</p>
+
+<pre><code>Hanami::Model.migration do
+  up do
+    create_table :books do
+      primary_key :id
+      column :book, String
+    end
+  end
+
+  down do
+    drop_table :books
+  end
+end
+</code></pre>
+
+<p>@example Use change block</p>
+
+<pre><code>Hanami::Model.migration do
+  change do
+    create_table :books do
+      primary_key :id
+      column :book, String
+    end
+  end
+
+  # DOWN strategy is automatically generated
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-migration_source')" id="l_method-c-migration_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L51" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-migration_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">migration</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-constant">Sequel</span>.<span class="ruby-identifier">migration</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-unload-21">
+            
+              <b>unload!</b>()
+            
+            <a href="../../classes/Hanami/Model.html#method-c-unload-21" name="method-c-unload-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Unload the framework</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-unload-21_source')" id="l_method-c-unload-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/7ff03eef2fc59e174b0a2e3d1519a542de0b34d9/lib/hanami/model.rb#L67" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-unload-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">unload!</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">unload!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

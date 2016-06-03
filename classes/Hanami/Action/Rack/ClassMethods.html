@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Rack::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Rack::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/controller/lib/hanami/action/rack_rb.html">sources/controller/lib/hanami/action/rack.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-params_class">params_class</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rack_builder">rack_builder</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-use">use</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-params_class">
+            
+              <b>params_class</b>()
+            
+            <a href="../../../../classes/Hanami/Action/Rack/ClassMethods.html#method-i-params_class" name="method-i-params_class" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the class which defines the params</p>
+
+<p>Returns the class which has been provided to define the params. By default
+this will be <a href="../Params.html">Hanami::Action::Params</a>.</p>
+
+<p>@return [Class] A params class (when whitelisted) or</p>
+
+<pre><code>Hanami::Action::Params
+</code></pre>
+
+<p>@api private @since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-params_class_source')" id="l_method-i-params_class_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L117" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-params_class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">params_class</span>
+  <span class="ruby-ivar">@params_class</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">BaseParams</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rack_builder">
+            
+              <b>rack_builder</b>()
+            
+            <a href="../../../../classes/Hanami/Action/Rack/ClassMethods.html#method-i-rack_builder" name="method-i-rack_builder" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Build rack builder</p>
+
+<p>@return [Rack::Builder]</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rack_builder_source')" id="l_method-i-rack_builder_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L65" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rack_builder_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rack_builder</span>
+  <span class="ruby-ivar">@rack_builder</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Action</span><span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Callable</span>
+    <span class="ruby-identifier">rack_builder</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Builder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">rack_builder</span>.<span class="ruby-identifier">run</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>) }
+    <span class="ruby-identifier">rack_builder</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use">
+            
+              <b>use</b>(middleware, *args, &amp;block)
+            
+            <a href="../../../../classes/Hanami/Action/Rack/ClassMethods.html#method-i-use" name="method-i-use" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Use a <a href="../Rack.html">Rack</a> middleware</p>
+
+<p>The middleware will be used as it is.</p>
+
+<p>At the runtime, the middleware be invoked with the raw <a
+href="../Rack.html">Rack</a> env.</p>
+
+<p>Multiple middlewares can be employed, just by using multiple times this
+method.</p>
+
+<p>@param middleware [#call] A <a href="../Rack.html">Rack</a> middleware
+@param args [Array] Array arguments for middleware</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="../Callbacks/ClassMethods.html#method-i-before">Hanami::Action::Callbacks::ClassMethods#before</a></p>
+
+<p>@example <a href="../../Middleware.html">Middleware</a></p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+module Sessions
+  class Create
+    include Hanami::Action
+    use OmniAuth
+
+    def call(params)
+      # ...
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_source')" id="l_method-i-use_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L103" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-use_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use</span>(<span class="ruby-identifier">middleware</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">rack_builder</span>.<span class="ruby-identifier">use</span> <span class="ruby-identifier">middleware</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Utils 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/http_router_rb.html">sources/router/lib/hanami/routing/http_router.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/namespace_rb.html">sources/router/lib/hanami/routing/namespace.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/parsing/json_parser_rb.html">sources/router/lib/hanami/routing/parsing/json_parser.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/parsing/parser_rb.html">sources/router/lib/hanami/routing/parsing/parser.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/recognized_route_rb.html">sources/router/lib/hanami/routing/recognized_route.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/resource/action_rb.html">sources/router/lib/hanami/routing/resource/action.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/resources/action_rb.html">sources/router/lib/hanami/routing/resources/action.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/routes_inspector_rb.html">sources/router/lib/hanami/routing/routes_inspector.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/interactor_rb.html">sources/utils/lib/hanami/interactor.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/logger_rb.html">sources/utils/lib/hanami/logger.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils_rb.html">sources/utils/lib/hanami/utils.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/attributes_rb.html">sources/utils/lib/hanami/utils/attributes.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/basic_object_rb.html">sources/utils/lib/hanami/utils/basic_object.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/blank_rb.html">sources/utils/lib/hanami/utils/blank.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/callbacks_rb.html">sources/utils/lib/hanami/utils/callbacks.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/class_rb.html">sources/utils/lib/hanami/utils/class.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/class_attribute_rb.html">sources/utils/lib/hanami/utils/class_attribute.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/deprecation_rb.html">sources/utils/lib/hanami/utils/deprecation.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/duplicable_rb.html">sources/utils/lib/hanami/utils/duplicable.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/escape_rb.html">sources/utils/lib/hanami/utils/escape.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/hash_rb.html">sources/utils/lib/hanami/utils/hash.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/inflector_rb.html">sources/utils/lib/hanami/utils/inflector.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/io_rb.html">sources/utils/lib/hanami/utils/io.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/json_rb.html">sources/utils/lib/hanami/utils/json.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/kernel_rb.html">sources/utils/lib/hanami/utils/kernel.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/load_paths_rb.html">sources/utils/lib/hanami/utils/load_paths.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/path_prefix_rb.html">sources/utils/lib/hanami/utils/path_prefix.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/string_rb.html">sources/utils/lib/hanami/utils/string.rb</a></li>
+            
+            <li><a href="../../files/sources/utils/lib/hanami/utils/version_rb.html">sources/utils/lib/hanami/utils/version.rb</a></li>
+            
+            <li><a href="../../files/sources/validations/lib/hanami/validations/attribute_rb.html">sources/validations/lib/hanami/validations/attribute.rb</a></li>
+            
+            <li><a href="../../files/sources/validations/lib/hanami/validations/attribute_definer_rb.html">sources/validations/lib/hanami/validations/attribute_definer.rb</a></li>
+            
+            <li><a href="../../files/sources/validations/lib/hanami/validations/coercions_rb.html">sources/validations/lib/hanami/validations/coercions.rb</a></li>
+            
+            <li><a href="../../files/sources/validations/lib/hanami/validations/errors_rb.html">sources/validations/lib/hanami/validations/errors.rb</a></li>
+            
+            <li><a href="../../files/sources/validations/lib/hanami/validations/namespace_rb.html">sources/validations/lib/hanami/validations/namespace.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/configuration_rb.html">sources/view/lib/hanami/view/configuration.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/escape_rb.html">sources/view/lib/hanami/view/escape.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/layout_finder_rb.html">sources/view/lib/hanami/view/rendering/layout_finder.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/layout_scope_rb.html">sources/view/lib/hanami/view/rendering/layout_scope.rb</a></li>
+            
+            <li><a href="../../files/sources/view/lib/hanami/view/rendering/template_name_rb.html">sources/view/lib/hanami/view/rendering/template_name.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Ruby core extentions and <a href="../Hanami.html">Hanami</a> utilities</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Callbacks.html">Hanami::Utils::Callbacks</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/ClassAttribute.html">Hanami::Utils::ClassAttribute</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Duplicable.html">Hanami::Utils::Duplicable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Escape.html">Hanami::Utils::Escape</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Inflector.html">Hanami::Utils::Inflector</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Json.html">Hanami::Utils::Json</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Utils/Kernel.html">Hanami::Utils::Kernel</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/Attributes.html">Hanami::Utils::Attributes</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/BasicObject.html">Hanami::Utils::BasicObject</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/Blank.html">Hanami::Utils::Blank</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/Class.html">Hanami::Utils::Class</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/Deprecation.html">Hanami::Utils::Deprecation</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/Hash.html">Hanami::Utils::Hash</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/IO.html">Hanami::Utils::IO</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/LoadPaths.html">Hanami::Utils::LoadPaths</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/PathPrefix.html">Hanami::Utils::PathPrefix</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Utils/String.html">Hanami::Utils::String</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-jruby-3F">jruby?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-rubinius-3F">rubinius?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">HANAMI_JRUBY</td>
+            <td>=</td>
+            <td class="attr-value">&#39;java&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.3.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HANAMI_RUBINIUS</td>
+            <td>=</td>
+            <td class="attr-value">&#39;rbx&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.3.1 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.8.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Defines the version</p>
+
+<p>@since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-jruby-3F">
+            
+              <b>jruby?</b>()
+            
+            <a href="../../classes/Hanami/Utils.html#method-c-jruby-3F" name="method-c-jruby-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the current VM is JRuby</p>
+
+<p>@return [TrueClass,FalseClass] return if the VM is JRuby or not</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-jruby-3F_source')" id="l_method-c-jruby-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils.rb#L22" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-jruby-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">jruby?</span>
+  <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">==</span> <span class="ruby-constant">HANAMI_JRUBY</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-rubinius-3F">
+            
+              <b>rubinius?</b>()
+            
+            <a href="../../classes/Hanami/Utils.html#method-c-rubinius-3F" name="method-c-rubinius-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the current VM is Rubinius</p>
+
+<p>@return [TrueClass,FalseClass] return if the VM is Rubinius or not</p>
+
+<p>@since 0.3.1 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-rubinius-3F_source')" id="l_method-c-rubinius-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils.rb#L32" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-rubinius-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">rubinius?</span>
+  <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-operator">==</span> <span class="ruby-constant">HANAMI_RUBINIUS</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

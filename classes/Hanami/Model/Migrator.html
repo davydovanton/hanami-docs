@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Migrator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Model::Migrator 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator_rb.html">sources/model/lib/hanami/model/migrator.rb</a></li>
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator/adapter_rb.html">sources/model/lib/hanami/model/migrator/adapter.rb</a></li>
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator/connection_rb.html">sources/model/lib/hanami/model/migrator/connection.rb</a></li>
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator/mysql_adapter_rb.html">sources/model/lib/hanami/model/migrator/mysql_adapter.rb</a></li>
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator/postgres_adapter_rb.html">sources/model/lib/hanami/model/migrator/postgres_adapter.rb</a></li>
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/migrator/sqlite_adapter_rb.html">sources/model/lib/hanami/model/migrator/sqlite_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Database schema migrator</p>
+
+<p>@since 0.4.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Migrator/Adapter.html">Hanami::Model::Migrator::Adapter</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Migrator/Connection.html">Hanami::Model::Migrator::Connection</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Migrator/MySQLAdapter.html">Hanami::Model::Migrator::MySQLAdapter</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Migrator/PostgresAdapter.html">Hanami::Model::Migrator::PostgresAdapter</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Migrator/SQLiteAdapter.html">Hanami::Model::Migrator::SQLiteAdapter</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-apply">apply</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-drop">drop</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-migrate">migrate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-prepare">prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-version">version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-apply">
+            
+              <b>apply</b>()
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-apply" name="method-c-apply" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Migrate, dump schema, delete migrations.</p>
+
+<p>This is an experimental feature. It may change or be removed in the future.</p>
+
+<p>Actively developed applications accumulate tons of migrations. In the long
+term they are hard to maintain and slow to execute.</p>
+
+<p>“Apply” feature solves this problem.</p>
+
+<p>It keeps an updated SQL file with the structure of the database. This file
+can be used to <a href="Migrator.html#method-c-create">::create</a> fresh
+databases for developer machines or during testing. This is faster than to
+run dozen or hundred migrations.</p>
+
+<p>When we use “apply”, it eliminates all the migrations that are no longer
+necessary.</p>
+
+<p>@raise [Hanami::Model::MigrationError] if an error occurs</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-adapter">Hanami::Model::Configuration#adapter</a>
+@see <a
+href="Configuration.html#method-i-migrations">Hanami::Model::Configuration#migrations</a></p>
+
+<p>@example Apply Migrations</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter    type: :sql, uri: &#39;postgres://localhost/foo&#39;
+  migrations &#39;db/migrations&#39;
+  schema     &#39;db/schema.sql&#39;
+end
+
+# Reads all files from &quot;db/migrations&quot; and apply and delete them.
+# It generates an updated version of &quot;db/schema.sql&quot;
+Hanami::Model::Migrator.apply
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-apply_source')" id="l_method-c-apply_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L203" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-apply_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">apply</span>
+  <span class="ruby-identifier">migrate</span>
+  <span class="ruby-identifier">adapter</span>(<span class="ruby-identifier">connection</span>).<span class="ruby-identifier">dump</span>
+  <span class="ruby-identifier">delete_migrations</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-create">
+            
+              <b>create</b>()
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-create" name="method-c-create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Create database defined by current configuration.</p>
+
+<p>It&#39;s only implemented for the following databases:</p>
+
+<pre><code>* SQLite3
+* PostgreSQL
+* MySQL</code></pre>
+
+<p>@raise [Hanami::Model::MigrationError] if an error occurs</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-adapter">Hanami::Model::Configuration#adapter</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter type: :sql, uri: &#39;postgres://localhost/foo&#39;
+end
+
+Hanami::Model::Migrator.create # Creates `foo&#39; database
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-create_source')" id="l_method-c-create_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L83" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">adapter</span>(<span class="ruby-identifier">connection</span>).<span class="ruby-identifier">create</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-drop">
+            
+              <b>drop</b>()
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-drop" name="method-c-drop" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Drop database defined by current configuration.</p>
+
+<p>It&#39;s only implemented for the following databases:</p>
+
+<pre><code>* SQLite3
+* PostgreSQL
+* MySQL</code></pre>
+
+<p>@raise [Hanami::Model::MigrationError] if an error occurs</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-adapter">Hanami::Model::Configuration#adapter</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter type: :sql, uri: &#39;postgres://localhost/foo&#39;
+end
+
+Hanami::Model::Migrator.drop # Drops `foo&#39; database
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-drop_source')" id="l_method-c-drop_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L111" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-drop_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">drop</span>
+  <span class="ruby-identifier">adapter</span>(<span class="ruby-identifier">connection</span>).<span class="ruby-identifier">drop</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-migrate">
+            
+              <b>migrate</b>(version: nil)
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-migrate" name="method-c-migrate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Migrate database schema</p>
+
+<p>It&#39;s possible to <a href="Migrator.html#method-c-migrate">::migrate</a>
+“down” by specifying a <a
+href="Migrator.html#method-c-version">::version</a> (eg.
+<code>&quot;20150610133853&quot;</code>)</p>
+
+<p>@param <a href="Migrator.html#method-c-version">::version</a>
+[String,NilClass] target <a
+href="Migrator.html#method-c-version">::version</a></p>
+
+<p>@raise [Hanami::Model::MigrationError] if an error occurs</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-adapter">Hanami::Model::Configuration#adapter</a>
+@see <a
+href="Configuration.html#method-i-migrations">Hanami::Model::Configuration#migrations</a></p>
+
+<p>@example Migrate Up</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter    type: :sql, uri: &#39;postgres://localhost/foo&#39;
+  migrations &#39;db/migrations&#39;
+end
+
+# Reads all files from &quot;db/migrations&quot; and apply them
+Hanami::Model::Migrator.migrate
+</code></pre>
+
+<p>@example Migrate Down</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter    type: :sql, uri: &#39;postgres://localhost/foo&#39;
+  migrations &#39;db/migrations&#39;
+end
+
+# Reads all files from &quot;db/migrations&quot; and apply them
+Hanami::Model::Migrator.migrate
+
+# Migrate to a specifiy version
+Hanami::Model::Migrator.migrate(version: &quot;20150610133853&quot;)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-migrate_source')" id="l_method-c-migrate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L157" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-migrate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-identifier">version</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">version</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">version</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">version</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">connection</span>, <span class="ruby-identifier">migrations</span>, <span class="ruby-identifier">target</span><span class="ruby-operator">:</span> <span class="ruby-identifier">version</span>, <span class="ruby-identifier">allow_missing_migration_files</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">migrations?</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">MigrationError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-prepare">
+            
+              <b>prepare</b>()
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-prepare" name="method-c-prepare" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Prepare database: <a href="Migrator.html#method-c-drop">::drop</a>, <a
+href="Migrator.html#method-c-create">::create</a>, load schema (if any), <a
+href="Migrator.html#method-c-migrate">::migrate</a>.</p>
+
+<p>This is designed for development machines and testing mode. It works faster
+if used with <code>apply</code>.</p>
+
+<p>@raise [Hanami::Model::MigrationError] if an error occurs</p>
+
+<p>@since 0.4.0</p>
+
+<p>@see <a href="Migrator.html#method-c-apply">::apply</a></p>
+
+<p>@example Prepare Database</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter    type: :sql, uri: &#39;postgres://localhost/foo&#39;
+  migrations &#39;db/migrations&#39;
+end
+
+Hanami::Model::Migrator.prepare # =&gt; creates `foo&#39; and run migrations
+</code></pre>
+
+<p>@example Prepare Database (with schema dump)</p>
+
+<pre><code>require &#39;hanami/model&#39;
+require &#39;hanami/model/migrator&#39;
+
+Hanami::Model.configure do
+  # ...
+  adapter    type: :sql, uri: &#39;postgres://localhost/foo&#39;
+  migrations &#39;db/migrations&#39;
+  schema     &#39;db/schema.sql&#39;
+end
+
+Hanami::Model::Migrator.apply   # =&gt; updates schema dump
+Hanami::Model::Migrator.prepare # =&gt; creates `foo&#39;, load schema and run pending migrations (if any)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-prepare_source')" id="l_method-c-prepare_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L245" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">prepare</span>
+  <span class="ruby-identifier">drop</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">adapter</span>(<span class="ruby-identifier">connection</span>).<span class="ruby-identifier">load</span>
+  <span class="ruby-identifier">migrate</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-version">
+            
+              <b>version</b>()
+            
+            <a href="../../../classes/Hanami/Model/Migrator.html#method-c-version" name="method-c-version" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return current database <a
+href="Migrator.html#method-c-version">::version</a> timestamp</p>
+
+<p>If no migrations were ran, it returns <code>nil</code>.</p>
+
+<p>@return [String,NilClass] current <a
+href="Migrator.html#method-c-version">::version</a>, if previously migrated</p>
+
+<p>@since 0.4.0</p>
+
+<p>@example</p>
+
+<pre><code># Given last migrations is:
+#  20150610133853_create_books.rb
+
+Hanami::Model::Migrator.version # =&gt; &quot;20150610133853&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-version_source')" id="l_method-c-version_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/migrator.rb#L265" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/migrator.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">version</span>
+  <span class="ruby-identifier">adapter</span>(<span class="ruby-identifier">connection</span>).<span class="ruby-identifier">version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

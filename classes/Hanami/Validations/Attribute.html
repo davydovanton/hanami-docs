@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Validations::Attribute</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Validations::Attribute 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/validations/lib/hanami/validations/attribute_rb.html">sources/validations/lib/hanami/validations/attribute.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A validable attribute</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-validate">validate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">CONFIRMATION_TEMPLATE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;%{name}_confirmation&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Attribute.html">Attribute</a> naming convention for “confirmation”
+validation</p>
+
+<p>@see Hanami::Validations::Attribute#confirmation</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>value</td>
+            <td class='attr-desc'><p>@api private @since 0.2.0</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(attributes, name, value, validations, errors)
+            
+            <a href="../../../classes/Hanami/Validations/Attribute.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiate an attribute</p>
+
+<p>@param attributes [Hash] a set of attributes and values coming from the</p>
+
+<pre><code>input
+</code></pre>
+
+<p>@param name [Symbol] the name of the attribute @param <a
+href="Attribute.html#attribute-i-value">#value</a> [Object,nil] the <a
+href="Attribute.html#attribute-i-value">#value</a> coming from the input
+@param validations [Hash] a set of validation rules</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute.rb#L37" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">attributes</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">validations</span>, <span class="ruby-identifier">errors</span>)
+  <span class="ruby-ivar">@attributes</span>  = <span class="ruby-identifier">attributes</span>
+  <span class="ruby-ivar">@name</span>        = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@value</span>       = <span class="ruby-identifier">value</span>
+  <span class="ruby-ivar">@validations</span> = <span class="ruby-identifier">validations</span>
+  <span class="ruby-ivar">@errors</span>      = <span class="ruby-identifier">errors</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-validate">
+            
+              <b>validate</b>()
+            
+            <a href="../../../classes/Hanami/Validations/Attribute.html#method-i-validate" name="method-i-validate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-validate_source')" id="l_method-i-validate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/validations/blob/2021183097897b922c305cb61a5d908e2b821618/lib/hanami/validations/attribute.rb#L47" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-validate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/validations/lib/hanami/validations/attribute.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">validate</span>
+  <span class="ruby-identifier">presence</span>
+  <span class="ruby-identifier">acceptance</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">skip?</span>
+
+  <span class="ruby-identifier">format</span>
+  <span class="ruby-identifier">inclusion</span>
+  <span class="ruby-identifier">exclusion</span>
+  <span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">confirmation</span>
+  <span class="ruby-identifier">nested</span>
+
+  <span class="ruby-ivar">@errors</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::LayoutFinder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::View::Rendering::LayoutFinder 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering/layout_finder_rb.html">sources/view/lib/hanami/view/rendering/layout_finder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Defines the logic to <a href="LayoutFinder.html#method-c-find">::find</a> a
+layout</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../../Layout.html">Hanami::Layout</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-find">find</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-find">find</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SUFFIX</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Layout&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="../../Layout.html">Layout</a> class name suffix</p>
+
+<p>@api private @since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-find">
+            
+              <b>find</b>(layout, namespace = Object)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutFinder.html#method-c-find" name="method-c-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Find a layout from the given name.</p>
+
+<p>@param layout [Symbol,String,NilClass] layout name or nil if you want</p>
+
+<pre><code>to fallback to the framework defaults (see `Hanami::View.layout`).</code></pre>
+
+<p>@param namespace [Class,Module] a Ruby namespace where to lookup</p>
+
+<p>@return [Hanami::Layout] the layout for the given name or</p>
+
+<pre><code>`Hanami::View.layout`
+</code></pre>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example With given name</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View::Rendering::LayoutFinder.find(:article) # =&gt;
+  ArticleLayout
+</code></pre>
+
+<p>@example With a class</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View::Rendering::LayoutFinder.find(ArticleLayout) # =&gt;
+  ArticleLayout
+</code></pre>
+
+<p>@example With namespace</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View::Rendering::LayoutFinder.find(:application, CardDeck) # =&gt;
+  CardDeck::ApplicationLayout
+</code></pre>
+
+<p>@example With nil</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View::Rendering::LayoutFinder.find(nil) # =&gt;
+  Hanami::View::Rendering::NullLayout
+</code></pre>
+
+<p>@example With unknown layout</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+Hanami::View::Rendering::LayoutFinder.find(:unknown) # =&gt;
+  Hanami::View::Rendering::NullLayout
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-find_source')" id="l_method-c-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/rendering/layout_finder.rb#L64" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_finder.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">layout</span>, <span class="ruby-identifier">namespace</span> = <span class="ruby-constant">Object</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">layout</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>, <span class="ruby-constant">String</span>
+    <span class="ruby-comment"># TODO Move this low level logic into a Hanami::Utils solution</span>
+    <span class="ruby-identifier">class_name</span> = <span class="ruby-node">&quot;#{ Utils::String.new(layout).classify }#{ SUFFIX }&quot;</span>
+    <span class="ruby-identifier">namespace</span>  = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Class</span>.<span class="ruby-identifier">load_from_pattern!</span>(<span class="ruby-identifier">namespace</span>)
+    <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">class_name</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span>
+    <span class="ruby-identifier">layout</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-operator">||</span> <span class="ruby-constant">NullLayout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(view)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutFinder.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the finder</p>
+
+<p>@param view [Class, #layout]</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/rendering/layout_finder.rb#L82" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_finder.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">view</span>)
+  <span class="ruby-ivar">@view</span> = <span class="ruby-identifier">view</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-find">
+            
+              <b>find</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutFinder.html#method-i-find" name="method-i-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Find the layout for the view</p>
+
+<p>@return [Hanami::Layout] the layout associated to the view</p>
+
+<p>@see <a href="LayoutFinder.html#method-c-find">::find</a> @see
+Hanami::View::Rendering::LayoutFinder#initialize</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example With layout</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+    layout :article
+  end
+end
+
+Hanami::View::Rendering::LayoutFinder.new(Articles::Show) # =&gt;
+  ArticleLayout
+</code></pre>
+
+<p>@example Without layout</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Dashboard
+  class Index
+    include Hanami::View
+  end
+end
+
+Hanami::View.layout # =&gt; :application
+
+Hanami::View::Rendering::LayoutFinder.new(Dashboard::Index) # =&gt;
+  ApplicationLayout
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_source')" id="l_method-i-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/rendering/layout_finder.rb#L122" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_finder.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@view</span>.<span class="ruby-identifier">layout</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

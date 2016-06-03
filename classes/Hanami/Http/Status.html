@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Http::Status</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Http::Status 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/http/status_rb.html">sources/controller/lib/hanami/http/status.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>An HTTP status</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-for_code">for_code</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-message_for">message_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">ALL</td>
+            <td>=</td>
+            <td class="attr-value">::Rack::Utils::HTTP_STATUS_CODES.dup.merge({
+103 =&gt; &#39;Checkpoint&#39;,
+122 =&gt; &#39;Request-URI too long&#39;,
+413 =&gt; &#39;Payload Too Large&#39;,                            # Rack 1.5 compat
+414 =&gt; &#39;URI Too Long&#39;,                                 # Rack 1.5 compat
+416 =&gt; &#39;Range Not Satisfiable&#39;,                        # Rack 1.5 compat
+418 =&gt; &#39;I\&#39;m a teapot&#39;,
+420 =&gt; &#39;Enhance Your Calm&#39;,
+444 =&gt; &#39;No Response&#39;,
+449 =&gt; &#39;Retry With&#39;,
+450 =&gt; &#39;Blocked by Windows Parental Controls&#39;,
+451 =&gt; &#39;Wrong Exchange server&#39;,
+499 =&gt; &#39;Client Closed Request&#39;,
+506 =&gt; &#39;Variant Also Negotiates&#39;,                      # Rack 1.5 compat
+598 =&gt; &#39;Network read timeout error&#39;,
+599 =&gt; &#39;Network connect timeout error&#39;
+}).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>A set of standard codes and messages for HTTP statuses</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-for_code">
+            
+              <b>for_code</b>(code)
+            
+            <a href="../../../classes/Hanami/Http/Status.html#method-c-for_code" name="method-c-for_code" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a status for the given code</p>
+
+<p>@param code [Fixnum] a valid HTTP code</p>
+
+<p>@return [Array] a pair of code and message for an HTTP status</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/http/status&#39;
+
+Hanami::Http::Status.for_code(418) # =&gt; [418, &quot;I&#39;m a teapot&quot;]
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-for_code_source')" id="l_method-c-for_code_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/http/status.rb#L45" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-for_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/http/status.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">for_code</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-constant">ALL</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">code</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-message_for">
+            
+              <b>message_for</b>(code)
+            
+            <a href="../../../classes/Hanami/Http/Status.html#method-c-message_for" name="method-c-message_for" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a message for the given status code</p>
+
+<p>@param code [Fixnum] a valid HTTP code</p>
+
+<p>@return [String] a message for the given status code</p>
+
+<p>@since 0.3.2 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-message_for_source')" id="l_method-c-message_for_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/http/status.rb#L57" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-message_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/http/status.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">message_for</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">for_code</span>(<span class="ruby-identifier">code</span>)[<span class="ruby-number">1</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

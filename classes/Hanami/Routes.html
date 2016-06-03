@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routes 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/routes_rb.html">sources/hanami/lib/hanami/routes.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Routes.html">Routes</a> factory</p>
+
+<p>A <a href="../Hanami.html">Hanami</a> application has this factory
+instantiated by default and associated to the `Routes` constant, under the
+application namespace.</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-path">path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-url">url</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(routes)
+            
+            <a href="../../classes/Hanami/Routes.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the factory</p>
+
+<p>@param routes [Hanami::Router] a routes set</p>
+
+<p>@return [Hanami::Routes] the factory</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/routes.rb#L18" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/routes.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">routes</span>)
+  <span class="ruby-ivar">@routes</span> = <span class="ruby-identifier">routes</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-path">
+            
+              <b>path</b>(name, *args)
+            
+            <a href="../../classes/Hanami/Routes.html#method-i-path" name="method-i-path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a relative <a href="Routes.html#method-i-path">#path</a> for the
+given route name</p>
+
+<p>@param name [Symbol] the route name @param args [Array,nil] an optional set
+of arguments that is passed down</p>
+
+<pre><code>to the wrapped route set.</code></pre>
+
+<p>@return [Hanami::Utils::Escape::SafeString] the corresponding relative URL</p>
+
+<p>@raise <a
+href="Routing/InvalidRouteException.html">Hanami::Routing::InvalidRouteException</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-router/Hanami/Router#path-instance_method">rdoc.info/gems/hanami-router/Hanami/Router#path-instance_method</a></p>
+
+<p>@example Basic example</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/login&#39;, to: &#39;sessions#new&#39;, as: :login
+      end
+    end
+  end
+end
+
+Bookshelf::Routes.path(:login)
+  # =&gt; &#39;/login&#39;
+
+Bookshelf::Routes.path(:login, return_to: &#39;/dashboard&#39;)
+  # =&gt; &#39;/login?return_to=%2Fdashboard&#39;
+</code></pre>
+
+<p>@example Dynamic finders</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        get &#39;/login&#39;, to: &#39;sessions#new&#39;, as: :login
+      end
+    end
+  end
+end
+
+Bookshelf::Routes.login_path
+  # =&gt; &#39;/login&#39;
+
+Bookshelf::Routes.login_path(return_to: &#39;/dashboard&#39;)
+  # =&gt; &#39;/login?return_to=%2Fdashboard&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-path_source')" id="l_method-i-path_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/routes.rb#L73" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/routes.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">path</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Escape</span><span class="ruby-operator">::</span><span class="ruby-constant">SafeString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-url">
+            
+              <b>url</b>(name, *args)
+            
+            <a href="../../classes/Hanami/Routes.html#method-i-url" name="method-i-url" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return an absolute <a href="Routes.html#method-i-path">#path</a> for the
+given route name</p>
+
+<p>@param name [Symbol] the route name @param args [Array,nil] an optional set
+of arguments that is passed down</p>
+
+<pre><code>to the wrapped route set.</code></pre>
+
+<p>@return [Hanami::Utils::Escape::SafeString] the corresponding absolute URL</p>
+
+<p>@raise <a
+href="Routing/InvalidRouteException.html">Hanami::Routing::InvalidRouteException</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://rdoc.info/gems/hanami-router/Hanami/Router#url-instance_method">rdoc.info/gems/hanami-router/Hanami/Router#url-instance_method</a></p>
+
+<p>@example Basic example</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        scheme &#39;https&#39;
+        host   &#39;bookshelf.org&#39;
+
+        get &#39;/login&#39;, to: &#39;sessions#new&#39;, as: :login
+      end
+    end
+  end
+end
+
+Bookshelf::Routes.url(:login)
+  # =&gt; &#39;https://bookshelf.org/login&#39;
+
+Bookshelf::Routes.url(:login, return_to: &#39;/dashboard&#39;)
+  # =&gt; &#39;https://bookshelf.org/login?return_to=%2Fdashboard&#39;
+</code></pre>
+
+<p>@example Dynamic finders</p>
+
+<pre><code>require &#39;hanami&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      routes do
+        scheme &#39;https&#39;
+        host   &#39;bookshelf.org&#39;
+
+        get &#39;/login&#39;, to: &#39;sessions#new&#39;, as: :login
+      end
+    end
+  end
+end
+
+Bookshelf::Routes.login_url
+  # =&gt; &#39;https://bookshelf.org/login&#39;
+
+Bookshelf::Routes.login_url(return_to: &#39;/dashboard&#39;)
+  # =&gt; &#39;https://bookshelf.org/login?return_to=%2Fdashboard&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-url_source')" id="l_method-i-url_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/routes.rb#L134" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-url_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/routes.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">url</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Escape</span><span class="ruby-operator">::</span><span class="ruby-constant">SafeString</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args)
+            
+            <a href="../../classes/Hanami/Routes.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/a0140d15d610a944c71364d7234dbb5ff7e57619/lib/hanami/routes.rb#L141" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/routes.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">named_route</span>, <span class="ruby-identifier">type</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\_(path|url)\z/</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">named_route</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

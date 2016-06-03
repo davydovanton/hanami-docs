@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::LoadPaths</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::LoadPaths 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/load_paths_rb.html">sources/utils/lib/hanami/utils/load_paths.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A collection of loading <a
+href="LoadPaths.html#attribute-i-paths">#paths</a>.</p>
+
+<p>@since 0.2.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3C-3C">&lt;&lt;</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-freeze">freeze</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-initialize_copy">initialize_copy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-push">push</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>paths</td>
+            <td class='attr-desc'><p>@since 0.6.0 @api private</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(*paths)
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a <a href="LoadPaths.html#method-c-new">::new</a> collection for
+the given <a href="LoadPaths.html#attribute-i-paths">#paths</a></p>
+
+<p>@param <a href="LoadPaths.html#attribute-i-paths">#paths</a> [String,
+Pathname, Array&lt;String&gt;, Array&lt;Pathname&gt;] A single</p>
+
+<pre><code>or a collection of objects that can be converted into a Pathname</code></pre>
+
+<p>@return [Hanami::Utils::LoadPaths] self</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html">ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html</a>
+@see <a href="Kernel.html">Hanami::Utils::Kernel</a>.Pathname</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>)
+  <span class="ruby-ivar">@paths</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Array</span>(<span class="ruby-identifier">paths</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3C-3C">
+            
+              <b>&lt;&lt;</b>(*paths)
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-3C-3C" name="method-i-3C-3C" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="LoadPaths.html#method-i-push">push</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <b>==</b>(other)
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-3D-3D" name="method-i-3D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.6.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L142" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-keyword ruby-title">other</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
+    <span class="ruby-identifier">other</span>.<span class="ruby-identifier">paths</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">paths</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">other</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">paths</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <b>each</b>()
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-each" name="method-i-each" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Iterates thru the collection and yields the given block. It skips
+duplications and raises an error in case one of the <a
+href="LoadPaths.html#attribute-i-paths">#paths</a> doesn&#39;t exist.</p>
+
+<p>@yield [pathname] the block of code that acts on the collection @yieldparam
+pathname [Pathname]</p>
+
+<p>@return [void]</p>
+
+<p>@raise [Errno::ENOENT] if one of the <a
+href="LoadPaths.html#attribute-i-paths">#paths</a> doesn&#39;t exist</p>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_source')" id="l_method-i-each_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L63" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-each_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each</span>
+  <span class="ruby-ivar">@paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">realpath</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-freeze">
+            
+              <b>freeze</b>()
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-freeze" name="method-i-freeze" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It freezes the object by preventing further modifications.</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://ruby-doc.org/core/Object.html#method-i-freeze">ruby-doc.org/core/Object.html#method-i-freeze</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths = Hanami::Utils::LoadPaths.new
+paths.freeze
+
+paths.frozen?  # =&gt; true
+
+paths.push &#39;.&#39; # =&gt; RuntimeError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-freeze_source')" id="l_method-i-freeze_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L135" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-freeze_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">freeze</span>
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@paths</span>.<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_copy">
+            
+              <b>initialize_copy</b>(original)
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-initialize_copy" name="method-i-initialize_copy" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It specifies the policy for initialize copies of the object, when #clone or
+#dup are invoked.</p>
+
+<p>@api private @since 0.2.0</p>
+
+<p>@see <a
+href="http://ruby-doc.org/core/Object.html#method-i-clone">ruby-doc.org/core/Object.html#method-i-clone</a>
+@see <a
+href="http://ruby-doc.org/core/Object.html#method-i-dup">ruby-doc.org/core/Object.html#method-i-dup</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths  = Hanami::Utils::LoadPaths.new &#39;.&#39;
+paths2 = paths.dup
+
+paths  &lt;&lt; &#39;..&#39;
+paths2 &lt;&lt; &#39;../..&#39;
+
+paths
+  # =&gt; #&lt;Hanami::Utils::LoadPaths:0x007f84e0cad430 @paths=[&quot;.&quot;, &quot;..&quot;]&gt;
+
+paths2
+  # =&gt; #&lt;Hanami::Utils::LoadPaths:0x007faedc4ad3e0 @paths=[&quot;.&quot;, &quot;../..&quot;]&gt;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_copy_source')" id="l_method-i-initialize_copy_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L47" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-initialize_copy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_copy</span>(<span class="ruby-identifier">original</span>)
+  <span class="ruby-ivar">@paths</span> = <span class="ruby-identifier">original</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-value">:@paths</span>).<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-push">
+            
+              <b>push</b>(*paths)
+            
+            <a href="../../../classes/Hanami/Utils/LoadPaths.html#method-i-push" name="method-i-push" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds the given path(s).</p>
+
+<p>It returns self, so that multiple operations can be performed.</p>
+
+<p>@param <a href="LoadPaths.html#attribute-i-paths">#paths</a> [String,
+Pathname, Array&lt;String&gt;, Array&lt;Pathname&gt;] A single</p>
+
+<pre><code>or a collection of objects that can be converted into a Pathname</code></pre>
+
+<p>@return [Hanami::Utils::LoadPaths] self</p>
+
+<p>@raise [RuntimeError] if the object was previously frozen</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="http://ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html">ruby-doc.org/stdlib/libdoc/pathname/rdoc/Pathname.html</a>
+@see <a href="Kernel.html">Hanami::Utils::Kernel</a>.Pathname @see <a
+href="LoadPaths.html#method-i-freeze">#freeze</a></p>
+
+<p>@example Basic usage</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths = Hanami::Utils::LoadPaths.new
+paths.push &#39;.&#39;
+paths.push &#39;..&#39;, &#39;../..&#39;
+</code></pre>
+
+<p>@example Chainable calls</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths = Hanami::Utils::LoadPaths.new
+paths.push(&#39;.&#39;)
+     .push(&#39;..&#39;, &#39;../..&#39;)
+</code></pre>
+
+<p>@example Shovel alias (#&lt;&lt;)</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths = Hanami::Utils::LoadPaths.new
+paths &lt;&lt; &#39;.&#39;
+paths &lt;&lt; [&#39;..&#39;, &#39;../..&#39;]
+</code></pre>
+
+<p>@example Chainable calls with shovel alias (#&lt;&lt;)</p>
+
+<pre><code>require &#39;hanami/utils/load_paths&#39;
+
+paths = Hanami::Utils::LoadPaths.new
+paths &lt;&lt; &#39;.&#39; &lt;&lt; &#39;../..&#39;
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="LoadPaths.html#method-i-3C-3C">&lt;&lt;</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-push_source')" id="l_method-i-push_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/404f01fa4e78707ef9a8057f3b58e34756f5465e/lib/hanami/utils/load_paths.rb#L112" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-push_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/load_paths.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">push</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>)
+  <span class="ruby-ivar">@paths</span>.<span class="ruby-identifier">push</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>)
+  <span class="ruby-ivar">@paths</span> = <span class="ruby-constant">Kernel</span>.<span class="ruby-constant">Array</span>(<span class="ruby-ivar">@paths</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

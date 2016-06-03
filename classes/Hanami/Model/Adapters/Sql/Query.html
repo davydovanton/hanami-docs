@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Adapters::Sql::Query</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Model::Adapters::Sql::Query 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../../files/sources/model/lib/hanami/model/adapters/sql/query_rb.html">sources/model/lib/hanami/model/adapters/sql/query.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Query.html">Query</a> the database with a powerful API.</p>
+
+<p>All the methods are chainable, it allows advanced composition of SQL <a
+href="Query.html#attribute-i-conditions">#conditions</a>.</p>
+
+<p>This works as a lazy filtering mechanism: the records are fetched from the
+database only when needed.</p>
+
+<p>@example</p>
+
+<pre><code>query.where(language: &#39;ruby&#39;)
+     .and(framework: &#39;hanami&#39;)
+     .reverse_order(:users_count).all
+
+# the records are fetched only when we invoke #all
+</code></pre>
+
+<p>It implements Ruby&#39;s `Enumerable` <a
+href="Query.html#method-i-and">#and</a> borrows some methods from `Array`.
+Expect a query to act like them.</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-all">all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-and">and</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-asc">asc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-average">average</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-avg">avg</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-count">count</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-desc">desc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-exclude">exclude</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exist-3F">exist?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-group">group</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inner_join">inner_join</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-interval">interval</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-join">join</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-left_join">left_join</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-left_outer_join">left_outer_join</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-limit">limit</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-max">max</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-min">min</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-negate-21">negate!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-not">not</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-offset">offset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-or">or</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-order">order</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-range">range</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reverse_order">reverse_order</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-run">run</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-scoped">scoped</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-select">select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-sum">sum</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-where">where</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Enumerable
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">OPERATORS_MAPPING</td>
+            <td>=</td>
+            <td class="attr-value">{
+where:   :exclude,
+exclude: :where
+}.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Define negations for operators.</p>
+
+<p>@see <a href="Query.html#method-i-negate-21">#negate!</a></p>
+
+<p>@api private @since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>conditions</td>
+            <td class='attr-desc'><p>@attr_reader <a href="Query.html#attribute-i-conditions">#conditions</a>
+[Array] an accumulator for the called</p>
+
+<pre><code>methods
+</code></pre>
+
+<p>@since 0.1.0 @api private</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(collection, context = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a query</p>
+
+<p>@param collection [Hanami::Model::Adapters::Sql::Collection] the</p>
+
+<pre><code>collection to query
+</code></pre>
+
+<p>@param blk [Proc] an optional block that gets yielded in the</p>
+
+<pre><code>context of the current query
+</code></pre>
+
+<p>@return [Hanami::Model::Adapters::Sql::Query]</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L61" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@collection</span>, <span class="ruby-ivar">@context</span> = <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">context</span>
+  <span class="ruby-ivar">@conditions</span> = []
+
+  <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-all">
+            
+              <b>all</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-all" name="method-i-all" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resolves the query by fetching records from the database <a
+href="Query.html#method-i-and">#and</a> translating them into entities.</p>
+
+<p>@return [Array] a collection of entities</p>
+
+<p>@raise [Hanami::Model::InvalidQueryError] if there is some issue when
+hitting the database for fetching records</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-all_source')" id="l_method-i-all_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L77" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all</span>
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">DatabaseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidQueryError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-and">
+            
+              <b>and</b>(condition = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-and" name="method-i-and" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-where">where</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-asc">
+            
+              <b>asc</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-asc" name="method-i-asc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Alias for <a href="Query.html#method-i-order">#order</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-order">#order</a></p>
+
+<p>@example Single column</p>
+
+<pre><code>query.asc(:name)
+
+# =&gt; SELECT * FROM `people` ORDER BY (`name`)
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.asc(:name, :year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year`
+</code></pre>
+
+<p>@example Multiple invokations</p>
+
+<pre><code>query.asc(:name).asc(:year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year`
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-order">order</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-average">
+            
+              <b>average</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-average" name="method-i-average" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Query.html#method-i-average">#average</a> of the
+values for the given column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return [Numeric]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>query.average(:comments_count)
+
+# =&gt; SELECT AVG(`comments_count`) FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-avg">avg</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-average_source')" id="l_method-i-average_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L458" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-average_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 458</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">average</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">avg</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-avg">
+            
+              <b>avg</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-avg" name="method-i-avg" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-average">average</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-count">
+            
+              <b>count</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-count" name="method-i-count" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="Query.html#method-i-count">#count</a> of the records for
+the current <a href="Query.html#attribute-i-conditions">#conditions</a>.</p>
+
+<p>@return [Fixnum]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>query.where(author_id: 23).count # =&gt; 5
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-count_source')" id="l_method-i-count_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L573" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-count_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 573</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">count</span>
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-desc">
+            
+              <b>desc</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-desc" name="method-i-desc" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Alias for <a href="Query.html#method-i-reverse_order">#reverse_order</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-reverse_order">#reverse_order</a></p>
+
+<p>@example Single column</p>
+
+<pre><code>query.desc(:name)
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.desc(:name, :year)
+</code></pre>
+
+<p>@example Multiple invokations</p>
+
+<pre><code>query.desc(:name).desc(:year)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-reverse_order">reverse_order</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exclude">
+            
+              <b>exclude</b>(condition = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-exclude" name="method-i-exclude" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Logical negation of a WHERE condition.</p>
+
+<p>It accepts a `Hash` with only one pair. The key must be the name of the
+column expressed as a `Symbol`. The value is the one used by the SQL query</p>
+
+<p>@param condition [Hash]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@return self</p>
+
+<p>@example Fixed value</p>
+
+<pre><code>query.exclude(language: &#39;java&#39;)
+
+# =&gt; SELECT * FROM `projects` WHERE (`language` != &#39;java&#39;)
+</code></pre>
+
+<p>@example Array</p>
+
+<pre><code>query.exclude(id: [4, 9])
+
+# =&gt; SELECT * FROM `articles` WHERE (`id` NOT IN (1, 3))
+</code></pre>
+
+<p>@example <a href="../../../../Range.html">Range</a></p>
+
+<pre><code>query.exclude(year: 1900..1982)
+
+# =&gt; SELECT * FROM `people` WHERE ((`year` &lt; 1900) AND (`year` &gt; 1982))
+</code></pre>
+
+<p>@example Multiple <a
+href="Query.html#attribute-i-conditions">#conditions</a></p>
+
+<pre><code>query.exclude(language: &#39;java&#39;)
+     .exclude(company: &#39;enterprise&#39;)
+
+# =&gt; SELECT * FROM `projects` WHERE (`language` != &#39;java&#39;) AND (`company` != &#39;enterprise&#39;)
+</code></pre>
+
+<p>@example Expressions</p>
+
+<pre><code>query.exclude{ age &gt; 31 }
+
+# =&gt; SELECT * FROM `users` WHERE (`age` &lt;= 31)
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-not">not</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exclude_source')" id="l_method-i-exclude_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L216" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-exclude_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exclude</span>(<span class="ruby-identifier">condition</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">_push_to_conditions</span>(<span class="ruby-value">:exclude</span>, <span class="ruby-identifier">condition</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exist-3F">
+            
+              <b>exist?</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-exist-3F" name="method-i-exist-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if at least one record exists for the current <a
+href="Query.html#attribute-i-conditions">#conditions</a>.</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>query.where(author_id: 23).exists? # =&gt; true
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exist-3F_source')" id="l_method-i-exist-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L560" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-exist-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 560</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exist?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">count</span>.<span class="ruby-identifier">zero?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-group">
+            
+              <b>group</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-group" name="method-i-group" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Group by the specified columns.</p>
+
+<p>@param columns [Array&lt;Symbol&gt;]</p>
+
+<p>@return self</p>
+
+<p>@since 0.5.0</p>
+
+<p>@example Single column</p>
+
+<pre><code>query.group(:name)
+
+# =&gt; SELECT * FROM `people` GROUP BY `name`
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.group(:name, :year)
+
+# =&gt; SELECT * FROM `people` GROUP BY `name`, `year`
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-group_source')" id="l_method-i-group_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L423" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-group_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 423</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">group</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>)
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-value">:group</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>])
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inner_join">
+            
+              <b>inner_join</b>(collection, options = {})
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-inner_join" name="method-i-inner_join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-join">join</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-interval">
+            
+              <b>interval</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-interval" name="method-i-interval" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the difference between the MAX <a
+href="Query.html#method-i-and">#and</a> MIN for the given column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return [Numeric]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-max">#max</a> @see <a
+href="Query.html#method-i-min">#min</a></p>
+
+<p>@example</p>
+
+<pre><code>query.interval(:comments_count)
+
+# =&gt; SELECT (MAX(`comments_count`) - MIN(`comments_count`)) FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-interval_source')" id="l_method-i-interval_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L526" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-interval_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 526</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">interval</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">interval</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-join">
+            
+              <b>join</b>(collection, options = {})
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-join" name="method-i-join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify an `INNER JOIN` clause.</p>
+
+<p>@param collection [String] @param options [Hash] @option key [Symbol] the
+key @option foreign_key [Symbol] the foreign key</p>
+
+<p>@return self</p>
+
+<p>@since 0.5.0</p>
+
+<p>@example</p>
+
+<pre><code>query.join(:users)
+
+# =&gt; SELECT * FROM `posts` INNER JOIN `users` ON `posts`.`user_id` = `users`.`id`
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-inner_join">inner_join</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-join_source')" id="l_method-i-join_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L635" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-join_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 635</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">join</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">_join</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">join</span><span class="ruby-operator">:</span> <span class="ruby-value">:inner</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-left_join">
+            
+              <b>left_join</b>(collection, options = {})
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-left_join" name="method-i-left_join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify a `LEFT JOIN` clause.</p>
+
+<p>@param collection [String] @param options [Hash] @option key [Symbol] the
+key @option foreign_key [Symbol] the foreign key</p>
+
+<p>@return self</p>
+
+<p>@since 0.5.0</p>
+
+<p>@example</p>
+
+<pre><code>query.left_join(:users)
+
+# =&gt; SELECT * FROM `posts` LEFT JOIN `users` ON `posts`.`user_id` = `users`.`id`
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-left_outer_join">left_outer_join</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-left_join_source')" id="l_method-i-left_join_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L657" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-left_join_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 657</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">left_join</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">_join</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">join</span><span class="ruby-operator">:</span> <span class="ruby-value">:left</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-left_outer_join">
+            
+              <b>left_outer_join</b>(collection, options = {})
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-left_outer_join" name="method-i-left_outer_join" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-left_join">left_join</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-limit">
+            
+              <b>limit</b>(number)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-limit" name="method-i-limit" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Limit the number of records to return.</p>
+
+<p>This operation is performed at the database level with `LIMIT`.</p>
+
+<p>@param number [Fixnum]</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>query.limit(1)
+
+# =&gt; SELECT * FROM `people` LIMIT 1
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-limit_source')" id="l_method-i-limit_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L264" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-limit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">limit</span>(<span class="ruby-identifier">number</span>)
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-value">:limit</span>, <span class="ruby-identifier">number</span>])
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-max">
+            
+              <b>max</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-max" name="method-i-max" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the maximum value for the given column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return result</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example With numeric type</p>
+
+<pre><code>query.max(:comments_count)
+
+# =&gt; SELECT MAX(`comments_count`) FROM articles
+</code></pre>
+
+<p>@example With string type</p>
+
+<pre><code>query.max(:title)
+
+# =&gt; SELECT MAX(`title`) FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-max_source')" id="l_method-i-max_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L483" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-max_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 483</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">max</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">max</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-min">
+            
+              <b>min</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-min" name="method-i-min" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the minimum value for the given column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return result</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example With numeric type</p>
+
+<pre><code>query.min(:comments_count)
+
+# =&gt; SELECT MIN(`comments_count`) FROM articles
+</code></pre>
+
+<p>@example With string type</p>
+
+<pre><code>query.min(:title)
+
+# =&gt; SELECT MIN(`title`) FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-min_source')" id="l_method-i-min_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L506" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-min_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">min</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">min</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-negate-21">
+            
+              <b>negate!</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-negate-21" name="method-i-negate-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Negates the current <a href="Query.html#method-i-where">#where</a>/exclude
+<a href="Query.html#attribute-i-conditions">#conditions</a> with the
+logical opposite operator.</p>
+
+<p>All the other <a href="Query.html#attribute-i-conditions">#conditions</a>
+will be ignored.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-where">#where</a> @see <a
+href="Query.html#method-i-exclude">#exclude</a> @see
+Hanami::Repository#exclude</p>
+
+<p>@example</p>
+
+<pre><code>query.where(language: &#39;java&#39;).negate!.all
+
+# =&gt; SELECT * FROM `projects` WHERE (`language` != &#39;java&#39;)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-negate-21_source')" id="l_method-i-negate-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L593" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-negate-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 593</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">negate!</span>
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">operator</span>, <span class="ruby-identifier">condition</span>)<span class="ruby-operator">|</span>
+    [<span class="ruby-constant">OPERATORS_MAPPING</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">operator</span>) { <span class="ruby-identifier">operator</span> }, <span class="ruby-identifier">condition</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-not">
+            
+              <b>not</b>(condition = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-not" name="method-i-not" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-exclude">exclude</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-offset">
+            
+              <b>offset</b>(number)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-offset" name="method-i-offset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify an `OFFSET` clause.</p>
+
+<p>Due to SQL syntax restriction, <a
+href="Query.html#method-i-offset">#offset</a> MUST be used with `#limit`.</p>
+
+<p>@param number [Fixnum]</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-limit">#limit</a></p>
+
+<p>@example</p>
+
+<pre><code>query.limit(1).offset(10)
+
+# =&gt; SELECT * FROM `people` LIMIT 1 OFFSET 10
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-offset_source')" id="l_method-i-offset_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L286" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">offset</span>(<span class="ruby-identifier">number</span>)
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-value">:offset</span>, <span class="ruby-identifier">number</span>])
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-or">
+            
+              <b>or</b>(condition = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-or" name="method-i-or" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds a SQL `OR` condition.</p>
+
+<p>It accepts a `Hash` with only one pair. The key must be the name of the
+column expressed as a `Symbol`. The value is the one used by the SQL query</p>
+
+<p>This condition will be ignored if <a
+href="Query.html#method-i-not">#not</a> used with WHERE.</p>
+
+<p>@param condition [Hash]</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Fixed value</p>
+
+<pre><code>query.where(language: &#39;ruby&#39;).or(framework: &#39;hanami&#39;)
+
+# =&gt; SELECT * FROM `projects` WHERE ((`language` = &#39;ruby&#39;) OR (`framework` = &#39;hanami&#39;))
+</code></pre>
+
+<p>@example Array</p>
+
+<pre><code>query.where(id: 1).or(author_id: [15, 23])
+
+# =&gt; SELECT * FROM `articles` WHERE ((`id` = 1) OR (`author_id` IN (15, 23)))
+</code></pre>
+
+<p>@example <a href="../../../../Range.html">Range</a></p>
+
+<pre><code>query.where(country: &#39;italy&#39;).or(year: 1900..1982)
+
+# =&gt; SELECT * FROM `people` WHERE ((`country` = &#39;italy&#39;) OR ((`year` &gt;= 1900) AND (`year` &lt;= 1982)))
+</code></pre>
+
+<p>@example Expressions</p>
+
+<pre><code>query.where(name: &#39;John&#39;).or{ age &gt; 31 }
+
+# =&gt; SELECT * FROM `users` WHERE ((`name` = &#39;John&#39;) OR (`age` &lt; 32))
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-or_source')" id="l_method-i-or_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L169" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-or_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">or</span>(<span class="ruby-identifier">condition</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">_push_to_conditions</span>(<span class="ruby-value">:or</span>, <span class="ruby-identifier">condition</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-order">
+            
+              <b>order</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-order" name="method-i-order" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify the ascending <a href="Query.html#method-i-order">#order</a> of the
+records, sorted by the given columns.</p>
+
+<p>@param columns [Array&lt;Symbol&gt;] the column names</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-reverse_order">#reverse_order</a></p>
+
+<p>@example Single column</p>
+
+<pre><code>query.order(:name)
+
+# =&gt; SELECT * FROM `people` ORDER BY (`name`)
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.order(:name, :year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year`
+</code></pre>
+
+<p>@example Multiple invokations</p>
+
+<pre><code>query.order(:name).order(:year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year`
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-asc">asc</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-order_source')" id="l_method-i-order_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L319" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">order</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>)
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">_order_operator</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>])
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-range">
+            
+              <b>range</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-range" name="method-i-range" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="Query.html#method-i-range">#range</a> of values between
+the MAX <a href="Query.html#method-i-and">#and</a> the MIN for the given
+column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return [Range]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="Query.html#method-i-max">#max</a> @see <a
+href="Query.html#method-i-min">#min</a></p>
+
+<p>@example</p>
+
+<pre><code>query.range(:comments_count)
+
+# =&gt; SELECT MAX(`comments_count`) AS v1, MIN(`comments_count`) AS v2 FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-range_source')" id="l_method-i-range_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L547" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-range_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 547</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">range</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reverse_order">
+            
+              <b>reverse_order</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-reverse_order" name="method-i-reverse_order" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify the descending <a href="Query.html#method-i-order">#order</a> of
+the records, sorted by the given columns.</p>
+
+<p>@param columns [Array&lt;Symbol&gt;] the column names</p>
+
+<p>@return self</p>
+
+<p>@since 0.3.1</p>
+
+<p>@see <a href="Query.html#method-i-order">#order</a></p>
+
+<p>@example Single column</p>
+
+<pre><code>query.reverse_order(:name)
+
+# =&gt; SELECT * FROM `people` ORDER BY (`name`) DESC
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.reverse_order(:name, :year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year` DESC
+</code></pre>
+
+<p>@example Multiple invokations</p>
+
+<pre><code>query.reverse_order(:name).reverse_order(:year)
+
+# =&gt; SELECT * FROM `people` ORDER BY `name`, `year` DESC
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-desc">desc</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reverse_order_source')" id="l_method-i-reverse_order_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L377" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-reverse_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reverse_order</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>)
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">columns</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">_order_operator</span>, <span class="ruby-constant">Sequel</span>.<span class="ruby-identifier">desc</span>(<span class="ruby-identifier">column</span>)])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run">
+            
+              <b>run</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-run" name="method-i-run" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Query.html#method-i-scoped">scoped</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scoped">
+            
+              <b>scoped</b>()
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-scoped" name="method-i-scoped" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Apply <a href="Query.html#method-i-all">#all</a> the <a
+href="Query.html#attribute-i-conditions">#conditions</a> <a
+href="Query.html#method-i-and">#and</a> returns a filtered collection.</p>
+
+<p>This operation is idempotent, <a href="Query.html#method-i-and">#and</a>
+the returned result didn&#39;t fetched the records yet.</p>
+
+<p>@return [Hanami::Model::Adapters::Sql::Collection]</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-run">run</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scoped_source')" id="l_method-i-scoped_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L607" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-scoped_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 607</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scoped</span>
+  <span class="ruby-identifier">scope</span> = <span class="ruby-ivar">@collection</span>
+
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">method</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-identifier">scope</span> = <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">scope</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-select">
+            
+              <b>select</b>(*columns)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-select" name="method-i-select" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Select only the specified columns.</p>
+
+<p>By default a query selects <a href="Query.html#method-i-all">#all</a> the
+columns of a table (`SELECT *`).</p>
+
+<p>@param columns [Array&lt;Symbol&gt;]</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Single column</p>
+
+<pre><code>query.select(:name)
+
+# =&gt; SELECT `name` FROM `people`
+</code></pre>
+
+<p>@example Multiple columns</p>
+
+<pre><code>query.select(:name, :year)
+
+# =&gt; SELECT `name`, `year` FROM `people`
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-select_source')" id="l_method-i-select_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L244" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">select</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>)
+  <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">push</span>([<span class="ruby-value">:select</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">columns</span>])
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sum">
+            
+              <b>sum</b>(column)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-sum" name="method-i-sum" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Query.html#method-i-sum">#sum</a> of the values for
+the given column.</p>
+
+<p>@param column [Symbol] the column name</p>
+
+<p>@return [Numeric]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>query.sum(:comments_count)
+
+# =&gt; SELECT SUM(`comments_count`) FROM articles
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sum_source')" id="l_method-i-sum_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L441" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 441</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sum</span>(<span class="ruby-identifier">column</span>)
+  <span class="ruby-identifier">run</span>.<span class="ruby-identifier">sum</span>(<span class="ruby-identifier">column</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-where">
+            
+              <b>where</b>(condition = nil, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-where" name="method-i-where" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds a SQL `WHERE` condition.</p>
+
+<p>It accepts a `Hash` with only one pair. The key must be the name of the
+column expressed as a `Symbol`. The value is the one used by the SQL query</p>
+
+<p>@param condition [Hash]</p>
+
+<p>@return self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example Fixed value</p>
+
+<pre><code>query.where(language: &#39;ruby&#39;)
+
+# =&gt; SELECT * FROM `projects` WHERE (`language` = &#39;ruby&#39;)
+</code></pre>
+
+<p>@example Array</p>
+
+<pre><code>query.where(id: [1, 3])
+
+# =&gt; SELECT * FROM `articles` WHERE (`id` IN (1, 3))
+</code></pre>
+
+<p>@example <a href="../../../../Range.html">Range</a></p>
+
+<pre><code>query.where(year: 1900..1982)
+
+# =&gt; SELECT * FROM `people` WHERE ((`year` &gt;= 1900) AND (`year` &lt;= 1982))
+</code></pre>
+
+<p>@example Multiple <a
+href="Query.html#attribute-i-conditions">#conditions</a></p>
+
+<pre><code>query.where(language: &#39;ruby&#39;)
+     .where(framework: &#39;hanami&#39;)
+
+# =&gt; SELECT * FROM `projects` WHERE (`language` = &#39;ruby&#39;) AND (`framework` = &#39;hanami&#39;)
+</code></pre>
+
+<p>@example Expressions</p>
+
+<pre><code>query.where{ age &gt; 10 }
+
+# =&gt; SELECT * FROM `users` WHERE (`age` &gt; 31)
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Query.html#method-i-and">and</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-where_source')" id="l_method-i-where_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L125" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-where_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">where</span>(<span class="ruby-identifier">condition</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">_push_to_conditions</span>(<span class="ruby-value">:where</span>, <span class="ruby-identifier">condition</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args, &amp;blk)
+            
+            <a href="../../../../../classes/Hanami/Model/Adapters/Sql/Query.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Handles missing methods for query combinations</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see Hanami::Model::Adapters:Sql::Query#apply</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/adapters/sql/query.rb#L670" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/sql/query.rb, line 670</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">apply</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

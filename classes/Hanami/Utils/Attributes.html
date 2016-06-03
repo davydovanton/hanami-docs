@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Attributes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::Attributes 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/attributes_rb.html">sources/utils/lib/hanami/utils/attributes.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>A <a href="Attributes.html#method-i-set">#set</a> of attributes.</p>
+
+<p>It internally stores the data as a <a href="Hash.html">Hash</a>.</p>
+
+<p>All the operations convert keys to strings. This strategy avoids memory
+attacks due to Symbol abuses when parsing untrusted input.</p>
+
+<p>At the same time, this allows to <a
+href="Attributes.html#method-i-get">#get</a>/set data with the original key
+or with the string representation. See the examples below.</p>
+
+<p>@since 0.3.2</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get">get</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set">set</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_h">to_h</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(hash = {})
+            
+            <a href="../../../classes/Hanami/Utils/Attributes.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a <a href="Attributes.html#method-i-set">#set</a> of attributes
+All the keys of the given <a href="Hash.html">Hash</a> are recursively
+converted to strings.</p>
+
+<p>@param hash [#to_h] a <a href="Hash.html">Hash</a> or any object that
+implements #to_h</p>
+
+<p>@return [Hanami::Utils::Attributes] self</p>
+
+<p>@since 0.3.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/attributes&#39;
+
+attributes = Hanami::Utils::Attributes.new(a: 1, b: { 2 =&gt; [3, 4] })
+attributes.to_h # =&gt; { &quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; { &quot;2&quot; =&gt; [3, 4] } }
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/2bc5ce3a38eb4406cf598c8d8fb8ebe28e484814/lib/hanami/utils/attributes.rb#L32" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/attributes.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">hash</span> = {})
+  <span class="ruby-ivar">@attributes</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash</span>, <span class="ruby-operator">&amp;</span><span class="ruby-keyword">nil</span>).<span class="ruby-identifier">stringify!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <b>[]</b>(attribute)
+            
+            <a href="../../../classes/Hanami/Utils/Attributes.html#method-i-5B-5D" name="method-i-5B-5D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.4</p>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Attributes.html#method-i-get">get</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get">
+            
+              <b>get</b>(attribute)
+            
+            <a href="../../../classes/Hanami/Utils/Attributes.html#method-i-get" name="method-i-get" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Get the value associated with the given attribute</p>
+
+<p>@param attribute [#to_s] a <a href="String.html">String</a> or any object
+that implements #to_s</p>
+
+<p>@return [Object,NilClass] the associated value, if present</p>
+
+<p>@since 0.3.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/attributes&#39;
+
+attributes = Hanami::Utils::Attributes.new(a: 1, &#39;b&#39; =&gt; 2, 23 =&gt; &#39;foo&#39;)
+
+attributes.get(:a)  # =&gt; 1
+attributes.get(&#39;a&#39;) # =&gt; 1
+attributes[:a]      # =&gt; 1
+attributes[&#39;a&#39;]     # =&gt; 1
+
+attributes.get(:b)  # =&gt; 2
+attributes.get(&#39;b&#39;) # =&gt; 2
+attributes[:b]      # =&gt; 2
+attributes[&#39;b&#39;]     # =&gt; 2
+
+attributes.get(23)   # =&gt; &quot;foo&quot;
+attributes.get(&#39;23&#39;) # =&gt; &quot;foo&quot;
+attributes[23]       # =&gt; &quot;foo&quot;
+attributes[&#39;23&#39;]     # =&gt; &quot;foo&quot;
+
+attributes.get(:unknown)  # =&gt; nil
+attributes.get(&#39;unknown&#39;) # =&gt; nil
+attributes[:unknown]      # =&gt; nil
+attributes[&#39;unknown&#39;]     # =&gt; nil
+</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Attributes.html#method-i-5B-5D">[]</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_source')" id="l_method-i-get_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/2bc5ce3a38eb4406cf598c8d8fb8ebe28e484814/lib/hanami/utils/attributes.rb#L68" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-get_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/attributes.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get</span>(<span class="ruby-identifier">attribute</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@attributes</span>
+
+  <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;.&#39;</span>)
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>
+
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set">
+            
+              <b>set</b>(attribute, value)
+            
+            <a href="../../../classes/Hanami/Utils/Attributes.html#method-i-set" name="method-i-set" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the given value for the given attribute</p>
+
+<p>@param attribute [#to_s] a <a href="String.html">String</a> or any object
+that implements #to_s @param value [Object] any value</p>
+
+<p>@return [NilClass]</p>
+
+<p>@since 0.3.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/attributes&#39;
+
+attributes = Hanami::Utils::Attributes.new
+
+attributes.set(:a, 1)
+attributes.get(:a)  # =&gt; 1
+attributes.get(&#39;a&#39;) # =&gt; 1
+
+attributes.set(&#39;b&#39;, 2)
+attributes.get(:b)  # =&gt; 2
+attributes.get(&#39;b&#39;) # =&gt; 2
+
+attributes.set(23, &#39;foo&#39;)
+attributes.get(23)   # =&gt; &quot;foo&quot;
+attributes.get(&#39;23&#39;) # =&gt; &quot;foo&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_source')" id="l_method-i-set_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/2bc5ce3a38eb4406cf598c8d8fb8ebe28e484814/lib/hanami/utils/attributes.rb#L109" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/attributes.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set</span>(<span class="ruby-identifier">attribute</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@attributes</span>[<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_h">
+            
+              <b>to_h</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Attributes.html#method-i-to_h" name="method-i-to_h" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a deep duplicated copy of the attributes as a <a
+href="Hash.html">Hash</a></p>
+
+<p>@return [::Hash]</p>
+
+<p>@since 0.3.2</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/2bc5ce3a38eb4406cf598c8d8fb8ebe28e484814/lib/hanami/utils/attributes.rb#L119" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_h_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/attributes.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>[].<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">result</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">_read_value</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

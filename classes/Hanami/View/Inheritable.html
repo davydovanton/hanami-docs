@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Inheritable</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::View::Inheritable 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/view/lib/hanami/view/inheritable_rb.html">sources/view/lib/hanami/view/inheritable.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Inheriting mechanisms</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inherited">inherited</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-subclasses">subclasses</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-views">views</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inherited">
+            
+              <b>inherited</b>(base)
+            
+            <a href="../../../classes/Hanami/View/Inheritable.html#method-i-inherited" name="method-i-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Register a view subclass</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+class IndexView
+  include Hanami::View
+end
+
+class JsonIndexView &lt; IndexView
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inherited_source')" id="l_method-i-inherited_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/inheritable.rb#L21" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/inheritable.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inherited</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">subclasses</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">base</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-subclasses">
+            
+              <b>subclasses</b>()
+            
+            <a href="../../../classes/Hanami/View/Inheritable.html#method-i-subclasses" name="method-i-subclasses" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set of registered <a
+href="Inheritable.html#method-i-subclasses">#subclasses</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-subclasses_source')" id="l_method-i-subclasses_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/inheritable.rb#L29" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-subclasses_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/inheritable.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">subclasses</span>
+  <span class="ruby-ivar">@subclasses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/View/Inheritable.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Loading mechanism hook.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../View.html#method-c-load-21">Hanami::View.load!</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/inheritable.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/inheritable.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-identifier">subclasses</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">views</span>.<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-views">
+            
+              <b>views</b>()
+            
+            <a href="../../../classes/Hanami/View/Inheritable.html#method-i-views" name="method-i-views" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Registered <a href="Inheritable.html#method-i-views">#views</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-views_source')" id="l_method-i-views_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/inheritable.rb#L49" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-views_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/inheritable.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">views</span>
+  <span class="ruby-ivar">@views</span> <span class="ruby-operator">||=</span> [ <span class="ruby-keyword">self</span> ] <span class="ruby-operator">+</span> <span class="ruby-identifier">subclasses</span>.<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Adapters::MemoryAdapter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Model::Adapters::MemoryAdapter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Abstract.html">Hanami::Model::Adapters::Abstract</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/model/lib/hanami/model/adapters/memory_adapter_rb.html">sources/model/lib/hanami/model/adapters/memory_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>In memory adapter that behaves like a SQL database. Not all the features of
+the SQL adapter are supported.</p>
+
+<p>This adapter SHOULD be used only for development or testing purposes,
+because its computations are inefficient and the data is volatile.</p>
+
+<p>@see <a
+href="Implementation.html">Hanami::Model::Adapters::Implementation</a></p>
+
+<p>@api private @since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clear">clear</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-command">command</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create">create</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-disconnect">disconnect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-query">query</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-transaction">transaction</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Implementation.html">
+              Hanami::Model::Adapters::Implementation
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(mapper, uri = nil, options = {})
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the adapter.</p>
+
+<p>@param mapper [Object] the database mapper @param uri [String] the
+connection uri (ignored) @param options [Hash] a hash of non mandatory
+adapter options</p>
+
+<p>@return [Hanami::Model::Adapters::MemoryAdapter]</p>
+
+<p>@see <a href="../Mapper.html">Hanami::Model::Mapper</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L35" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">mapper</span>, <span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-ivar">@mutex</span>       = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@collections</span> = {}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-clear">
+            
+              <b>clear</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-clear" name="method-i-clear" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes all the records from the given collection and resets the identity
+counter.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clear_source')" id="l_method-i-clear_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L93" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-clear_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clear</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">command</span>(<span class="ruby-identifier">collection</span>).<span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-command">
+            
+              <b>command</b>(collection)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-command" name="method-i-command" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Fabricates a <a href="MemoryAdapter.html#method-i-command">#command</a> for
+the given <a href="MemoryAdapter.html#method-i-query">#query</a>.</p>
+
+<p>@param collection [Symbol] the collection name (it must be mapped)</p>
+
+<p>@return [Hanami::Model::Adapters::Memory::Command]</p>
+
+<p>@see <a
+href="Memory/Command.html">Hanami::Model::Adapters::Memory::Command</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-command_source')" id="l_method-i-command_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L109" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-command_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">command</span>(<span class="ruby-identifier">collection</span>)
+  <span class="ruby-constant">Memory</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">_collection</span>(<span class="ruby-identifier">collection</span>), <span class="ruby-identifier">_mapped_collection</span>(<span class="ruby-identifier">collection</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create">
+            
+              <b>create</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-create" name="method-i-create" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a record in the database for the given entity. It assigns the `id`
+attribute, in case of success.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [#id=] the entity to <a
+href="MemoryAdapter.html#method-i-create">#create</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_source')" id="l_method-i-create_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L52" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">command</span>(<span class="ruby-identifier">collection</span>).<span class="ruby-identifier">create</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <b>delete</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-delete" name="method-i-delete" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes a record in the database corresponding to the given entity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [#id] the entity to <a
+href="MemoryAdapter.html#method-i-delete">#delete</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L80" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">command</span>(<span class="ruby-identifier">collection</span>).<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-disconnect">
+            
+              <b>disconnect</b>()
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-disconnect" name="method-i-disconnect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.5.0</p>
+
+<p>@see <a
+href="Abstract.html#method-i-disconnect">Hanami::Model::Adapters::Abstract#disconnect</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-disconnect_source')" id="l_method-i-disconnect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L148" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-disconnect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">disconnect</span>
+  <span class="ruby-ivar">@collections</span> = <span class="ruby-constant">DisconnectedResource</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@mutex</span>       = <span class="ruby-constant">DisconnectedResource</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-query">
+            
+              <b>query</b>(collection, context = nil, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-query" name="method-i-query" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Fabricates a <a href="MemoryAdapter.html#method-i-query">#query</a></p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param blk [Proc] a block of code to be executed in the context of</p>
+
+<pre><code>the query.</code></pre>
+
+<p>@return [Hanami::Model::Adapters::Memory::Query]</p>
+
+<p>@see <a href="Memory/Query.html">Hanami::Model::Adapters::Memory::Query</a></p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-query_source')" id="l_method-i-query_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L125" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">query</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Memory</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">_collection</span>(<span class="ruby-identifier">collection</span>), <span class="ruby-identifier">_mapped_collection</span>(<span class="ruby-identifier">collection</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-transaction">
+            
+              <b>transaction</b>(options = {})
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-transaction" name="method-i-transaction" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>WARNING: this is a no-op. For “real” transactions please use `SqlAdapter`
+or another adapter that supports them</p>
+
+<p>@param options [Hash] options for <a
+href="MemoryAdapter.html#method-i-transaction">#transaction</a></p>
+
+<p>@see <a
+href="SqlAdapter.html#method-i-transaction">Hanami::Model::Adapters::SqlAdapter#transaction</a>
+@see <a
+href="Abstract.html#method-i-transaction">Hanami::Model::Adapters::Abstract#transaction</a></p>
+
+<p>@since 0.2.3</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-transaction_source')" id="l_method-i-transaction_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L140" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">transaction</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <b>update</b>(collection, entity)
+            
+            <a href="../../../../classes/Hanami/Model/Adapters/MemoryAdapter.html#method-i-update" name="method-i-update" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Updates a record in the database corresponding to the given entity.</p>
+
+<p>@param collection [Symbol] the target collection (it must be mapped).
+@param entity [#id] the entity to <a
+href="MemoryAdapter.html#method-i-update">#update</a></p>
+
+<p>@return [Object] the entity</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/e6e425ff56dfc7865e3bc86332dfe413b3c6f36c/lib/hanami/model/adapters/memory_adapter.rb#L67" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/adapters/memory_adapter.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">command</span>(<span class="ruby-identifier">collection</span>).<span class="ruby-identifier">update</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

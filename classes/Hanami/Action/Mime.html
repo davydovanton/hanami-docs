@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Mime</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Mime 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/mime_rb.html">sources/controller/lib/hanami/action/mime.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Mime.html">Mime</a> type API</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Action::Mime::ClassMethods#accept</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Mime/ClassMethods.html">Hanami::Action::Mime::ClassMethods</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Mime/InstanceMethods.html">Hanami::Action::Mime::InstanceMethods</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-charset">charset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-charset-3D">charset=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-content_type">content_type</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-format">format</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">HTTP_ACCEPT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HTTP_ACCEPT&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The key that returns accepted mime types from the <a
+href="Rack.html">Rack</a> env</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CONTENT_TYPE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;Content-Type&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The header key to set the mime type of the response</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_ACCEPT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;*/*&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default mime type for an incoming HTTP request</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_CONTENT_TYPE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;application/octet-stream&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default mime type that is returned in the response</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_CHARSET</td>
+            <td>=</td>
+            <td class="attr-value">&#39;utf-8&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default <a href="Mime.html#method-i-charset">#charset</a> that is
+returned in the response</p>
+
+<p>@since 0.3.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MIME_TYPES</td>
+            <td>=</td>
+            <td class="attr-value">::Rack::Mime::MIME_TYPES.values.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default mime types list</p>
+
+<p>@since 0.6.1 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../../classes/Hanami/Action/Mime.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes <a
+href="Mime.html">Mime</a> types logic</p>
+
+<p>@param base [Class] the target action</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Module.html#method-i-included">www.ruby-doc.org/core-2.1.2/Module.html#method-i-included</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/109c2847ee4a1ed9dd8cedde7e5a5f25b1bbb2ed/lib/hanami/action/mime.rb#L59" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/mime.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+    <span class="ruby-identifier">prepend</span> <span class="ruby-constant">InstanceMethods</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-charset">
+            
+              <b>charset</b>()
+            
+            <a href="../../../classes/Hanami/Action/Mime.html#method-i-charset" name="method-i-charset" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Mime.html#method-i-charset">#charset</a> that will be
+automatically set in the response.</p>
+
+<p>It prefers, in order:</p>
+
+<pre><code>* Explicit set value (see #charset=)
+* Default configuration charset
+* Default content type</code></pre>
+
+<p>To override the value, use <code>#charset=</code></p>
+
+<p>@return [String] the <a href="Mime.html#method-i-charset">#charset</a> of
+the request.</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a href="Mime.html#method-i-charset-3D">#charset=</a> @see
+Hanami::Configuration#default_charset @see
+Hanami::Action::Mime#default_charset @see
+Hanami::Action::Mime#DEFAULT_CHARSET</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    # ...
+    charset # =&gt; &#39;text/html&#39;
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-charset_source')" id="l_method-i-charset_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/109c2847ee4a1ed9dd8cedde7e5a5f25b1bbb2ed/lib/hanami/action/mime.rb#L263" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-charset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/mime.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">charset</span>
+  <span class="ruby-ivar">@charset</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_charset</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_CHARSET</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-charset-3D">
+            
+              <b>charset=</b>(value)
+            
+            <a href="../../../classes/Hanami/Action/Mime.html#method-i-charset-3D" name="method-i-charset-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../Action.html">Action</a> <a
+href="Mime.html#method-i-charset">#charset</a> setter, receives new <a
+href="Mime.html#method-i-charset">#charset</a> value</p>
+
+<p>@return [String] the <a href="Mime.html#method-i-charset">#charset</a> of
+the request.</p>
+
+<p>@since 0.3.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    # ...
+    self.charset = &#39;koi8-r&#39;
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-charset-3D_source')" id="l_method-i-charset-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/109c2847ee4a1ed9dd8cedde7e5a5f25b1bbb2ed/lib/hanami/action/mime.rb#L230" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-charset-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/mime.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">charset=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@charset</span> = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-content_type">
+            
+              <b>content_type</b>()
+            
+            <a href="../../../classes/Hanami/Action/Mime.html#method-i-content_type" name="method-i-content_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The content type that will be automatically set in the response.</p>
+
+<p>It prefers, in order:</p>
+
+<pre><code>* Explicit set value (see #format=)
+* Weighted value from Accept
+* Default content type</code></pre>
+
+<p>To override the value, use <code>#format=</code></p>
+
+<p>@return [String] the content type from the request.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Action::Mime#format= @see <a
+href="../Configuration.html#method-i-default_request_format">Hanami::Configuration#default_request_format</a>
+@see Hanami::Action::Mime#default_content_type @see
+Hanami::Action::Mime#DEFAULT_CONTENT_TYPE</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    # ...
+    content_type # =&gt; &#39;text/html&#39;
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-content_type_source')" id="l_method-i-content_type_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/109c2847ee4a1ed9dd8cedde7e5a5f25b1bbb2ed/lib/hanami/action/mime.rb#L209" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-content_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/mime.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">content_type</span>
+  <span class="ruby-ivar">@content_type</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_response_type</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">accepts</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_content_type</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_CONTENT_TYPE</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-format">
+            
+              <b>format</b>()
+            
+            <a href="../../../classes/Hanami/Action/Mime.html#method-i-format" name="method-i-format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a symbol representation of the content type.</p>
+
+<p>The framework automatically detects the request mime type, and returns the
+corresponding <a href="Mime.html#method-i-format">#format</a>.</p>
+
+<p>However, if this value was explicitly set by `#format=`, it will return
+that value</p>
+
+<p>@return [Symbol] a symbol that corresponds to the content type</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see Hanami::Action::Mime#format= @see <a
+href="Mime.html#method-i-content_type">#content_type</a></p>
+
+<p>@example Default scenario</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+  end
+end
+
+action = Show.new
+
+_, headers, _ = action.call({ &#39;HTTP_ACCEPT&#39; =&gt; &#39;text/html&#39; })
+headers[&#39;Content-Type&#39;] # =&gt; &#39;text/html&#39;
+action.format           # =&gt; :html
+</code></pre>
+
+<p>@example Set value</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    self.format = :xml
+  end
+end
+
+action = Show.new
+
+_, headers, _ = action.call({ &#39;HTTP_ACCEPT&#39; =&gt; &#39;text/html&#39; })
+headers[&#39;Content-Type&#39;] # =&gt; &#39;application/xml&#39;
+action.format           # =&gt; :xml
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-format_source')" id="l_method-i-format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/109c2847ee4a1ed9dd8cedde7e5a5f25b1bbb2ed/lib/hanami/action/mime.rb#L176" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/mime.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">format</span>
+  <span class="ruby-ivar">@format</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">detect_format</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Exposable::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Exposable::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/controller/lib/hanami/action/exposable_rb.html">sources/controller/lib/hanami/action/exposable.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Exposures API class methods</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-expose">expose</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exposures">exposures</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-expose">
+            
+              <b>expose</b>(*names)
+            
+            <a href="../../../../classes/Hanami/Action/Exposable/ClassMethods.html#method-i-expose" name="method-i-expose" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Expose the given attributes on the outside of the object with a getter and
+a special method called #exposures.</p>
+
+<p>@param names [Array&lt;Symbol&gt;] the name(s) of the attribute(s) to be</p>
+
+<pre><code>exposed
+</code></pre>
+
+<p>@return [void]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  expose :article, :tags
+
+  def call(params)
+    @article = Article.find params[:id]
+    @tags    = Tag.for(article)
+  end
+end
+
+action = Show.new
+action.call({id: 23})
+
+action.article # =&gt; #&lt;Article ...&gt;
+action.tags    # =&gt; [#&lt;Tag ...&gt;, #&lt;Tag ...&gt;]
+
+action.exposures # =&gt; { :article =&gt; #&lt;Article ...&gt;, :tags =&gt; [ ... ] }
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-expose_source')" id="l_method-i-expose_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/exposable.rb#L61" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-expose_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/exposable.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">expose</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+  <span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">attr_reader</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">attr_reader?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">exposures</span>.<span class="ruby-identifier">push</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exposures">
+            
+              <b>exposures</b>()
+            
+            <a href="../../../../classes/Hanami/Action/Exposable/ClassMethods.html#method-i-exposures" name="method-i-exposures" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set of <a href="ClassMethods.html#method-i-exposures">#exposures</a>
+attribute names</p>
+
+<p>@return [Array] the <a
+href="ClassMethods.html#method-i-exposures">#exposures</a> attribute names</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exposures_source')" id="l_method-i-exposures_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/exposable.rb#L77" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-exposures_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/exposable.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exposures</span>
+  <span class="ruby-ivar">@exposures</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

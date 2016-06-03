@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Commands::Generate::Model</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Commands::Generate::Model 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Abstract.html">Hanami::Commands::Generate::Abstract</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/hanami/lib/hanami/commands/generate/model_rb.html">sources/hanami/lib/hanami/commands/generate/model.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-map_templates">map_templates</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template_options">template_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>model_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options, model_name)
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Model.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/model.rb#L10" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/model.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">model_name</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@model_name</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">model_name</span>).<span class="ruby-identifier">classify</span>
+
+  <span class="ruby-identifier">assert_model_name!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-map_templates">
+            
+              <b>map_templates</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Model.html#method-i-map_templates" name="method-i-map_templates" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-map_templates_source')" id="l_method-i-map_templates_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/model.rb#L17" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-map_templates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/model.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">map_templates</span>
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&#39;entity.rb.tt&#39;</span>, <span class="ruby-identifier">entity_path</span>)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-string">&#39;repository.rb.tt&#39;</span>, <span class="ruby-identifier">repository_path</span>)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-node">&quot;entity_spec.#{ test_framework.framework }.tt&quot;</span>, <span class="ruby-identifier">entity_spec_path</span>,)
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-node">&quot;repository_spec.#{ test_framework.framework }.tt&quot;</span>, <span class="ruby-identifier">repository_spec_path</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template_options">
+            
+              <b>template_options</b>()
+            
+            <a href="../../../../classes/Hanami/Commands/Generate/Model.html#method-i-template_options" name="method-i-template_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_options_source')" id="l_method-i-template_options_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/14c5a4273c740bef4b4306acb23ccf3345caf0fe/lib/hanami/commands/generate/model.rb#L24" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/commands/generate/model.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template_options</span>
+  {
+    <span class="ruby-identifier">model_name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">model_name</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

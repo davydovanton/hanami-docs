@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Routing::Resource::Action</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Routing::Resource::Action 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/router/lib/hanami/routing/resource/action_rb.html">sources/router/lib/hanami/routing/resource/action.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Action.html">Action</a> for RESTful resource</p>
+
+<p>@since 0.1.0</p>
+
+<p>@api private</p>
+
+<p>@see Hanami::Router#resource</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-generate">generate</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-generate">generate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-namespace">namespace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resource_name">resource_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../../Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">NESTED_ROUTES_SEPARATOR</td>
+            <td>=</td>
+            <td class="attr-value">&#39;/&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Nested.html">Nested</a> routes separator</p>
+
+<p>@api private @since 0.4.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-generate">
+            
+              <b>generate</b>(router, action, options = {}, resource = nil)
+            
+            <a href="../../../../classes/Hanami/Routing/Resource/Action.html#method-c-generate" name="method-c-generate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate an action for the given router</p>
+
+<p>@param router [Hanami::Router] @param action
+[Hanami::Routing::Resource::Action] @param options [Hash] @param resource
+[Hanami::Routing::Resource, Hanami::Routing::Resources]</p>
+
+<p>@api private</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-generate_source')" id="l_method-c-generate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/resource/action.rb#L56" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-generate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/resource/action.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">router</span>, <span class="ruby-identifier">action</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">resource</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">class_for</span>(<span class="ruby-identifier">action</span>).<span class="ruby-identifier">new</span>(<span class="ruby-identifier">router</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">resource</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(router, options = {}, resource = nil, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Routing/Resource/Action.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize an action</p>
+
+<p>@param router [Hanami::Router] @param options [Hash] @param resource
+[Hanami::Routing::Resource, Hanami::Routing::Resources] @param blk [Proc]</p>
+
+<p>@api private</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/resource/action.rb#L70" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/resource/action.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">router</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">resource</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span> = <span class="ruby-identifier">router</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-identifier">resource</span>
+  <span class="ruby-identifier">generate</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-generate">
+            
+              <b>generate</b>(&amp;blk)
+            
+            <a href="../../../../classes/Hanami/Routing/Resource/Action.html#method-i-generate" name="method-i-generate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate an action for the given router</p>
+
+<p>@param blk [Proc]</p>
+
+<p>@api private</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-generate_source')" id="l_method-i-generate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/resource/action.rb#L84" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-generate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/resource/action.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">generate</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">verb</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">to</span><span class="ruby-operator">:</span> <span class="ruby-identifier">endpoint</span>, <span class="ruby-identifier">as</span><span class="ruby-operator">:</span> <span class="ruby-identifier">as</span>
+  <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-namespace">
+            
+              <b>namespace</b>()
+            
+            <a href="../../../../classes/Hanami/Routing/Resource/Action.html#method-i-namespace" name="method-i-namespace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../Namespace.html">Namespace</a></p>
+
+<p>@api private @since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-namespace_source')" id="l_method-i-namespace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/resource/action.rb#L112" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-namespace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/resource/action.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">namespace</span>
+  <span class="ruby-ivar">@namespace</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">PathPrefix</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:namespace</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resource_name">
+            
+              <b>resource_name</b>()
+            
+            <a href="../../../../classes/Hanami/Routing/Resource/Action.html#method-i-resource_name" name="method-i-resource_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../Resource.html">Resource</a> name</p>
+
+<p>@return [String]</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;
+end
+
+# &#39;identity&#39; is the name passed in the @options
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resource_name_source')" id="l_method-i-resource_name_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/f945b4f31c4129ca21ef43aceb8d70f41bea3922/lib/hanami/routing/resource/action.rb#L104" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resource_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/routing/resource/action.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resource_name</span>
+  <span class="ruby-ivar">@resource_name</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

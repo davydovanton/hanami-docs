@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Router</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Router 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/router/lib/hanami/router_rb.html">sources/router/lib/hanami/router.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/router/version_rb.html">sources/router/lib/hanami/router/version.rb</a></li>
+            
+            <li><a href="../../files/sources/router/lib/hanami/routing/recognized_route_rb.html">sources/router/lib/hanami/routing/recognized_route.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Rack compatible, lightweight and fast HTTP <a
+href="Router.html">Router</a>.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example It offers an intuitive DSL, that supports most of the HTTP verbs:</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+endpoint = -&gt;(env) { [200, {}, [&#39;Welcome to Hanami::Router!&#39;]] }
+router = Hanami::Router.new do
+  get     &#39;/&#39;, to: endpoint # =&gt; get and head requests
+  post    &#39;/&#39;, to: endpoint
+  put     &#39;/&#39;, to: endpoint
+  patch   &#39;/&#39;, to: endpoint
+  delete  &#39;/&#39;, to: endpoint
+  options &#39;/&#39;, to: endpoint
+  trace   &#39;/&#39;, to: endpoint
+end
+</code></pre>
+
+<p>@example Specify an endpoint with `:to` (Rack compatible object)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+endpoint = -&gt;(env) { [200, {}, [&#39;Welcome to Hanami::Router!&#39;]] }
+router = Hanami::Router.new do
+  get &#39;/&#39;, to: endpoint
+end
+
+# :to is mandatory for the default resolver (`Hanami::Routing::EndpointResolver.new`),
+# This behavior can be changed by passing a custom resolver to `Hanami::Router#initialize`
+</code></pre>
+
+<p>@example Specify an endpoint with `:to` (controller and action string)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/&#39;, to: &#39;articles#show&#39; # =&gt; Articles::Show
+end
+
+# This is a builtin feature for a Hanami::Controller convention.
+</code></pre>
+
+<p>@example Specify a named route with `:as`</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+endpoint = -&gt;(env) { [200, {}, [&#39;Welcome to Hanami::Router!&#39;]] }
+router = Hanami::Router.new(scheme: &#39;https&#39;, host: &#39;hanamirb.org&#39;) do
+  get &#39;/&#39;, to: endpoint, as: :root
+end
+
+router.path(:root) # =&gt; &#39;/&#39;
+router.url(:root)  # =&gt; &#39;https://hanamirb.org/&#39;
+
+# This isn&#39;t mandatory for the default route class (`Hanami::Routing::Route`),
+# This behavior can be changed by passing a custom route to `Hanami::Router#initialize`
+</code></pre>
+
+<p>@example Mount an application</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  mount Api::App, at: &#39;/api&#39;
+end
+
+# All the requests starting with &quot;/api&quot; will be forwarded to Api::App
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Router/NotRoutableEndpointError.html">Hanami::Router::NotRoutableEndpointError</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.7.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.1.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>    

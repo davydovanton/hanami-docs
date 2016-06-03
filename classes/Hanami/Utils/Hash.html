@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Utils::Hash</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Utils::Hash 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/utils/lib/hanami/utils/hash_rb.html">sources/utils/lib/hanami/utils/hash.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Hash.html">Hash</a> on steroids @since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D-3D">[]=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deep_dup">deep_dup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eql-3F">eql?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hash">hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-keys">keys</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-stringify-21">stringify!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-symbolize-21">symbolize!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_a">to_a</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_h">to_h</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_hash">to_hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DUPLICATE_LOGIC</td>
+            <td>=</td>
+            <td class="attr-value">Proc.new do |value|
+case value
+when Hash
+value.deep_dup
+when ::Hash
+Hash.new(value).deep_dup.to_h
+end
+end.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.6.0 @api private</p>
+
+<p>@see <a href="Hash.html#method-i-deep_dup">#deep_dup</a> @see <a
+href="Duplicable.html">Hanami::Utils::Duplicable</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(hash = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the <a href="Hash.html#method-i-hash">#hash</a></p>
+
+<p>@param <a href="Hash.html#method-i-hash">#hash</a> [#to_h] the value we
+want to use to initialize this instance @param blk [Proc] define the
+default value</p>
+
+<p>@return [Hanami::Utils::Hash] self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-c-5B-5D">www.ruby-doc.org/core/Hash.html#method-c-5B-5D</a></p>
+
+<p>@example Passing a <a href="Hash.html">Hash</a></p>
+
+<pre><code>require &#39;hanami/utils/hash&#39;
+
+hash = Hanami::Utils::Hash.new(&#39;l&#39; =&gt; 23)
+hash[&#39;l&#39;] # =&gt; 23
+</code></pre>
+
+<p>@example Passing a block for default</p>
+
+<pre><code>require &#39;hanami/utils/hash&#39;
+
+hash = Hanami::Utils::Hash.new {|h,k| h[k] = [] }
+hash[&#39;foo&#39;].push &#39;bar&#39;
+
+hash.to_h # =&gt; { &#39;foo&#39; =&gt; [&#39;bar&#39;] }
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L46" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">hash</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@hash</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">to_h</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">default_proc</span> = <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <b>==</b>(other)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-3D-3D" name="method-i-3D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Equality</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Hash.html#method-i-eql-3F">eql?</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L250" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-keyword ruby-title">other</span>)
+  <span class="ruby-ivar">@hash</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_h</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <b>[]</b>(key)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-5B-5D" name="method-i-5B-5D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Retrieves the value object corresponding to the key object.</p>
+
+<p>@param key [Object] the key</p>
+
+<p>@return [Object,nil] the correspoding value, if present</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-5B-5D">www.ruby-doc.org/core/Hash.html#method-i-5B-5D</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L202" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-keyword ruby-title">key</span>)
+  <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D-3D">
+            
+              <b>[]=</b>(key, value)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-5B-5D-3D" name="method-i-5B-5D-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Associates the value given by value with the key given by key.</p>
+
+<p>@param key [Object] the key to assign @param value [Object] the value to
+assign</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-5B-5D-3D">www.ruby-doc.org/core/Hash.html#method-i-5B-5D-3D</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D-3D_source')" id="l_method-i-5B-5D-3D_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L214" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-5B-5D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-keyword ruby-title">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-deep_dup">
+            
+              <b>deep_dup</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-deep_dup" name="method-i-deep_dup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a deep copy of the current <a
+href="Hash.html">Hanami::Utils::Hash</a></p>
+
+<p>@return [Hash] a deep duplicated self</p>
+
+<p>@since 0.3.1</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/hash&#39;
+
+hash = Hanami::Utils::Hash.new(
+  &#39;nil&#39;        =&gt; nil,
+  &#39;false&#39;      =&gt; false,
+  &#39;true&#39;       =&gt; true,
+  &#39;symbol&#39;     =&gt; :foo,
+  &#39;fixnum&#39;     =&gt; 23,
+  &#39;bignum&#39;     =&gt; 13289301283 ** 2,
+  &#39;float&#39;      =&gt; 1.0,
+  &#39;complex&#39;    =&gt; Complex(0.3),
+  &#39;bigdecimal&#39; =&gt; BigDecimal.new(&#39;12.0001&#39;),
+  &#39;rational&#39;   =&gt; Rational(0.3),
+  &#39;string&#39;     =&gt; &#39;foo bar&#39;,
+  &#39;hash&#39;       =&gt; { a: 1, b: &#39;two&#39;, c: :three },
+  &#39;u_hash&#39;     =&gt; Hanami::Utils::Hash.new({ a: 1, b: &#39;two&#39;, c: :three })
+)
+
+duped = hash.deep_dup
+
+hash.class  # =&gt; Hanami::Utils::Hash
+duped.class # =&gt; Hanami::Utils::Hash
+
+hash.object_id  # =&gt; 70147385937100
+duped.object_id # =&gt; 70147385950620
+
+# unduplicated values
+duped[&#39;nil&#39;]        # =&gt; nil
+duped[&#39;false&#39;]      # =&gt; false
+duped[&#39;true&#39;]       # =&gt; true
+duped[&#39;symbol&#39;]     # =&gt; :foo
+duped[&#39;fixnum&#39;]     # =&gt; 23
+duped[&#39;bignum&#39;]     # =&gt; 176605528590345446089
+duped[&#39;float&#39;]      # =&gt; 1.0
+duped[&#39;complex&#39;]    # =&gt; (0.3+0i)
+duped[&#39;bigdecimal&#39;] # =&gt; #&lt;BigDecimal:7f9ffe6e2fd0,&#39;0.120001E2&#39;,18(18)&gt;
+duped[&#39;rational&#39;]   # =&gt; 5404319552844595/18014398509481984)
+
+# it duplicates values
+duped[&#39;string&#39;].reverse!
+duped[&#39;string&#39;] # =&gt; &quot;rab oof&quot;
+hash[&#39;string&#39;]  # =&gt; &quot;foo bar&quot;
+
+# it deeply duplicates Hash, by preserving the class
+duped[&#39;hash&#39;].class # =&gt; Hash
+duped[&#39;hash&#39;].delete(:a)
+hash[&#39;hash&#39;][:a]    # =&gt; 1
+
+duped[&#39;hash&#39;][:b].upcase!
+duped[&#39;hash&#39;][:b] # =&gt; &quot;TWO&quot;
+hash[&#39;hash&#39;][:b]  # =&gt; &quot;two&quot;
+
+# it deeply duplicates Hanami::Utils::Hash, by preserving the class
+duped[&#39;u_hash&#39;].class # =&gt; Hanami::Utils::Hash
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deep_dup_source')" id="l_method-i-deep_dup_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L162" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-deep_dup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deep_dup</span>
+  <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Duplicable</span>.<span class="ruby-identifier">dup</span>(<span class="ruby-identifier">v</span>, <span class="ruby-operator">&amp;</span><span class="ruby-constant">DUPLICATE_LOGIC</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <b>delete</b>(key)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-delete" name="method-i-delete" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Deletes the key-value pair and returns the value from hsh whose key is
+equal to key.</p>
+
+<p>@param key [Object] the key to remove</p>
+
+<p>@return [Object,nil] the value hold by the given key, if present</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-keys">www.ruby-doc.org/core/Hash.html#method-i-keys</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L189" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eql-3F">
+            
+              <b>eql?</b>(other)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-eql-3F" name="method-i-eql-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Hash.html#method-i-3D-3D">==</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hash">
+            
+              <b>hash</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-hash" name="method-i-hash" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <a href="Hash.html#method-i-hash">#hash</a> of the internal
+@hash</p>
+
+<p>@return [Fixnum]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hash_source')" id="l_method-i-hash_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L261" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hash</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <b>inspect</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-inspect" name="method-i-inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a string describing the internal @hash</p>
+
+<p>@return [String]</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L270" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-keys">
+            
+              <b>keys</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-keys" name="method-i-keys" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="Hash.html#method-c-new">::new</a> array populated with
+the <a href="Hash.html#method-i-keys">#keys</a> from this <a
+href="Hash.html#method-i-hash">#hash</a></p>
+
+<p>@return [Array] the <a href="Hash.html#method-i-keys">#keys</a></p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-keys">www.ruby-doc.org/core/Hash.html#method-i-keys</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-keys_source')" id="l_method-i-keys_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L175" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-keys_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">keys</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s <a
+href="Hash.html#method-i-method_missing">#method_missing</a> in order to
+provide ::Hash interface</p>
+
+<p>@api private @since 0.3.0</p>
+
+<p>@raise [NoMethodError] If doesn&#39;t respond to the given method</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L280" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-identifier">h</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">h</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMethodError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">%Q(undefined method `#{ m }&#39; for #{ @hash }:#{ self.class })</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(m, include_private=false)
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s <a
+href="Hash.html#method-i-respond_to_missing-3F">#respond_to_missing?</a> in
+order to support ::Hash interface</p>
+
+<p>@api private @since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L294" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-stringify-21">
+            
+              <b>stringify!</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-stringify-21" name="method-i-stringify-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Convert in-place all the <a href="Hash.html#method-i-keys">#keys</a> to
+Symbol instances, nested hashes are converted too.</p>
+
+<p>@return [Hash] self</p>
+
+<p>@since 0.3.2</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/hash&#39;
+
+hash = Hanami::Utils::Hash.new a: 23, b: { c: [&#39;x&#39;,&#39;y&#39;,&#39;z&#39;] }
+hash.stringify!
+
+hash.keys    # =&gt; [:a, :b]
+hash.inspect # =&gt; {&quot;a&quot;=&gt;23, &quot;b&quot;=&gt;{&quot;c&quot;=&gt;[&quot;x&quot;, &quot;y&quot;, &quot;z&quot;]}}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-stringify-21_source')" id="l_method-i-stringify-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L90" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-stringify-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">stringify!</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>).<span class="ruby-identifier">stringify!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>)
+
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-symbolize-21">
+            
+              <b>symbolize!</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-symbolize-21" name="method-i-symbolize-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Convert in-place all the <a href="Hash.html#method-i-keys">#keys</a> to
+Symbol instances, nested hashes are converted too.</p>
+
+<p>@return [Hash] self</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/utils/hash&#39;
+
+hash = Hanami::Utils::Hash.new &#39;a&#39; =&gt; 23, &#39;b&#39; =&gt; { &#39;c&#39; =&gt; [&#39;x&#39;,&#39;y&#39;,&#39;z&#39;] }
+hash.symbolize!
+
+hash.keys    # =&gt; [:a, :b]
+hash.inspect # =&gt; {:a=&gt;23, :b=&gt;{:c=&gt;[&quot;x&quot;, &quot;y&quot;, &quot;z&quot;]}}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-symbolize-21_source')" id="l_method-i-symbolize-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L65" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-symbolize-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">symbolize!</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">k</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>).<span class="ruby-identifier">symbolize!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>)
+
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_a">
+            
+              <b>to_a</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-to_a" name="method-i-to_a" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Converts into a nested array of [ key, value ] arrays.</p>
+
+<p>@return [::Array] the array</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-to_a">www.ruby-doc.org/core/Hash.html#method-i-to_a</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_a_source')" id="l_method-i-to_a_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L241" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_a_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_a</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_h">
+            
+              <b>to_h</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-to_h" name="method-i-to_h" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a Ruby <a href="Hash.html">Hash</a> as duplicated version of self</p>
+
+<p>@return [::Hash] the <a href="Hash.html#method-i-hash">#hash</a></p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Hash.html#method-i-to_h">www.ruby-doc.org/core/Hash.html#method-i-to_h</a></p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Hash.html#method-i-to_hash">to_hash</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/138ff97840b4a0941a162d3e70cafa00601e8b23/lib/hanami/utils/hash.rb#L225" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_h_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/utils/hash.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
+  <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>), <span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_h</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>)
+    <span class="ruby-identifier">result</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_hash">
+            
+              <b>to_hash</b>()
+            
+            <a href="../../../classes/Hanami/Utils/Hash.html#method-i-to_hash" name="method-i-to_hash" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Hash.html#method-i-to_h">to_h</a>
+            </div>
+          
+          
+          
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

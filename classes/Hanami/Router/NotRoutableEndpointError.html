@@ -1,0 +1,2423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Router::NotRoutableEndpointError</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Router::NotRoutableEndpointError 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Routing/Error.html">Hanami::Routing::Error</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/router/lib/hanami/router_rb.html">sources/router/lib/hanami/router.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This error is raised when <code>#call</code> is invoked on a non-routable
+recognized route.</p>
+
+<p>@since 0.5.0</p>
+
+<p>@see Hanami::Router#recognize @see <a
+href="../Routing/RecognizedRoute.html">Hanami::Routing::RecognizedRoute</a>
+@see <a
+href="../Routing/RecognizedRoute.html#method-i-call">Hanami::Routing::RecognizedRoute#call</a>
+@see <a
+href="../Routing/RecognizedRoute.html#method-i-routable-3F">Hanami::Routing::RecognizedRoute#routable?</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-define">define</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-define">define</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-defined-3F">defined?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-env_for">env_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get">get</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspector">inspector</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mount">mount</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-namespace">namespace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-options">options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-patch">patch</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-path">path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-post">post</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-put">put</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-recognize">recognize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-redirect">redirect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-resource">resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-resources">resources</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-routes">routes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-trace">trace</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-url">url</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">REQUEST_METHOD</td>
+            <td>=</td>
+            <td class="attr-value">&#39;REQUEST_METHOD&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PATH_INFO</td>
+            <td>=</td>
+            <td class="attr-value">&#39;PATH_INFO&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ROOT_PATH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;/&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Defines <a href="NotRoutableEndpointError.html#method-i-root">#root</a> <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a></p>
+
+<p>@since x.x.x @api private</p>
+
+<p>@see Hanami::Router#root</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-define">
+            
+              <b>define</b>(&amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-c-define" name="method-c-define" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the given block as it is.</p>
+
+<p>When <a href="../Router.html">Hanami::Router</a> is used as a standalone
+gem and the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> are
+defined into a configuration file, some systems could raise an exception.</p>
+
+<p>Imagine the following file into a Ruby on Rails application:</p>
+
+<pre><code>get &#39;/&#39;, to: &#39;api#index&#39;
+</code></pre>
+
+<p>Because Ruby on Rails in production mode use to eager load code and the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> file uses
+top level method calls, it crashes the application.</p>
+
+<p>If we wrap these <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> with
+<code>Hanami::Router.define</code>, the block doesn&#39;t <a
+href="NotRoutableEndpointError.html#method-i-get">#get</a> yielded but just
+returned to the caller as it is.</p>
+
+<p>Usually the receiver of this block is
+<code>Hanami::Router#initialize</code>, which finally evaluates the block.</p>
+
+<p>@param blk [Proc] a set of route definitions</p>
+
+<p>@return [Proc] the given block</p>
+
+<p>@since 0.5.0</p>
+
+<p>@example</p>
+
+<pre><code># apps/web/config/routes.rb
+Hanami::Router.define do
+  get &#39;/&#39;, to: &#39;home#index&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-define_source')" id="l_method-c-define_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L131" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-define_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">define</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">blk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(env)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L89" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 89</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">env</span>)
+    <span class="ruby-keyword">super</span> <span class="ruby-operator">%</span>(<span class="ruby-constant">Cannot</span> <span class="ruby-identifier">find</span> <span class="ruby-identifier">routable</span> <span class="ruby-identifier">endpoint</span> <span class="ruby-keyword">for</span> <span class="ruby-comment">#{ env[REQUEST_METHOD] } &quot;#{ env[PATH_INFO] }&quot;)</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-call">
+            
+              <b>call</b>(env)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-call" name="method-i-call" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resolve the given Rack env to a registered endpoint and invoke it.</p>
+
+<p>@param env [Hash] a Rack env instance</p>
+
+<p>@return [Rack::Response, Array]</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L968" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 968</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-define">
+            
+              <b>define</b>(&amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-define" name="method-i-define" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>To support defining <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> in the
+`define` wrapper.</p>
+
+<p>@param blk [Proc] the block to <a
+href="NotRoutableEndpointError.html#method-c-define">::define</a> the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<p>@return [Hanami::Routing::Route]</p>
+
+<p>@since 0.2.0</p>
+
+<p>@example In <a href="../../Hanami.html">Hanami</a> framework</p>
+
+<pre><code>class Application &lt; Hanami::Application
+  configure do
+    routes &#39;config/routes&#39;
+  end
+end
+
+# In `config/routes`
+
+define do
+  get # ...
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-define_source')" id="l_method-i-define_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L267" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-define_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">define</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-defined-3F">
+            
+              <b>defined?</b>()
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-defined-3F" name="method-i-defined-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Check if there are defined <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<p>@return [TrueClass,FalseClass] the result of the check</p>
+
+<p>@since 0.2.0 @api private</p>
+
+<p>@example</p>
+
+<pre><code>router = Hanami::Router.new
+router.defined? # =&gt; false
+
+router = Hanami::Router.new { get &#39;/&#39;, to: -&gt;(env) { } }
+router.defined? # =&gt; true
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-defined-3F_source')" id="l_method-i-defined-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L285" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-defined-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">defined?</span>
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">any?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <b>delete</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-delete" name="method-i-delete" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a DELETE request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L479" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 479</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get">
+            
+              <b>get</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-get" name="method-i-get" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a GET request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example Fixed matching string</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/hanami&#39;, to: -&gt;(env) { [200, {}, [&#39;Hello from Hanami!&#39;]] }
+</code></pre>
+
+<p>@example String matching with variables</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/flowers/:id&#39;,
+  to: -&gt;(env) {
+    [
+      200,
+      {},
+      [&quot;Hello from Flower no. #{ env[&#39;router.params&#39;][:id] }!&quot;]
+    ]
+  }
+</code></pre>
+
+<p>@example Variables Constraints</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/flowers/:id&#39;,
+  id: /\d+/,
+  to: -&gt;(env) { [200, {}, [&quot;:id must be a number!&quot;]] }
+</code></pre>
+
+<p>@example String matching with globbling</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/*&#39;,
+  to: -&gt;(env) {
+    [
+      200,
+      {},
+      [&quot;This is catch all: #{ env[&#39;router.params&#39;].inspect }!&quot;]
+    ]
+  }
+</code></pre>
+
+<p>@example String matching with optional tokens</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.get &#39;/hanami(.:format)&#39;,
+  to: -&gt;(env) {
+    [200, {}, [&quot;You&#39;ve requested #{ env[&#39;router.params&#39;][:format] }!&quot;]]
+  }
+</code></pre>
+
+<p>@example Named <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new(scheme: &#39;https&#39;, host: &#39;hanamirb.org&#39;)
+router.get &#39;/hanami&#39;,
+  to: -&gt;(env) { [200, {}, [&#39;Hello from Hanami!&#39;]] },
+  as: :hanami
+
+router.path(:hanami) # =&gt; &quot;/hanami&quot;
+router.url(:hanami)  # =&gt; &quot;https://hanamirb.org/hanami&quot;
+</code></pre>
+
+<p>@example Duck typed endpoints (Rack compatible objects)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+
+router.get &#39;/hanami&#39;,      to: -&gt;(env) { [200, {}, [&#39;Hello from Hanami!&#39;]] }
+router.get &#39;/middleware&#39;, to: Middleware
+router.get &#39;/rack-app&#39;,   to: RackApp.new
+router.get &#39;/method&#39;,     to: ActionControllerSubclass.action(:new)
+
+# Everything that responds to #call is invoked as it is
+</code></pre>
+
+<p>@example Duck typed endpoints (strings)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+class RackApp
+  def call(env)
+    # ...
+  end
+end
+
+router = Hanami::Router.new
+router.get &#39;/hanami&#39;, to: &#39;rack_app&#39; # it will map to RackApp.new
+</code></pre>
+
+<p>@example Duck typed endpoints (string: controller + action)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+module Flowers
+  class Index
+    def call(env)
+      # ...
+    end
+  end
+end
+
+ router = Hanami::Router.new
+ router.get &#39;/flowers&#39;, to: &#39;flowers#index&#39;
+
+ # It will map to Flowers::Index.new, which is the
+ # Hanami::Controller convention.
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_source')" id="l_method-i-get_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L403" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-get_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspector">
+            
+              <b>inspector</b>()
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-inspector" name="method-i-inspector" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> <a
+href="NotRoutableEndpointError.html#method-i-inspector">#inspector</a></p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a
+href="../Routing/RoutesInspector.html">Hanami::Routing::RoutesInspector</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get    &#39;/&#39;,       to: &#39;home#index&#39;
+  get    &#39;/login&#39;,  to: &#39;sessions#new&#39;,     as: :login
+  post   &#39;/login&#39;,  to: &#39;sessions#create&#39;
+  delete &#39;/logout&#39;, to: &#39;sessions#destroy&#39;, as: :logout
+end
+
+puts router.inspector
+  # =&gt;        GET, HEAD  /                        Home::Index
+       login  GET, HEAD  /login                   Sessions::New
+              POST       /login                   Sessions::Create
+       logout GET, HEAD  /logout                  Sessions::Destroy</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspector_source')" id="l_method-i-inspector_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L1166" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inspector_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 1166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspector</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/routing/routes_inspector&#39;</span>
+  <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutesInspector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@router</span>.<span class="ruby-identifier">routes</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mount">
+            
+              <b>mount</b>(app, options)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-mount" name="method-i-mount" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Mount a Rack application at the specified <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>. All the
+requests starting with the specified <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>, will be
+forwarded to the given application.</p>
+
+<p>All the other methods (eg #get) support callable objects, but they restrict
+the range of the acceptable HTTP verb. Mounting an application with #mount
+doesn&#39;t apply this kind of restriction at the router level, but let the
+application to decide.</p>
+
+<p>@param app [#call] a class or an object that responds to #call @param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the <a
+href="NotRoutableEndpointError.html#method-i-mount">#mount</a> @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [:at]
+the relative <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> where to <a
+href="NotRoutableEndpointError.html#method-i-mount">#mount</a> the app</p>
+
+<p>@since 0.1.1</p>
+
+<p>@example Basic usage</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  mount Api::App.new, at: &#39;/api&#39;
+end
+
+# Requests:
+#
+# GET  /api          # =&gt; 200
+# GET  /api/articles # =&gt; 200
+# POST /api/articles # =&gt; 200
+# GET  /api/unknown  # =&gt; 404
+</code></pre>
+
+<p>@example Difference between #get and #mount</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  get &#39;/rack1&#39;,      to: RackOne.new
+  mount RackTwo.new, at: &#39;/rack2&#39;
+end
+
+# Requests:
+#
+# # /rack1 will only accept GET
+# GET  /rack1        # =&gt; 200 (RackOne.new)
+# POST /rack1        # =&gt; 405
+#
+# # /rack2 accepts all the verbs and delegate the decision to RackTwo
+# GET  /rack2        # =&gt; 200 (RackTwo.new)
+# POST /rack2        # =&gt; 200 (RackTwo.new)
+</code></pre>
+
+<p>@example Types of mountable applications</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+class RackOne
+  def self.call(env)
+  end
+end
+
+class RackTwo
+  def call(env)
+  end
+end
+
+class RackThree
+  def call(env)
+  end
+end
+
+module Dashboard
+  class Index
+    def call(env)
+    end
+  end
+end
+
+Hanami::Router.new do
+  mount RackOne,                             at: &#39;/rack1&#39;
+  mount RackTwo,                             at: &#39;/rack2&#39;
+  mount RackThree.new,                       at: &#39;/rack3&#39;
+  mount -&gt;(env) {[200, {}, [&#39;Rack Four&#39;]]},  at: &#39;/rack4&#39;
+  mount &#39;dashboard#index&#39;,                   at: &#39;/dashboard&#39;
+end
+
+# 1. RackOne is used as it is (class), because it respond to .call
+# 2. RackTwo is initialized, because it respond to #call
+# 3. RackThree is used as it is (object), because it respond to #call
+# 4. That Proc is used as it is, because it respond to #call
+# 5. That string is resolved as Dashboard::Index (Hanami::Controller)
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mount_source')" id="l_method-i-mount_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L957" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-mount_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 957</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mount</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">mount</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-namespace">
+            
+              <b>namespace</b>(namespace, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-namespace" name="method-i-namespace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a Ruby block: all the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> defined
+within it will be namespaced with the given relative <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>Namespaces blocks can be nested multiple times.</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-namespace">#namespace</a>
+[String] the relative <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> where the
+nested <a href="NotRoutableEndpointError.html#method-i-routes">#routes</a>
+will</p>
+
+<pre><code>be mounted
+</code></pre>
+
+<p>@param blk [Proc] the block that defines the <a
+href="NotRoutableEndpointError.html#method-i-resources">#resources</a></p>
+
+<p>@return [Hanami::Routing::Namespace] the generated <a
+href="NotRoutableEndpointError.html#method-i-namespace">#namespace</a>.</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Router.html">Hanami::Router</a></p>
+
+<p>@example Basic example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  namespace &#39;trees&#39; do
+    get &#39;/sequoia&#39;, to: endpoint # =&gt; &#39;/trees/sequoia&#39;
+  end
+end
+</code></pre>
+
+<p>@example Nested namespaces</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  namespace &#39;animals&#39; do
+    namespace &#39;mammals&#39; do
+      get &#39;/cats&#39;, to: endpoint # =&gt; &#39;/animals/mammals/cats&#39;
+    end
+  end
+end
+</code></pre>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.namespace &#39;trees&#39; do
+  get &#39;/sequoia&#39;, to: endpoint # =&gt; &#39;/trees/sequoia&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-namespace_source')" id="l_method-i-namespace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L623" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-namespace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 623</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">namespace</span>(<span class="ruby-identifier">namespace</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Namespace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">namespace</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-options">
+            
+              <b>options</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-options" name="method-i-options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a OPTIONS request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-options_source')" id="l_method-i-options_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L547" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 547</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">options</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">options</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-patch">
+            
+              <b>patch</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-patch" name="method-i-patch" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a PATCH request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-patch_source')" id="l_method-i-patch_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L460" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-patch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 460</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">patch</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">patch</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-path">
+            
+              <b>path</b>(route, *args)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-path" name="method-i-path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate an relative URL for a specified named route. The additional
+arguments will be used to compose the relative URL - in</p>
+
+<pre><code>case it has tokens to match - and for compose the query string.</code></pre>
+
+<p>@param route [Symbol] the route name</p>
+
+<p>@return [String]</p>
+
+<p>@raise [Hanami::Routing::InvalidRouteException] when the router fails to</p>
+
+<pre><code>recognize a route, because of the given arguments.</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new(scheme: &#39;https&#39;, host: &#39;hanamirb.org&#39;)
+router.get &#39;/login&#39;, to: &#39;sessions#new&#39;,    as: :login
+router.get &#39;/:name&#39;, to: &#39;frameworks#show&#39;, as: :framework
+
+router.path(:login)                          # =&gt; &quot;/login&quot;
+router.path(:login, return_to: &#39;/dashboard&#39;) # =&gt; &quot;/login?return_to=%2Fdashboard&quot;
+router.path(:framework, name: &#39;router&#39;)      # =&gt; &quot;/router&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-path_source')" id="l_method-i-path_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L1114" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 1114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">path</span>(<span class="ruby-identifier">route</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">route</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-post">
+            
+              <b>post</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-post" name="method-i-post" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a POST request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-post_source')" id="l_method-i-post_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L422" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-post_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">post</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-put">
+            
+              <b>put</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-put" name="method-i-put" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a PUT request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-put_source')" id="l_method-i-put_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L441" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-put_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 441</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">put</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-recognize">
+            
+              <b>recognize</b>(env, options = {}, params = nil)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-recognize" name="method-i-recognize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Recognize the given env, <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>, or name and
+return a route for testing inspection.</p>
+
+<p>If the route cannot be recognized, it still returns an object for testing
+inspection.</p>
+
+<p>@param env [Hash, String, Symbol] Rack env, <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> or route name
+@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash] a
+set of <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> for Rack
+env or route params @param params [Hash] a set of params</p>
+
+<p>@return [Hanami::Routing::RecognizedRoute] the recognized route</p>
+
+<p>@since 0.5.0</p>
+
+<p>@see Hanami::Router#env_for @see <a
+href="../Routing/RecognizedRoute.html">Hanami::Routing::RecognizedRoute</a></p>
+
+<p>@example Successful Path Recognition</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(&#39;/books/23&#39;)
+route.verb      # =&gt; &quot;GET&quot; (default)
+route.routable? # =&gt; true
+route.params    # =&gt; {:id=&gt;&quot;23&quot;}
+</code></pre>
+
+<p>@example Successful Rack Env Recognition</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(Rack::MockRequest.env_for(&#39;/books/23&#39;))
+route.verb      # =&gt; &quot;GET&quot; (default)
+route.routable? # =&gt; true
+route.params    # =&gt; {:id=&gt;&quot;23&quot;}
+</code></pre>
+
+<p>@example Successful Named Route Recognition</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(:book, id: 23)
+route.verb      # =&gt; &quot;GET&quot; (default)
+route.routable? # =&gt; true
+route.params    # =&gt; {:id=&gt;&quot;23&quot;}
+</code></pre>
+
+<p>@example Failing Recognition For Unknown Path</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(&#39;/books&#39;)
+route.verb      # =&gt; &quot;GET&quot; (default)
+route.routable? # =&gt; false
+</code></pre>
+
+<p>@example Failing Recognition For Path With Wrong HTTP Verb</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(&#39;/books/23&#39;, method: :post)
+route.verb      # =&gt; &quot;POST&quot;
+route.routable? # =&gt; false
+</code></pre>
+
+<p>@example Failing Recognition For Rack Env With Wrong HTTP Verb</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(Rack::MockRequest.env_for(&#39;/books/23&#39;, method: :post))
+route.verb      # =&gt; &quot;POST&quot;
+route.routable? # =&gt; false
+</code></pre>
+
+<p>@example Failing Recognition Named Route With Wrong Params</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(:book)
+route.verb      # =&gt; &quot;GET&quot; (default)
+route.routable? # =&gt; false
+</code></pre>
+
+<p>@example Failing Recognition Named Route With Wrong HTTP Verb</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new do
+  get &#39;/books/:id&#39;, to: &#39;books#show&#39;, as: :book
+end
+
+route = router.recognize(:book, {method: :post}, {id: 1})
+route.verb      # =&gt; &quot;POST&quot;
+route.routable? # =&gt; false
+route.params    # =&gt; {:id=&gt;&quot;1&quot;}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-recognize_source')" id="l_method-i-recognize_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L1080" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-recognize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 1080</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">recognize</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;hanami/routing/recognized_route&#39;</span>
+
+  <span class="ruby-identifier">env</span>          = <span class="ruby-identifier">env_for</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">responses</span>, <span class="ruby-identifier">_</span> = <span class="ruby-operator">*</span><span class="ruby-ivar">@router</span>.<span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">env</span>)
+
+  <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">RecognizedRoute</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">responses</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">responses</span>.<span class="ruby-identifier">first</span>,
+    <span class="ruby-identifier">env</span>, <span class="ruby-ivar">@router</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-redirect">
+            
+              <b>redirect</b>(path, options = {}, &amp;endpoint)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-redirect" name="method-i-redirect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines an HTTP <a
+href="NotRoutableEndpointError.html#method-i-redirect">#redirect</a></p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> that needs to
+be redirected @param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the <a
+href="NotRoutableEndpointError.html#method-i-redirect">#redirect</a>
+behavior @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Fixnum]
+the HTTP status to return (defaults to `301`)</p>
+
+<p>@return [Hanami::Routing::Route] the generated route.</p>
+
+<pre><code>This may vary according to the `:route` option passed to the initializer</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Router.html">Hanami::Router</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  redirect &#39;/legacy&#39;,  to: &#39;/new_endpoint&#39;
+  redirect &#39;/legacy2&#39;, to: &#39;/new_endpoint2&#39;, code: 302
+end
+</code></pre>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.redirect &#39;/legacy&#39;,  to: &#39;/new_endpoint&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-redirect_source')" id="l_method-i-redirect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L577" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-redirect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 577</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">redirect</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">endpoint</span>)
+  <span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">redirect</span> <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">options</span>), <span class="ruby-identifier">options</span>[<span class="ruby-value">:code</span>] <span class="ruby-operator">||</span> <span class="ruby-number">301</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resource">
+            
+              <b>resource</b>(name, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-resource" name="method-i-resource" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a set of named <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> for a
+single RESTful <a
+href="NotRoutableEndpointError.html#method-i-resource">#resource</a>. It
+has a built-in integration for <a
+href="../Controller.html">Hanami::Controller</a>.</p>
+
+<p>@param name [String] the name of the <a
+href="NotRoutableEndpointError.html#method-i-resource">#resource</a> @param
+<a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Hash] a set of <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> to
+customize the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Array&lt;Symbol&gt;] :only a subset of the default <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>that we want to generate
+</code></pre>
+
+<p>@option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Array&lt;Symbol&gt;] :except prevent the given <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> to be</p>
+
+<pre><code>generated
+</code></pre>
+
+<p>@param blk [Proc] a block of code to generate additional <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<p>@return [Hanami::Routing::Resource]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Routing/Resource.html">Hanami::Routing::Resource</a> @see
+<a
+href="../Routing/Resource/Action.html">Hanami::Routing::Resource::Action</a>
+@see <a
+href="../Routing/Resource/Options.html">Hanami::Routing::Resource::Options</a></p>
+
+<p>@example Default usage</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;
+end
+
+# It generates:
+#
+# +--------+----------------+-------------------+----------+----------------+
+# | Verb   | Path           | Action            | Name     | Named Route    |
+# +--------+----------------+-------------------+----------+----------------+
+# | GET    | /identity      | Identity::Show    | :show    | :identity      |
+# | GET    | /identity/new  | Identity::New     | :new     | :new_identity  |
+# | POST   | /identity      | Identity::Create  | :create  | :identity      |
+# | GET    | /identity/edit | Identity::Edit    | :edit    | :edit_identity |
+# | PATCH  | /identity      | Identity::Update  | :update  | :identity      |
+# | DELETE | /identity      | Identity::Destroy | :destroy | :identity      |
+# +--------+----------------+-------------------+----------+----------------+
+</code></pre>
+
+<p>@example Limit the generated <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> with :only</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;, only: [:show, :new, :create]
+end
+
+# It generates:
+#
+# +--------+----------------+------------------+----------+----------------+
+# | Verb   | Path           | Action           | Name     | Named Route    |
+# +--------+----------------+------------------+----------+----------------+
+# | GET    | /identity      | Identity::Show   | :show    | :identity      |
+# | GET    | /identity/new  | Identity::New    | :new     | :new_identity  |
+# | POST   | /identity      | Identity::Create | :create  | :identity      |
+# +--------+----------------+------------------+----------+----------------+
+</code></pre>
+
+<p>@example Limit the generated <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> with
+:except</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;, except: [:edit, :update, :destroy]
+end
+
+# It generates:
+#
+# +--------+----------------+------------------+----------+----------------+
+# | Verb   | Path           | Action           | Name     | Named Route    |
+# +--------+----------------+------------------+----------+----------------+
+# | GET    | /identity      | Identity::Show   | :show    | :identity      |
+# | GET    | /identity/new  | Identity::New    | :new     | :new_identity  |
+# | POST   | /identity      | Identity::Create | :create  | :identity      |
+# +--------+----------------+------------------+----------+----------------+
+</code></pre>
+
+<p>@example Additional single <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;, only: [] do
+    member do
+      patch &#39;activate&#39;
+    end
+  end
+end
+
+# It generates:
+#
+# +--------+--------------------+--------------------+------+--------------------+
+# | Verb   | Path               | Action             | Name | Named Route        |
+# +--------+--------------------+--------------------+------+--------------------+
+# | PATCH  | /identity/activate | Identity::Activate |      | :activate_identity |
+# +--------+--------------------+--------------------+------+--------------------+
+</code></pre>
+
+<p>@example Additional collection <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resource &#39;identity&#39;, only: [] do
+    collection do
+      get &#39;keys&#39;
+    end
+  end
+end
+
+# It generates:
+#
+# +------+----------------+----------------+------+----------------+
+# | Verb | Path           | Action         | Name | Named Route    |
+# +------+----------------+----------------+------+----------------+
+# | GET  | /identity/keys | Identity::Keys |      | :keys_identity |
+# +------+----------------+----------------+------+----------------+
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resource_source')" id="l_method-i-resource_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L745" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 745</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resource</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">separator</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">action_separator</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resources">
+            
+              <b>resources</b>(name, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-resources" name="method-i-resources" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a set of named <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> for a
+plural RESTful <a
+href="NotRoutableEndpointError.html#method-i-resource">#resource</a>. It
+has a built-in integration for <a
+href="../Controller.html">Hanami::Controller</a>.</p>
+
+<p>@param name [String] the name of the <a
+href="NotRoutableEndpointError.html#method-i-resource">#resource</a> @param
+<a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Hash] a set of <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> to
+customize the <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Array&lt;Symbol&gt;] :only a subset of the default <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>that we want to generate
+</code></pre>
+
+<p>@option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[Array&lt;Symbol&gt;] :except prevent the given <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> to be</p>
+
+<pre><code>generated
+</code></pre>
+
+<p>@param blk [Proc] a block of code to generate additional <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<p>@return [Hanami::Routing::Resources]</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a href="../Routing/Resources.html">Hanami::Routing::Resources</a>
+@see <a
+href="../Routing/Resources/Action.html">Hanami::Routing::Resources::Action</a>
+@see <a
+href="../Routing/Resource/Options.html">Hanami::Routing::Resource::Options</a></p>
+
+<p>@example Default usage</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resources &#39;articles&#39;
+end
+
+# It generates:
+#
+# +--------+--------------------+-------------------+----------+----------------+
+# | Verb   | Path               | Action            | Name     | Named Route    |
+# +--------+--------------------+-------------------+----------+----------------+
+# | GET    | /articles          | Articles::Index   | :index   | :articles      |
+# | GET    | /articles/:id      | Articles::Show    | :show    | :articles      |
+# | GET    | /articles/new      | Articles::New     | :new     | :new_articles  |
+# | POST   | /articles          | Articles::Create  | :create  | :articles      |
+# | GET    | /articles/:id/edit | Articles::Edit    | :edit    | :edit_articles |
+# | PATCH  | /articles/:id      | Articles::Update  | :update  | :articles      |
+# | DELETE | /articles/:id      | Articles::Destroy | :destroy | :articles      |
+# +--------+--------------------+-------------------+----------+----------------+
+</code></pre>
+
+<p>@example Limit the generated <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> with :only</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resources &#39;articles&#39;, only: [:index]
+end
+
+# It generates:
+#
+# +------+-----------+-----------------+--------+-------------+
+# | Verb | Path      | Action          | Name   | Named Route |
+# +------+-----------+-----------------+--------+-------------+
+# | GET  | /articles | Articles::Index | :index | :articles   |
+# +------+-----------+-----------------+--------+-------------+
+</code></pre>
+
+<p>@example Limit the generated <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a> with
+:except</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resources &#39;articles&#39;, except: [:edit, :update]
+end
+
+# It generates:
+#
+# +--------+--------------------+-------------------+----------+----------------+
+# | Verb   | Path               | Action            | Name     | Named Route    |
+# +--------+--------------------+-------------------+----------+----------------+
+# | GET    | /articles          | Articles::Index   | :index   | :articles      |
+# | GET    | /articles/:id      | Articles::Show    | :show    | :articles      |
+# | GET    | /articles/new      | Articles::New     | :new     | :new_articles  |
+# | POST   | /articles          | Articles::Create  | :create  | :articles      |
+# | DELETE | /articles/:id      | Articles::Destroy | :destroy | :articles      |
+# +--------+--------------------+-------------------+----------+----------------+
+</code></pre>
+
+<p>@example Additional single <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resources &#39;articles&#39;, only: [] do
+    member do
+      patch &#39;publish&#39;
+    end
+  end
+end
+
+# It generates:
+#
+# +--------+-----------------------+-------------------+------+-------------------+
+# | Verb   | Path                  | Action            | Name | Named Route       |
+# +--------+-----------------------+-------------------+------+-------------------+
+# | PATCH  | /articles/:id/publish | Articles::Publish |      | :publish_articles |
+# +--------+-----------------------+-------------------+------+-------------------+
+</code></pre>
+
+<p>@example Additional collection <a
+href="NotRoutableEndpointError.html#method-i-routes">#routes</a></p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+Hanami::Router.new do
+  resources &#39;articles&#39;, only: [] do
+    collection do
+      get &#39;search&#39;
+    end
+  end
+end
+
+# It generates:
+#
+# +------+------------------+------------------+------+------------------+
+# | Verb | Path             | Action           | Name | Named Route      |
+# +------+------------------+------------------+------+------------------+
+# | GET  | /articles/search | Articles::Search |      | :search_articles |
+# +------+------------------+------------------+------+------------------+
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resources_source')" id="l_method-i-resources_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L868" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 868</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resources</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">separator</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">action_separator</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>(options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a <a href="NotRoutableEndpointError.html#method-i-root">#root</a>
+route (a GET route for &#39;/&#39;)</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@since x.x.x</p>
+
+<p>@example Fixed matching string</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new
+router.root to: -&gt;(env) { [200, {}, [&#39;Hello from Hanami!&#39;]] }
+</code></pre>
+
+<p>@example Included names as `root` (for <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> and <a
+href="NotRoutableEndpointError.html#method-i-url">#url</a> helpers)</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new(scheme: &#39;https&#39;, host: &#39;hanamirb.org&#39;)
+router.root to: -&gt;(env) { [200, {}, [&#39;Hello from Hanami!&#39;]] }
+
+router.path(:root) # =&gt; &quot;/&quot;
+router.url(:root)  # =&gt; &quot;https://hanamirb.org/&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L528" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 528</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>(<span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">ROOT_PATH</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">as</span><span class="ruby-operator">:</span> <span class="ruby-value">:root</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-routes">
+            
+              <b>routes</b>()
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-routes" name="method-i-routes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns self</p>
+
+<p>This is a duck-typing trick for compatibility with `Hanami::Application`.
+It&#39;s used by `Hanami::Routing::RoutesInspector` to inspect both apps
+and routers.</p>
+
+<p>@return [self]</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-routes_source')" id="l_method-i-routes_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L243" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">routes</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-trace">
+            
+              <b>trace</b>(path, options = {}, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-trace" name="method-i-trace" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Defines a route that accepts a TRACE request for the given <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a>.</p>
+
+<p>@param <a href="NotRoutableEndpointError.html#method-i-path">#path</a>
+[String] the relative URL to be matched</p>
+
+<p>@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash]
+the <a href="NotRoutableEndpointError.html#method-i-options">#options</a>
+to customize the route @option <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a>
+[String,Proc,Class,Object#call] :to the endpoint</p>
+
+<p>@param blk [Proc] the anonymous proc to be used as endpoint for the route</p>
+
+<p>@return [Hanami::Routing::Route] this may vary according to the :route</p>
+
+<pre><code>option passed to the constructor
+</code></pre>
+
+<p>@see Hanami::Router#get</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-trace_source')" id="l_method-i-trace_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L498" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-trace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 498</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">trace</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">trace</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-url">
+            
+              <b>url</b>(route, *args)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-url" name="method-i-url" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate a URL for a specified named route. The additional arguments will
+be used to compose the relative URL - in</p>
+
+<pre><code>case it has tokens to match - and for compose the query string.</code></pre>
+
+<p>@param route [Symbol] the route name</p>
+
+<p>@return [String]</p>
+
+<p>@raise [Hanami::Routing::InvalidRouteException] when the router fails to</p>
+
+<pre><code>recognize a route, because of the given arguments.</code></pre>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/router&#39;
+
+router = Hanami::Router.new(scheme: &#39;https&#39;, host: &#39;hanamirb.org&#39;)
+router.get &#39;/login&#39;, to: &#39;sessions#new&#39;, as: :login
+router.get &#39;/:name&#39;, to: &#39;frameworks#show&#39;, as: :framework
+
+router.url(:login)                          # =&gt; &quot;https://hanamirb.org/login&quot;
+router.url(:login, return_to: &#39;/dashboard&#39;) # =&gt; &quot;https://hanamirb.org/login?return_to=%2Fdashboard&quot;
+router.url(:framework, name: &#39;router&#39;)      # =&gt; &quot;https://hanamirb.org/router&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-url_source')" id="l_method-i-url_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L1141" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-url_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 1141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">url</span>(<span class="ruby-identifier">route</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@router</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">route</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-env_for">
+            
+              <b>env_for</b>(env, options = {}, params = nil)
+            
+            <a href="../../../classes/Hanami/Router/NotRoutableEndpointError.html#method-i-env_for" name="method-i-env_for" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Fabricate Rack env for the given Rack env, <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> or named route</p>
+
+<p>@param env [Hash, String, Symbol] Rack env, <a
+href="NotRoutableEndpointError.html#method-i-path">#path</a> or route name
+@param <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> [Hash] a
+set of <a
+href="NotRoutableEndpointError.html#method-i-options">#options</a> for Rack
+env or route params @param params [Hash] a set of params</p>
+
+<p>@return [Hash] Rack env</p>
+
+<p>@since 0.5.0 @api private</p>
+
+<p>@see Hanami::Router#recognize @see <a
+href="http://www.rubydoc.info/github/rack/rack/Rack%2FMockRequest.env_for">www.rubydoc.info/github/rack/rack/Rack%2FMockRequest.env_for</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-env_for_source')" id="l_method-i-env_for_source">show</a>
+                
+                  | <a href="https://github.com/hanami/router/blob/8ece8de9eaabbd5de451bea9be68403fcfa963fc/lib/hanami/router.rb#L1186" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-env_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/router/lib/hanami/router.rb, line 1186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">env_for</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">env</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">env</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">MockRequest</span>.<span class="ruby-identifier">env_for</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">url</span> = <span class="ruby-identifier">path</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">params</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">env_for</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidRouteException</span>
+      {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">env</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

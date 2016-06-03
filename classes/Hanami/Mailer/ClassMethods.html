@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Mailer::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Mailer::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/mailer/lib/hanami/mailer_rb.html">sources/mailer/lib/hanami/mailer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deliver">deliver</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-deliver">
+            
+              <b>deliver</b>(locals = {})
+            
+            <a href="../../../classes/Hanami/Mailer/ClassMethods.html#method-i-deliver" name="method-i-deliver" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Delivers a multipart email message.</p>
+
+<p>When a mailer defines a <code>html</code> and <code>txt</code> template,
+they are both delivered.</p>
+
+<p>In order to selectively <a
+href="ClassMethods.html#method-i-deliver">#deliver</a> only one of the two
+templates, use <code>Signup::Welcome.deliver(format: :txt)</code></p>
+
+<p>All the given locals, excepted the reserved ones (<code>:format</code> and
+<code>charset</code>), are available as rendering context for the
+templates.</p>
+
+<p>@param locals [Hash] a set of objects that acts as context for the
+rendering @option :format [Symbol] specify format to <a
+href="ClassMethods.html#method-i-deliver">#deliver</a> @option :charset
+[String] charset</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see <a
+href="Configuration.html#method-i-default_charset">Hanami::Mailer::Configuration#default_charset</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/mailer&#39;
+
+Hanami::Mailer.configure do
+  delivery_method :smtp
+end.load!
+
+module Billing
+  class Invoice
+    include Hanami::Mailer
+
+    from    &#39;noreply@example.com&#39;
+    to      :recipient
+    subject :subject_line
+
+    def prepare
+      mail.attachments[&#39;invoice.pdf&#39;] = File.read(&#39;/path/to/invoice.pdf&#39;)
+    end
+
+    private
+
+    def recipient
+      user.email
+    end
+
+    def subject_line
+      &quot;Invoice - #{ invoice.number }&quot;
+    end
+  end
+end
+
+invoice = Invoice.new
+user    = User.new(name: &#39;L&#39;, email: &#39;user@example.com&#39;)
+
+Billing::Invoice.deliver(invoice: invoice, user: user)                      # Deliver both text, HTML parts and the attachment
+Billing::Invoice.deliver(invoice: invoice, user: user, format: :txt)        # Deliver only the text part and the attachment
+Billing::Invoice.deliver(invoice: invoice, user: user, format: :html)       # Deliver only the text part and the attachment
+Billing::Invoice.deliver(invoice: invoice, user: user, charset: &#39;iso-8859&#39;) # Deliver both the parts with &quot;iso-8859&quot;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deliver_source')" id="l_method-i-deliver_source">show</a>
+                
+                  | <a href="https://github.com/hanami/mailer/blob/392e057b75b5d80035208b000291e3632cb34357/lib/hanami/mailer.rb#L185" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-deliver_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/mailer/lib/hanami/mailer.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deliver</span>(<span class="ruby-identifier">locals</span> = {})
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">locals</span>).<span class="ruby-identifier">deliver</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

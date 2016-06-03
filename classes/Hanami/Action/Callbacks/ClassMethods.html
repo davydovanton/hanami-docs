@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Callbacks::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Callbacks::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/controller/lib/hanami/action/callbacks_rb.html">sources/controller/lib/hanami/action/callbacks.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../Callbacks.html">Callbacks</a> API class methods</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-after">after</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-append_after">append_after</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-append_before">append_before</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-before">before</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-extended">extended</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prepend_after">prepend_after</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-prepend_before">prepend_before</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../../Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-extended">
+            
+              <b>extended</b>(base)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-c-extended" name="method-c-extended" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes callbacks logic</p>
+
+<p>@param base [Class] the target action</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core/Module.html#method-i-extended">www.ruby-doc.org/core/Module.html#method-i-extended</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-extended_source')" id="l_method-c-extended_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/callbacks.rb#L42" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-extended_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/callbacks.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassAttribute</span>
+
+    <span class="ruby-identifier">class_attribute</span> <span class="ruby-value">:before_callbacks</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">before_callbacks</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Callbacks</span><span class="ruby-operator">::</span><span class="ruby-constant">Chain</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-identifier">class_attribute</span> <span class="ruby-value">:after_callbacks</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">after_callbacks</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Callbacks</span><span class="ruby-operator">::</span><span class="ruby-constant">Chain</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-after">
+            
+              <b>after</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-after" name="method-i-after" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="ClassMethods.html#method-i-append_after">append_after</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-append_after">
+            
+              <b>append_after</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-append_after" name="method-i-append_after" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define a callback for an <a href="../../Action.html">Action</a>. The
+callback will be executed *<strong>after</strong>* the action is called, in
+the order they are added.</p>
+
+<p>@param callbacks [Symbol, Array&lt;Symbol&gt;] a single or multiple
+symbol(s)</p>
+
+<pre><code>each of them is representing a name of a method available in the
+context of the Action.</code></pre>
+
+<p>@param blk [Proc] an anonymous function to be executed</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.3.2</p>
+
+<p>@see <a href="ClassMethods.html#method-i-append_before">#append_before</a></p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ClassMethods.html#method-i-after">after</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-append_after_source')" id="l_method-i-append_after_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/callbacks.rb#L138" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-append_after_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/callbacks.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">append_after</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">after_callbacks</span>.<span class="ruby-identifier">append</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-append_before">
+            
+              <b>append_before</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-append_before" name="method-i-append_before" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define a callback for an <a href="../../Action.html">Action</a>. The
+callback will be executed *<strong>before</strong>* the action is called,
+in the order they are added.</p>
+
+<p>@param callbacks [Symbol, Array&lt;Symbol&gt;] a single or multiple
+symbol(s)</p>
+
+<pre><code>each of them is representing a name of a method available in the
+context of the Action.</code></pre>
+
+<p>@param blk [Proc] an anonymous function to be executed</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.3.2</p>
+
+<p>@see <a href="ClassMethods.html#method-i-append_after">#append_after</a></p>
+
+<p>@example Method names (symbols)</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  before :authenticate, :set_article
+
+  def call(params)
+  end
+
+  private
+  def authenticate
+    # ...
+  end
+
+  # `params` in the method signature is optional
+  def set_article(params)
+    @article = Article.find params[:id]
+  end
+end
+
+# The order of execution will be:
+#
+# 1. #authenticate
+# 2. #set_article
+# 3. #call
+</code></pre>
+
+<p>@example Anonymous functions (Procs)</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  before { ... } # 1 do some authentication stuff
+  before {|params| @article = Article.find params[:id] } # 2
+
+  def call(params)
+  end
+end
+
+# The order of execution will be:
+#
+# 1. authentication
+# 2. set the article
+# 3. #call</code></pre>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="ClassMethods.html#method-i-before">before</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-append_before_source')" id="l_method-i-append_before_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/callbacks.rb#L116" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-append_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/callbacks.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">append_before</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">before_callbacks</span>.<span class="ruby-identifier">append</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-before">
+            
+              <b>before</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-before" name="method-i-before" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="ClassMethods.html#method-i-append_before">append_before</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepend_after">
+            
+              <b>prepend_after</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-prepend_after" name="method-i-prepend_after" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define a callback for an <a href="../../Action.html">Action</a>. The
+callback will be executed *<strong>after</strong>* the action is called. It
+will add the callback at the beginning of the callbacks&#39; chain.</p>
+
+<p>@param callbacks [Symbol, Array&lt;Symbol&gt;] a single or multiple
+symbol(s)</p>
+
+<pre><code>each of them is representing a name of a method available in the
+context of the Action.</code></pre>
+
+<p>@param blk [Proc] an anonymous function to be executed</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.3.2</p>
+
+<p>@see <a
+href="ClassMethods.html#method-i-prepend_before">#prepend_before</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepend_after_source')" id="l_method-i-prepend_after_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/callbacks.rb#L179" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-prepend_after_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/callbacks.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepend_after</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">after_callbacks</span>.<span class="ruby-identifier">prepend</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepend_before">
+            
+              <b>prepend_before</b>(*callbacks, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/Action/Callbacks/ClassMethods.html#method-i-prepend_before" name="method-i-prepend_before" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Define a callback for an <a href="../../Action.html">Action</a>. The
+callback will be executed *<strong>before</strong>* the action is called.
+It will add the callback at the beginning of the callbacks&#39; chain.</p>
+
+<p>@param callbacks [Symbol, Array&lt;Symbol&gt;] a single or multiple
+symbol(s)</p>
+
+<pre><code>each of them is representing a name of a method available in the
+context of the Action.</code></pre>
+
+<p>@param blk [Proc] an anonymous function to be executed</p>
+
+<p>@return [void]</p>
+
+<p>@since 0.3.2</p>
+
+<p>@see <a href="ClassMethods.html#method-i-prepend_after">#prepend_after</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepend_before_source')" id="l_method-i-prepend_before_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/50a07c8960948fbe52092e98640c776284a7cd8f/lib/hanami/action/callbacks.rb#L160" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-prepend_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/callbacks.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepend_before</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">before_callbacks</span>.<span class="ruby-identifier">prepend</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">callbacks</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

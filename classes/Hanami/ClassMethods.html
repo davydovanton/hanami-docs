@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/utils/lib/hanami/interactor_rb.html">sources/utils/lib/hanami/interactor.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@since 0.5.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-expose">expose</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-extended">extended</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Utils/ClassAttribute.html">
+              Hanami::Utils::ClassAttribute
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-extended">
+            
+              <b>extended</b>(interactor)
+            
+            <a href="../../classes/Hanami/ClassMethods.html#method-c-extended" name="method-c-extended" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.5.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-extended_source')" id="l_method-c-extended_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L453" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-extended_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 453</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">interactor</span>)
+  <span class="ruby-identifier">interactor</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassAttribute</span>
+
+    <span class="ruby-identifier">class_attribute</span> <span class="ruby-value">:exposures</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exposures</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-expose">
+            
+              <b>expose</b>(*instance_variable_names)
+            
+            <a href="../../classes/Hanami/ClassMethods.html#method-i-expose" name="method-i-expose" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Expose local instance variables into the returning value of
+<code>#call</code></p>
+
+<p>@param instance_variable_names [Symbol,Array&lt;Symbol&gt;] one or more
+instance</p>
+
+<pre><code>variable names
+</code></pre>
+
+<p>@since 0.5.0</p>
+
+<p>@see <a href="Interactor/Result.html">Hanami::Interactor::Result</a></p>
+
+<p>@example Expose instance variable</p>
+
+<pre><code>class Signup
+  include Hanami::Interactor
+  expose :user
+
+  def initialize(params)
+    @params = params
+    @user   = User.new(@params[:user])
+  end
+
+  def call
+    # ...
+  end
+end
+
+result = Signup.new(user: { name: &quot;Luca&quot; }).call
+
+result.user   # =&gt; #&lt;User:0x007fa85c58ccd8 @name=&quot;Luca&quot;&gt;
+result.params # =&gt; NoMethodError
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-expose_source')" id="l_method-i-expose_source">show</a>
+                
+                  | <a href="https://github.com/hanami/utils/blob/e41ca0991d6747d53b427851afe5412a4f70b3da/lib/hanami/interactor.rb#L491" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-expose_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/utils/lib/hanami/interactor.rb, line 491</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">expose</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">instance_variable_names</span>)
+  <span class="ruby-identifier">instance_variable_names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exposures</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-node">&quot;@#{ name }&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

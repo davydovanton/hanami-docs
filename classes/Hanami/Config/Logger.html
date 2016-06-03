@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Config::Logger</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Config::Logger 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/config/logger_rb.html">sources/hanami/lib/hanami/config/logger.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Logger.html">Logger</a> configuration</p>
+
+<p>@since x.x.x</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-app_name">app_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-build">build</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-engine">engine</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-level">level</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-stream">stream</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>application_module</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L11" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@stream</span> = <span class="ruby-constant">STDOUT</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-app_name">
+            
+              <b>app_name</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-i-app_name" name="method-i-app_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../Application.html">Application</a> name value.</p>
+
+<p>@overload app_name(value)</p>
+
+<pre><code>Sets the given value
+@param value [String] for app name option</code></pre>
+
+<p>@overload <a href="Logger.html#method-i-app_name">#app_name</a></p>
+
+<pre><code>Gets the value
+@return [String] app name option&#39;s value</code></pre>
+
+<p>@since x.x.x @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-app_name_source')" id="l_method-i-app_name_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L135" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-app_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">app_name</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@app_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@app_name</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-build">
+            
+              <b>build</b>()
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-i-build" name="method-i-build" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns <a href="Logger.html#method-c-new">::new</a> <a
+href="../Logger.html">Hanami::Logger</a> instance with all options</p>
+
+<p>@return [Hanami::Logger,Object] a logger</p>
+
+<p>@since x.x.x @api private</p>
+
+<p>@see <a href="Logger.html#method-i-stream">#stream</a> @see <a
+href="Logger.html#method-i-engine">#engine</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-build_source')" id="l_method-i-build_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L152" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">build</span>
+  <span class="ruby-ivar">@engine</span> <span class="ruby-operator">||</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@app_name</span>, <span class="ruby-identifier">stream</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@stream</span>, <span class="ruby-identifier">level</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@level</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-engine">
+            
+              <b>engine</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-i-engine" name="method-i-engine" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Custom logger <a href="Logger.html#method-i-engine">#engine</a>.</p>
+
+<p>This isn&#39;t used by default, but allows developers to use their own
+logger.</p>
+
+<p>@overload engine(value)</p>
+
+<pre><code>Sets the given value
+@param value [Object] a logger</code></pre>
+
+<p>@overload <a href="Logger.html#method-i-engine">#engine</a></p>
+
+<pre><code>Gets the value
+@return [Object] returns the logger</code></pre>
+
+<p>@since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-engine_source')" id="l_method-i-engine_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L54" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-engine_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">engine</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@engine</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@engine</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-level">
+            
+              <b>level</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-i-level" name="method-i-level" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Logger.html">Logger</a> <a
+href="Logger.html#method-i-level">#level</a></p>
+
+<p>Available values are:</p>
+
+<pre><code>* DEBUG
+* INFO
+* WARN
+* ERROR
+* FATAL
+* UNKNOWN</code></pre>
+
+<p>@overload level(value)</p>
+
+<pre><code>Sets the given value
+@param value [Integer,String,Symbol] the logger level</code></pre>
+
+<p>@overload <a href="Logger.html#method-i-level">#level</a></p>
+
+<pre><code>Gets the value
+@return [Integer,String,Symbol] returns the level</code></pre>
+
+<p>@since x.x.x</p>
+
+<p>@example Constant (Integer)</p>
+
+<pre><code>require &#39;hanami/application&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      logger.level Hanami::Logger::DEBUG
+    end
+  end
+end
+</code></pre>
+
+<p>@example String</p>
+
+<pre><code>require &#39;hanami/application&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      logger.level &#39;debug&#39;
+    end
+  end
+end
+</code></pre>
+
+<p>@example Symbol</p>
+
+<pre><code>require &#39;hanami/application&#39;
+
+module Bookshelf
+  class Application &lt; Hanami::Application
+    configure do
+      logger.level :debug
+    end
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-level_source')" id="l_method-i-level_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L115" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-level_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">level</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@level</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@level</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-stream">
+            
+              <b>stream</b>(value = nil)
+            
+            <a href="../../../classes/Hanami/Config/Logger.html#method-i-stream" name="method-i-stream" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Log <a href="Logger.html#method-i-stream">#stream</a>.</p>
+
+<p><code>STDOUT</code> by default.</p>
+
+<p>It accepts relative or absolute paths expressed as <code>String</code>, or
+<code>Pathname</code>.</p>
+
+<p>It can also accept a <code>IO</code> or <code>StringIO</code> as output <a
+href="Logger.html#method-i-stream">#stream</a>.</p>
+
+<p>@overload stream(value)</p>
+
+<pre><code>Sets the given value
+@param value [String,Pathname,IO,StringIO] for log stream option.</code></pre>
+
+<p>@overload <a href="Logger.html#method-i-stream">#stream</a></p>
+
+<pre><code>Gets the value
+@return [String,Pathname,IO,StringIO] log stream option&#39;s value</code></pre>
+
+<p>@since x.x.x</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-stream_source')" id="l_method-i-stream_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/7141d81d8b95051b1f88b13c2008d62bf649af45/lib/hanami/config/logger.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-stream_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/config/logger.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">stream</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@stream</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@stream</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

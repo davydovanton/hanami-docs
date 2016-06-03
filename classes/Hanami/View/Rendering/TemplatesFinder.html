@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::TemplatesFinder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::View::Rendering::TemplatesFinder 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering/templates_finder_rb.html">sources/view/lib/hanami/view/rendering/templates_finder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Find templates for a view</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../Template.html">View::Template</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-_find">_find</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-engines">engines</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find">find</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-format">format</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-recursive">recursive</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-search_path">search_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-separator">separator</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template_name">template_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-templates_path">templates_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">FORMAT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;*&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="TemplatesFinder.html#method-i-format">#format</a></p>
+
+<p>@api private @since 0.1.0</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ENGINES</td>
+            <td>=</td>
+            <td class="attr-value">&#39;*&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default template <a
+href="TemplatesFinder.html#method-i-engines">#engines</a></p>
+
+<p>@api private @since 0.1.0</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RECURSIVE</td>
+            <td>=</td>
+            <td class="attr-value">&#39;**&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Recursive pattern</p>
+
+<p>@api private @since 0.2.0</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(view)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a finder</p>
+
+<p>@param view [Class] the view</p>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L37" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">view</span>)
+  <span class="ruby-ivar">@view</span> = <span class="ruby-identifier">view</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-find">
+            
+              <b>find</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-find" name="method-i-find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Find all the associated templates to the view. It recursively looks for
+templates under the <a href="TemplatesFinder.html#method-i-root">#root</a>
+path of the view, that are matching the template name</p>
+
+<p>@return [Array&lt;Hanami::View::Template&gt;] the templates</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../Dsl.html#method-i-root">Hanami::View::Dsl#root</a> @see <a
+href="../Dsl.html#method-i-template">Hanami::View::Dsl#template</a></p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Show
+    include Hanami::View
+  end
+end
+
+Articles::Show.root     # =&gt; &quot;/path/to/templates&quot;
+Articles::Show.template # =&gt; &quot;articles/show&quot;
+
+# This view has a template:
+#
+#   &quot;/path/to/templates/articles/show.html.erb&quot;
+
+Hanami::View::Rendering::TemplatesFinder.new(Articles::Show).find
+  # =&gt; [#&lt;Hanami::View::Template:0x007f8a0a86a970 ... @file=&quot;/path/to/templates/articles/show.html.erb&quot;&gt;]
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_source')" id="l_method-i-find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L71" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find</span>
+  <span class="ruby-identifier">_find</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">template</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">View</span><span class="ruby-operator">::</span><span class="ruby-constant">Template</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">template</span>, <span class="ruby-ivar">@view</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">default_encoding</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-_find">
+            
+              <b>_find</b>(lookup = search_path)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-_find" name="method-i-_find" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.4.3</p>
+
+<p>Searches first for files at
+`../templates/articles/index.<strong>.</strong>` If none are found, falls
+back to <a href="TemplatesFinder.html#method-i-recursive">#recursive</a>
+search in `../templates   /articles/index.<strong>.</strong>`</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-_find_source')" id="l_method-i-_find_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L85" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-_find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">_find</span>(<span class="ruby-identifier">lookup</span> = <span class="ruby-identifier">search_path</span>)
+  <span class="ruby-identifier">base_path</span> = <span class="ruby-identifier">templates_path</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">template_name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">base_path</span>.<span class="ruby-identifier">none?</span>
+    <span class="ruby-identifier">templates_path</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">lookup</span>, <span class="ruby-identifier">template_name</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">base_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-engines">
+            
+              <b>engines</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-engines" name="method-i-engines" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-engines_source')" id="l_method-i-engines_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L138" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-engines_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">engines</span>
+  <span class="ruby-constant">ENGINES</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-format">
+            
+              <b>format</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-format" name="method-i-format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-format_source')" id="l_method-i-format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L132" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">format</span>
+  <span class="ruby-constant">FORMAT</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-recursive">
+            
+              <b>recursive</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-recursive" name="method-i-recursive" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-recursive_source')" id="l_method-i-recursive_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L120" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-recursive_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">recursive</span>
+  <span class="ruby-constant">RECURSIVE</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L108" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>
+  <span class="ruby-ivar">@view</span>.<span class="ruby-identifier">root</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-search_path">
+            
+              <b>search_path</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-search_path" name="method-i-search_path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.4.3</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-search_path_source')" id="l_method-i-search_path_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L114" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-search_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">search_path</span>
+  <span class="ruby-identifier">recursive</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-separator">
+            
+              <b>separator</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-separator" name="method-i-separator" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-separator_source')" id="l_method-i-separator_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L126" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-separator_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">separator</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template_name">
+            
+              <b>template_name</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-template_name" name="method-i-template_name" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_name_source')" id="l_method-i-template_name_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L102" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-template_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template_name</span>
+  <span class="ruby-ivar">@view</span>.<span class="ruby-identifier">template</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-templates_path">
+            
+              <b>templates_path</b>(*parts)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/TemplatesFinder.html#method-i-templates_path" name="method-i-templates_path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@api private @since 0.7.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-templates_path_source')" id="l_method-i-templates_path_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8ed731d216bea09c4c3209d5cdac40ebe0787f69/lib/hanami/view/rendering/templates_finder.rb#L96" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-templates_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/templates_finder.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">templates_path</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">parts</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-node">&quot;#{ parts.join(separator) }.#{ format }.#{ engines }&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

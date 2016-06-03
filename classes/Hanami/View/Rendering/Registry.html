@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::Registry</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::View::Rendering::Registry 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="LayoutRegistry.html">Hanami::View::Rendering::LayoutRegistry</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering/registry_rb.html">sources/view/lib/hanami/view/rendering/registry.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Holds all the references of all the registered subclasses of a view. We
+have one registry for each superclass view.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a
+href="LayoutRegistry.html">Hanami::View::Rendering::LayoutRegistry</a> @see
+Hanami::View::Rendering#registry</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/view&#39;
+
+module Articles
+  class Index
+    include Hanami::View
+  end
+
+  class Show
+    include Hanami::View
+  end
+
+  class JsonShow &lt; Show
+    format :json
+  end
+
+  class XmlShow &lt; Show
+    format :xml
+
+    def render
+      ArticleSerializer.new(article).to_xml
+    end
+  end
+end
+
+# We have the following templates:
+#
+#  * articles/index.html.erb
+#  * articles/index.atom.erb
+#  * articles/show.html.erb
+#  * articles/show.json.erb
+
+# One registry per superclass view
+Articles::Index.send(:registry).object_id     # =&gt; 70135342862240
+
+Articles::Show.send(:registry).object_id      # =&gt; 70135342110540
+Articles::XmlShow.send(:registry).object_id   # =&gt; 70135342110540
+Articles::JsonShow.send(:registry).object_id  # =&gt; 70135342110540
+
+# It holds the references for all the templates and the views
+Articles::Index.send(:registry).inspect
+  # =&gt; { :all  =&gt; [Articles::Index, nil],
+  #      :atom =&gt; [Articles::Index, #&lt;Hanami::View::Template ... @file=&quot;/path/to/templates/articles/index.atom.erb&quot;],
+  #      :html =&gt; [Articles::Index, #&lt;Hanami::View::Template ... @file=&quot;/path/to/templates/articles/index.html.erb&quot;] }
+
+Articles::Show.send(:registry).inspect
+  # =&gt; { :all  =&gt; [Articles::Show, nil],
+  #      :html =&gt; [Articles::Show,     #&lt;Hanami::View::Template ... @file=&quot;/path/to/templates/articles/show.html.erb&quot;],
+  #      :json =&gt; [Articles::JsonShow, #&lt;Hanami::View::Template ... @file=&quot;/path/to/templates/articles/show.json.erb&quot;],
+  #      :xml  =&gt; [Articles::XmlShow, nil] }
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resolve">resolve</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_FORMAT</td>
+            <td>=</td>
+            <td class="attr-value">:all</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default format for views without an explicit format.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="../Dsl.html#method-i-format">Hanami::View::Dsl#format</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-resolve">
+            
+              <b>resolve</b>(context)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/Registry.html#method-i-resolve" name="method-i-resolve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the view for the given context.</p>
+
+<p>@param context [Hash] the rendering context @option context [Symbol]
+:format the requested format</p>
+
+<p>@return [Hanami::View] the view associated with the given context</p>
+
+<p>@raise [Hanami::View::MissingFormatError] if the given context doesn&#39;t</p>
+
+<pre><code>have the :format key</code></pre>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a
+href="../Rendering.html#method-i-render">Hanami::View::Rendering#render</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resolve_source')" id="l_method-i-resolve_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/8cecdc2d03d433c8fb68aff5ca0f45cdd2246172/lib/hanami/view/rendering/registry.rb#L91" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-resolve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/registry.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">view</span>, <span class="ruby-identifier">template</span> = <span class="ruby-ivar">@registry</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">format</span>(<span class="ruby-identifier">context</span>)) { <span class="ruby-ivar">@registry</span>[<span class="ruby-constant">DEFAULT_FORMAT</span>] }
+  <span class="ruby-identifier">view</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">template</span>, <span class="ruby-identifier">context</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

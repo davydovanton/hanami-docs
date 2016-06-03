@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::View::Rendering::LayoutScope</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::View::Rendering::LayoutScope 
+            
+                <span class="parent">&lt; 
+                    
+                    BasicObject
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/sources/view/lib/hanami/view/rendering/layout_scope_rb.html">sources/view/lib/hanami/view/rendering/layout_scope.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Scope.html">Scope</a> for layout rendering</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-class">class</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-content">content</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-format">format</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-local">local</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-locals">locals</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render">render</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-renderer">renderer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-respond_to-3F">respond_to?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-view">view</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(layout, scope)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the scope</p>
+
+<p>@param layout [Hanami::Layout] the layout to <a
+href="LayoutScope.html#method-i-render">#render</a> @param scope
+[Hanami::View::Rendering::Scope] the scope of the current</p>
+
+<pre><code>view
+</code></pre>
+
+<p>@api private @since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">layout</span>, <span class="ruby-identifier">scope</span>)
+  <span class="ruby-ivar">@layout</span> = <span class="ruby-identifier">layout</span>
+  <span class="ruby-ivar">@scope</span>  = <span class="ruby-identifier">scope</span>
+  <span class="ruby-ivar">@view</span>   = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@locals</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-class">
+            
+              <b>class</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-class" name="method-i-class" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the classname as string</p>
+
+<p>@return classname</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-class_source')" id="l_method-i-class_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L32" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">class</span>
+  (<span class="ruby-keyword ruby-title">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword ruby-title">self</span>; <span class="ruby-keyword">self</span> <span class="ruby-keyword">end</span>).<span class="ruby-identifier">superclass</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-content">
+            
+              <b>content</b>(key)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-content" name="method-i-content" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="LayoutScope.html#method-i-content">#content</a> for the
+given key, by trying to invoke on the current scope, a method with the same
+name.</p>
+
+<p>The scope is made of <a href="LayoutScope.html#method-i-locals">#locals</a>
+and concrete methods from <a
+href="LayoutScope.html#method-i-view">#view</a> and layout.</p>
+
+<p>@param key [Symbol] a method to invoke within current scope @return
+[String,NilClass] returning <a
+href="LayoutScope.html#method-i-content">#content</a> if scope respond to
+the</p>
+
+<pre><code>requested method
+</code></pre>
+
+<p>@deprecated Use {#local} instead @since 0.4.1</p>
+
+<p>@example</p>
+
+<pre><code># Given the following layout template
+
+&lt;!doctype HTML&gt;
+&lt;html&gt;
+  &lt;!-- ... --&gt;
+  &lt;body&gt;
+    &lt;!-- ... --&gt;
+    &lt;%= content :footer %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+# Case 1:
+#   Products::Index doesn&#39;t respond to #footer, content will return nil
+#
+# Case 2:
+#   Products::Show responds to #footer, content will send back
+#     #footer returning value
+
+module Products
+  class Index
+    include Hanami::View
+  end
+
+  class Show
+    include Hanami::View
+
+    def footer
+      &quot;contents for footer&quot;
+    end
+  end
+end</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-content_source')" id="l_method-i-content_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L165" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-content_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">content</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#content is deprecated, please use #local&quot;</span>)
+  <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-format">
+            
+              <b>format</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-format" name="method-i-format" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the requested <a
+href="LayoutScope.html#method-i-format">#format</a>.</p>
+
+<p>@return [Symbol] the requested <a
+href="LayoutScope.html#method-i-format">#format</a> (eg. :html, :json,
+:xml, etc..)</p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-format_source')" id="l_method-i-format_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L99" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">format</span>
+  <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">format</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <b>inspect</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-inspect" name="method-i-inspect" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an <a href="LayoutScope.html#method-i-inspect">#inspect</a> String</p>
+
+<p>@return [String] <a href="LayoutScope.html#method-i-inspect">#inspect</a>
+String (contains classname, objectid in hex, available ivars)</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L41" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-identifier">base</span> = <span class="ruby-node">&quot;#&lt;#{ self.class }:#{&#39;%x&#39; % (self.object_id &lt;&lt; 1)}&quot;</span>
+  <span class="ruby-identifier">base</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; @layout=\&quot;#{@layout.inspect}\&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@layout</span>
+  <span class="ruby-identifier">base</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; @scope=\&quot;#{@scope.inspect}\&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@scope</span>
+  <span class="ruby-identifier">base</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-local">
+            
+              <b>local</b>(key)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-local" name="method-i-local" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>It tries to invoke a method for the <a
+href="LayoutScope.html#method-i-view">#view</a> or a <a
+href="LayoutScope.html#method-i-local">#local</a> for the given key. If the
+lookup fails, it returns a null object.</p>
+
+<p>@return [Objeect,Hanami::View::Rendering::NullLocal] the returning value</p>
+
+<p>@since x.x.x</p>
+
+<p>@example Safe method navigation</p>
+
+<pre><code>&lt;% if local(:plan).overdue? %&gt;
+  &lt;h2&gt;Your plan is overdue.&lt;/h2&gt;
+&lt;% end %&gt;</code></pre>
+
+<p>@example Optional Contents</p>
+
+<pre><code># Given the following layout template
+
+&lt;!doctype HTML&gt;
+&lt;html&gt;
+  &lt;!-- ... --&gt;
+  &lt;body&gt;
+    &lt;!-- ... --&gt;
+    &lt;%= local :footer %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+# Case 1:
+#   Products::Index doesn&#39;t respond to #footer, local will return nil
+#
+# Case 2:
+#   Products::Show responds to #footer, local will send back
+#     #footer returning value
+
+module Products
+  class Index
+    include Hanami::View
+  end
+
+  class Show
+    include Hanami::View
+
+    def footer
+      &quot;contents for footer&quot;
+    end
+  end
+end</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-local_source')" id="l_method-i-local_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L214" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-local_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">local</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">locals</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) { <span class="ruby-constant">NullLocal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-locals">
+            
+              <b>locals</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-locals" name="method-i-locals" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The current <a href="LayoutScope.html#method-i-locals">#locals</a>.</p>
+
+<p>@return [Hash] the current <a
+href="LayoutScope.html#method-i-locals">#locals</a></p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-locals_source')" id="l_method-i-locals_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L117" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-locals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">locals</span>
+  <span class="ruby-ivar">@locals</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">locals</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render">
+            
+              <b>render</b>(options)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-render" name="method-i-render" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Render a partial or a template within a layout template.</p>
+
+<p>@param options [Hash] @option options [String] :partial the partial
+template to <a href="LayoutScope.html#method-i-render">#render</a> @option
+options [String] :template the template to <a
+href="LayoutScope.html#method-i-render">#render</a></p>
+
+<p>@return [String] the output of the rendering process</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example <a href="../Rendering.html">Rendering</a> partial</p>
+
+<pre><code># Given a partial under:
+#   templates/shared/_sidebar.html.erb
+#
+# In the layout template:
+#   templates/application.html.erb
+#
+# Use like this:
+&lt;%= render partial: &#39;shared/sidebar&#39; %&gt;</code></pre>
+
+<p>@example <a href="../Rendering.html">Rendering</a> template</p>
+
+<pre><code># Given a template under:
+#   templates/articles/index.html.erb
+#
+# In the layout template:
+#   templates/application.html.erb
+#
+# Use like this:
+&lt;%= render template: &#39;articles/index&#39; %&gt;</code></pre>
+
+<p>@example <a href="../Rendering.html">Rendering</a> partial, using optional
+:locals</p>
+
+<pre><code># Given a partial under:
+#   templates/shared/_sidebar.html.erb
+#
+# In the layout template:
+#   templates/application.html.erb
+#
+# Use like this:
+&lt;%= render partial: &#39;shared/sidebar&#39;, { user: current_user } %&gt;
+
+#
+# `user` will be available in the scope of the sidebar rendering</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_source')" id="l_method-i-render_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L90" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">renderer</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">render</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to-3F">
+            
+              <b>respond_to?</b>(m, include_all = false)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-respond_to-3F" name="method-i-respond_to-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Implements “respond to” logic</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.3.0</p>
+
+<p>@see <a
+href="http://ruby-doc.org/core/Object.html#method-i-respond_to-3F">ruby-doc.org/core/Object.html#method-i-respond_to-3F</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to-3F_source')" id="l_method-i-respond_to-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L229" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-respond_to-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_all</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">respond_to_missing?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_all</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(m, include_all)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Implements “respond to” logic</p>
+
+<p>@return [TrueClass,FalseClass]</p>
+
+<p>@since 0.3.0 @api private</p>
+
+<p>@see <a
+href="http://ruby-doc.org/core/Object.html#method-i-respond_to_missing-3F">ruby-doc.org/core/Object.html#method-i-respond_to_missing-3F</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L241" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_all</span>)
+  <span class="ruby-ivar">@layout</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_all</span>) <span class="ruby-operator">||</span>
+    <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_all</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-view">
+            
+              <b>view</b>()
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-view" name="method-i-view" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The current <a href="LayoutScope.html#method-i-view">#view</a>.</p>
+
+<p>@return [Hanami::View] the current <a
+href="LayoutScope.html#method-i-view">#view</a></p>
+
+<p>@since 0.1.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-view_source')" id="l_method-i-view_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L108" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-view_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">view</span>
+  <span class="ruby-ivar">@view</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">view</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args, &amp;blk)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Forward all the missing methods to the <a
+href="LayoutScope.html#method-i-view">#view</a> scope or to the layout.</p>
+
+<p>@api private @since 0.1.0</p>
+
+<p>@see <a href="Scope.html">Hanami::View::Rendering::Scope</a> @see <a
+href="../../Layout.html">Hanami::Layout</a></p>
+
+<p>@example</p>
+
+<pre><code># In the layout template:
+#   templates/application.html.erb
+#
+# Use like this:
+&lt;title&gt;&lt;%= article.title %&gt;&lt;/title&gt;
+
+# `article` will be looked up in the view scope first.
+# If not found, it will be searched within the layout.</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L264" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">layout</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">layout</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span><span class="ruby-operator">::</span><span class="ruby-constant">Escape</span>.<span class="ruby-identifier">html</span>(<span class="ruby-keyword">super</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-renderer">
+            
+              <b>renderer</b>(options)
+            
+            <a href="../../../../classes/Hanami/View/Rendering/LayoutScope.html#method-i-renderer" name="method-i-renderer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-renderer_source')" id="l_method-i-renderer_source">show</a>
+                
+                  | <a href="https://github.com/hanami/view/blob/1f60c532c133d54df993a322f2cf1ae4ca3ec84f/lib/hanami/view/rendering/layout_scope.rb#L274" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-renderer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/view/lib/hanami/view/rendering/layout_scope.rb, line 274</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">renderer</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:partial</span>]
+    <span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">Partial</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:template</span>]
+    <span class="ruby-constant">Rendering</span><span class="ruby-operator">::</span><span class="ruby-constant">Template</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">_options</span>(<span class="ruby-identifier">options</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

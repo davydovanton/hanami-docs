@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action_rb.html">sources/controller/lib/hanami/action.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/base_params_rb.html">sources/controller/lib/hanami/action/base_params.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cache_rb.html">sources/controller/lib/hanami/action/cache.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cache/cache_control_rb.html">sources/controller/lib/hanami/action/cache/cache_control.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cache/conditional_get_rb.html">sources/controller/lib/hanami/action/cache/conditional_get.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cache/directives_rb.html">sources/controller/lib/hanami/action/cache/directives.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cache/expires_rb.html">sources/controller/lib/hanami/action/cache/expires.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/callable_rb.html">sources/controller/lib/hanami/action/callable.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/callbacks_rb.html">sources/controller/lib/hanami/action/callbacks.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/configurable_rb.html">sources/controller/lib/hanami/action/configurable.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cookie_jar_rb.html">sources/controller/lib/hanami/action/cookie_jar.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/cookies_rb.html">sources/controller/lib/hanami/action/cookies.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/exposable_rb.html">sources/controller/lib/hanami/action/exposable.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/flash_rb.html">sources/controller/lib/hanami/action/flash.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/glue_rb.html">sources/controller/lib/hanami/action/glue.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/head_rb.html">sources/controller/lib/hanami/action/head.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/mime_rb.html">sources/controller/lib/hanami/action/mime.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/params_rb.html">sources/controller/lib/hanami/action/params.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/rack_rb.html">sources/controller/lib/hanami/action/rack.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/rack/callable_rb.html">sources/controller/lib/hanami/action/rack/callable.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/rack/file_rb.html">sources/controller/lib/hanami/action/rack/file.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/redirect_rb.html">sources/controller/lib/hanami/action/redirect.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/request_rb.html">sources/controller/lib/hanami/action/request.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/session_rb.html">sources/controller/lib/hanami/action/session.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/throwable_rb.html">sources/controller/lib/hanami/action/throwable.rb</a></li>
+            
+            <li><a href="../../files/sources/controller/lib/hanami/action/validatable_rb.html">sources/controller/lib/hanami/action/validatable.rb</a></li>
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/action/csrf_protection_rb.html">sources/hanami/lib/hanami/action/csrf_protection.rb</a></li>
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/action/routing_helpers_rb.html">sources/hanami/lib/hanami/action/routing_helpers.rb</a></li>
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/cli_sub_commands/destroy_rb.html">sources/hanami/lib/hanami/cli_sub_commands/destroy.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>An HTTP endpoint</p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    # ...
+  end
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/CSRFProtection.html">Hanami::Action::CSRFProtection</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Cache.html">Hanami::Action::Cache</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Callable.html">Hanami::Action::Callable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Callbacks.html">Hanami::Action::Callbacks</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Configurable.html">Hanami::Action::Configurable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Cookies.html">Hanami::Action::Cookies</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Exposable.html">Hanami::Action::Exposable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Glue.html">Hanami::Action::Glue</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Head.html">Hanami::Action::Head</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Mime.html">Hanami::Action::Mime</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Rack.html">Hanami::Action::Rack</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Redirect.html">Hanami::Action::Redirect</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/RoutingHelpers.html">Hanami::Action::RoutingHelpers</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Session.html">Hanami::Action::Session</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Throwable.html">Hanami::Action::Throwable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Action/Validatable.html">Hanami::Action::Validatable</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/BaseParams.html">Hanami::Action::BaseParams</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/CookieJar.html">Hanami::Action::CookieJar</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/Flash.html">Hanami::Action::Flash</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/InvalidCSRFTokenError.html">Hanami::Action::InvalidCSRFTokenError</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/Params.html">Hanami::Action::Params</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Action/Request.html">Hanami::Action::Request</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Action/Rack.html">
+              Hanami::Action::Rack
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Mime.html">
+              Hanami::Action::Mime
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Redirect.html">
+              Hanami::Action::Redirect
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Exposable.html">
+              Hanami::Action::Exposable
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Throwable.html">
+              Hanami::Action::Throwable
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Callbacks.html">
+              Hanami::Action::Callbacks
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Validatable.html">
+              Hanami::Action::Validatable
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Configurable.html">
+              Hanami::Action::Configurable
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="Action/Head.html">
+              Hanami::Action::Head
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../classes/Hanami/Action.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes basic <a
+href="Action.html">Hanami::Action</a> modules to the given class.</p>
+
+<p>@param base [Class] the target action</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Module.html#method-i-included">www.ruby-doc.org/core-2.1.2/Module.html#method-i-included</a></p>
+
+<p>@see <a href="Action/Rack.html">Hanami::Action::Rack</a> @see <a
+href="Action/Mime.html">Hanami::Action::Mime</a> @see Hanami::Action::Http
+@see <a href="Action/Redirect.html">Hanami::Action::Redirect</a> @see <a
+href="Action/Exposable.html">Hanami::Action::Exposable</a> @see <a
+href="Action/Throwable.html">Hanami::Action::Throwable</a> @see <a
+href="Action/Callbacks.html">Hanami::Action::Callbacks</a> @see <a
+href="Action/Validatable.html">Hanami::Action::Validatable</a> @see <a
+href="Action/Configurable.html">Hanami::Action::Configurable</a> @see <a
+href="Action/Callable.html">Hanami::Action::Callable</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/b84607e6b1697b48d4c70cd8a7f58a54d46503c1/lib/hanami/action.rb#L52" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Rack</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Mime</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Redirect</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Exposable</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Throwable</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Callbacks</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Validatable</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Validatable</span>)
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Configurable</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">Head</span>
+    <span class="ruby-identifier">prepend</span> <span class="ruby-constant">Callable</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

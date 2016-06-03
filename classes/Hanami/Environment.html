@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Environment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Environment 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/sources/hanami/lib/hanami/environment_rb.html">sources/hanami/lib/hanami/environment.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Define and expose information about the <a href="../Hanami.html">Hanami</a>
+<a href="Environment.html#method-i-environment">#environment</a>.</p>
+
+<p>@since 0.1.0 @api private</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-apps_path">apps_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-architecture">architecture</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bundler_groups">bundler_groups</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-code_reloading-3F">code_reloading?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-config">config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-container-3F">container?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-env_config">env_config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-environment">environment</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-environment-3F">environment?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-host">host</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-port">port</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rackup">rackup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-require_application_environment">require_application_environment</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-serve_static_assets-3F">serve_static_assets?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_options">to_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">LOCK</td>
+            <td>=</td>
+            <td class="attr-value">Mutex.new</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Global lock (used to serialize process of <a
+href="Environment.html#method-i-environment">#environment</a>
+configuration)</p>
+
+<p>@since 0.8.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RACK_ENV</td>
+            <td>=</td>
+            <td class="attr-value">&#39;RACK_ENV&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Standard Rack ENV key</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HANAMI_ENV</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HANAMI_ENV&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Standard <a href="../Hanami.html">Hanami</a> ENV key</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_ENV</td>
+            <td>=</td>
+            <td class="attr-value">&#39;development&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="../Hanami.html">Hanami</a> <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PRODUCTION_ENV</td>
+            <td>=</td>
+            <td class="attr-value">&#39;production&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Production <a href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RACK_ENV_DEPLOYMENT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;deployment&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Rack production <a
+href="Environment.html#method-i-environment">#environment</a> (aka
+deployment)</p>
+
+<p>@since 0.6.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_DOTENV_ENV</td>
+            <td>=</td>
+            <td class="attr-value">&#39;.env.%s&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default `.env` per <a
+href="Environment.html#method-i-environment">#environment</a> file name</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_CONFIG</td>
+            <td>=</td>
+            <td class="attr-value">&#39;config&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default configuration directory under application <a
+href="Environment.html#method-i-root">#root</a></p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HANAMI_HOST</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HANAMI_HOST&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Standard <a href="../Hanami.html">Hanami</a> <a
+href="Environment.html#method-i-host">#host</a> ENV key</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_HOST</td>
+            <td>=</td>
+            <td class="attr-value">&#39;localhost&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default HTTP <a href="Environment.html#method-i-host">#host</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">LISTEN_ALL_HOST</td>
+            <td>=</td>
+            <td class="attr-value">&#39;0.0.0.0&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default IP address listen</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HANAMI_PORT</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HANAMI_PORT&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Standard <a href="../Hanami.html">Hanami</a> <a
+href="Environment.html#method-i-port">#port</a> ENV key</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_PORT</td>
+            <td>=</td>
+            <td class="attr-value">2300</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="../Hanami.html">Hanami</a> HTTP <a
+href="Environment.html#method-i-port">#port</a></p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_RACKUP</td>
+            <td>=</td>
+            <td class="attr-value">&#39;config.ru&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default Rack configuration file</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_ENVIRONMENT_CONFIG</td>
+            <td>=</td>
+            <td class="attr-value">&#39;environment&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="Environment.html#method-i-environment">#environment</a>
+configuration file</p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CODE_RELOADING</td>
+            <td>=</td>
+            <td class="attr-value">{ &#39;development&#39; =&gt; true }.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Code reloading per <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>@since 0.2.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CONTAINER</td>
+            <td>=</td>
+            <td class="attr-value">&#39;container&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CONTAINER_PATH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;apps&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">APPLICATION</td>
+            <td>=</td>
+            <td class="attr-value">&#39;app&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">APPLICATION_PATH</td>
+            <td>=</td>
+            <td class="attr-value">&#39;app&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SERVE_STATIC_ASSETS</td>
+            <td>=</td>
+            <td class="attr-value">&#39;SERVE_STATIC_ASSETS&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SERVE_STATIC_ASSETS_ENABLED</td>
+            <td>=</td>
+            <td class="attr-value">&#39;true&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>@since 0.4.0 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(options = {})
+            
+            <a href="../../classes/Hanami/Environment.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a <a href="../Hanami.html">Hanami</a> <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>It accepts an optional set of configurations from the CLI commands. Those
+settings override the defaults defined by this object.</p>
+
+<p>When initialized, it sets standard `ENV` variables for Rack and <a
+href="../Hanami.html">Hanami</a>, such as `RACK_ENV` and `HANAMI_ENV`.</p>
+
+<p>It also evaluates configuration from `.env` and `.env.&lt;environment&gt;`
+located under the <a href="Environment.html#method-i-config">#config</a>
+directory. All the settings in those files will be exported as `ENV`
+variables.</p>
+
+<p>The format of those `.env` files is compatible with `dotenv` and `foreman`
+gems.</p>
+
+<p>@param options [Hash] override default options for various <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<pre><code>attributes
+</code></pre>
+
+<p>@return [Hanami::Environment] the <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>@see <a href="Commands/Console.html">Hanami::Commands::Console</a> @see <a
+href="Commands/Routes.html">Hanami::Commands::Routes</a> @see <a
+href="Commands/Server.html">Hanami::Commands::Server</a> @see <a
+href="Environment.html#method-i-config">#config</a></p>
+
+<p>@example Define ENV variables from .env</p>
+
+<pre><code># % tree .
+#   .
+#   # ...
+#   ├── .env
+#   └── .env.development
+
+# % cat .env
+#   FOO=&quot;bar&quot;
+#   XYZ=&quot;yes&quot;
+
+# % cat .env.development
+#   FOO=&quot;ok&quot;
+
+require &#39;hanami/environment&#39;
+
+env = Hanami::Environment.new
+env.environment   # =&gt; &quot;development&quot;
+
+# Framework defined ENV vars
+ENV[&#39;HANAMI_ENV&#39;]  # =&gt; &quot;development&quot;
+ENV[&#39;RACK_ENV&#39;]   # =&gt; &quot;development&quot;
+
+ENV[&#39;HANAMI_HOST&#39;] # =&gt; &quot;localhost&quot;
+ENV[&#39;HANAMI_PORT&#39;] # =&gt; &quot;2300&quot;
+
+# User defined ENV vars
+ENV[&#39;FOO&#39;]        # =&gt; &quot;ok&quot;
+ENV[&#39;XYZ&#39;]        # =&gt; &quot;yes&quot;
+
+# Hanami::Environment evaluates `.env` first as master configuration.
+# Then it evaluates `.env.development` because the current environment
+# is &quot;development&quot;. The settings defined in this last file override
+# the one defined in the parent (eg `FOO` is overwritten). All the
+# other settings (eg `XYZ`) will be left untouched.
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L198" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Hanamirc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>).<span class="ruby-identifier">options</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">clone</span>).<span class="ruby-identifier">symbolize!</span>
+  <span class="ruby-constant">LOCK</span>.<span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">set_env_vars!</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-apps_path">
+            
+              <b>apps_path</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-apps_path" name="method-i-apps_path" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-apps_path_source')" id="l_method-i-apps_path_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L414" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-apps_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 414</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">apps_path</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:path</span>) {
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">architecture</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">CONTAINER</span>   <span class="ruby-keyword">then</span> <span class="ruby-constant">CONTAINER_PATH</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">APPLICATION</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">APPLICATION_PATH</span>
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-architecture">
+            
+              <b>architecture</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-architecture" name="method-i-architecture" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-architecture_source')" id="l_method-i-architecture_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L393" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-architecture_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">architecture</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:architecture</span>) {
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Cannot recognize Hanami architecture, please check `.hanamirc&#39;&quot;</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-number">1</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bundler_groups">
+            
+              <b>bundler_groups</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-bundler_groups" name="method-i-bundler_groups" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>A set of Bundler groups</p>
+
+<p>@return [Array] A set of groups</p>
+
+<p>@since 0.2.0 @api private</p>
+
+<p>@see <a
+href="http://bundler.io/v1.7/groups.html">bundler.io/v1.7/groups.html</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bundler_groups_source')" id="l_method-i-bundler_groups_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L239" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-bundler_groups_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bundler_groups</span>
+  [<span class="ruby-value">:default</span>, <span class="ruby-identifier">environment</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-code_reloading-3F">
+            
+              <b>code_reloading?</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-code_reloading-3F" name="method-i-code_reloading-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Determine if activate code reloading for the current <a
+href="Environment.html#method-i-environment">#environment</a> while running
+the server.</p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `code_reloading`</code></pre>
+
+<p>If those are missing it falls back to the following defaults:</p>
+
+<pre><code>* true for development
+* false for all the other environments</code></pre>
+
+<p>@return [TrueClass,FalseClass] the result of the check</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see <a href="Commands/Server.html">Hanami::Commands::Server</a> @see
+Hanami::Environment::CODE_RELOADING</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-code_reloading-3F_source')" id="l_method-i-code_reloading-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L387" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-code_reloading-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">code_reloading?</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:code_reloading</span>) { <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">CODE_RELOADING</span>[<span class="ruby-identifier">environment</span>] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-config">
+            
+              <b>config</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-config" name="method-i-config" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Application&#39;s <a href="Environment.html#method-i-config">#config</a>
+directory</p>
+
+<p>It&#39;s the application where all the configurations are stored.</p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `config`</code></pre>
+
+<p>If those are missing it falls back to the default one: `“config/”`.</p>
+
+<p>When a relative path is given via CLI option, it assumes to be located
+under application&#39;s <a href="Environment.html#method-i-root">#root</a>.
+If absolute path, it will be used as it is.</p>
+
+<p>@return [Pathname] the <a
+href="Environment.html#method-i-config">#config</a> directory</p>
+
+<p>@since 0.2.0</p>
+
+<p>@see Hanami::Environment::DEFAULT_CONFIG @see <a
+href="Environment.html#method-i-root">#root</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-config_source')" id="l_method-i-config_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L274" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 274</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">config</span>
+  <span class="ruby-ivar">@config</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:config</span>) { <span class="ruby-constant">DEFAULT_CONFIG</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-container-3F">
+            
+              <b>container?</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-container-3F" name="method-i-container-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-container-3F_source')" id="l_method-i-container-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L402" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-container-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">container?</span>
+  <span class="ruby-identifier">architecture</span> <span class="ruby-operator">==</span> <span class="ruby-constant">CONTAINER</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-env_config">
+            
+              <b>env_config</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-env_config" name="method-i-env_config" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Path to <a href="Environment.html#method-i-environment">#environment</a>
+configuration file.</p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `environment`</code></pre>
+
+<p>If those are missing it falls back to the default one:
+`“config/environment.rb”`.</p>
+
+<p>When a relative path is given via CLI option, it assumes to be located
+under application&#39;s <a href="Environment.html#method-i-root">#root</a>.
+If absolute path, it will be used as it is.</p>
+
+<p>@return [Pathname] path to applications</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Environment::DEFAULT_ENVIRONMENT_CONFIG</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-env_config_source')" id="l_method-i-env_config_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L355" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-env_config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">env_config</span>
+  <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:environment</span>) { <span class="ruby-identifier">config</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">DEFAULT_ENVIRONMENT_CONFIG</span>) })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-environment">
+            
+              <b>environment</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-environment" name="method-i-environment" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The current <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>In order to decide the value, it looks up to the following `ENV` vars:</p>
+
+<pre><code>* HANAMI_ENV
+* RACK_ENV</code></pre>
+
+<p>If those are missing it falls back to the default one: `“development”`.</p>
+
+<p>Rack <a href="Environment.html#method-i-environment">#environment</a>
+`“deployment”` is translated to <a href="../Hanami.html">Hanami</a>
+`“production”`.</p>
+
+<p>@return [String] the current <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Environment::DEFAULT_ENV</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-environment_source')" id="l_method-i-environment_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L220" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-environment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">environment</span>
+  <span class="ruby-ivar">@environment</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-constant">HANAMI_ENV</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">rack_env</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_ENV</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-environment-3F">
+            
+              <b>environment?</b>(*names)
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-environment-3F" name="method-i-environment-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.3.1</p>
+
+<p>@see <a href="../Hanami.html#method-c-env-3F">Hanami.env?</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-environment-3F_source')" id="l_method-i-environment-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L227" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-environment-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">environment?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">environment</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-host">
+            
+              <b>host</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-host" name="method-i-host" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The HTTP <a href="Environment.html#method-i-host">#host</a> name</p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `host`
+* HANAMI_HOST ENV var</code></pre>
+
+<p>If those are missing it falls back to the following defaults:</p>
+
+<pre><code>* `&quot;localhost&quot;` for development
+* `&quot;0.0.0.0&quot;` for all the other environments</code></pre>
+
+<p>@return [String] the HTTP <a
+href="Environment.html#method-i-host">#host</a> name</p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Environment::DEFAULT_HOST @see
+Hanami::Environment::LISTEN_ALL_HOST</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-host_source')" id="l_method-i-host_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L296" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-host_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">host</span>
+  <span class="ruby-ivar">@host</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:host</span>) {
+    <span class="ruby-constant">ENV</span>[<span class="ruby-constant">HANAMI_HOST</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default_host</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-port">
+            
+              <b>port</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-port" name="method-i-port" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The HTTP <a href="Environment.html#method-i-port">#port</a></p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `port`
+* HANAMI_PORT ENV var</code></pre>
+
+<p>If those are missing it falls back to the default one: `2300`.</p>
+
+<p>@return [Integer] the default <a
+href="Environment.html#method-i-port">#port</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@see Hanami::Environment::DEFAULT_PORT</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-port_source')" id="l_method-i-port_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L316" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">port</span>
+  <span class="ruby-ivar">@port</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:port</span>) { <span class="ruby-constant">ENV</span>[<span class="ruby-constant">HANAMI_PORT</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_PORT</span> }.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rackup">
+            
+              <b>rackup</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-rackup" name="method-i-rackup" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Path to the Rack configuration file</p>
+
+<p>In order to decide the value, it looks up the following sources:</p>
+
+<pre><code>* CLI option `rackup`</code></pre>
+
+<p>If those are missing it falls back to the default one: `“config.ru”`.</p>
+
+<p>When a relative path is given via CLI option, it assumes to be located
+under application&#39;s <a href="Environment.html#method-i-root">#root</a>.
+If absolute path, it will be used as it is.</p>
+
+<p>@return [Pathname] path to the Rack configuration file</p>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rackup_source')" id="l_method-i-rackup_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L334" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rackup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rackup</span>
+  <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:rackup</span>) { <span class="ruby-constant">DEFAULT_RACKUP</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-require_application_environment">
+            
+              <b>require_application_environment</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-require_application_environment" name="method-i-require_application_environment" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Require application <a
+href="Environment.html#method-i-environment">#environment</a></p>
+
+<p>Eg <code>require &quot;config/environment&quot;</code>.</p>
+
+<p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-require_application_environment_source')" id="l_method-i-require_application_environment_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L365" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-require_application_environment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">require_application_environment</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-identifier">env_config</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Application&#39;s <a href="Environment.html#method-i-root">#root</a></p>
+
+<p>It defaults to the current working directory. <a
+href="../Hanami.html">Hanami</a> assumes that all the commands are executed
+from there.</p>
+
+<p>@return [Pathname] application&#39;s <a
+href="Environment.html#method-i-root">#root</a></p>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L251" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>
+  <span class="ruby-ivar">@root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-serve_static_assets-3F">
+            
+              <b>serve_static_assets?</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-serve_static_assets-3F" name="method-i-serve_static_assets-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>@since 0.6.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-serve_static_assets-3F_source')" id="l_method-i-serve_static_assets-3F_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L408" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-serve_static_assets-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 408</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">serve_static_assets?</span>
+  <span class="ruby-constant">SERVE_STATIC_ASSETS_ENABLED</span> <span class="ruby-operator">==</span> <span class="ruby-constant">ENV</span>[<span class="ruby-constant">SERVE_STATIC_ASSETS</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_options">
+            
+              <b>to_options</b>()
+            
+            <a href="../../classes/Hanami/Environment.html#method-i-to_options" name="method-i-to_options" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Serialize the most relevant settings into a Hash</p>
+
+<p>@return [Hanami::Utils::Hash]</p>
+
+<p>@since 0.1.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_options_source')" id="l_method-i-to_options_source">show</a>
+                
+                  | <a href="https://github.com/hanami/hanami/blob/43b143305d98d382c2e17fa6fd160c6cb7ce8f95/lib/hanami/environment.rb#L429" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/hanami/lib/hanami/environment.rb, line 429</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_options</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">merge</span>(
+    <span class="ruby-identifier">environment</span><span class="ruby-operator">:</span> <span class="ruby-identifier">environment</span>,
+    <span class="ruby-identifier">env_config</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">env_config</span>,
+    <span class="ruby-identifier">apps_path</span><span class="ruby-operator">:</span>   <span class="ruby-identifier">apps_path</span>,
+    <span class="ruby-identifier">rackup</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">rackup</span>,
+    <span class="ruby-identifier">host</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">host</span>,
+    <span class="ruby-identifier">port</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">port</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Action::Rack</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Hanami::Action::Rack 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/rack_rb.html">sources/controller/lib/hanami/action/rack.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/rack/callable_rb.html">sources/controller/lib/hanami/action/rack/callable.rb</a></li>
+            
+            <li><a href="../../../files/sources/controller/lib/hanami/action/rack/file_rb.html">sources/controller/lib/hanami/action/rack/file.rb</a></li>
+            
+            <li><a href="../../../files/sources/hanami/lib/hanami/action/csrf_protection_rb.html">sources/hanami/lib/hanami/action/csrf_protection.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Rack.html">Rack</a> integration API</p>
+
+<p>@since 0.1.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Rack/Callable.html">Hanami::Action::Rack::Callable</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Rack/ClassMethods.html">Hanami::Action::Rack::ClassMethods</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Rack/InstanceMethods.html">Hanami::Action::Rack::InstanceMethods</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Rack/File.html">Hanami::Action::Rack::File</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-headers">headers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-request">request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-request_id">request_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-response">response</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_RESPONSE_CODE</td>
+            <td>=</td>
+            <td class="attr-value">200</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default HTTP <a href="Rack.html#method-i-response">#response</a> code</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_RESPONSE_BODY</td>
+            <td>=</td>
+            <td class="attr-value">[]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default <a href="Rack.html">Rack</a> <a
+href="Rack.html#method-i-response">#response</a> body</p>
+
+<p>@since 0.1.0 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_REQUEST_ID_LENGTH</td>
+            <td>=</td>
+            <td class="attr-value">16</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The default HTTP <a href="Request.html">Request</a> ID length</p>
+
+<p>@since 0.3.0 @api private</p>
+
+<p>@see <a href="Rack.html#method-i-request_id">#request_id</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REQUEST_METHOD</td>
+            <td>=</td>
+            <td class="attr-value">&#39;REQUEST_METHOD&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>The <a href="Rack.html#method-i-request">#request</a> method</p>
+
+<p>@since 0.3.2 @api private</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HEAD</td>
+            <td>=</td>
+            <td class="attr-value">&#39;HEAD&#39;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Rack.html#HEAD">HEAD</a> <a
+href="Rack.html#method-i-request">#request</a></p>
+
+<p>@since 0.3.2 @api private</p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <b>included</b>(base)
+            
+            <a href="../../../classes/Hanami/Action/Rack.html#method-c-included" name="method-c-included" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Override Ruby&#39;s hook for modules. It includes basic <a
+href="../Action.html">Hanami::Action</a> modules to the given class.</p>
+
+<p>@param base [Class] the target action</p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see <a
+href="http://www.ruby-doc.org/core-2.1.2/Module.html#method-i-included">www.ruby-doc.org/core-2.1.2/Module.html#method-i-included</a></p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L54" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+    <span class="ruby-identifier">prepend</span> <span class="ruby-constant">InstanceMethods</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-headers">
+            
+              <b>headers</b>()
+            
+            <a href="../../../classes/Hanami/Action/Rack.html#method-i-headers" name="method-i-headers" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Gets the <a href="Rack.html#method-i-headers">#headers</a> from the <a
+href="Rack.html#method-i-response">#response</a></p>
+
+<p>@return [Hash] the HTTP <a href="Rack.html#method-i-headers">#headers</a>
+from the <a href="Rack.html#method-i-response">#response</a></p>
+
+<p>@since 0.1.0</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Show
+  include Hanami::Action
+
+  def call(params)
+    # ...
+    self.headers            # =&gt; { ... }
+    self.headers.merge!({&#39;X-Custom&#39; =&gt; &#39;OK&#39;})
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-headers_source')" id="l_method-i-headers_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L153" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-headers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">headers</span>
+  <span class="ruby-ivar">@headers</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-request">
+            
+              <b>request</b>()
+            
+            <a href="../../../classes/Hanami/Action/Rack.html#method-i-request" name="method-i-request" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="../../Hanami.html">Hanami</a> specialized rack <a
+href="Rack.html#method-i-request">#request</a></p>
+
+<p>@return [Hanami::Action::Request] The <a
+href="Rack.html#method-i-request">#request</a></p>
+
+<p>@since 0.3.1</p>
+
+<p>@example</p>
+
+<pre><code>require &#39;hanami/controller&#39;
+
+class Create
+  include Hanami::Action
+
+  def call(params)
+    ip     = request.ip
+    secure = request.ssl?
+  end
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-request_source')" id="l_method-i-request_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L201" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">request</span>
+  <span class="ruby-ivar">@request</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Action</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@_env</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-request_id">
+            
+              <b>request_id</b>()
+            
+            <a href="../../../classes/Hanami/Action/Rack.html#method-i-request_id" name="method-i-request_id" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Calculates an unique ID for the current <a
+href="Rack.html#method-i-request">#request</a></p>
+
+<p>@return [String] The unique ID</p>
+
+<p>@since 0.3.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-request_id_source')" id="l_method-i-request_id_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L179" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-request_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">request_id</span>
+  <span class="ruby-comment"># FIXME make this number configurable and document the probabilities of clashes</span>
+  <span class="ruby-ivar">@request_id</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">hex</span>(<span class="ruby-constant">DEFAULT_REQUEST_ID_LENGTH</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-response">
+            
+              <b>response</b>()
+            
+            <a href="../../../classes/Hanami/Action/Rack.html#method-i-response" name="method-i-response" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a serialized <a href="Rack.html">Rack</a> <a
+href="Rack.html#method-i-response">#response</a> (Array), according to the
+current</p>
+
+<pre><code>status code, headers, and body.</code></pre>
+
+<p>@return [Array] the serialized <a
+href="Rack.html#method-i-response">#response</a></p>
+
+<p>@since 0.1.0 @api private</p>
+
+<p>@see Hanami::Action::Rack::DEFAULT_RESPONSE_CODE @see
+Hanami::Action::Rack::DEFAULT_RESPONSE_BODY @see
+Hanami::Action::Rack#status= @see <a
+href="Rack.html#method-i-headers">#headers</a> @see
+Hanami::Action::Rack#body=</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-response_source')" id="l_method-i-response_source">show</a>
+                
+                  | <a href="https://github.com/hanami/controller/blob/64f3cefeed33463cc604767118f5c380b265788a/lib/hanami/action/rack.rb#L170" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/controller/lib/hanami/action/rack.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">response</span>
+  [ <span class="ruby-ivar">@_status</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_RESPONSE_CODE</span>, <span class="ruby-identifier">headers</span>, <span class="ruby-ivar">@_body</span> <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_RESPONSE_BODY</span>.<span class="ruby-identifier">dup</span> ]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

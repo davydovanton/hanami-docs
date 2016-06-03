@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Hanami::Model::Configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Hanami::Model::Configuration 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/sources/model/lib/hanami/model/configuration_rb.html">sources/model/lib/hanami/model/configuration.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Configuration.html">Configuration</a> for the framework, models
+and adapters.</p>
+
+<p><a href="../Model.html">Hanami::Model</a> has its own global configuration
+that can be manipulated via `Hanami::Model.configure`.</p>
+
+<p>@since 0.2.0</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adapter">adapter</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-duplicate">duplicate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load-21">load!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mapping">mapping</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-migrations">migrations</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset-21">reset!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-root">root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-schema">schema</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unload-21">unload!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_MIGRATIONS_PATH</td>
+            <td>=</td>
+            <td class="attr-value">Pathname.new(&#39;db/migrations&#39;).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="Configuration.html#method-i-migrations">#migrations</a>
+path</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a href="Configuration.html#method-i-migrations">#migrations</a></p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_SCHEMA_PATH</td>
+            <td>=</td>
+            <td class="attr-value">Pathname.new(&#39;db/schema.sql&#39;).freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Default <a href="Configuration.html#method-i-schema">#schema</a> path</p>
+
+<p>@since 0.4.0 @api private</p>
+
+<p>@see <a href="Configuration.html#method-i-schema">#schema</a></p></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>adapter_config</td>
+            <td class='attr-desc'><p>An <a href="Configuration.html#method-i-adapter">#adapter</a> configuration
+template</p>
+
+<p>@return [Hanami::Model::Config::Adapter]</p>
+
+<p>@since 0.2.0</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>mapper</td>
+            <td class='attr-desc'><p>The persistence <a href="Configuration.html#attribute-i-mapper">#mapper</a></p>
+
+<p>@return [Hanami::Model::Mapper]</p>
+
+<p>@since 0.2.0</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize a configuration instance</p>
+
+<p>@return [Hanami::Model::Configuration] a <a
+href="Configuration.html#method-c-new">::new</a> configuration&#39;s</p>
+
+<pre><code>instance
+</code></pre>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L49" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-identifier">reset!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter">
+            
+              <b>adapter</b>(options = nil)
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-adapter" name="method-i-adapter" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Register <a href="Configuration.html#method-i-adapter">#adapter</a></p>
+
+<p>There could only 1 <a
+href="Configuration.html#method-i-adapter">#adapter</a> can be registered
+per application</p>
+
+<p>@overload <a href="Configuration.html#method-i-adapter">#adapter</a></p>
+
+<pre><code>Retrieves the configured adapter
+@return [Hanami::Model::Config::Adapter,NilClass] the adapter, if
+  present</code></pre>
+
+<p>@overload <a href="Configuration.html#method-i-adapter">#adapter</a></p>
+
+<pre><code>Register the adapter
+  @param @options [Hash] A set of options to register an adapter
+  @option options [Symbol] :type The adapter type. Eg. :sql, :memory
+    (mandatory)
+  @option options [String] :uri The database uri string (mandatory)</code></pre>
+
+<p>@return void</p>
+
+<p>@raise [ArgumentError] if one of the mandatory options is omitted</p>
+
+<p>@see <a href="../Model.html#method-c-configure">Hanami::Model.configure</a>
+@see <a href="Config/Adapter.html">Hanami::Model::Config::Adapter</a></p>
+
+<p>@example Register the <a
+href="Configuration.html#method-i-adapter">#adapter</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+Hanami::Model.configure do
+  adapter type: :sql, uri: &#39;sqlite3://localhost/database&#39;
+end
+
+Hanami::Model.configuration.adapter_config
+</code></pre>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_source')" id="l_method-i-adapter_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L114" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-adapter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@adapter_config</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">_check_adapter_options!</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-ivar">@adapter_config</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Adapter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-duplicate">
+            
+              <b>duplicate</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-duplicate" name="method-i-duplicate" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Duplicate by copying the settings in a <a
+href="Configuration.html#method-c-new">::new</a> instance.</p>
+
+<p>@return [Hanami::Model::Configuration] a copy of the configuration</p>
+
+<p>@since 0.2.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-duplicate_source')" id="l_method-i-duplicate_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L234" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-duplicate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">duplicate</span>
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@adapter_config</span>, <span class="ruby-ivar">@adapter_config</span>)
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@mapper</span>, <span class="ruby-ivar">@mapper</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load-21">
+            
+              <b>load!</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-load-21" name="method-i-load-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the configuration for the current framework</p>
+
+<p>@return void</p>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load-21_source')" id="l_method-i-load-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L74" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-load-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load!</span>
+  <span class="ruby-identifier">_build_mapper</span>
+  <span class="ruby-identifier">_build_adapter</span>
+
+  <span class="ruby-identifier">mapper</span>.<span class="ruby-identifier">load!</span>(<span class="ruby-ivar">@adapter</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mapping">
+            
+              <b>mapping</b>(path=nil, &amp;blk)
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-mapping" name="method-i-mapping" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Set global persistence <a
+href="Configuration.html#method-i-mapping">#mapping</a></p>
+
+<p>@overload mapping(blk)</p>
+
+<pre><code>Specify a set of mapping in the given block
+@param blk [Proc] the mapping definitions</code></pre>
+
+<p>@overload mapping(path)</p>
+
+<pre><code>Specify a relative path where to find the mapping file
+@param path [String] the relative path</code></pre>
+
+<p>@return void</p>
+
+<p>@see <a href="../Model.html#method-c-configure">Hanami::Model.configure</a>
+@see <a href="Mapper.html">Hanami::Model::Mapper</a></p>
+
+<p>@example Set global persistence <a
+href="Configuration.html#attribute-i-mapper">#mapper</a></p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+Hanami::Model.configure do
+  mapping do
+    collection :users do
+      entity User
+
+      attribute :id,   Integer
+      attribute :name, String
+    end
+  end
+end
+</code></pre>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mapping_source')" id="l_method-i-mapping_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L153" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-mapping_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mapping</span>(<span class="ruby-identifier">path</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@mapper_config</span> = <span class="ruby-constant">Hanami</span><span class="ruby-operator">::</span><span class="ruby-constant">Model</span><span class="ruby-operator">::</span><span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Mapper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-migrations">
+            
+              <b>migrations</b>(path = nil)
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-migrations" name="method-i-migrations" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Migrations directory</p>
+
+<p>It defaults to <code>db/migrations</code>.</p>
+
+<p>@overload <a href="Configuration.html#method-i-migrations">#migrations</a></p>
+
+<pre><code>Get migrations directory
+@return [Pathname] migrations directory</code></pre>
+
+<p>@overload migrations(path)</p>
+
+<pre><code>Set migrations directory
+@param path [String,Pathname] the path
+@raise [Errno::ENOENT] if the given path doesn&#39;t exist</code></pre>
+
+<p>@since 0.4.0</p>
+
+<p>@see Hanami::Model::Migrations::DEFAULT_MIGRATIONS_PATH</p>
+
+<p>@example Set Custom Path</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+Hanami::Model.configure do
+  # ...
+  migrations &#39;path/to/migrations&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-migrations_source')" id="l_method-i-migrations_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L181" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-migrations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">migrations</span>(<span class="ruby-identifier">path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@migrations</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@migrations</span> = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">realpath</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset-21">
+            
+              <b>reset!</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-reset-21" name="method-i-reset-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Reset all the values to the defaults</p>
+
+<p>@return void</p>
+
+<p>@since 0.2.0</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Configuration.html#method-i-unload-21">unload!</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset-21_source')" id="l_method-i-reset-21_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L58" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-reset-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset!</span>
+  <span class="ruby-ivar">@adapter</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@adapter_config</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@mapper</span> = <span class="ruby-constant">NullMapper</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@mapper_config</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@migrations</span> = <span class="ruby-constant">DEFAULT_MIGRATIONS_PATH</span>
+  <span class="ruby-ivar">@schema</span> = <span class="ruby-constant">DEFAULT_SCHEMA_PATH</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root">
+            
+              <b>root</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-root" name="method-i-root" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Root directory</p>
+
+<p>@since 0.4.0 @api private</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root_source')" id="l_method-i-root_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L224" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root</span>
+  <span class="ruby-constant">Hanami</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:root</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Hanami</span>.<span class="ruby-identifier">root</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">pwd</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-schema">
+            
+              <b>schema</b>(path = nil)
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-schema" name="method-i-schema" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Schema</p>
+
+<p>It defaults to <code>db/schema.sql</code>.</p>
+
+<p>@overload <a href="Configuration.html#method-i-schema">#schema</a></p>
+
+<pre><code>Get schema path
+@return [Pathname] schema path</code></pre>
+
+<p>@overload schema(path)</p>
+
+<pre><code>Set schema path
+@param path [String,Pathname] the path</code></pre>
+
+<p>@since 0.4.0</p>
+
+<p>@see Hanami::Model::Migrations::DEFAULT_SCHEMA_PATH</p>
+
+<p>@example Set Custom Path</p>
+
+<pre><code>require &#39;hanami/model&#39;
+
+Hanami::Model.configure do
+  # ...
+  schema &#39;path/to/schema.sql&#39;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-schema_source')" id="l_method-i-schema_source">show</a>
+                
+                  | <a href="https://github.com/hanami/model/blob/802db2d3d2d8951d679de028aa8291202920f2ea/lib/hanami/model/configuration.rb#L212" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-schema_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File sources/model/lib/hanami/model/configuration.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">schema</span>(<span class="ruby-identifier">path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@schema</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@schema</span> = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unload-21">
+            
+              <b>unload!</b>()
+            
+            <a href="../../../classes/Hanami/Model/Configuration.html#method-i-unload-21" name="method-i-unload-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Configuration.html#method-i-reset-21">reset!</a>
+            </div>
+          
+          
+          
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
