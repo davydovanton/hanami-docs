@@ -1,7 +1,7 @@
 Hanami Docs
 ==============
 
-Simple library for building hanami documentations.
+Simple library for building full hanami documentations.
 
 ## Usage
 
